@@ -4,61 +4,82 @@ Chloros poskytuje plnú podporu rozhrania v **38 jazykoch po celom svete**, čí
 
 Chloros podporuje nasledujúce jazyky:
 
-1. 🇺🇸 **angličtina**
-2. 🇪🇸 **Español** (španielčina)
-3. 🇵🇹 **Português** (portugalčina)
-4. 🇫🇷 **Français** (francúzština)
-5. 🇩🇪 **Deutsch** (nemčina)
-6. 🇮🇹 **Italiano** (taliančina)
-7. 🇯🇵 **日本語** (japončina)
-8. 🇰🇷 **한국어** (kórejčina)
-9. 🇨🇳 **简体中文** (zjednodušená čínština)
-10. 🇹🇼 **繁體中文** (tradičná čínština)
-11. 🇷🇺 **Русский** (ruština)
-12. 🇳🇱 **Nederlands** (holandčina)
-13. 🇸🇦 **العربية** (arabčina)
-14. 🇵🇱 **Polski** (poľština)
-15. 🇹🇷 **Türkçe** (turečtina)
-16. 🇮🇳 **हिंदी** (hindčina)
-17. 🇮🇩 **Bahasa Indonesia** (indonézština)
-18. 🇻🇳 **Tiếng Việt** (vietnamčina)
-19. 🇹🇭 **ไทย** (thajčina)
-20. 🇸🇪 **Svenska** (švédčina)
-21. 🇩🇰 **Dansk** (dánčina)
-22. 🇳🇴 **Norsk** (nórčina)
-23. 🇫🇮 **Suomi** (fínčina)
-24. 🇬🇷 **Ελληνικά** (gréčtina)
-25. 🇨🇿 **Čeština** (česky)
-26. 🇭🇺 **Magyar** (maďarsky)
-27. 🇷🇴 **Română** (rumunsky)
-28. 🇺🇦 **Українська** (ukrajinsky)
-29. 🇧🇷 **Português Brasileiro** (brazílska portugalčina)
-30. 🇭🇰 **粵語** (kantónčina)
-31. 🇲🇾 **Bahasa Melayu** (malajčina)
-32. 🇸🇰 **Slovenčina** (slovenčina)
-33. 🇧🇬 **Български** (bulharčina)
-34. 🇭🇷 **Hrvatski** (chorvátčina)
-35. 🇱🇹 **Lietuvių** (litovčina)
-36. 🇱🇻 **Latviešu** (lotyština)
-37. 🇪🇪 **Eesti** (estónčina)
-38. 🇸🇮 **Slovenščina** (slovinčina)
+| # | Jazyk | Rodný názov | Kód CLI |
+|---|----------|-------------|----------|
+| 1 | 🇺🇸 Angličtina | Angličtina | `en` |
+| 2 | 🇪🇸 Španielčina | Español | `es` |
+| 3 | 🇵🇹 Portugalčina | Português | `pt` |
+| 4 | 🇫🇷 Francúzština | Français | `fr` |
+| 5 | 🇩🇪 Nemčina | Deutsch | `de` |
+| 6 | 🇮🇹 Taliančina | Italiano | `it` |
+| 7 | 🇯🇵 Japončina | 日本語 | `ja` |
+| 8 | 🇰🇷 Kórejčina | 한국어 | `ko` |
+| 9 | 🇨🇳 Čínština (zjednodušená) | 简体中文 | `zh` |
+| 10 | 🇹🇼 Čínština (tradičná) | 繁體中文 | `zh-TW` |
+| 11 | 🇷🇺 Ruština | Русский | `ru` |
+| 12 | 🇳🇱 Holandčina | Nederlands | `nl` |
+| 13 | 🇸🇦 Arabčina | العربية | `ar` |
+| 14 | 🇵🇱 Poľština | Polski | `pl` |
+| 15 | 🇹🇷 Turečtina | Türkçe | `tr` |
+| 16 | 🇮🇳 Hindčina | हिंदी | `hi` |
+| 17 | 🇮🇩 Indonézština | Bahasa Indonesia | `id` |
+| 18 | 🇻🇳 Vietnamčina | Tiếng Việt | `vi` |
+| 19 | 🇹🇭 Thajčina | ไทย | `th` |
+| 20 | 🇸🇪 Švédčina | Svenska | `sv` |
+| 21 | 🇩🇰 Dánčina | Dansk | `da` |
+| 22 | 🇳🇴 Nórčina | Norsk | `no` |
+| 23 | 🇫🇮 Fínčina | Suomi | `fi` |
+| 24 | 🇬🇷 Gréčtina | Ελληνικά | `el` |
+| 25 | 🇨🇿 Čeština | Čeština | `cs` |
+| 26 | 🇭🇺 Maďarčina | Magyar | `hu` |
+| 27 | 🇷🇴 Rumunčina | Română | `ro` |
+| 28 | 🇺🇦 Ukrajinčina | Українська | `uk` |
+| 29 | 🇧🇷 Brazílsky portugalčina | Português Brasileiro | `pt-BR` |
+| 30 | 🇭🇰 Kantónčina | 粵語 | `zh-HK` |
+| 31 | 🇲🇾 Malajčina | Bahasa Melayu | `ms` |
+| 32 | 🇸🇰 Slovenčina | Slovenčina | `sk` |
+| 33 | 🇧🇬 Bulharčina | Български | `bg` |
+| 34 | 🇭🇷 Chorvátčina | Hrvatski | `hr` |
+| 35 | 🇱🇹 Litovčina | Lietuvių | `lt` |
+| 36 | 🇱🇻 Lotyština | Latviešu | `lv` |
+| 37 | 🇪🇪 Estónčina | Eesti | `et` |
+| 38 | 🇸🇮 Slovinčina | Slovenščina | `sl` |
 
 ## Ako zmeniť jazyk
 
 ### V Chloros Desktop/Browser
 
-1. Otvorte nastavenia aplikácie
-2. Prejdite do menu výberu jazyka
-3. Zoznamu vyberte preferovaný jazyk
-4. Rozhranie sa okamžite aktualizuje
+1. Otvorte nastavenia aplikácie.
+2. Prejdite do menu výberu jazyka.
+3. Zo zoznamu vyberte preferovaný jazyk.
+4. Rozhranie sa okamžite aktualizuje.
 
 ### V Chloros CLI
 
-Na nastavenie jazyka rozhrania použite parameter jazyka s vašimi príkazmi.
+Použite príkaz `language` na zobrazenie alebo zmenu jazyka rozhrania CLI:
+
+```bash
+# View current language
+chloros-cli language
+
+# Change to Spanish
+chloros-cli language es
+
+# Change to Chinese (Simplified)
+chloros-cli language zh
+
+# Change to Brazilian Portuguese
+chloros-cli language pt-BR
+
+# List all available languages
+chloros-cli language --list
+```
+
+Ďalšie podrobnosti nájdete v [dokumentácii CLI](CLI.md).
 
 ### V Chloros Python SDK
 
-Nastavte jazykový parameter pri inicializácii SDK, aby ste dostávali správy a výstupy vo vašom preferovanom jazyku.
+Pri inicializácii SDK nastavte parameter jazyka, aby ste dostávali správy a výstupy vo vašom preferovanom jazyku.
 
 ## Pokrytie
 
@@ -69,4 +90,4 @@ Všetkých 38 jazykov je plne podporovaných v:
 * **Chloros CLI** – rozhranie príkazového riadku a výstupné správy
 * **Chloros Python SDK** – správy a dokumentácia API
 
-Jazyková podpora zaručuje, že používatelia po celom svete môžu efektívne pracovať vo svojom rodnom jazyku bez akýchkoľvek prekážok.
+Jazyková podpora zaručuje, že používatelia po celom svete môžu efektívne pracovať vo svojom rodnom jazyku bez bariér.
