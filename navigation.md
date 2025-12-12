@@ -14,7 +14,9 @@ Z hlavného menu môžete začať nový projekt, otvoriť existujúci projekt al
 
 Keď je tlačidlo spracovania aktivované, spustí sa spracovanie obrazu.
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Indikátor priebehu <img src=".gitbook/assets/image (5).png" alt="" data-size="line">V bezplatnom režime Chloros, ktorý spracováva všetky súbory postupne, ukazovateľ priebehu zobrazuje 2 fázy: Detekcia cieľa a Spracovanie.
+### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Indikátor priebehu <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+
+V bezplatnom režime Chloros, ktorý spracováva všetky súbory postupne, ukazovateľ priebehu zobrazuje 2 fázy: Detekcia cieľa a Spracovanie.
 
 V platenom režime Chloros+ s licenciou, ktorý spracováva všetky súbory súčasne, ukazovateľ priebehu zobrazuje 4 fázy: Detekcia, Analýza, Kalibrácia, Export. Ak umiestnite kurzor myši nad ukazovateľ priebehu Chloros+, zobrazí sa rozbalené rozšírené okno s 4 ukazovateľmi priebehu, takže môžete sledovať priebeh. Kliknutím na horný ukazovateľ priebehu sa rozbalené okno zmrazí, ďalším kliknutím sa opäť odblokuje.
 
