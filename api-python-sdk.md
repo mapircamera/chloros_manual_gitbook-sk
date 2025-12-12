@@ -1,48 +1,48 @@
 # API : Python SDK
 
-The **Chloros Python SDK** provides programmatic access to the Chloros image processing engine, enabling automation, custom workflows, and seamless integration with your Python applications and research pipelines.
+**Chloros Python SDK** poskytuje programový prístup k obrazovému procesorovému jadru Chloros, čo umožňuje automatizáciu, vlastné pracovné postupy a bezproblémovú integráciu s vašimi aplikáciami Python a výskumnými procesmi.
 
-### Key Features
+### Kľúčové vlastnosti
 
-* 🐍 **Native Python** - Clean, Pythonic API for image processing
-* 🔧 **Full API Access** - Complete control over Chloros processing
-* 🚀 **Automation** - Build custom batch processing workflows
-* 🔗 **Integration** - Embed Chloros in existing Python applications
-* 📊 **Research-Ready** - Perfect for scientific analysis pipelines
-* ⚡ **Parallel Processing** - Scales to your CPU cores (Chloros+)
+* 🐍 **Natívny Python** - Čistý, Pythonic API pre spracovanie obrazu
+* 🔧 **Plný prístup k API** - Kompletná kontrola nad spracovaním Chloros
+* 🚀 **Automatizácia** - Vytvorte vlastné pracovné postupy hromadného spracovania
+* 🔗 **Integrácia** – Vložte Chloros do existujúcich aplikácií Python
+* 📊 **Pripravené na výskum** – Ideálne pre vedecké analytické procesy
+* ⚡ **Paralelné spracovanie** – Škálovateľné podľa počtu jadier vášho procesora (Chloros+)
 
-### Requirements
+### Požiadavky
 
-| Requirement          | Details                                                             |
+| Požiadavka          | Podrobnosti                                                             |
 | -------------------- | ------------------------------------------------------------------- |
-| **Chloros Desktop**  | Must be installed locally                                           |
-| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
-| **Operating System** | Windows 10/11 (64-bit)                                              |
-| **Python**           | Python 3.7 or higher                                                |
-| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
-| **Internet**         | Required for license activation                                     |
+| **Chloros Desktop**  | Musí byť nainštalovaný lokálne                                           |
+| **Licencia**          | Chloros+ ([vyžaduje sa platený plán](https://cloud.mapir.camera/pricing)) |
+| **Operačný systém** | Windows 10/11 (64-bit)                                              |
+| **Python**           | Python 3.7 alebo vyšší                                                |
+| **Pamäť**           | Minimálne 8 GB RAM (odporúča sa 16 GB)                                  |
+| **Internet**         | Potrebný na aktiváciu licencie                                     |
 
-{% hint style="warning" %}
-**License Requirement**: The Python SDK requires a paid Chloros+ subscription for API access. Standard (free) plans do not have API/SDK access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
+{% hint style=&quot;warning&quot; %}
+**Požiadavky na licenciu**: Python SDK vyžaduje platené predplatné Chloros+ pre prístup k API. Štandardné (bezplatné) plány nemajú prístup k API/SDK. Prejdite na [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) a vykonajte upgrade.
 {% endhint %}
 
-## Quick Start
+## Rýchly štart
 
-### Installation
+### Inštalácia
 
-Install via pip:
+Inštalácia prostredníctvom pip:
 
 ```bash
 pip install chloros-sdk
 ```
 
-{% hint style="info" %}
-**First-Time Setup**: Before using the SDK, activate your Chloros+ license by opening Chloros, Chloros (Browser) or Chloros CLI and logging in with your credentials. This only needs to be done once.
+{% hint style=&quot;info&quot; %}
+**Prvé nastavenie**: Pred použitím SDK aktivujte svoju licenciu Chloros+ otvorením Chloros, Chloros (prehliadač) alebo Chloros CLI a prihlásením sa pomocou svojich prihlasovacích údajov. Toto je potrebné urobiť len raz.
 {% endhint %}
 
-### Basic Usage
+### Základné použitie
 
-Process a folder with just a few lines:
+Spracujte priečinok s niekoľkými riadkami:
 
 ```python
 from chloros_sdk import process_folder
@@ -51,9 +51,9 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\DroneImages\\Flight001")
 ```
 
-### Full Control
+### Plná kontrola
 
-For advanced workflows:
+Pre pokročilé pracovné postupy:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -80,39 +80,39 @@ chloros.process(mode="parallel", wait=True)
 
 ***
 
-## Installation Guide
+## Inštalačná príručka
 
-### Prerequisites
+### Predpoklady
 
-Before installing the SDK, ensure you have:
+Pred inštaláciou SDK sa uistite, že máte:
 
-1. **Chloros Desktop** installed ([download](download.md))
-2. **Python 3.7+** installed ([python.org](https://www.python.org))
-3. **Active Chloros+ license** ([upgrade](https://cloud.mapir.camera/pricing))
+1. **Chloros Desktop** nainštalovaný ([stiahnuť](download.md))
+2. **Python 3.7+** nainštalovaný ([python.org](https://www.python.org))
+3. **Aktívna licencia Chloros+** ([upgrade](https://cloud.mapir.camera/pricing))
 
-### Install via pip
+### Inštalácia prostredníctvom pip
 
-**Standard installation:**
+**Štandardná inštalácia:**
 
 ```bash
 pip install chloros-sdk
 ```
 
-**With progress monitoring support:**
+**S podporou monitorovania priebehu:**
 
 ```bash
 pip install chloros-sdk[progress]
 ```
 
-**Development installation:**
+**Inštalácia pre vývoj:**
 
 ```bash
 pip install chloros-sdk[dev]
 ```
 
-### Verify Installation
+### Overenie inštalácie
 
-Test that the SDK is installed correctly:
+Otestujte, či je SDK nainštalovaný správne:
 
 ```python
 import chloros_sdk
@@ -121,23 +121,23 @@ print(f"Chloros SDK version: {chloros_sdk.__version__}")
 
 ***
 
-## First-Time Setup
+## Prvé nastavenie
 
-### License Activation
+### Aktivácia licencie
 
-The SDK uses the same license as Chloros, Chloros (Browser), and Chloros CLI. Activate once via the GUI or CLI:
+SDK používa rovnakú licenciu ako Chloros, Chloros (prehliadač) a Chloros CLI. Aktivujte raz prostredníctvom grafického používateľského rozhrania alebo CLI:
 
-1. Open **Chloros or Chloros (Browser)** and login on the User <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> tab. Or, open the **CLI**.
-2. Enter your Chloros+ credentials and log in
-3. License is cached locally (persists across reboots)
+1. Otvorte **Chloros alebo Chloros (prehliadač)** a prihláste sa na karte Používateľ <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> . Alebo otvorte **CLI**.
+2. Zadajte svoje prihlasovacie údaje Chloros+ a prihláste sa
+3. Licencia je uložená v lokálnej pamäti (zostáva zachovaná aj po reštartovaní)
 
-{% hint style="success" %}
-**One-Time Setup**: After logging in via the GUI or CLI, the SDK automatically uses the cached license. No additional authentication needed!
+{% hint style=&quot;success&quot; %}
+**Jednorazové nastavenie**: Po prihlásení prostredníctvom GUI alebo CLI, SDK automaticky používa uloženú licenciu. Nie je potrebné žiadne ďalšie overenie!
 {% endhint %}
 
-### Test Connection
+### Testovanie pripojenia
 
-Verify the SDK can connect to Chloros:
+Overte, či sa SDK môže pripojiť k Chloros:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -152,13 +152,13 @@ print(f"Backend running: {status['running']}")
 
 ***
 
-## API Reference
+## API Referencia
 
-### ChlorosLocal Class
+### Trieda ChlorosLocal
 
-Main class for local Chloros image processing.
+Hlavná trieda pre lokálne spracovanie obrazu Chloros.
 
-#### Constructor
+#### Konštruktor
 
 ```python
 ChlorosLocal(
@@ -170,17 +170,17 @@ ChlorosLocal(
 )
 ```
 
-**Parameters:**
+**Parametre:**
 
-| Parameter                 | Type | Default                   | Description                           |
+| Parameter                 | Typ | Predvolené nastavenie                   | Popis                           |
 | ------------------------- | ---- | ------------------------- | ------------------------------------- |
-| `api_url`                 | str  | `"http://localhost:5000"` | URL of local Chloros backend          |
-| `auto_start_backend`      | bool | `True`                    | Automatically start backend if needed |
-| `backend_exe`             | str  | `None` (auto-detect)      | Path to backend executable            |
-| `timeout`                 | int  | `30`                      | Request timeout in seconds            |
-| `backend_startup_timeout` | int  | `60`                      | Timeout for backend startup (seconds) |
+| `api_url`                 | str  | `"http://localhost:5000"` | URL lokálneho Chloros backendu          |
+| `auto_start_backend`      | bool | `True`                    | V prípade potreby automaticky spustiť backend |
+| `backend_exe`             | str  | `None` (automatická detekcia)      | Cesta k spustiteľnému súboru backendu            |
+| `timeout`                 | int  | `30`                      | Časový limit požiadavky v sekundách            |
+| `backend_startup_timeout` | int  | `60`                      | Časový limit pre spustenie backendu (sekundy) |
 
-**Examples:**
+**Príklady:**
 
 ```python
 # Default (auto-start backend)
@@ -198,22 +198,22 @@ chloros = ChlorosLocal(timeout=60)
 
 ***
 
-### Methods
+### Metódy
 
 #### `create_project(project_name, camera=None)`
 
-Create a new Chloros project.
+Vytvorenie nového projektu Chloros.
 
-**Parameters:**
+**Parametre:**
 
-| Parameter      | Type | Required | Description                                              |
+| Parameter      | Typ | Povinný | Popis                                              |
 | -------------- | ---- | -------- | -------------------------------------------------------- |
-| `project_name` | str  | Yes      | Name for the project                                     |
-| `camera`       | str  | No       | Camera template (e.g., "Survey3N\_RGN", "Survey3W\_OCN") |
+| `project_name` | str  | Áno      | Názov projektu                                     |
+| `camera`       | str  | Nie       | Šablóna kamery (napr. „Survey3N\_RGN“, „Survey3W\_OCN“) |
 
-**Returns:** `dict` - Project creation response
+**Vrátené hodnoty:** `dict` - Odpoveď na vytvorenie projektu
 
-**Example:**
+**Príklad:**
 
 ```python
 # Basic project
@@ -227,18 +227,18 @@ chloros.create_project("DroneField_A", camera="Survey3N_RGN")
 
 #### `import_images(folder_path, recursive=False)`
 
-Import images from a folder.
+Importujte obrázky zo zložky.
 
-**Parameters:**
+**Parametre:**
 
-| Parameter     | Type     | Required | Description                        |
+| Parameter     | Typ     | Povinné | Popis                        |
 | ------------- | -------- | -------- | ---------------------------------- |
-| `folder_path` | str/Path | Yes      | Path to folder with images         |
-| `recursive`   | bool     | No       | Search subfolders (default: False) |
+| `folder_path` | str/Path | Áno      | Cesta k priečinku s obrázkami         |
+| `recursive`   | bool     | Nie       | Vyhľadávanie v podpriečinkoch (predvolené: False) |
 
-**Returns:** `dict` - Import results with file count
+**Vrátené hodnoty:** `dict` – Výsledky importu s počtom súborov
 
-**Example:**
+**Príklad:**
 
 ```python
 # Import from folder
@@ -252,32 +252,32 @@ chloros.import_images("C:\\DroneImages", recursive=True)
 
 #### `configure(**settings)`
 
-Configure processing settings.
+Konfigurácia nastavení spracovania.
 
-**Parameters:**
+**Parametre:**
 
-| Parameter                 | Type | Default                 | Description                     |
+| Parameter                 | Typ | Predvolené nastavenie                 | Popis                     |
 | ------------------------- | ---- | ----------------------- | ------------------------------- |
-| `debayer`                 | str  | "High Quality (Faster)" | Debayer method                  |
-| `vignette_correction`     | bool | `True`                  | Enable vignette correction      |
-| `reflectance_calibration` | bool | `True`                  | Enable reflectance calibration  |
-| `indices`                 | list | `None`                  | Vegetation indices to calculate |
-| `export_format`           | str  | "TIFF (16-bit)"         | Output format                   |
-| `ppk`                     | bool | `False`                 | Enable PPK corrections          |
-| `custom_settings`         | dict | `None`                  | Advanced custom settings        |
+| `debayer`                 | str  | „Vysoká kvalita (rýchlejšie)“ | Metóda Debayer                  |
+| `vignette_correction`     | bool | `True`                  | Povoliť korekciu vinetácie      |
+| `reflectance_calibration` | bool | `True`                  | Povoliť kalibráciu odrazivosti  |
+| `indices`                 | list | `None`                  | Vegetačné indexy na výpočet |
+| `export_format`           | str  | „TIFF (16-bitový)“         | Výstupný formát                   |
+| `ppk`                     | bool | `False`                 | Povoliť PPK korekcie          |
+| `custom_settings`         | dict | `None`                  | Pokročilé vlastné nastavenia        |
 
-**Export Formats:**
+**Formáty exportu:**
 
-* `"TIFF (16-bit)"` - Recommended for GIS/photogrammetry
-* `"TIFF (32-bit, Percent)"` - Scientific analysis
-* `"PNG (8-bit)"` - Visual inspection
-* `"JPG (8-bit)"` - Compressed output
+* `"TIFF (16-bit)"` – odporúčané pre GIS/fotogrametriu
+* `"TIFF (32-bit, Percent)"` – vedecká analýza
+* `"PNG (8-bit)"` – vizuálna kontrola
+* `"JPG (8-bit)"` – komprimovaný výstup
 
-**Available Indices:**
+**Dostupné indexy:**
 
-NDVI, NDRE, GNDVI, OSAVI, CIG, EVI, SAVI, MSAVI, MTVI2, and more.
+NDVI, NDRE, GNDVI, OSAVI, CIG, EVI, SAVI, MSAVI, MTVI2 a ďalšie.
 
-**Example:**
+**Príklad:**
 
 ```python
 # Basic configuration
@@ -302,24 +302,24 @@ chloros.configure(
 
 #### `process(mode="parallel", wait=True, progress_callback=None)`
 
-Process the project images.
+Spracujte obrázky projektu.
 
-**Parameters:**
+**Parametre:**
 
-| Parameter           | Type     | Default      | Description                               |
+| Parameter           | Typ     | Predvolené      | Popis                               |
 | ------------------- | -------- | ------------ | ----------------------------------------- |
-| `mode`              | str      | `"parallel"` | Processing mode: "parallel" or "serial"   |
-| `wait`              | bool     | `True`       | Wait for completion                       |
-| `progress_callback` | callable | `None`       | Progress callback function(progress, msg) |
-| `poll_interval`     | float    | `2.0`        | Polling interval for progress (seconds)   |
+| `mode`              | str      | `"parallel"` | Režim spracovania: „parallel“ alebo „sériový“   |
+| `wait`              | bool     | `True`       | Čakanie na dokončenie                       |
+| `progress_callback` | callable | `None`       | Funkcia spätného volania priebehu (progress, msg) |
+| `poll_interval`     | float    | `2.0`        | Interval opytovania pokroku (sekundy)   |
 
-**Returns:** `dict` - Processing results
+**Vrátené hodnoty:** `dict` – Výsledky spracovania
 
-{% hint style="warning" %}
-**Parallel Mode**: Requires Chloros+ license. Automatically scales to your CPU cores (up to 16 workers).
+{% hint style=&quot;warning&quot; %}
+**Paralelný režim**: Vyžaduje licenciu Chloros+. Automaticky sa prispôsobí jadrám vášho procesora (až 16 pracovných jednotiek).
 {% endhint %}
 
-**Example:**
+**Príklad:**
 
 ```python
 # Simple processing
@@ -343,11 +343,11 @@ chloros.process(wait=False)
 
 #### `get_config()`
 
-Get current project configuration.
+Získajte aktuálnu konfiguráciu projektu.
 
-**Returns:** `dict` - Current project configuration
+**Vrátené hodnoty:** `dict` – Aktuálna konfigurácia projektu
 
-**Example:**
+**Príklad:**
 
 ```python
 config = chloros.get_config()
@@ -358,11 +358,11 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-Get backend status information.
+Získajte informácie o stave backendu.
 
-**Returns:** `dict` - Backend status
+**Vrátené hodnoty:** `dict` – stav backendu
 
-**Example:**
+**Príklad:**
 
 ```python
 status = chloros.get_status()
@@ -374,9 +374,9 @@ print(f"URL: {status['url']}")
 
 #### `shutdown_backend()`
 
-Shutdown the backend (if started by SDK).
+Vypne backend (ak bol spustený pomocou SDK).
 
-**Example:**
+**Príklad:**
 
 ```python
 chloros.shutdown_backend()
@@ -384,29 +384,29 @@ chloros.shutdown_backend()
 
 ***
 
-### Convenience Functions
+### Pomocné funkcie
 
 #### `process_folder(folder_path, **options)`
 
-One-line convenience function to process a folder.
+Jednoradová pomocná funkcia na spracovanie priečinka.
 
-**Parameters:**
+**Parametre:**
 
-| Parameter                 | Type     | Default         | Description                    |
+| Parameter                 | Typ     | Predvolené         | Popis                    |
 | ------------------------- | -------- | --------------- | ------------------------------ |
-| `folder_path`             | str/Path | Required        | Path to folder with images     |
-| `project_name`            | str      | Auto-generated  | Project name                   |
-| `camera`                  | str      | `None`          | Camera template                |
-| `indices`                 | list     | `["NDVI"]`      | Indices to calculate           |
-| `vignette_correction`     | bool     | `True`          | Enable vignette correction     |
-| `reflectance_calibration` | bool     | `True`          | Enable reflectance calibration |
-| `export_format`           | str      | "TIFF (16-bit)" | Output format                  |
-| `mode`                    | str      | `"parallel"`    | Processing mode                |
-| `progress_callback`       | callable | `None`          | Progress callback              |
+| `folder_path`             | str/Path | Povinné        | Cesta k priečinku s obrázkami     |
+| `project_name`            | str      | Automaticky generované  | Názov projektu                   |
+| `camera`                  | str      | `None`          | Šablóna kamery                |
+| `indices`                 | list     | `["NDVI"]`      | Indexy na výpočet           |
+| `vignette_correction`     | bool     | `True`          | Povoliť korekciu vinetácie     |
+| `reflectance_calibration` | bool     | `True`          | Povoliť kalibráciu odrazivosti |
+| `export_format`           | str      | „TIFF (16-bitový)“ | Výstupný formát                  |
+| `mode`                    | str      | `"parallel"`    | Režim spracovania                |
+| `progress_callback`       | callable | `None`          | Spätné volanie priebehu              |
 
-**Returns:** `dict` - Processing results
+**Vrátené hodnoty:** `dict` – Výsledky spracovania
 
-**Example:**
+**Príklad:**
 
 ```python
 from chloros_sdk import process_folder
@@ -435,9 +435,9 @@ results = process_folder(
 
 ***
 
-## Context Manager Support
+## Podpora správcu kontextu
 
-The SDK supports context managers for automatic cleanup:
+SDK podporuje správcov kontextu pre automatické čistenie:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -453,11 +453,11 @@ with ChlorosLocal() as chloros:
 
 ***
 
-## Complete Examples
+## Kompletné príklady
 
-### Example 1: Basic Processing
+### Príklad 1: Základné spracovanie
 
-Process a folder with default settings:
+Spracovanie priečinka s predvolenými nastaveniami:
 
 ```python
 from chloros_sdk import process_folder
@@ -470,9 +470,9 @@ print(f"Processing complete: {results}")
 
 ***
 
-### Example 2: Custom Workflow
+### Príklad 2: Vlastný pracovný postup
 
-Full control over processing pipeline:
+Plná kontrola nad spracovateľským potrubím:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -512,9 +512,9 @@ print("Processing complete!")
 
 ***
 
-### Example 3: Batch Processing Multiple Folders
+### Príklad 3: Hromadné spracovanie viacerých priečinkov
 
-Process multiple flight datasets:
+Spracovanie viacerých dátových súborov letov:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -564,9 +564,9 @@ print("All flights processed!")
 
 ***
 
-### Example 4: Research Pipeline Integration
+### Príklad 4: Integrácia výskumného potrubia
 
-Integrate Chloros with data analysis:
+Integrácia Chloros s analýzou dát:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -619,9 +619,9 @@ print(df)
 
 ***
 
-### Example 5: Custom Progress Monitoring
+### Príklad 5: Vlastné sledovanie priebehu
 
-Advanced progress tracking with logging:
+Pokročilé sledovanie priebehu s protokolovaním:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -658,9 +658,9 @@ logging.info("Processing complete!")
 
 ***
 
-### Example 6: Error Handling
+### Príklad 6: Spracovanie chýb
 
-Robust error handling for production use:
+Robustné spracovanie chýb pre produkčné použitie:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -710,9 +710,9 @@ else:
 
 ***
 
-### Example 7: Command-Line Tool
+### Príklad 7: Nástroj príkazového riadku
 
-Build a custom CLI tool with the SDK:
+Vytvorte vlastný nástroj CLI pomocou SDK:
 
 ```python
 #!/usr/bin/env python
@@ -775,7 +775,7 @@ if __name__ == '__main__':
     sys.exit(main())
 ```
 
-**Usage:**
+**Použitie:**
 
 ```bash
 python my_processor.py "C:\Flight001" "C:\Flight002" --indices NDVI NDRE GNDVI
@@ -783,11 +783,11 @@ python my_processor.py "C:\Flight001" "C:\Flight002" --indices NDVI NDRE GNDVI
 
 ***
 
-## Exception Handling
+## Spracovanie výnimiek
 
-The SDK provides specific exception classes for different error types:
+SDK poskytuje špecifické triedy výnimiek pre rôzne typy chýb:
 
-### Exception Hierarchy
+### Hierarchia výnimiek
 
 ```python
 ChlorosError                    # Base exception
@@ -799,7 +799,7 @@ ChlorosError                    # Base exception
 └── ChlorosConfigurationError  # Configuration errors
 ```
 
-### Exception Examples
+### Príklady výnimiek
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -824,11 +824,11 @@ except ChlorosError as e:
 
 ***
 
-## Advanced Topics
+## Pokročilé témy
 
-### Custom Backend Configuration
+### Vlastná konfigurácia backendu
 
-Use a custom backend location or configuration:
+Použite vlastnú polohu alebo konfiguráciu backendu:
 
 ```python
 chloros = ChlorosLocal(
@@ -839,9 +839,9 @@ chloros = ChlorosLocal(
 )
 ```
 
-### Non-Blocking Processing
+### Nezablokované spracovanie
 
-Start processing and continue with other tasks:
+Začnite spracovanie a pokračujte s ďalšími úlohami:
 
 ```python
 # Start processing (non-blocking)
@@ -861,9 +861,9 @@ while True:
 print("Processing complete!")
 ```
 
-### Memory Management
+### Správa pamäte
 
-For large datasets, process in batches:
+V prípade veľkých dátových súborov spracúvajte v dávkach:
 
 ```python
 from pathlib import Path
@@ -888,15 +888,15 @@ for i in range(0, len(images), batch_size):
 
 ***
 
-## Troubleshooting
+## Riešenie problémov
 
-### Backend Not Starting
+### Backend sa nespustí
 
-**Issue:** SDK fails to start backend
+**Problém:** SDK sa nepodarí spustiť backend.
 
-**Solutions:**
+**Riešenia:**
 
-1. Verify Chloros Desktop is installed:
+1. Overte, či je nainštalovaný Chloros Desktop:
 
 ```python
 import os
@@ -904,8 +904,8 @@ backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backen
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. Check Windows Firewall isn't blocking
-3. Try manual backend path:
+2. Skontrolujte, či Windows Firewall neblokuje
+3. Skúste manuálnu cestu backendu:
 
 ```python
 chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
@@ -913,14 +913,14 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 
 ***
 
-### License Not Detected
+### Licencia nebola detegovaná
 
-**Issue:** SDK warns about missing license
+**Problém:** SDK varuje o chýbajúcej licencii
 
-**Solutions:**
+**Riešenia:**
 
-1. Open Chloros, Chloros (Browser) or Chloros CLI and login.
-2. Verify license is cached:
+1. Otvorte Chloros, Chloros (prehliadač) alebo Chloros CLI a prihláste sa.
+2. Overte, či je licencia uložená v pamäti cache:
 
 ```python
 from pathlib import Path
@@ -931,15 +931,15 @@ cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
 print(f"Cache exists: {cache_path.exists()}")
 ```
 
-3. Contact support: info@mapir.camera
+3. Kontaktujte podporu: info@mapir.camera
 
 ***
 
-### Import Errors
+### Chyby importu
 
-**Issue:** `ModuleNotFoundError: No module named 'chloros_sdk'`
+**Problém:** `ModuleNotFoundError: No module named 'chloros_sdk'`
 
-**Solutions:**
+**Riešenia:**
 
 ```bash
 # Verify installation
@@ -955,36 +955,36 @@ python -c "import sys; print(sys.path)"
 
 ***
 
-### Processing Timeout
+### Časový limit spracovania
 
-**Issue:** Processing times out
+**Problém:** Časový limit spracovania
 
-**Solutions:**
+**Riešenia:**
 
-1. Increase timeout:
+1. Zvýšte časový limit:
 
 ```python
 chloros = ChlorosLocal(timeout=120)  # 2 minutes
 ```
 
-2. Process smaller batches
-3. Check available disk space
-4. Monitor system resources
+2. Spracúvajte menšie dávky
+3. Skontrolujte dostupný priestor na disku
+4. Sledujte systémové zdroje
 
 ***
 
-### Port Already in Use
+### Port je už používaný
 
-**Issue:** Backend port 5000 occupied
+**Problém:** Backend port 5000 je obsadený
 
-**Solutions:**
+**Riešenia:**
 
 ```python
 # Use different port
 chloros = ChlorosLocal(api_url="http://localhost:5001")
 ```
 
-Or find and close conflicting process:
+Alebo vyhľadajte a zatvorte konfliktný proces:
 
 ```powershell
 # PowerShell
@@ -993,36 +993,36 @@ Get-NetTCPConnection -LocalPort 5000
 
 ***
 
-## Performance Tips
+## Tipy na zvýšenie výkonu
 
-### Optimize Processing Speed
+### Optimalizácia rýchlosti spracovania
 
-1. **Use Parallel Mode** (requires Chloros+)
+1. **Použite paralelný režim** (vyžaduje Chloros+)
 
 ```python
 chloros.process(mode="parallel")  # Up to 16 workers
 ```
 
-2. **Reduce Output Resolution** (if acceptable)
+2. **Znížte výstupné rozlíšenie** (ak je to prijateľné)
 
 ```python
 chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
 ```
 
-3. **Disable Unnecessary Indices**
+3. **Deaktivujte nepotrebné indexy**
 
 ```python
 # Only calculate needed indices
 chloros.configure(indices=["NDVI"])  # Not all indices
 ```
 
-4. **Process on SSD** (not HDD)
+4. **Spracúvajte na SSD** (nie na HDD)
 
 ***
 
-### Memory Optimization
+### Optimalizácia pamäte
 
-For large datasets:
+Pre veľké dátové súbory:
 
 ```python
 # Process in batches instead of all at once
@@ -1031,9 +1031,9 @@ For large datasets:
 
 ***
 
-### Background Processing
+### Spracovanie na pozadí
 
-Free up Python for other tasks:
+Uvoľnite Python pre iné úlohy:
 
 ```python
 chloros.process(wait=False)  # Non-blocking
@@ -1044,9 +1044,9 @@ chloros.process(wait=False)  # Non-blocking
 
 ***
 
-## Integration Examples
+## Príklady integrácie
 
-### Django Integration
+### Integrácia Django
 
 ```python
 # views.py
@@ -1119,49 +1119,49 @@ chloros.process(progress_callback=notebook_progress)
 
 ***
 
-## FAQ
+## Často kladené otázky
 
-### Q: Does the SDK require an internet connection?
+### Otázka: Vyžaduje SDK pripojenie k internetu?
 
-**A:** Only for initial license activation. After logging in via Chloros, Chloros (Browser) or Chloros CLI the license is cached locally and works offline for 30 days.
-
-***
-
-### Q: Can I use the SDK on a server without GUI?
-
-**A:** Yes! Requirements:
-
-* Windows Server 2016 or later
-* Chloros installed (one-time)
-* License activated on any machine (cached license copied to server)
+**Odpoveď:** Iba na počiatočnú aktiváciu licencie. Po prihlásení cez Chloros, Chloros (prehliadač) alebo Chloros CLI sa licencia uloží do lokálnej vyrovnávacej pamäte a funguje offline počas 30 dní.
 
 ***
 
-### Q: What's the difference between Desktop, CLI, and SDK?
+### Otázka: Môžem používať SDK na serveri bez grafického používateľského rozhrania?
 
-| Feature         | Desktop GUI | CLI Command Line | Python SDK  |
+**Odpoveď:** Áno! Požiadavky:
+
+* Windows Server 2016 alebo novší
+* Chloros nainštalovaný (jednorazovo)
+* Licencia aktivovaná na akomkoľvek počítači (licencia uložená v pamäti vyrovnávacej pamäte skopírovaná na server)
+
+***
+
+### Otázka: Aký je rozdiel medzi Desktop, CLI a SDK?
+
+| Funkcia         | Desktop GUI | CLI Príkazový riadok | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
-| **Interface**   | Point-click | Command          | Python API  |
-| **Best For**    | Visual work | Scripting        | Integration |
-| **Automation**  | Limited     | Good             | Excellent   |
-| **Flexibility** | Basic       | Good             | Maximum     |
-| **License**     | Chloros+    | Chloros+         | Chloros+    |
+| **Rozhranie**   | Ukazovateľom myši | Príkazový riadok          | Python API  |
+| **Najvhodnejšie pre**    | Vizuálnu prácu | Skriptovanie        | Integráciu |
+| **Automatizácia**  | Obmedzená     | Dobrá             | Vynikajúca   |
+| **Flexibilita** | Základná       | Dobrá             | Maximálna     |
+| **Licencia**     | Chloros+    | Chloros+         | Chloros+    |
 
 ***
 
-### Q: Can I distribute apps built with the SDK?
+### Otázka: Môžem distribuovať aplikácie vytvorené pomocou SDK?
 
-**A:** SDK code can be integrated into your applications, but:
+**Odpoveď:** Kód SDK je možné integrovať do vašich aplikácií, ale:
 
-* End users need Chloros installed
-* End users need active Chloros+ licenses
-* Commercial distribution requires OEM licensing
+* Koncoví používatelia potrebujú nainštalovaný Chloros
+* Koncoví používatelia potrebujú aktívne licencie Chloros+.
+* Komerčná distribúcia vyžaduje OEM licencie.
 
-Contact info@mapir.camera for OEM inquiries.
+V prípade otázok týkajúcich sa OEM kontaktujte info@mapir.camera.
 
 ***
 
-### Q: How do I update the SDK?
+### Otázka: Ako aktualizujem SDK?
 
 ```bash
 pip install --upgrade chloros-sdk
@@ -1169,9 +1169,9 @@ pip install --upgrade chloros-sdk
 
 ***
 
-### Q: Where are processed images saved?
+### Otázka: Kde sa ukladajú spracované obrázky?
 
-By default, in the Project Path :
+V predvolenom nastavení v ceste projektu:
 
 ```
 Project_Path/
@@ -1181,9 +1181,9 @@ Project_Path/
 
 ***
 
-### Q: Can I process images from Python scripts running on schedule?
+### Otázka: Môžem spracovávať obrázky zo skriptov Python bežiacich podľa plánu?
 
-**A:** Yes! Use Windows Task Scheduler with Python scripts:
+**Odpoveď:** Áno! Použite plánovač úloh Windows so skriptami Python:
 
 ```python
 # scheduled_processing.py
@@ -1193,13 +1193,13 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\Flights\\Today")
 ```
 
-Schedule via Task Scheduler to run daily.
+Naplánujte prostredníctvom plánovača úloh, aby sa spúšťal denne.
 
 ***
 
-### Q: Does the SDK support async/await?
+### Otázka: Podporuje SDK async/await?
 
-**A:** Current version is synchronous. For async behavior, use `wait=False` or run in separate thread:
+**Odpoveď:** Aktuálna verzia je synchronná. Pre asynchrónne správanie použite `wait=False` alebo spustite v samostatnom vlákne:
 
 ```python
 import threading
@@ -1215,26 +1215,26 @@ thread.start()
 
 ***
 
-## Getting Help
+## Pomoc
 
-### Documentation
+### Dokumentácia
 
-* **API Reference**: This page
+* **Referencia API**: Táto stránka
 
-### Support Channels
+### Kanály podpory
 
-* **Email**: info@mapir.camera
-* **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+* **E-mail**: info@mapir.camera
+* **Webová stránka**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* **Ceny**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
-### Sample Code
+### Ukážkový kód
 
-All examples listed here are tested and production-ready. Copy and adapt them for your use case.
+Všetky uvedené príklady sú otestované a pripravené na použitie. Skopírujte ich a prispôsobte svojim potrebám.
 
 ***
 
-## License
+## Licencia
 
-**Proprietary Software** - Copyright (c) 2025 MAPIR Inc.
+**Vlastnícky softvér** – Copyright (c) 2025 MAPIR Inc.
 
-SDK requires an active Chloros+ subscription. Unauthorized use, distribution, or modification is prohibited.
+SDK vyžaduje aktívne predplatné Chloros+. Neoprávnené používanie, distribúcia alebo úprava sú zakázané.

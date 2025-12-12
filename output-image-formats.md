@@ -4,21 +4,21 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
 
-# Output Image Formats
+# Formáty výstupných obrázkov
 
-### TIFF (16-bit)
+### TIFF (16-bitový)
 
-16-bit (pixel digital number 0 - 65535) TIFF (.tif) format output.
+16-bitový (digitálne číslo pixelu 0 – 65535) výstup vo formáte TIFF (.tif).
 
-### TIFF (32-bit, Percent %)
+### TIFF (32-bitový, percentá %)
 
-32-bit (pixel float 0.0 - 1.0) TIFF (.tif) format output. Pixel values represent reflectance percentages where 0.0 = 0% and 1.0 = 100%.
+32-bitový (plávajúca desatinná hodnota pixelu 0,0 – 1,0) výstup vo formáte TIFF (.tif). Hodnoty pixelu predstavujú percentá odrazivosti, kde 0,0 = 0 % a 1,0 = 100 %.
 
-### **JPG (8-bit)**
+### **JPG (8-bitový)**
 
-8-bit (pixel digital number 0 -255) JPG (.jpg) format output.
+8-bitový (digitálne číslo pixelu 0 -255) výstup vo formáte JPG (.jpg).
 
-### **PNG (8-bit)**
+### **PNG (8-bitový)**
 
-8-bit (pixel digital number 0 - 255) PNG (.png) format output. Lossless compression suitable for web viewing and visualization.
+8-bitový (digitálne číslo pixelu 0 – 255) výstup vo formáte PNG (.png). Bezstratová kompresia vhodná pre prezeranie a vizualizáciu na webe.
 

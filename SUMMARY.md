@@ -1,34 +1,34 @@
-# Table of contents
+# Obsah
 
-* [Getting Started](README.md)
-* [GUI : Navigation](navigation.md)
-* [GUI : Projects](projects.md)
-* [CLI : Command Line](CLI.md)
-* [API : Python SDK](api-python-sdk.md)
-* [Supported Cameras](supported-cameras.md)
-* [Output Image Formats](output-image-formats.md)
-* [Chloros+ Login](chloros+-login.md)
-* [Calibration Targets](calibration-targets.md)
-* [Supported Languages](supported-languages.md)
-* [Download](download.md)
-* [FAQ](faq.md)
+* [Začíname](README.md)
+* [GUI : Navigácia](navigation.md)
+* [GUI : Projekty](projects.md)
+* [CLI: Príkazový riadok](CLI.md)
+* [API: Python SDK](api-python-sdk.md)
+* [Podporované fotoaparáty](supported-cameras.md)
+* [Formáty výstupných obrázkov](output-image-formats.md)
+* [Chloros+ Prihlásenie](chloros+-login.md)
+* [Kalibračné ciele](calibration-targets.md)
+* [Podporované jazyky](supported-languages.md)
+* [Stiahnutie](download.md)
+* [Často kladené otázky](faq.md)
 
-## Processing Images (GUI)
+## Spracovanie obrázkov (GUI)
 
-* [Adjusting Project Settings](processing-images-gui/adjusting-project-settings.md)
-* [Adding Files to a Project](processing-images-gui/adding-files-to-a-project.md)
-* [Choosing Target Images](processing-images-gui/choosing-target-images.md)
-* [Starting the Processing](processing-images-gui/starting-the-processing.md)
-* [Monitoring the Processing](processing-images-gui/monitoring-the-processing.md)
-* [Finishing the Processing](processing-images-gui/finishing-the-processing.md)
+* [Úprava nastavení projektu](processing-images-gui/adjusting-project-settings.md)
+* [Pridávanie súborov do projektu](processing-images-gui/adding-files-to-a-project.md)
+* [Výber cieľových obrázkov](processing-images-gui/choosing-target-images.md)
+* [Spustenie spracovania](processing-images-gui/starting-the-processing.md)
+* [Monitorovanie spracovania](processing-images-gui/monitoring-the-processing.md)
+* [Ukončenie spracovania](processing-images-gui/finishing-the-processing.md)
 
-## PROJECT SETTINGS
+## NASTAVENIA PROJEKTU
 
-* [Project Settings](project-settings/project-settings.md)
-* [Multispectral Index Formulas](project-settings/multispectral-index-formulas.md)
+* [Nastavenia projektu](project-settings/project-settings.md)
+* [Vzorce multispektrálneho indexu](project-settings/multispectral-index-formulas.md)
 
-## IMAGE VIEWER (GUI)
+## PREHLIADAČ OBRAZOV (GUI)
 
-* [Opening an Image Full Screen](image-viewer-gui/opening-an-image-full-screen.md)
-* [Image Layers](image-viewer-gui/image-layers.md)
+* [Otvorenie obrázku na celú obrazovku](image-viewer-gui/opening-an-image-full-screen.md)
+* [Vrstvy obrázkov](image-viewer-gui/image-layers.md)
 * [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)

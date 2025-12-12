@@ -1,247 +1,247 @@
-# Opening an Image Full Screen
+# Otvorenie obrázku na celej obrazovke
 
-The Chloros Image Viewer provides a dedicated full-screen interface for viewing, analyzing, and manipulating your multispectral images. Whether viewing original images or processed outputs, the Image Viewer offers powerful tools for inspection and analysis.
+Prehliadač obrázkov Chloros poskytuje špecializované rozhranie na celej obrazovke na prezeranie, analýzu a manipuláciu s multispektrálnymi obrázkami. Nech už prezeráte originálne obrázky alebo spracované výstupy, prehliadač obrázkov ponúka výkonné nástroje na kontrolu a analýzu.
 
-## Accessing the Image Viewer
+## Prístup k prehliadaču obrázkov
 
-### From the File Browser
+### Z prehliadača súborov
 
-The most common way to open an image in the Image Viewer:
+Najbežnejší spôsob otvorenia obrázku v prehliadači obrázkov:
 
-1. Ensure you're in the **File Browser** tab <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Click any **image thumbnail** in the image grid
-3. The image opens in the **main preview area** (center of screen)
-4. The image is now loaded and ready for full-screen viewing
+1. Uistite sa, že ste na karte **Prehliadač súborov**. <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Kliknite na ľubovoľnú **miniaturu obrázka** v mriežke obrázkov.
+3. Obrázok sa otvorí v **hlavnej oblasti náhľadu** (v strede obrazovky).
+4. Obrázok je teraz načítaný a pripravený na zobrazenie na celej obrazovke.
 
-### Opening the Image Viewer Tab
+### Otvorenie karty Image Viewer
 
-Once an image is loaded in the preview area:
+Po načítaní obrázka do oblasti náhľadu:
 
-1. Click the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> icon in the left sidebar
-2. The Image Viewer tab opens, displaying the selected image full-screen
-3. Advanced viewing and analysis tools become available in the left sidebar
-
-***
-
-## Image Viewer Interface Overview
-
-### Main Display Area
-
-The largest portion of the screen shows your image:
-
-* **Full resolution**: Images displayed at native resolution
-* **Zoomable**: Use controls or mouse wheel to zoom
-* **Pannable**: Click and drag to move around when zoomed
-* **Aspect ratio maintained**: Images scale proportionally
+1. Kliknite na ikonu **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> v ľavom bočnom paneli.
+2. Otvorí sa karta Prehliadač obrázkov, kde sa vybraný obrázok zobrazí na celej obrazovke.
+3. V ľavom bočnom paneli sa sprístupnia pokročilé nástroje na prezeranie a analýzu.
 
 ***
 
-## Viewing Options
+## Prehľad rozhrania prehliadača obrázkov
 
-### Basic Image Navigation
+### Hlavná oblasť zobrazenia
 
-#### Browse Through Images
+Najväčšia časť obrazovky zobrazuje váš obrázok:
 
-Navigate through your image set using keyboard shortcuts or buttons:
-
-* **Next image**: Click → button or press **→** (Right Arrow) key
-* **Previous image**: Click ← button or press **←** (Left Arrow) key
-* **Jump to specific image**: Return to File Browser and click desired thumbnail
-
-#### Zoom Controls
-
-Adjust magnification to inspect image details:
-
-**Zoom In:**
-
-* Click **+** (Plus) button
-* Press **+** or **=** key
-* Scroll mouse wheel **up**
-
-**Zoom Out:**
-
-* Click **−** (Minus) button
-* Press **−** (Minus) key
-* Scroll mouse wheel **down**
-
-**Fit to Screen:**
-
-* Click **↔** (Fit) button
-* Press **0** (Zero) key
-* Double-click on image
-
-#### Pan When Zoomed
-
-When zoomed in beyond screen size:
-
-1. Move mouse cursor over image
-2. Click and **hold left mouse button**
-3. **Drag** to move image around
-4. Release to stop panning
-
-**Alternative**: Use arrow keys to pan in small increments
+* **Plné rozlíšenie**: Obrázky sa zobrazujú v natívnom rozlíšení.
+* **Zväčšiteľný**: Na zväčšenie použite ovládacie prvky alebo koliesko myši
+* **Posuvný**: Po zväčšení kliknite a ťahajte, aby ste sa pohybovali
+* **Zachované pomerové rozmery**: Obrázky sa zväčšujú proporcionálne
 
 ***
 
-## Pixel Value Inspection
+## Možnosti zobrazenia
 
-### Viewing Pixel Values at Cursor
+### Základná navigácia v obrázkoch
 
-As you move your mouse cursor over the image, pixel values display in real-time:
+#### Prehliadanie obrázkov
 
-**Value display location:**
+V sade obrázkov sa pohybujte pomocou klávesových skratiek alebo tlačidiel:
 
-* **Floating number and red line in right side index LUT gradient legend**
-* **When zoomed in further, floating value near cursor and highlighted pixel**
-* Shows values for pixel **under cursor or highlighted**
-* Updates as you move mouse
+* **Ďalší obrázok**: Kliknite na tlačidlo → alebo stlačte klávesu **→** (šipka doprava)
+* **Predchádzajúci obrázok**: Kliknite na tlačidlo ← alebo stlačte klávesu **←** (šipka doľava)
+* **Preskočiť na konkrétny obrázok**: Vráťte sa do prehliadača súborov a kliknite na požadovanú miniatúru
 
-***
+#### Ovládacie prvky priblíženia
 
-## Image Types You Can View
+Upravte zväčšenie, aby ste mohli prezrieť detaily obrázku:
 
-### Original Images (Pre-Processing)
+**Zväčšenie:**
 
-**RAW + JPG images from camera:**
+* Kliknite na tlačidlo **+** (plus)
+* Stlačte kláves **+** alebo **=**
+* Posuňte koliesko myši **nahor**
 
-* Display RAW data as previewed
-* Show original, uncorrected values
-* Useful for checking image quality before processing
+**Zmenšenie:**
 
-### Calibrated Reflectance Images
+* Kliknite na tlačidlo **−** (mínus)
+* Stlačte kláves **−** (mínus)
+* Posuňte koliesko myši **nadol**
 
-**After processing:**
+**Prispôsobiť obrazovke:**
 
-* Vignette corrected
-* Reflectance calibrated
-* Multi-band TIFF (Red, Green, NIR, etc.)
-* Scientific data ready for analysis
+* Kliknite na tlačidlo **↔** (Prispôsobiť)
+* Stlačte kláves **0** (Nula)
+* Dvakrát kliknite na obrázok
 
-### Index Images
+#### Posúvanie pri zväčšení
 
-**NDVI, NDRE, GNDVI, etc. (\_NDVI.tif files):**
+Pri zväčšení nad veľkosť obrazovky:
 
-* Single-band grayscale images
-* Pixel values represent index calculation results
-* Range typically -1 to +1 for normalized indices
-* Can apply color LUTs for visualization
+1. Presuňte kurzor myši nad obrázok
+2. Kliknite a **podržte ľavé tlačidlo myši**
+3. **Ťahajte**, aby ste posunuli obrázok
+4. Uvoľnite tlačidlo, aby ste zastavili posúvanie
 
-***
-
-## Index and LUT Application
-
-Apply multispectral indices and color Look-Up Tables:
-
-1. Locate **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar
-2. Select vegetation index (NDVI, NDRE, etc.)
-3. Select multispectral formula, or create your own custom one (Chloros+ only)
-4. Apply color LUT gradient for visualization
-5. Adjust value ranges and thresholds
-
-See [Index/LUT Sandbox](index-lut-sandbox.md) for detailed instructions.
+**Alternatíva**: Použite klávesy so šípkami na posúvanie v malých krokoch
 
 ***
 
-## Keyboard Shortcuts
+## Kontrola hodnoty pixelov
 
-### Navigation
+### Zobrazenie hodnôt pixelov na kurzore
 
-* **→** (Right Arrow): Next image
-* **←** (Left Arrow): Previous image
-* **Home**: First image in list
-* **End**: Last image in list
+Keď presuniete kurzor myši nad obrázok, hodnoty pixelov sa zobrazia v reálnom čase:
 
-### Zoom
+**Umiestnenie zobrazenia hodnoty:**
 
-* **+** or **=**: Zoom in
-* **−**: Zoom out
-* **0** (Zero): Fit to screen
-* **Mouse Wheel**: Zoom in/out
-
-### View Controls
-
-* **P**: Toggle pixel percent mode
-* **L**: Toggle layers panel
-* **Esc**: Close full-screen or return to File Browser
-
-### Other
-
-* **Ctrl+S**: Save current image
-* **F**: Full-screen mode (if available)
+* **Plávajúce číslo a červená čiara v pravej časti indexu LUT gradientnej legendy**
+* **Pri ďalšom zväčšení sa zobrazí plávajúca hodnota v blízkosti kurzora a zvýrazneného pixelu**
+* Zobrazuje hodnoty pre pixel **pod kurzorom alebo zvýraznený**
+* Aktualizuje sa pri pohybe myši
 
 ***
 
-### Verifying Index Calculations
+## Typy obrázkov, ktoré môžete zobraziť
 
-Check that indices calculated correctly:
+### Pôvodné obrázky (pred spracovaním)
 
-1. Open NDVI or other index image
-2. Check vegetation areas:
-   * **NDVI**: Should show 0.4-0.9 for healthy plants
-   * **NDRE**: Higher values for vigorous growth
-   * **GNDVI**: Similar to NDVI but chlorophyll-sensitive
-3. Check non-vegetation:
-   * **Soil**: Near 0 or slightly negative
-   * **Water**: Negative values (-0.5 to 0)
+**Obrázky RAW + JPG z fotoaparátu:**
 
-***
+* Zobrazenie údajov RAW ako náhľad
+* Zobrazenie pôvodných, neopravených hodnôt
+* Užitočné na kontrolu kvality obrázku pred spracovaním
 
-## Troubleshooting Viewing Issues
+### Kalibrované obrázky odrazivosti
 
-### Image Won't Open
+**Po spracovaní:**
 
-**Possible causes:**
+* Korekcia vinetácie
+* Kalibrovaná odrazivosť
+* Viacpásmové TIFF (Red, Green, NIR atď.)
+* Vedecké údaje pripravené na analýzu
 
-* File corrupted during processing
-* Unsupported file format
-* Insufficient memory for large image
+### Indexové obrázky
 
-**Solutions:**
+**NDVI, NDRE, GNDVI atď. (súbory \_NDVI.tif):**
 
-1. Try opening in external viewer to verify file integrity
-2. Check file format matches expected type
-3. Close other applications to free memory
-4. Try smaller/different image
-
-### Black or White Image Display
-
-**Possible causes:**
-
-* Value range outside display capability
-* 32-bit float image with unusual values
-* Index calculation error
-
-**Solutions:**
-
-1. Check pixel values - if all very low or very high, adjust display range
-2. Try opening in QGIS or similar with auto-range adjustment
-3. Check Debug Log from processing for errors
-
-### Pixel Values Seem Wrong
-
-**Possible causes:**
-
-* Viewing wrong image (original vs processed)
-* Calibration didn't apply correctly
-* Light sensor data wasn't included in input
-* Percent mode toggled incorrectly
-
-**Solutions:**
-
-1. Verify you're viewing processed output (check filename suffix)
-2. Check percent mode button state
-3. Compare with known-good images from same dataset
+* Jednopásmové obrázky v odtieňoch sivej
+* Hodnoty pixelov predstavujú výsledky výpočtu indexu
+* Rozsah typicky od -1 do +1 pre normalizované indexy
+* Na vizualizáciu je možné použiť farebné LUT
 
 ***
 
-## Next Steps
+## Použitie indexu a LUT
 
-Now that you can view images full-screen:
+Použite multispektrálne indexy a farebné vyhľadávacie tabuľky:
 
-* [**Image Layers**](image-layers.md) - Learn about multi-band visualization
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Apply custom indices and color mapping
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Understand available indices
+1. Vyhľadajte **Index/LUT Sandbox** v **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> bočnom paneli
+2. Vyberte index vegetácie (NDVI, NDRE atď.)
+3. Vyberte multispektrálnu formulu alebo vytvorte vlastnú (len Chloros+)
+4. Použite farebný LUT gradient na vizualizáciu
+5. Upravte rozsahy hodnôt a prahové hodnoty
 
-For processing workflow, see:
+Podrobné pokyny nájdete v časti [Index/LUT Sandbox](index-lut-sandbox.md).
 
-* [**Processing Images (GUI)**](../processing-images-gui/page-1.md) - Complete processing guide
+***
+
+## Klávesové skratky
+
+### Navigácia
+
+* **→** (šipka doprava): Ďalší obrázok
+* **←** (šipka doľava): Predchádzajúci obrázok
+* **Home**: Prvý obrázok v zozname
+* **End**: Posledný obrázok v zozname
+
+### Zväčšenie
+
+* **+** alebo **=**: Zväčšiť
+* **−**: Zmenšiť
+* **0** (Nula): Prispôsobiť obrazovke
+* **Koliesko myši**: Zväčšiť/zmenšiť
+
+### Ovládacie prvky zobrazenia
+
+* **P**: Prepnúť režim percentuálneho zobrazenia pixelov
+* **L**: Prepnúť panel vrstiev
+* **Esc**: Zatvoriť celú obrazovku alebo vrátiť sa do prehliadača súborov
+
+### Ostatné
+
+* **Ctrl+S**: Uložiť aktuálny obrázok
+* **F**: Režim celej obrazovky (ak je k dispozícii)
+
+***
+
+### Overenie výpočtov indexov
+
+Skontrolujte, či sú indexy vypočítané správne:
+
+1. Otvorte NDVI alebo iný indexový obrázok.
+2. Skontrolujte oblasti vegetácie:
+   * **NDVI**: Malo by sa zobraziť 0,4–0,9 pre zdravé rastliny.
+   * **NDRE**: Vyššie hodnoty pre silný rast
+   * **GNDVI**: Podobné ako NDVI, ale citlivé na chlorofyl
+3. Skontrolujte oblasti bez vegetácie:
+   * **Pôda**: Blízko 0 alebo mierne záporná
+   * **Voda**: Záporné hodnoty (-0,5 až 0)
+
+***
+
+## Riešenie problémov so zobrazením
+
+### Obraz sa neotvorí
+
+**Možné príčiny:**
+
+* Poškodený súbor počas spracovania
+* Nepodporovaný formát súboru
+* Nedostatočná pamäť pre veľký obraz
+
+**Riešenia:**
+
+1. Skúste otvoriť v externom prehliadači, aby ste overili integritu súboru.
+2. Skontrolujte, či formát súboru zodpovedá očakávanému typu.
+3. Zatvorte ostatné aplikácie, aby ste uvoľnili pamäť.
+4. Skúste menší/iný obrázok.
+
+### Čierny alebo biely obraz
+
+**Možné príčiny:**
+
+* Rozsah hodnôt mimo možnosti zobrazenia.
+* 32-bitový plávajúci obrázok s neobvyklými hodnotami.
+* Chyba výpočtu indexu.
+
+**Riešenia:**
+
+1. Skontrolujte hodnoty pixelov – ak sú všetky veľmi nízke alebo veľmi vysoké, upravte rozsah zobrazenia.
+2. Skúste otvoriť v QGIS alebo podobnom programe s automatickým nastavením rozsahu.
+3. Skontrolujte protokol ladenia zo spracovania, či neobsahuje chyby.
+
+### Hodnoty pixelov sa zdajú nesprávne
+
+**Možné príčiny:**
+
+* Zobrazenie nesprávneho obrázku (originál vs. spracovaný)
+* Kalibrácia nebola správne aplikovaná
+* Dáta svetelného senzora neboli zahrnuté vo vstupe
+* Režim percent bol nesprávne prepnutý
+
+**Riešenia:**
+
+1. Overte, či prezeráte spracovaný výstup (skontrolujte príponu súboru)
+2. Skontrolujte stav tlačidla režimu percent
+3. Porovnajte so známymi dobrými obrázkami z rovnakého súboru údajov
+
+***
+
+## Ďalšie kroky
+
+Teraz, keď môžete zobraziť obrázky na celej obrazovke:
+
+* [**Vrstvy obrázkov**](image-layers.md) – Informácie o vizualizácii viacerých pásiem
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) – Použite vlastné indexy a mapovanie farieb
+* [**Vzorec multispektrálneho indexu**](../project-settings/multispectral-index-formulas.md) – Porozumenie dostupným indexom
+
+Pre spracovanie pracovného postupu pozrite:
+
+* [**Spracovanie obrázkov (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – Kompletný sprievodca spracovaním

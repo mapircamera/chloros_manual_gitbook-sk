@@ -1,165 +1,165 @@
-# Monitoring the Processing
+# Monitorovanie spracovania
 
-Once processing has started, Chloros provides several ways to monitor progress, check for issues, and understand what's happening with your dataset. This page explains how to track your processing and interpret the information Chloros provides.
+Po začatí spracovania ponúka Chloros niekoľko spôsobov, ako monitorovať priebeh, kontrolovať problémy a porozumieť tomu, čo sa deje s vašim súborom údajov. Na tejto stránke je vysvetlené, ako sledovať spracovanie a interpretovať informácie, ktoré poskytuje Chloros.
 
-## Progress Bar Overview
+## Prehľad ukazovateľa priebehu
 
-The progress bar in the top header shows real-time processing status and completion percentage.
+Indikátor priebehu v hornej hlavičke zobrazuje stav spracovania v reálnom čase a percento dokončenia.
 
-### Free Mode Progress Bar
+### Indikátor priebehu v bezplatnom režime
 
-For users without Chloros+ license:
+Pre používateľov bez licencie Chloros+:
 
-**2-Stage Progress Display:**
+**Zobrazenie priebehu v 2 fázach:**
 
-1. **Target Detect** - Finding calibration targets in images
-2. **Processing** - Applying corrections and exporting
+1. **Detekcia cieľa** – vyhľadávanie kalibračných cieľov v obrazoch
+2. **Spracovanie** – uplatňovanie korekcií a export
 
-**Progress bar shows:**
+**Indikátor priebehu zobrazuje:**
 
-* Overall completion percentage (0-100%)
-* Current stage name
-* Simple horizontal bar visualization
+* Celkové percento dokončenia (0–100 %)
+* Názov aktuálnej fázy
+* Jednoduchá vizualizácia horizontálneho pruhu
 
-### Chloros+ Progress Bar
+### Indikátor priebehu Chloros+
 
-For users with Chloros+ license:
+Pre používateľov s licenciou Chloros+:
 
-**4-Stage Progress Display:**
+**4-fázové zobrazenie priebehu:**
 
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining images and preparing pipeline
-3. **Calibrating** - Applying vignette and reflectance corrections
-4. **Exporting** - Saving processed files
+1. **Detekcia** – hľadanie kalibračných cieľov
+2. **Analýza** – skúmanie obrázkov a príprava potrubia
+3. **Kalibrácia** – aplikovanie korekcií vinetácie a odrazivosti
+4. **Export** – ukladanie spracovaných súborov
 
-**Interactive Features:**
+**Interaktívne funkcie:**
 
-* **Hover over** progress bar to see expanded 4-stage panel
-* **Click** progress bar to freeze/pin the expanded panel
-* **Click again** to unfreeze and auto-hide on mouse leave
-* Each stage shows individual progress (0-100%)
-
-***
-
-## Understanding Each Processing Stage
-
-### Stage 1: Detecting (Target Detection)
-
-**What's happening:**
-
-* Chloros scans images marked with Target checkbox
-* Computer vision algorithms identify the 4 calibration panels
-* Reflectance values extracted from each panel
-* Target timestamps recorded for proper calibration scheduling
-
-**Duration:**
-
-* With marked targets: 10-60 seconds
-* Without marked targets: 5-30+ minutes (scans all images)
-
-**Progress indicator:**
-
-* Detecting: 0% → 100%
-* Number of images scanned
-* Targets found count
-
-**What to watch for:**
-
-* Should complete quickly if targets properly marked
-* If taking too long, targets may not be marked
-* Check Debug Log for "Target found" messages
-
-### Stage 2: Analyzing
-
-**What's happening:**
-
-* Reading image EXIF metadata (timestamps, exposure settings)
-* Determining calibration strategy based on target timestamps
-* Organizing image processing queue
-* Preparing parallel processing workers (Chloros+ only)
-
-**Duration:** 5-30 seconds
-
-**Progress indicator:**
-
-* Analyzing: 0% → 100%
-* Fast stage, usually completes quickly
-
-**What to watch for:**
-
-* Should progress steadily without pauses
-* Warnings about missing metadata will appear in Debug Log
-
-### Stage 3: Calibrating
-
-**What's happening:**
-
-* **Debayering**: Converting RAW Bayer pattern to 3 channels
-* **Vignette correction**: Removing lens edge darkening
-* **Reflectance calibration**: Normalizing with target values
-* **Index calculation**: Computing multispectral indices
-* Processing each image through the full pipeline
-
-**Duration:** Majority of total processing time (60-80%)
-
-**Progress indicator:**
-
-* Calibrating: 0% → 100%
-* Current image being processed
-* Images completed / Total images
-
-**Processing behavior:**
-
-* **Free mode**: Processes one image at a time sequentially
-* **Chloros+ mode**: Processes up to 16 images simultaneously
-* **GPU acceleration**: Significantly speeds up this stage
-
-**What to watch for:**
-
-* Steady progress through image count
-* Check Debug Log for per-image completion messages
-* Warnings about image quality or calibration issues
-
-### Stage 4: Exporting
-
-**What's happening:**
-
-* Writing calibrated images to disk in selected format
-* Exporting multispectral index images with LUT colors
-* Creating camera model subfolders
-* Preserving original filenames with appropriate suffixes
-
-**Duration:** 10-20% of total processing time
-
-**Progress indicator:**
-
-* Exporting: 0% → 100%
-* Files being written
-* Export format and destination
-
-**What to watch for:**
-
-* Disk space warnings
-* File write errors
-* Completion of all configured outputs
+* **Naveďte kurzor** na ukazovateľ priebehu, aby sa zobrazil rozšírený 4-fázový panel
+* **Kliknutím** na ukazovateľ priebehu zmrazíte/pripnete rozšírený panel
+* **Ďalším kliknutím** zmrazenie zrušíte a panel sa automaticky skryje po odstránení kurzora myši
+* Každá fáza zobrazuje individuálny priebeh (0–100 %)
 
 ***
 
-## Debug Log Tab
+## Vysvetlenie jednotlivých fáz spracovania
 
-The Debug Log provides detailed information about processing progress and any issues encountered.
+### Fáza 1: Detekcia (detekcia cieľov)
 
-### Accessing the Debug Log
+**Čo sa deje:**
 
-1. Click the **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> icon in the left sidebar
-2. Log panel opens showing real-time processing messages
-3. Auto-scrolls to show latest messages
+* Chloros skenuje obrázky označené zaškrtávacím políčkom Cieľ
+* Algoritmy počítačového videnia identifikujú 4 kalibračné panely
+* Hodnoty odrazivosti extrahované z každého panelu
+* Časové značky cieľov zaznamenané pre správne naplánovanie kalibrácie
 
-### Understanding Log Messages
+**Trvanie:**
 
-#### Information Messages (White/Gray)
+* S označenými cieľmi: 10–60 sekúnd
+* Bez označených cieľov: 5–30+ minút (skenuje všetky obrázky)
 
-Normal processing updates:
+**Indikátor priebehu:**
+
+* Detekcia: 0 % → 100 %
+* Počet naskenovaných obrázkov
+* Počet nájdených cieľov
+
+**Na čo si dávať pozor:**
+
+* Ak sú ciele správne označené, proces by mal byť rýchlo dokončený.
+* Ak to trvá príliš dlho, ciele môžu byť neoznačené.
+* Skontrolujte protokol ladenia, či sa v ňom nachádzajú správy „Cieľ nájdený“.
+
+### Fáza 2: Analýza
+
+**Čo sa deje:**
+
+* Čítanie metadát EXIF obrázkov (časové značky, nastavenia expozície)
+* Určenie stratégie kalibrácie na základe časových značiek cieľov
+* Organizovanie fronty spracovania obrázkov
+* Príprava paralelných spracovateľov (len Chloros+)
+
+**Trvanie:** 5–30 sekúnd
+
+**Indikátor priebehu:**
+
+* Analýza: 0 % → 100 %
+* Rýchla fáza, zvyčajne sa dokončí rýchlo
+
+**Na čo si dávať pozor:**
+
+* Pokrok by mal prebiehať plynule bez prestávok
+* Upozornenia na chýbajúce metadáta sa zobrazia v protokole ladenia
+
+### Fáza 3: Kalibrácia
+
+**Čo sa deje:**
+
+* **Debayering**: Konverzia vzoru RAW Bayer na 3 kanály
+* **Korekcia vinetácie**: Odstránenie stmavnutia okrajov objektívu
+* **Kalibrácia odrazivosti**: Normalizácia pomocou cieľových hodnôt
+* **Výpočet indexu**: Výpočet multispektrálnych indexov
+* Spracovanie každého obrázku prostredníctvom celého procesu
+
+**Trvanie:** Väčšina celkového času spracovania (60–80 %)
+
+**Indikátor priebehu:**
+
+* Kalibrácia: 0 % → 100 %
+* Spracovávanie aktuálneho obrazu
+* Dokončené obrazy / Celkový počet obrazov
+
+**Správanie spracovania:**
+
+* **Voľný režim**: Spracováva jeden obraz za druhým postupne
+* **Režim Chloros+**: Spracováva až 16 obrazov súčasne
+* **GPU akcelerácia**: Výrazne urýchľuje túto fázu
+
+**Na čo si dávať pozor:**
+
+* Stabilný pokrok v počte obrázkov
+* Skontrolujte protokol ladenia, či obsahuje správy o dokončení jednotlivých obrázkov
+* Upozornenia týkajúce sa kvality obrázkov alebo problémov s kalibráciou
+
+### Fáza 4: Export
+
+**Čo sa deje:**
+
+* Zapisovanie kalibrovaných obrázkov na disk vo vybranom formáte
+* Exportovanie multispektrálnych indexových obrázkov s farbami LUT
+* Vytváranie podadresárov modelov kamier
+* Zachovanie pôvodných názvov súborov s príslušnými príponami
+
+**Trvanie:** 10–20 % celkového času spracovania
+
+**Indikátor pokroku:**
+
+* Exportovanie: 0 % → 100 %
+* Zapisovanie súborov
+* Formát exportu a cieľová destinácia
+
+**Na čo si dávať pozor:**
+
+* Upozornenia na nedostatok miesta na disku
+* Chyby pri zápise súborov
+* Dokončenie všetkých nakonfigurovaných výstupov
+
+***
+
+## Karta Debug Log (Logs)
+
+Debug Log poskytuje podrobné informácie o priebehu spracovania a všetkých problémoch, ktoré sa vyskytli.
+
+### Prístup k Debug Log
+
+1. Kliknite na ikonu **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> v ľavom bočnom paneli.
+2. Otvorí sa panel protokolu, ktorý zobrazuje správy o spracovaní v reálnom čase.
+3. Automaticky sa posúva, aby zobrazil najnovšie správy.
+
+### Porozumenie správam protokolu
+
+#### Informačné správy (biele/šedé)
+
+Bežné aktualizácie spracovania:
 
 ```
 [INFO] Processing started
@@ -169,9 +169,9 @@ Normal processing updates:
 [INFO] Processing complete
 ```
 
-#### Warning Messages (Yellow)
+#### Varovné správy (žlté)
 
-Non-critical issues that don't stop processing:
+Nekritické problémy, ktoré nezastavia spracovanie:
 
 ```
 [WARN] No GPS data found in IMG_0145.RAW
@@ -179,11 +179,11 @@ Non-critical issues that don't stop processing:
 [WARN] Low contrast in calibration panel - results may vary
 ```
 
-**Action:** Review warnings after processing, but don't interrupt
+**Akcia:** Po spracovaní skontrolujte varovania, ale neprerušujte spracovanie.
 
-#### Error Messages (Red)
+#### Chybové správy (Red)
 
-Critical issues that may cause processing to fail:
+Kritické problémy, ktoré môžu spôsobiť zlyhanie spracovania:
 
 ```
 [ERROR] Cannot write file - disk full
@@ -191,202 +191,202 @@ Critical issues that may cause processing to fail:
 [ERROR] No targets detected - enable reflectance calibration or mark target images
 ```
 
-**Action:** Stop processing, resolve error, restart
+**Akcia:** Zastavte spracovanie, odstráňte chybu a reštartujte.
 
-### Common Log Messages
+### Bežné hlásenia protokolu
 
-| Message                          | Meaning                                | Action Needed                                         |
+| Hlásenie                          | Význam                                | Potrebná akcia                                         |
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| "Target detected in \[filename]" | Calibration target found successfully  | None - normal                                         |
-| "Processing image X of Y"        | Current progress update                | None - normal                                         |
-| "No targets found"               | No calibration targets detected        | Mark target images or disable reflectance calibration |
-| "Insufficient disk space"        | Not enough storage for output          | Free up disk space                                    |
-| "Skipping corrupted file"        | Image file is damaged                  | Re-copy file from SD card                             |
-| "PPK data applied"               | GPS corrections from .daq file applied | None - normal                                         |
+| „Cieľ zistený v \[názov súboru]“ | Kalibračný cieľ úspešne nájdený  | Žiadne – normálne                                         |
+| „Spracovanie obrázku X z Y“        | Aktualizácia aktuálneho priebehu                | Žiadne – normálne                                         |
+| „Nenájdené žiadne ciele“               | Nezistené žiadne kalibračné ciele        | Označte cieľové obrázky alebo deaktivujte kalibráciu odrazivosti |
+| „Nedostatočný priestor na disku“        | Nedostatočná pamäťová kapacita pre výstup          | Uvoľnite miesto na disku                                    |
+| „Preskakuje sa poškodený súbor“        | Obrazový súbor je poškodený                  | Znovu skopírujte súbor z SD karty                             |
+| „Použité údaje PPK“               | Použité korekcie GPS zo súboru .daq | Žiadne – normálne                                         |
 
-### Copying Log Data
+### Kopírovanie údajov protokolu
 
-To copy log for troubleshooting or support:
+Kopírovanie protokolu na účely riešenia problémov alebo podpory:
 
-1. Open Debug Log panel
-2. Click **"Copy Log"** button (or right-click → Select All)
-3. Paste into text file or email
-4. Send to MAPIR support if needed
-
-***
-
-## System Resource Monitoring
-
-### CPU Usage
-
-**Free Mode:**
-
-* 1 CPU core at \~100%
-* Other cores idle or available
-* System remains responsive
-
-**Chloros+ Parallel Mode:**
-
-* Multiple cores at 80-100% (up to 16 cores)
-* High overall CPU utilization
-* System may feel less responsive
-
-**To monitor:**
-
-* Windows Task Manager (Ctrl+Shift+Esc)
-* Performance tab → CPU section
-* Look for "Chloros" or "chloros-backend" processes
-
-### Memory (RAM) Usage
-
-**Typical usage:**
-
-* Small projects (< 100 images): 2-4 GB
-* Medium projects (100-500 images): 4-8 GB
-* Large projects (500+ images): 8-16 GB
-* Chloros+ parallel mode uses more RAM
-
-**If memory is low:**
-
-* Process smaller batches
-* Close other applications
-* Upgrade RAM if regularly processing large datasets
-
-### GPU Usage (Chloros+ with CUDA)
-
-When GPU acceleration is enabled:
-
-* NVIDIA GPU shows high utilization (60-90%)
-* VRAM usage increases (requires 4GB+ VRAM)
-* Calibrating stage is significantly faster
-
-**To monitor:**
-
-* NVIDIA System Tray icon
-* Task Manager → Performance → GPU
-* GPU-Z or similar monitoring tool
-
-### Disk I/O
-
-**What to expect:**
-
-* High disk read during Analyzing stage
-* High disk write during Exporting stage
-* SSD significantly faster than HDD
-
-**Performance tip:**
-
-* Use SSD for project folder when possible
-* Avoid network drives for large datasets
-* Ensure disk isn't near capacity (affects write speed)
+1. Otvorte panel Debug Log (Protokol ladenia).
+2. Kliknite na tlačidlo **„Copy Log“** (Kopírovať protokol) (alebo kliknite pravým tlačidlom myši → Vybrať všetko).
+3. Vložte do textového súboru alebo e-mailu.
+4. V prípade potreby pošlite na podporu MAPIR.
 
 ***
 
-## Detecting Problems During Processing
+## Monitorovanie systémových zdrojov
 
-### Warning Signs
+### Využitie CPU
 
-**Progress stalls (no change for 5+ minutes):**
+**Voľný režim:**
 
-* Check Debug Log for errors
-* Verify disk space available
-* Check Task Manager to ensure Chloros is running
+* 1 jadro CPU na ~100 %
+* Ostatné jadrá sú neaktívne alebo dostupné
+* Systém zostáva odozvný
 
-**Error messages appear frequently:**
+**Chloros+ Paralelný režim:**
 
-* Stop processing and review errors
-* Common causes: disk space, corrupted files, memory issues
-* See Troubleshooting section below
+* Viacero jadier na 80–100 % (až 16 jadier)
+* Vysoké celkové využitie CPU
+* Systém môže reagovať pomalšie
 
-**System becomes unresponsive:**
+**Monitorovanie:**
 
-* Chloros+ parallel mode using too many resources
-* Consider reducing concurrent tasks or upgrading hardware
-* Free mode is less resource-intensive
+* Windows Správca úloh (Ctrl+Shift+Esc)
+* Karta Výkon → sekcia CPU
+* Vyhľadajte procesy „Chloros“ alebo „chloros-backend“
 
-### When to Stop Processing
+### Využitie pamäte (RAM)
 
-Stop processing if you see:
+**Typické využitie:**
 
-* ❌ "Disk full" or "Cannot write file" errors
-* ❌ Repeated image file corruption errors
-* ❌ System completely frozen (not responding)
-* ❌ Realized wrong settings were configured
-* ❌ Wrong images imported
+* Malé projekty (&lt; 100 obrázkov): 2–4 GB
+* Stredné projekty (100–500 obrázkov): 4–8 GB
+* Veľké projekty (500+ obrázkov): 8–16 GB
+* Chloros+ paralelný režim využíva viac RAM
 
-**How to stop:**
+**Ak je pamäť nedostatočná:**
 
-1. Click **Stop/Cancel button** (replaces Start button)
-2. Processing halts, progress is lost
-3. Fix issues and restart from beginning
+* Spracúvajte menšie dávky
+* Zatvorte ostatné aplikácie
+* Ak pravidelne spracúvate veľké dátové súbory, zvýšte kapacitu RAM
 
-***
+### Využitie GPU (Chloros+ s CUDA)
 
-## Troubleshooting During Processing
+Keď je povolené zrýchlenie GPU:
 
-### Processing is Very Slow
+* GPU NVIDIA vykazuje vysoké využitie (60–90 %)
+* Zvýšené využitie VRAM (vyžaduje 4 GB+ VRAM)
+* Fáza kalibrácie je výrazne rýchlejšia
 
-**Possible causes:**
+**Monitorovanie:**
 
-* Unmarked target images (scanning all images)
-* HDD instead of SSD storage
-* Insufficient system resources
-* Many indices configured
-* Network drive access
+* Ikona NVIDIA v systémovej lište
+* Správca úloh → Výkon → GPU
+* GPU-Z alebo podobný monitorovací nástroj
 
-**Solutions:**
+### Diskové I/O
 
-1. If just started and in Detecting stage: Cancel, mark targets, restart
-2. For future: Use SSD, reduce indices, upgrade hardware
-3. Consider CLI for batch processing large datasets
+**Čo môžete očakávať:**
 
-### "Disk Space" Warnings
+* Vysoké čítanie disku počas fázy analýzy
+* Vysoké zapisovanie disku počas fázy exportu
+* SSD je výrazne rýchlejší ako HDD
 
-**Solutions:**
+**Tip na zvýšenie výkonu:**
 
-1. Free up disk space immediately
-2. Move project to drive with more space
-3. Reduce number of indices to export
-4. Use JPG format instead of TIFF (smaller files)
-
-### Frequent "Corrupted File" Messages
-
-**Solutions:**
-
-1. Re-copy images from SD card to ensure integrity
-2. Test SD card for errors
-3. Remove corrupted files from project
-4. Continue processing remaining images
-
-### System Overheating / Throttling
-
-**Solutions:**
-
-1. Ensure adequate ventilation
-2. Clean dust from computer vents
-3. Reduce processing load (use Free mode instead of Chloros+)
-4. Process during cooler times of day
+* Ak je to možné, použite SSD pre projektovú zložku
+* Vyhnite sa sieťovým diskom pre veľké dátové súbory
+* Uistite sa, že disk nie je takmer plný (ovplyvňuje rýchlosť zápisu)
 
 ***
 
-## Processing Complete Notification
+## Detekcia problémov počas spracovania
 
-When processing finishes:
+### Varovné signály
 
-* Progress bar reaches 100%
-* **"Processing Complete"** message appears in Debug Log
-* Start button becomes enabled again
-* All output files are in camera model subfolder
+**Zastavenie priebehu (bez zmeny po dobu 5 a viac minút):**
+
+* Skontrolujte protokol ladenia, či neobsahuje chyby.
+* Overte, či je k dispozícii dostatok miesta na disku.
+* Skontrolujte Správcu úloh, či beží Chloros.
+
+**Často sa zobrazujú chybové správy:**
+
+* Zastavte spracovanie a skontrolujte chyby.
+* Bežné príčiny: miesto na disku, poškodené súbory, problémy s pamäťou.
+* Pozrite si časť Riešenie problémov nižšie.
+
+**Systém nereaguje:**
+
+* Chloros+ paralelné režim používa príliš veľa zdrojov.
+* Zvážte zníženie počtu súbežných úloh alebo upgrade hardvéru.
+* Voľný režim je menej náročný na zdroje.
+
+### Kedy zastaviť spracovanie
+
+Spracovanie zastavte, ak sa zobrazí:
+
+* ❌ Chyba „Disk je plný“ alebo „Nie je možné zapísať súbor“
+* ❌ Opakované chyby poškodenia obrazových súborov
+* ❌ Systém úplne zamrzol (nereaguje)
+* ❌ Zistili ste, že boli nakonfigurované nesprávne nastavenia
+* ❌ Importovali sa nesprávne obrazy
+
+**Ako zastaviť:**
+
+1. Kliknite na **tlačidlo Zastaviť/Zrušiť** (nahradzuje tlačidlo Štart)
+2. Spracovanie sa zastaví, pokrok sa stratí
+3. Opravte problémy a začnite od začiatku
 
 ***
 
-## Next Steps
+## Riešenie problémov počas spracovania
 
-Once processing completes:
+### Spracovanie je veľmi pomalé
 
-1. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
-2. **Check output folder** - Verify all files exported correctly
-3. **Review Debug Log** - Check for any warnings or errors
-4. **Preview processed images** - Use Image Viewer or external software
+**Možné príčiny:**
 
-For information about reviewing and using your processed results, see [Finishing the Processing](finishing-the-processing.md).
+* Neoznačené cieľové obrázky (skenovanie všetkých obrázkov)
+* HDD namiesto SSD úložiska
+* Nedostatočné systémové zdroje
+* Veľa nakonfigurovaných indexov
+* Prístup k sieťovému disku
+
+**Riešenia:**
+
+1. Ak ste práve začali a ste vo fáze detekcie: Zrušte, označte ciele, reštartujte
+2. Do budúcnosti: Použite SSD, znížte počet indexov, aktualizujte hardvér
+3. Zvážte použitie CLI na hromadné spracovanie veľkých dátových súborov
+
+### Upozornenia „Diskový priestor“
+
+**Riešenia:**
+
+1. Okamžite uvoľnite disk
+2. Presuňte projekt na disk s väčším priestorom
+3. Znížte počet indexov na export.
+4. Použite formát JPG namiesto TIFF (menšie súbory).
+
+### Časté správy „Poškodený súbor“
+
+**Riešenia:**
+
+1. Znovu skopírujte obrázky z SD karty, aby ste zaistili integritu.
+2. Skontrolujte SD kartu, či neobsahuje chyby.
+3. Odstráňte poškodené súbory z projektu.
+4. Pokračujte v spracovaní zostávajúcich obrázkov.
+
+### Prehrievanie/spomaľovanie systému
+
+**Riešenia:**
+
+1. Zabezpečte dostatočné vetranie.
+2. Odstráňte prach z vetracích otvorov počítača.
+3. Znížte zaťaženie spracovaním (použite režim Free namiesto Chloros+).
+4. Spracovávajte v chladnejších častiach dňa.
+
+***
+
+## Oznámenie o dokončení spracovania
+
+Po dokončení spracovania:
+
+* Ukazovateľ priebehu dosiahne 100 %
+* V protokole ladenia sa zobrazí správa **„Spracovanie dokončené“**
+* Tlačidlo Štart sa opäť aktivuje
+* Všetky výstupné súbory sa nachádzajú v podsložke modelu fotoaparátu
+
+***
+
+## Ďalšie kroky
+
+Po dokončení spracovania:
+
+1. **Skontrolujte výsledky** – pozrite si časť [Dokončenie spracovania](finishing-the-processing.md)
+2. **Skontrolujte výstupnú zložku** – overte, či boli všetky súbory správne exportované
+3. **Skontrolujte protokol ladenia** – skontrolujte, či sa nezobrazujú žiadne varovania alebo chyby
+4. **Prezrite si spracované obrázky** – použite prehliadač obrázkov alebo externý softvér
+
+Informácie o kontrole a používaní spracovaných výsledkov nájdete v časti [Dokončenie spracovania](finishing-the-processing.md).

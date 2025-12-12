@@ -1,48 +1,46 @@
-# CLI : Command Line
+# CLI : Príkazový riadok
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** poskytuje výkonný prístup cez príkazový riadok k obrazovému procesorovému jadru Chloros, čo umožňuje automatizáciu, skriptovanie a bezhlavú prevádzku vašich pracovných postupov spracovania obrazu.
 
-The **Chloros CLI** provides powerful command-line access to the Chloros image processing engine, enabling automation, scripting, and headless operation for your imaging workflows.
+### Kľúčové funkcie
 
-### Key Features
+* 🚀 **Automatizácia** – skriptové dávkové spracovanie viacerých dátových súborov
+* 🔗 **Integrácia** – vloženie do existujúcich pracovných postupov a potrubí
+* 💻 **Prevádzka bez grafického rozhrania** – spustenie bez grafického rozhrania
+* 🌍 **Viacjazyčnosť** – podpora 38 jazykov
+* ⚡ **Paralelné spracovanie** – dynamické prispôsobenie vášmu CPU (až 16 paralelných pracovníkov)
 
-* 🚀 **Automation** - Script batch processing of multiple datasets
-* 🔗 **Integration** - Embed in existing workflows and pipelines
-* 💻 **Headless Operation** - Run without GUI
-* 🌍 **Multi-Language** - Support for 38 languages
-* ⚡ **Parallel Processing** - Dynamically scales to your CPU (up to 16 parallel workers)
+### Požiadavky
 
-### Requirements
-
-| Requirement          | Details                                                             |
+| Požiadavka          | Podrobnosti                                                             |
 | -------------------- | ------------------------------------------------------------------- |
-| **Operating System** | Windows 10/11 (64-bit)                                              |
-| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
-| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
-| **Internet**         | Required for license activation                                     |
-| **Disk Space**       | Varies by project size                                              |
+| **Operačný systém** | Windows 10/11 (64-bit)                                              |
+| **Licencia**          | Chloros+ ([vyžaduje sa platený plán](https://cloud.mapir.camera/pricing)) |
+| **Pamäť**           | Minimálne 8 GB RAM (odporúča sa 16 GB)                                  |
+| **Internet**         | Vyžaduje sa na aktiváciu licencie                                     |
+| **Miesto na disku**       | Závisí od veľkosti projektu                                              |
 
-{% hint style="warning" %}
-**License Requirement**: The CLI requires a paid Chloros+ subscription. Standard (free) plans do not have CLI access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
+{% hint style=&quot;warning&quot; %}
+**Požiadavky na licenciu**: CLI vyžaduje platené predplatné Chloros+. Štandardné (bezplatné) plány nemajú prístup k CLI. Prejdite na stránku [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing), aby ste vykonali aktualizáciu.
 {% endhint %}
 
-## Quick Start
+## Rýchly štart
 
-### Installation
+### Inštalácia
 
-The CLI is automatically included with the Chloros installer:
+CLI je automaticky súčasťou inštalačného programu Chloros:
 
-1. Download and run **Chloros Installer.exe**
-2. Complete the installation wizard
-3. CLI installed to: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
+1. Stiahnite a spustite **Chloros Installer.exe**
+2. Dokončite inštalačného sprievodcu
+3. CLI nainštalovaný do: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
-{% hint style="success" %}
-The installer automatically adds `chloros-cli` to your system PATH. Restart your terminal after installation.
+{% hint style=&quot;success&quot; %}
+Inštalačný program automaticky pridá `chloros-cli` do systémovej cesty PATH. Po inštalácii reštartujte terminál.
 {% endhint %}
 
-### First-Time Setup
+### Prvé nastavenie
 
-Before using the CLI, activate your Chloros+ license:
+Pred použitím CLI aktivujte svoju licenciu Chloros+:
 
 ```bash
 # Login with your Chloros+ account
@@ -55,9 +53,9 @@ chloros-cli status
 chloros-cli process "C:\Images\Dataset001"
 ```
 
-### Basic Usage
+### Základné použitie
 
-Process a folder with default settings:
+Spracujte priečinok s predvolenými nastaveniami:
 
 ```powershell
 chloros-cli process "C:\Images\Dataset001"
@@ -65,9 +63,9 @@ chloros-cli process "C:\Images\Dataset001"
 
 ***
 
-## Command Reference
+## Referencia príkazov
 
-### General Syntax
+### Všeobecná syntax
 
 ```
 chloros-cli [global-options] <command> [command-options]
@@ -75,11 +73,11 @@ chloros-cli [global-options] <command> [command-options]
 
 ***
 
-## Commands
+## Príkazy
 
-### `process` - Process Images
+### `process` – Spracovanie obrázkov
 
-Process images in a folder with calibration.
+Spracovanie obrázkov v priečinku s kalibráciou.
 
 **Syntax:**
 
@@ -87,37 +85,37 @@ Process images in a folder with calibration.
 chloros-cli process <input-folder> [options]
 ```
 
-**Example:**
+**Príklad:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 ```
 
-#### Process Command Options
+#### Možnosti príkazu spracovania
 
-| Option                | Type    | Default        | Description                                                                            |
+| Možnosť                | Typ    | Predvolené        | Popis                                                                            |
 | --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
-| `<input-folder>`      | Path    | _Required_     | Folder containing RAW/JPG multispectral images                                         |
-| `-o, --output`        | Path    | Same as input  | Output folder for processed images                                                     |
-| `-n, --project-name`  | String  | Auto-generated | Custom project name                                                                    |
-| `--vignette`          | Flag    | Enabled        | Enable vignette correction                                                             |
-| `--no-vignette`       | Flag    | -              | Disable vignette correction                                                            |
-| `--reflectance`       | Flag    | Enabled        | Enable reflectance calibration                                                         |
-| `--no-reflectance`    | Flag    | -              | Disable reflectance calibration                                                        |
-| `--ppk`               | Flag    | Disabled       | Apply PPK corrections from .daq light sensor data                                      |
-| `--format`            | Choice  | TIFF (16-bit)  | Output format: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Integer | Auto           | Minimum target size in pixels for calibration panel detection                          |
-| `--target-clustering` | Integer | Auto           | Target clustering threshold (0-100)                                                    |
-| `--exposure-pin-1`    | String  | None           | Lock exposure for camera model (Pin 1)                                                 |
-| `--exposure-pin-2`    | String  | None           | Lock exposure for camera model (Pin 2)                                                 |
-| `--recal-interval`    | Integer | Auto           | Recalibration interval in seconds                                                      |
-| `--timezone-offset`   | Integer | 0              | Timezone offset in hours                                                               |
+| `<input-folder>`      | Cesta    | _Povinné_     | Zložka obsahujúca multispektrálne obrázky RAW/JPG                                         |
+| `-o, --output`        | Cesta    | Rovnaká ako vstup  | Výstupná zložka pre spracované obrázky                                                     |
+| `-n, --project-name`  | Reťazec  | Automaticky generované | Vlastný názov projektu                                                                    |
+| `--vignette`          | Príznak    | Povolené        | Povoliť korekciu vinetácie                                                             |
+| `--no-vignette`       | Príznak    | -              | Zakázať korekciu vinetácie                                                            |
+| `--reflectance`       | Príznak    | Povolené        | Povoliť kalibráciu odrazivosti                                                         |
+| `--no-reflectance`    | Príznak    | -              | Zakázať kalibráciu odrazivosti                                                        |
+| `--ppk`               | Príznak    | Zakázané       | Použiť korekcie PPK z údajov svetelného senzora .daq                                      |
+| `--format`            | Voľba  | TIFF (16-bit)  | Výstupný formát: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
+| `--min-target-size`   | Celé číslo | Automaticky           | Minimálna cieľová veľkosť v pixeloch pre detekciu kalibračného panela                          |
+| `--target-clustering` | Celé číslo | Automaticky           | Prah zhlukovania cieľov (0-100)                                                    |
+| `--exposure-pin-1`    | Reťazec  | Žiadne           | Uzamknutie expozície pre model kamery (pin 1)                                                 |
+| `--exposure-pin-2`    | Reťazec  | Žiadne           | Uzamknutie expozície pre model kamery (pin 2)                                                 |
+| `--recal-interval`    | Celé číslo | Automaticky           | Interval rekalibrácie v sekundách                                                      |
+| `--timezone-offset`   | Celé číslo | 0              | Posun časového pásma v hodinách                                                               |
 
 ***
 
-### `login` - Authenticate Account
+### `login` – Overenie účtu
 
-Login with your Chloros+ credentials to enable CLI processing.
+Prihláste sa pomocou svojich prihlasovacích údajov Chloros+, aby ste povolili spracovanie CLI.
 
 **Syntax:**
 
@@ -125,25 +123,23 @@ Login with your Chloros+ credentials to enable CLI processing.
 chloros-cli login <email> <password>
 ```
 
-**Example:**
+**Príklad:**
 
 ```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
+{% hint style=&quot;warning&quot; %}
+**Špeciálne znaky**: Použite jednoduché úvodzovky okolo hesiel obsahujúcich znaky ako `$`, `!` alebo medzery.
 {% endhint %}
 
-**Output:**
+**Výstup:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
-***
+### `logout` – Vymazať prihlasovacie údaje
 
-### `logout` - Clear Credentials
-
-Clear stored credentials and logout from your account.
+Vymazať uložené prihlasovacie údaje a odhlásiť sa z účtu.
 
 **Syntax:**
 
@@ -151,13 +147,13 @@ Clear stored credentials and logout from your account.
 chloros-cli logout
 ```
 
-**Example:**
+**Príklad:**
 
 ```powershell
 chloros-cli logout
 ```
 
-**Output:**
+**Výstup:**
 
 ```
 ✓ Logout successful
@@ -166,9 +162,9 @@ chloros-cli logout
 
 ***
 
-### `status` - Check License Status
+### `status` – Skontrolujte stav licencie
 
-Display current license and authentication status.
+Zobrazí aktuálny stav licencie a overenia.
 
 **Syntax:**
 
@@ -176,13 +172,13 @@ Display current license and authentication status.
 chloros-cli status
 ```
 
-**Example:**
+**Príklad:**
 
 ```powershell
 chloros-cli status
 ```
 
-**Output:**
+**Výstup:**
 
 ```
 ╔══════════════════════════════════════╗
@@ -197,9 +193,9 @@ chloros-cli status
 
 ***
 
-### `export-status` - Check Export Progress
+### `export-status` – Kontrola priebehu exportu
 
-Monitor Thread 4 export progress during or after processing.
+Monitorovanie priebehu exportu vlákna 4 počas alebo po spracovaní.
 
 **Syntax:**
 
@@ -207,19 +203,19 @@ Monitor Thread 4 export progress during or after processing.
 chloros-cli export-status
 ```
 
-**Example:**
+**Príklad:**
 
 ```powershell
 chloros-cli export-status
 ```
 
-**Use Case:** Call this command while processing is running to check export progress.
+**Prípad použitia:** Vyvolajte tento príkaz počas spracovania, aby ste skontrolovali priebeh exportu.
 
 ***
 
-### `language` - Manage Interface Language
+### `language` – Správa jazyka rozhrania
 
-View or change the CLI interface language.
+Zobraziť alebo zmeniť jazyk rozhrania CLI.
 
 **Syntax:**
 
@@ -234,7 +230,7 @@ chloros-cli language --list
 chloros-cli language <language-code>
 ```
 
-**Examples:**
+**Príklady:**
 
 ```powershell
 # View current language
@@ -250,58 +246,58 @@ chloros-cli language es
 chloros-cli language ja
 ```
 
-#### Supported Languages (38 Total)
+#### Podporované jazyky (celkom 38)
 
-| Code    | Language              | Native Name      |
+| Kód    | Jazyk              | Rodný názov      |
 | ------- | --------------------- | ---------------- |
-| `en`    | English               | English          |
-| `es`    | Spanish               | Español          |
-| `pt`    | Portuguese            | Português        |
-| `fr`    | French                | Français         |
-| `de`    | German                | Deutsch          |
-| `it`    | Italian               | Italiano         |
-| `ja`    | Japanese              | 日本語              |
-| `ko`    | Korean                | 한국어              |
-| `zh`    | Chinese (Simplified)  | 简体中文             |
-| `zh-TW` | Chinese (Traditional) | 繁體中文             |
-| `ru`    | Russian               | Русский          |
-| `nl`    | Dutch                 | Nederlands       |
-| `ar`    | Arabic                | العربية          |
-| `pl`    | Polish                | Polski           |
-| `tr`    | Turkish               | Türkçe           |
-| `hi`    | Hindi                 | हिंदी            |
-| `id`    | Indonesian            | Bahasa Indonesia |
-| `vi`    | Vietnamese            | Tiếng Việt       |
-| `th`    | Thai                  | ไทย              |
-| `sv`    | Swedish               | Svenska          |
-| `da`    | Danish                | Dansk            |
-| `no`    | Norwegian             | Norsk            |
-| `fi`    | Finnish               | Suomi            |
-| `el`    | Greek                 | Ελληνικά         |
-| `cs`    | Czech                 | Čeština          |
-| `hu`    | Hungarian             | Magyar           |
-| `ro`    | Romanian              | Română           |
-| `uk`    | Ukrainian             | Українська       |
-| `pt-BR` | Brazilian Portuguese  | Português Brasileiro |
-| `zh-HK` | Cantonese             | 粵語             |
-| `ms`    | Malay                 | Bahasa Melayu    |
-| `sk`    | Slovak                | Slovenčina       |
-| `bg`    | Bulgarian             | Български        |
-| `hr`    | Croatian              | Hrvatski         |
-| `lt`    | Lithuanian            | Lietuvių         |
-| `lv`    | Latvian               | Latviešu         |
-| `et`    | Estonian              | Eesti            |
-| `sl`    | Slovenian             | Slovenščina      |
+| `en`    | Angličtina               | English          |
+| `es`    | Španielčina               | Español          |
+| `pt`    | Portugalčina            | Português        |
+| `fr`    | Francúzština                | Français         |
+| `de`    | Nemčina                | Deutsch          |
+| `it`    | Taliančina               | Italiano         |
+| `ja`    | Japončina              | 日本語              |
+| `ko`    | Kórejčina                | 한국어              |
+| `zh`    | Čínština (zjednodušená)  | 简体中文             |
+| `zh-TW` | Čínština (tradičná) | 繁體中文             |
+| `ru`    | Ruština               | Русский          |
+| `nl`    | Holandčina                 | Nederlands       |
+| `ar`    | Arabčina                | العربية          |
+| `pl`    | Poľština                | Polski           |
+| `tr`    | Turečtina               | Türkçe           |
+| `hi`    | Hindčina                 | हिंदी            |
+| `id`    | Indonézština            | Bahasa Indonesia |
+| `vi`    | Vietnamčina            | Tiếng Việt       |
+| `th`    | Thajčina                  | ไทย              |
+| `sv`    | Švédčina               | Svenska          |
+| `da`    | Dánčina                | Dansk            |
+| `no`    | Nórčina             | Norsk            |
+| `fi`    | fínčina               | Suomi            |
+| `el`    | gréčtina                 | Ελληνικά         |
+| `cs`    | čeština                 | Čeština          |
+| `hu`    | Maďarčina             | Magyar           |
+| `ro`    | Rumunčina              | Română           |
+| `uk`    | Ukrajinčina             | Українська       |
+| `pt-BR` | Brazílska portugalčina  | Português Brasileiro |
+| `zh-HK` | Kantónčina             | 粵語             |
+| `ms`    | Malajčina                 | Bahasa Melayu    |
+| `sk`    | Slovenčina                | Slovenčina       |
+| `bg`    | Bulharčina             | Български        |
+| `hr`    | Chorvátčina              | Hrvatski         |
+| `lt`    | Litovčina            | Lietuvių         |
+| `lv`    | Lotyšský               | Latviešu         |
+| `et`    | Estónsky              | Eesti            |
+| `sl`    | Slovinčtina             | Slovenščina      |
 
-{% hint style="success" %}
-**Automatic Persistence**: Your language preference is saved to `~/.chloros/cli_language.json` and persists across all sessions.
+{% hint style=&quot;success&quot; %}
+**Automatická perzistencia**: Vaše jazykové preferencie sú uložené v `~/.chloros/cli_language.json` a pretrvávajú vo všetkých reláciách.
 {% endhint %}
 
 ***
 
-### `set-project-folder` - Set Default Project Folder
+### `set-project-folder` – Nastavenie predvoleného priečinka projektu
 
-Change the default project folder location (shared with GUI).
+Zmeňte umiestnenie predvoleného priečinka projektu (zdieľané s GUI).
 
 **Syntax:**
 
@@ -309,7 +305,7 @@ Change the default project folder location (shared with GUI).
 chloros-cli set-project-folder <folder-path>
 ```
 
-**Example:**
+**Príklad:**
 
 ```powershell
 chloros-cli set-project-folder "C:\Projects\2025"
@@ -317,9 +313,9 @@ chloros-cli set-project-folder "C:\Projects\2025"
 
 ***
 
-### `get-project-folder` - Show Project Folder
+### `get-project-folder` – Zobraziť priečinok projektu
 
-Display the current default project folder location.
+Zobrazí aktuálne umiestnenie predvoleného priečinka projektu.
 
 **Syntax:**
 
@@ -327,13 +323,13 @@ Display the current default project folder location.
 chloros-cli get-project-folder
 ```
 
-**Example:**
+**Príklad:**
 
 ```powershell
 chloros-cli get-project-folder
 ```
 
-**Output:**
+**Výstup:**
 
 ```
 ℹ Current project folder: C:\Projects\2025
@@ -341,9 +337,9 @@ chloros-cli get-project-folder
 
 ***
 
-### `reset-project-folder` - Reset to Default
+### `reset-project-folder` – Obnoviť predvolené nastavenia
 
-Reset the project folder to the default location.
+Obnoví predvolenú polohu priečinka projektu.
 
 **Syntax:**
 
@@ -353,19 +349,19 @@ chloros-cli reset-project-folder
 
 ***
 
-## Global Options
+## Globálne možnosti
 
-These options apply to all commands:
+Tieto možnosti sa vzťahujú na všetky príkazy:
 
-| Option          | Type    | Default       | Description                                      |
+| Možnosť          | Typ    | Predvolené nastavenie       | Popis                                      |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe` | Path    | Auto-detected | Path to backend executable                       |
-| `--port`        | Integer | 5000          | Backend API port number                          |
-| `--restart`     | Flag    | -             | Force restart backend (kills existing processes) |
-| `--version`     | Flag    | -             | Show version information and exit                |
-| `--help`        | Flag    | -             | Show help information and exit                   |
+| `--backend-exe` | Cesta    | Automaticky detegovaná | Cesta k spustiteľnému súboru backendu                       |
+| `--port`        | Celé číslo | 5000          | Číslo portu backendu API                          |
+| `--restart`     | Príznak    | -             | Vynútiť reštart backendu (ukončí existujúce procesy) |
+| `--version`     | Príznak    | -             | Zobraziť informácie o verzii a ukončiť                |
+| `--help`        | Príznak    | -             | Zobraziť informácie o pomoci a ukončiť                   |
 
-**Example with Global Options:**
+**Príklad s globálnymi možnosťami:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Survey_001"
@@ -373,80 +369,78 @@ chloros-cli --port 5001 process "C:\Datasets\Survey_001"
 
 ***
 
-## Processing Settings Guide
+## Príručka nastavení spracovania
 
-### Parallel Processing
+### Paralelné spracovanie
 
-Chloros+ CLI **automatically scales** parallel processing to match your computer's capabilities:
+Chloros+ CLI **automaticky škaluje** paralelné spracovanie tak, aby zodpovedalo schopnostiam vášho počítača:
 
-**How It Works:**
+**Ako to funguje:**
 
-* Detects your CPU cores and RAM
-* Allocates workers: **2× CPU cores** (uses hyperthreading)
-* **Maximum: 16 parallel workers** (for stability)
+* Detekuje jadrá procesora a pamäť RAM
+* Prideli pracovníkov: **2× jadrá procesora** (využíva hyperthreading)
+* **Maximálne: 16 paralelných pracovníkov** (pre stabilitu)
 
-**System Tiers:**
+**Úrovne systému:**
 
-| System Type   | CPU        | RAM      | Workers  | Performance     |
+| Typ systému   | Procesor        | Pamäť RAM      | Pracovníci  | Výkon     |
 | ------------- | ---------- | -------- | -------- | --------------- |
-| **High-End**  | 16+ cores  | 32+ GB   | Up to 16 | Maximum speed   |
-| **Mid-Range** | 8-15 cores | 16-31 GB | 8-16     | Excellent speed |
-| **Low-End**   | 4-7 cores  | 8-15 GB  | 4-8      | Good speed      |
+| **High-End**  | 16+ jadier  | 32+ GB   | Až 16 | Maximálna rýchlosť   |
+| **Stredná trieda** | 8–15 jadier | 16–31 GB | 8–16     | Vynikajúca rýchlosť |
+| **Nízka trieda**   | 4–7 jadier  | 8–15 GB  | 4–8      | Dobrá rýchlosť      |
 
-{% hint style="success" %}
-**Automatic Optimization**: The CLI automatically detects your system specs and configures optimal parallel processing. No manual configuration needed!
+{% hint style=&quot;success&quot; %}
+**Automatická optimalizácia**: CLI automaticky detekuje špecifikácie vášho systému a nakonfiguruje optimálne paralelné spracovanie. Nie je potrebná žiadna manuálna konfigurácia!
 {% endhint %}
 
-### Debayer Methods
+### Metódy debayer
 
-The CLI uses **High Quality (Faster)** as the default and recommended debayer algorithm:
+CLI používa ako predvolený a odporúčaný algoritmus debayer **Vysoká kvalita (rýchlejšia)**:
 
-| Method                      | Quality | Speed | Description                                 |
+| Metóda                      | Kvalita | Rýchlosť | Popis                                 |
 | --------------------------- | ------- | ----- | ------------------------------------------- |
-| **High Quality (Faster)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Edge-aware algorithm (default, recommended) |
+| **Vysoká kvalita (rýchlejšia)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Algoritmus zohľadňujúci okraje (predvolený, odporúčaný) |
 
-### Vignette Correction
+### Korekcia vinetácie
 
-**What it does:** Corrects light falloff at image edges (darker corners common in camera imagery).
+**Čo robí:** Koriguje pokles jasu na okrajoch obrazu (tmavšie rohy bežné v snímkach z fotoaparátu).
 
-* **Enabled by default** - Most users should keep this enabled
-* Use `--no-vignette` to disable
+* **Predvolene zapnuté** – väčšina používateľov by mala túto funkciu nechať zapnutú.
+* Na vypnutie použite `--no-vignette`.
 
-{% hint style="success" %}
-**Recommendation**: Always enable vignette correction to ensure uniform brightness across the frame.
+{% hint style=&quot;success&quot; %}
+**Odporúčanie**: Vždy zapnite korekciu vinetácie, aby ste zabezpečili rovnomernú jasnosť v celom snímku.
 {% endhint %}
 
-### Reflectance Calibration
+### Kalibrácia odrazivosti
 
-Converts raw sensor values to standardized reflectance percentages using calibration panels.
+Prevádza surové hodnoty senzora na štandardizované percentá odrazivosti pomocou kalibračných panelov.
 
-* **Enabled by default** - Essential for vegetation analysis
-* Requires calibration target panels in images
-* Use `--no-reflectance` to disable
+* **Povolené štandardne** – nevyhnutné pre analýzu vegetácie.
+* Vyžaduje kalibračné panely v obrazoch.
+* Na deaktiváciu použite `--no-reflectance`.
 
-{% hint style="info" %}
-**Requirements**: Ensure calibration panels are properly exposed and visible in your images for accurate reflectance conversion.
+{% hint style=&quot;info&quot; %}
+**Požiadavky**: Pre presnú konverziu odrazivosti sa uistite, že kalibračné panely sú správne exponované a viditeľné vo vašich obrázkoch.
 {% endhint %}
 
-### PPK Corrections
+### PPK korekcie
 
-**What it does:** Applies Post-Processed Kinematic corrections using DAQ-A-SD log data for improved GPS accuracy.
+**Čo robí:** Používa postprocesné kinematické korekcie pomocou údajov z protokolu DAQ-A-SD pre zlepšenie presnosti GPS.
 
-* **Disabled by default**
-* Use `--ppk` to enable
-* Requires .daq files in project folder from MAPIR DAQ-A-SD light sensor.
+* **V predvolenom nastavení je táto funkcia vypnutá.
+* Na jej zapnutie použite `--ppk`.
+* Vyžaduje súbory .daq v projektovej zložke z MAPIR DAQ-A-SD svetelného senzora.
 
-### Output Formats
+### Výstupné formáty
 
-<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bit Depth</th><th width="116.5999755859375">File Size</th><th>Best For</th></tr></thead><tbody><tr><td><strong>TIFF (16-bit)</strong> ⭐</td><td>16-bit integer</td><td>Large</td><td>GIS analysis, photogrammetry (recommended)</td></tr><tr><td><strong>TIFF (32-bit, Percent)</strong></td><td>32-bit float</td><td>Very Large</td><td>Scientific analysis, research</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-bit integer</td><td>Medium</td><td>Visual inspection, web sharing</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-bit integer</td><td>Small</td><td>Quick preview, compressed output</td></tr></tbody></table>
+<table><thead><tr><th width="197">Formát</th><th width="130.20001220703125">Bitová hĺbka</th><th width="116.5999755859375">Veľkosť súboru</th><th>Najvhodnejšie pre</th></tr></thead><tbody><tr><td><strong>TIFF (16-bitový)</strong> ⭐</td><td>16-bitové celé číslo</td><td>Veľké</td><td>GIS analýza, fotogrametria (odporúčané)</td></tr><tr><td><strong>TIFF (32-bitové, percentá)</strong></td><td>32-bitové plávajúce</td><td>Veľmi veľké</td><td>Vedecká analýza, výskum</td></tr><tr><td><strong>PNG (8-bitový)</strong></td><td>8-bitové celé číslo</td><td>Stredné</td><td>Vizuálna kontrola, zdieľanie na webe</td></tr><tr><td><strong>JPG (8-bitové)</strong></td><td>8-bitové celé číslo</td><td>Malé</td><td>Rýchly náhľad, komprimovaný výstup</td></tr></tbody></table>***
 
-***
+## Automatizácia a skriptovanie
 
-## Automation & Scripting
+### Hromadné spracovanie v PowerShell
 
-### PowerShell Batch Processing
-
-Process multiple dataset folders automatically:
+Automatické spracovanie viacerých priečinkov s dátovými sadami:
 
 ```powershell
 # process_all_datasets.ps1
@@ -470,9 +464,9 @@ foreach ($dataset in $datasets) {
 Write-Host "All datasets processed!" -ForegroundColor Green
 ```
 
-### Windows Batch Script
+### Windows Hromadný skript
 
-Simple loop for batch processing:
+Jednoduchá slučka pre hromadné spracovanie:
 
 ```batch
 @echo off
@@ -497,9 +491,9 @@ echo All datasets processed!
 pause
 ```
 
-### Python Automation Script
+### Python Automatizačný skript
 
-Advanced automation with error handling:
+Pokročilá automatizácia s riešením chýb:
 
 ```python
 import subprocess
@@ -578,16 +572,16 @@ if __name__ == '__main__':
 
 ***
 
-## Processing Workflow
+## Pracovný postup spracovania
 
-### Standard Workflow
+### Štandardný pracovný postup
 
-1. **Input**: Folder containing RAW/JPG image pairs
-2. **Discovery**: CLI auto-scans for supported image files
-3. **Processing**: Parallel mode scales to your CPU cores (Chloros+)
-4. **Output**: Creates camera-model subfolders with processed images
+1. **Vstup**: Zložka obsahujúca páry obrázkov RAW/JPG
+2. **Vyhľadávanie**: CLI automaticky vyhľadáva podporované obrazové súbory
+3. **Spracovanie**: Paralelný režim sa prispôsobuje jadrám vášho procesora (Chloros+)
+4. **Výstup**: Vytvára podadresáre podľa modelov fotoaparátov so spracovanými obrázkami
 
-### Example Output Structure
+### Príklad štruktúry výstupu
 
 ```
 MyProject/
@@ -600,72 +594,72 @@ MyProject/
     └── ...
 ```
 
-### Processing Time Estimates
+### Odhadované časy spracovania
 
-Typical processing times for 100 images (12MP each):
+Typické časy spracovania pre 100 obrázkov (každý s rozlíšením 12 MP):
 
-| Mode              | Time      | Hardware                                     |
+| Režim              | Čas      | Hardvér                                     |
 | ----------------- | --------- | -------------------------------------------- |
-| **Parallel Mode** | 5-10 min  | i7/Ryzen 7, 16GB RAM, SSD (up to 16 workers) |
-| **Parallel Mode** | 10-15 min | i5/Ryzen 5, 8GB RAM, HDD (up to 8 workers)   |
+| **Paralelný režim** | 5–10 minút  | i7/Ryzen 7, 16 GB RAM, SSD (až 16 pracovníkov) |
+| **Paralelný režim** | 10–15 minút | i5/Ryzen 5, 8 GB RAM, HDD (až 8 pracovníkov)   |
 
-{% hint style="info" %}
-**Performance Tip**: Processing time varies based on image count, resolution, and computer specs.
+{% hint style=&quot;info&quot; %}
+**Tip na zvýšenie výkonu**: Doba spracovania sa líši v závislosti od počtu obrázkov, rozlíšenia a špecifikácií počítača.
 {% endhint %}
 
 ***
 
-## Troubleshooting
+## Riešenie problémov
 
-### CLI Not Found
+### CLI nenájdené
 
-**Error:**
+**Chyba:**
 
 ```
 'chloros-cli' is not recognized as an internal or external command
 ```
 
-**Solutions:**
+**Riešenia:**
 
-1. Verify installation location:
+1. Overte umiestnenie inštalácie:
 
 ```powershell
 dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
-2. Use full path if not in PATH:
+2. Ak nie je v PATH, použite úplnú cestu:
 
 ```powershell
 "C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
 ```
 
-3. Add to PATH manually:
-   * Open System Properties → Environment Variables
-   * Edit PATH variable
-   * Add: `C:\Program Files\Chloros\resources\cli`
-   * Restart terminal
+3. Ručne pridajte do PATH:
+   * Otvorte Vlastnosti systému → Premenné prostredia.
+   * Upravte premennú PATH.
+   * Pridajte: `C:\Program Files\Chloros\resources\cli`
+   * Reštartujte terminál.
 
 ***
 
-### Backend Failed to Start
+### Backend sa nepodarilo spustiť.
 
-**Error:**
+**Chyba:**
 
 ```
 Backend failed to start within 30 seconds
 ```
 
-**Solutions:**
+**Riešenia:**
 
-1. Check if backend already running (close it first)
-2. Check Windows Firewall is not blocking
-3. Try different port:
+1. Skontrolujte, či backend už beží (najskôr ho zatvorte).
+2. Skontrolujte, či Windows Firewall neblokuje.
+3. Skúste iný port:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
 ```
 
-4. Force restart backend:
+4. Vynúťte reštartovanie backendu:
 
 ```powershell
 chloros-cli --restart process "C:\Datasets\Field_A"
@@ -673,71 +667,71 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### License / Authentication Issues
+### Problémy s licenciou/overením
 
-**Error:**
+**Chyba:**
 
 ```
 Chloros+ license required for CLI access
 ```
 
-**Solutions:**
+**Riešenia:**
 
-1. Verify you have an active Chloros+ subscription
-2. Login with your credentials:
+1. Overte, či máte aktívne predplatné Chloros+.
+2. Prihláste sa pomocou svojich prihlasovacích údajov:
 
 ```powershell
 chloros-cli login user@example.com 'password'
 ```
 
-3. Check license status:
+3. Skontrolujte stav licencie:
 
 ```powershell
 chloros-cli status
 ```
 
-4. Contact support: info@mapir.camera
+4. Kontaktujte podporu: info@mapir.camera
 
 ***
 
-### No Images Found
+### Nenašli sa žiadne obrázky
 
-**Error:**
+**Chyba:**
 
 ```
 No images found in the specified folder
 ```
 
-**Solutions:**
+**Riešenia:**
 
-1. Verify folder contains supported formats (.RAW, .TIF, .JPG)
-2. Check folder path is correct (use quotes for paths with spaces)
-3. Ensure you have read permissions for the folder
-4. Check file extensions are correct
-
-***
-
-### Processing Stalls or Hangs
-
-**Solutions:**
-
-1. Check available disk space (ensure enough for output)
-2. Close other applications to free memory
-3. Reduce image count (process in batches)
+1. Overte, či priečinok obsahuje podporované formáty (.RAW, .TIF, .JPG).
+2. Skontrolujte, či je cesta k priečinku správna (pre cesty s medzerami použite úvodzovky).
+3. Uistite sa, že máte oprávnenie na čítanie priečinka.
+4. Skontrolujte, či sú príponami súborov správne.
 
 ***
 
-### Port Already in Use
+### Spracovanie sa zastaví alebo zavesí
 
-**Error:**
+**Riešenia:**
+
+1. Skontrolujte voľné miesto na disku (uistite sa, že je dostatočné na výstup).
+2. Zatvorte ostatné aplikácie, aby ste uvoľnili pamäť.
+3. Znížte počet obrázkov (spracovávajte v dávkach).
+
+***
+
+### Port je už používaný
+
+**Chyba:**
 
 ```
 Port 5000 is already in use
 ```
 
-**Solution:**
+**Riešenie:**
 
-Specify a different port:
+Určite iný port:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
@@ -745,35 +739,35 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ***
 
-## FAQ
+## Často kladené otázky
 
-### Q: Do I need a license for the CLI?
+### Otázka: Potrebujem licenciu pre CLI?
 
-**A:** Yes! The CLI requires a paid **Chloros+ license**.
+**Odpoveď:** Áno! CLI vyžaduje platenú **licenciu Chloros+**.
 
-* ❌ Standard (free) plan: CLI disabled
-* ✅ Chloros+ (paid) plans: CLI fully enabled
+* ❌ Štandardný (bezplatný) plán: CLI deaktivovaný
+* ✅ Plány Chloros+ (platené): CLI plne povolené
 
-Subscribe at: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
-
-### Q: Can I use the CLI on a server without GUI?
-
-**A:** Yes! The CLI runs completely headless. Requirements:
-
-* Windows Server 2016 or later
-* Visual C++ Redistributable installed
-* Sufficient RAM (8GB minimum, 16GB recommended)
-* One-time GUI license activation on any machine
+Prihláste sa na: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
 ***
 
-### Q: Where are processed images saved?
+### Otázka: Môžem používať CLI na serveri bez grafického rozhrania?
 
-**A:** By default, processed images are saved in the **same folder as input** in camera-model subfolders (e.g., `Survey3N_RGN/`).
+**Odpoveď:** Áno! CLI beží úplne bez grafického rozhrania. Požiadavky:
 
-Use `-o` option to specify different output folder:
+* Windows Server 2016 alebo novší
+* Nainštalovaný Visual C++ Redistributable
+* Dostatočná pamäť RAM (minimálne 8 GB, odporúča sa 16 GB)
+* Jednorazová aktivácia licencie GUI na akomkoľvek počítači
+
+***
+
+### Otázka: Kde sa ukladajú spracované obrázky?
+
+**Odpoveď:** Spracované obrázky sa štandardne ukladajú do **rovnakého priečinka ako vstupné** v podpriečinkoch modelov kamier (napr. `Survey3N_RGN/`).
+
+Na určenie iného výstupného priečinka použite možnosť `-o`:
 
 ```powershell
 chloros-cli process "C:\Input" -o "D:\Output"
@@ -781,13 +775,13 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ***
 
-### Q: Can I process multiple folders at once?
+### Otázka: Môžem spracovať viacero priečinkov naraz?
 
-**A:** Not directly in one command, but you can use scripting to process folders sequentially. See [Automation & Scripting](CLI.md#automation--scripting) section.
+**A:** Nie priamo v jednom príkaze, ale môžete použiť skriptovanie na postupné spracovanie priečinkov. Pozrite si časť [Automatizácia a skriptovanie](CLI.md#automation--scripting).
 
 ***
 
-### Q: How do I save CLI output to a log file?
+### Q: Ako uložím výstup CLI do súboru protokolu?
 
 **PowerShell:**
 
@@ -803,33 +797,33 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### Q: What happens if I press Ctrl+C during processing?
+### Otázka: Čo sa stane, ak počas spracovania stlačím klávesy Ctrl+C?
 
-**A:** The CLI will:
+**Odpoveď:** CLI:
 
-1. Stop processing gracefully
-2. Shut down the backend
-3. Exit with code 130
+1. Plynule zastaví spracovanie
+2. Vypne backend
+3. Ukončí sa s kódom 130
 
-Partially processed images may remain in the output folder.
-
-***
-
-### Q: Can I automate CLI processing?
-
-**A:** Absolutely! The CLI is designed for automation. See [Automation & Scripting](CLI.md#automation--scripting) for PowerShell, Batch, and Python examples.
+Čiastočne spracované obrázky môžu zostať vo výstupnej zložke.
 
 ***
 
-### Q: How do I check the CLI version?
+### Otázka: Môžem automatizovať spracovanie CLI?
 
-**A:**
+**Odpoveď:** Samozrejme! CLI je navrhnutý pre automatizáciu. Príklady pre PowerShell, Batch a Python nájdete v časti [Automatizácia a skriptovanie](CLI.md#automation--scripting).
+
+***
+
+### Otázka: Ako skontrolujem verziu CLI?
+
+**Odpoveď:**
 
 ```powershell
 chloros-cli --version
 ```
 
-**Output:**
+**Výstup:**
 
 ```
 Chloros CLI 1.0.2
@@ -837,11 +831,11 @@ Chloros CLI 1.0.2
 
 ***
 
-## Getting Help
+## Pomoc
 
-### Command-Line Help
+### Pomoc v príkazovom riadku
 
-View help information directly in the CLI:
+Informácie o pomoci si môžete zobraziť priamo v CLI:
 
 ```powershell
 # General help
@@ -853,19 +847,19 @@ chloros-cli login --help
 chloros-cli language --help
 ```
 
-### Support Channels
+### Kanály podpory
 
-* **Email**: info@mapir.camera
-* **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+* **E-mail**: info@mapir.camera
+* **Webová stránka**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* **Ceny**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
 ***
 
-## Complete Examples
+## Kompletné príklady
 
-### Example 1: Basic Processing
+### Príklad 1: Základné spracovanie
 
-Process with default settings (vignette, reflectance):
+Spracovanie s predvolenými nastaveniami (vinetácia, odrazivosť):
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"
@@ -873,9 +867,9 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 ***
 
-### Example 2: High-Quality Scientific Output
+### Príklad 2: Vysoko kvalitný vedecký výstup
 
-32-bit float TIFF:
+32-bitové plávajúce desatinné číslo TIFF:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -886,9 +880,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 3: Fast Preview Processing
+### Príklad 3: Rýchle spracovanie náhľadu
 
-8-bit PNG without calibration for quick review:
+8-bitové PNG bez kalibrácie pre rýchle prezeranie:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -899,9 +893,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 4: PPK-Corrected Processing
+### Príklad 4: Spracovanie s korekciou PPK
 
-Apply PPK corrections with reflectance:
+Aplikácia korekcií PPK s odrazivosťou:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -911,9 +905,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 5: Custom Output Location
+### Príklad 5: Vlastné umiestnenie výstupu
 
-Process to different drive with specific format:
+Spracovanie na inom disku s konkrétnym formátom:
 
 ```powershell
 chloros-cli process "C:\Input\Raw_Images" ^
@@ -923,9 +917,9 @@ chloros-cli process "C:\Input\Raw_Images" ^
 
 ***
 
-### Example 6: Authentication Workflow
+### Príklad 6: Pracovný postup overovania
 
-Complete authentication flow:
+Dokončenie overovania:
 
 ```powershell
 # Step 1: Login
@@ -943,9 +937,9 @@ chloros-cli logout
 
 ***
 
-### Example 7: Multi-Language Usage
+### Príklad 7: Viacjazyčné použitie
 
-Change interface language:
+Zmena jazyka rozhrania:
 
 ```powershell
 # List available languages

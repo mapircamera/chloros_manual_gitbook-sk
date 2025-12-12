@@ -4,169 +4,165 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
 
-# Download
+# Stiahnutie
 
-Download the latest version of Chloros for Windows to get started with multispectral image processing.
+Stiahnite si najnovšiu verziu Chloros pre Windows a začnite s multispektrálnym spracovaním obrazu.
 
-### System Requirements
+### Systémové požiadavky
 
-| Requirement          | Minimum                         | Recommended                     |
+| Požiadavka          | Minimálne                         | Odporúčané                     |
 | -------------------- | ------------------------------- | ------------------------------- |
-| **Operating System** | Windows 10 (64-bit)             | Windows 11 (64-bit)             |
-| **Processor**        | Intel Core i5 or equivalent     | Intel Core i7 or better         |
-| **Memory (RAM)**     | 8GB                             | 16GB or more                    |
-| **Graphics Card**    | DirectX 11 compatible           | NVIDIA GPU with 4GB+ VRAM       |
-| **Storage**          | 2GB free space                  | SSD with 10GB+ free space       |
-| **Display**          | 1920x1080                       | 2560x1440 or higher             |
-| **Internet**         | Required for license activation | Required for license activation |
+| **Operačný systém** | Windows 10 (64-bit)             | Windows 11 (64-bit)             |
+| **Procesor**        | Intel Core i5 alebo ekvivalent     | Intel Core i7 alebo lepší         |
+| **Pamäť (RAM)**     | 8 GB                             | 16 GB alebo viac                    |
+| **Grafická karta**    | Kompatibilná s DirectX 11           | NVIDIA GPU s 4 GB+ VRAM       |
+| **Úložisko**          | 2 GB voľného miesta                  | SSD s 10 GB+ voľného miesta       |
+| **Displej**          | 1920x1080                       | 2560x1440 alebo vyšší             |
+| **Internet**         | Potrebný na aktiváciu licencie | Potrebný na aktiváciu licencie |
 
-{% hint style="info" %}
-**GPU Acceleration**: Chloros+ users with NVIDIA GPUs (4GB+ VRAM) can use CUDA acceleration for significantly faster processing.
+{% hint style=&quot;info&quot; %}
+**GPU akcelerácia**: Chloros+ používatelia s GPU NVIDIA (4 GB+ VRAM) môžu využiť CUDA akceleráciu pre výrazne rýchlejšie spracovanie.
 {% endhint %}
 
 ***
 
-## Download Chloros
+## Stiahnuť Chloros
 
-### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Download Chloros Here</a>
+### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Stiahnuť Chloros tu</a>
 
-### Latest Stable Release
+### Najnovšia stabilná verzia
 
-**Chloros Installer for Windows**
+**Chloros Inštalátor pre Windows**
 
-* **Version**: 1.0.3
-* **Release Date**: December ?, 2025
-* **File Size**: 1.6GB
-* **File Type**: .exe (Windows Installer)
+* **Verzia**: 1.0.3
+* **Dátum vydania**: december ?, 2025
+* **Veľkosť súboru**: 1,6 GB
+* **Typ súboru**: .exe (inštalátor Windows)
 
-#### **Installation Steps:**
+#### **Kroky inštalácie:**
 
-1. Download the `CHLOROS INSTALLER - CURRENT VERSION.exe` file
-2. Double-click the installer to begin installation
-3. Follow the installation wizard prompts
-4. Choose installation directory (default: `C:\Program Files\Chloros\`)
-5. Complete installation and launch Chloros
-6. Sign in with your MAPIR Cloud Chloros+ account (or continue with free version)
+1. Stiahnite si súbor `CHLOROS INSTALLER - CURRENT VERSION.exe`.
+2. Dvojitým kliknutím na inštalačný program spustite inštaláciu.
+3. Postupujte podľa pokynov inštalačného sprievodcu.
+4. Vyberte inštalačný adresár (predvolený: `C:\Program Files\Chloros\`).
+5. Dokončite inštaláciu a spustite Chloros.
+6. Prihláste sa pomocou svojho účtu MAPIR Cloud Chloros+ (alebo pokračujte s bezplatnou verziou).
 
-{% hint style="success" %}
-The installer automatically adds `chloros-cli` to your system PATH for command-line access.
+{% hint style=&quot;success&quot; %}
+Inštalačný program automaticky pridá `chloros-cli` do systémovej cesty PATH pre prístup z príkazového riadku.
 {% endhint %}
 
 ***
 
-## Additional Resources
+## Ďalšie zdroje
 
 ### Python SDK
 
-For developers and automation workflows, install the Chloros Python SDK:
+Pre vývojárov a automatizačné pracovné postupy nainštalujte Chloros Python SDK:
 
 ```bash
 pip install chloros-sdk
 ```
 
-**Documentation**: [API: Python SDK](api-python-sdk.md)
+**Dokumentácia**: [API: Python SDK](api-python-sdk.md)
 
-**Requirements**: Chloros Desktop must be installed, Chloros+ license required
-
-***
-
-## What's Included
-
-The Chloros installation includes:
-
-* ✅ **Chloros Desktop GUI** - Full-featured graphical interface
-* ✅ **Chloros (Browser)** - Web-based interface for lower-spec systems
-* ✅ **Chloros CLI** - Command-line interface (requires Chloros+ license)
-* ✅ **Backend Engine** - Image processing pipeline
-* ✅ **Camera Profiles** - Pre-configured MAPIR camera templates
+**Požiadavky**: Chloros Desktop musí byť nainštalovaný, Chloros+ licencia je povinná.
 
 ***
 
-## Upgrade to Chloros+
+## Čo je zahrnuté
 
-Unlock advanced features with a Chloros+ subscription:
+Inštalácia Chloros obsahuje:
 
-* 🚀 **Multi-threaded Processing** - Process images in parallel
-* ⚡ **GPU (CUDA) Acceleration** - Leverage NVIDIA GPU power
-* 💻 **CLI Access** - Automate with command-line tools
-* 🐍 **Python SDK** - Programmatic API access
-* 📱 **Multiple Devices** - Use on 2-10+ devices (plan dependent)
-* 🧮 **Custom Formulas** - Create custom multispectral indices
-
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">View Chloros+ Plans &#x26; Pricing</a></p>
+* ✅ **Chloros Desktop GUI** – plnohodnotné grafické rozhranie
+* ✅ **Chloros (prehliadač)** – webové rozhranie pre systémy s nižšou konfiguráciou
+* ✅ **Chloros CLI** – rozhranie príkazového riadku (vyžaduje licenciu Chloros+)
+* ✅ **Backend Engine** – potrubie na spracovanie obrazu
+* ✅ **Profily kamery** - Predkonfigurované šablóny kamery MAPIR
 
 ***
 
-## Installation Help
+## Upgrade na Chloros+
 
-### Troubleshooting
+Odomknite pokročilé funkcie s predplatným Chloros+:
 
-**Installation fails with error message:**
+* 🚀 **Viacvláknové spracovanie** – spracovávajte obrázky paralelne
+* ⚡ **Akcelerácia GPU (CUDA)** – Využite výkon GPU NVIDIA
+* 💻 **CLI Access** – Automatizácia pomocou nástrojov príkazového riadku
+* 🐍 **Python SDK** – Programový prístup API
+* 📱 **Viac zariadení** – Používajte na 2–10+ zariadeniach (v závislosti od plánu)
+* 🧮 **Vlastné vzorce** – Vytvárajte vlastné multispektrálne indexy
 
-* Ensure you have administrator rights
-* Temporarily disable antivirus software
-* Check that you meet minimum system requirements
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Zobraziť Chloros+ Plány a ceny</a></p>***
 
-**Application won't start:**
+## Pomoc s inštaláciou
 
-* Try Chloros (Browser) version
-* Verify Windows 10/11 (64-bit) is installed
-* Update graphics drivers
-* Check Windows Event Viewer for error details
-* Contact support with error logs
+### Riešenie problémov
 
-**License activation issues:**
+**Inštalácia zlyhá s chybovou správou:**
 
-* Ensure internet connection is active
-* Verify credentials at [https://cloud.mapir.camera](https://cloud.mapir.camera)
-* Check firewall isn't blocking Chloros
-* See [Chloros+ Login](chloros+-login.md) for detailed instructions
+* Uistite sa, že máte práva správcu
+* Dočasne deaktivujte antivírusový softvér
+* Skontrolujte, či spĺňate minimálne systémové požiadavky
 
-### Getting Support
+**Aplikácia sa nespustí:**
 
-Need help with installation or setup?
+* Skúste verziu Chloros (prehliadač)
+* Overte, či je nainštalovaný Windows 10/11 (64-bit)
+* Aktualizujte grafické ovládače
+* Skontrolujte podrobnosti o chybe v Windows Event Viewer
+* Kontaktujte podporu s protokolmi chýb
 
-* 📧 **Email**: info@mapir.camera
-* 🌐 **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* 📚 **Documentation**: [Getting Started](./)
-* ❓ **FAQ**: [Frequently Asked Questions](faq.md)
+**Problémy s aktiváciou licencie:**
+
+* Uistite sa, že je aktívne pripojenie k internetu
+* Overte prihlasovacie údaje na [https://cloud.mapir.camera](https://cloud.mapir.camera)
+* Skontrolujte, či firewall neblokuje Chloros
+* Podrobné pokyny nájdete na [Chloros+ Prihlásenie](chloros+-login.md)
+
+### Získanie podpory
+
+Potrebujete pomoc s inštaláciou alebo nastavením?
+
+* 📧 **E-mail**: info@mapir.camera
+* 🌐 **Webová stránka**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* 📚 **Dokumentácia**: [Začíname](./)
+* ❓ **FAQ**: [Často kladené otázky](faq.md)
 
 ***
 
-## Change Log
+## Zoznam zmien
 
 <details>
 
-<summary>Version 1.0.3</summary>
+<summary>Verzia 1.0.3</summary>
 
-### **Release Date**: December ?, 2025
+### **Dátum vydania**: december ?, 2025
 
-#### New Features
+#### Nové funkcie
 
-* Initial Launch
+* Počiatočné spustenie
 
-#### Improvements
+#### Vylepšenia
 
-* Initial Launch
+* Počiatočné spustenie
 
-#### Bug Fixes
+#### Opravy chýb
 
-* Initial Launch
+* Počiatočné spustenie
 
-#### Known Issues
+#### Známé problémy
 
-* Initial Launch
+* Počiatočné spustenie
 
-</details>
+</details>***
 
-***
+## Licenčná zmluva
 
-## License Agreement
+**Vlastnícky softvér** – Copyright (c) 2025 MAPIR Inc.
 
-**Proprietary Software** - Copyright (c) 2025 MAPIR Inc.
+Neoprávnené používanie, distribúcia alebo úprava je zakázaná.
 
-Unauthorized use, distribution, or modification is prohibited.
+**Bezplatná verzia**: K dispozícii na osobné a komerčné použitie s obmedzeniami funkcií.
 
-**Free Version**: Available for personal and commercial use with feature limitations
-
-**Chloros+**: Subscription-based license for advanced features and commercial deployments
+**Chloros+**: Licencia na báze predplatného pre pokročilé funkcie a komerčné nasadenie.

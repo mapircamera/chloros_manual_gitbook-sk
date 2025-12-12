@@ -1,234 +1,234 @@
-# Adjusting Project Settings
+# Úprava nastavení projektu
 
-Before processing your images, it's important to configure your project settings to match your workflow requirements. The Project Settings <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> panel provides comprehensive control over calibration, processing options, multispectral indices, and export formats.
+Pred spracovaním obrázkov je dôležité nakonfigurovať nastavenia projektu tak, aby zodpovedali požiadavkám vášho pracovného postupu. Panel Nastavenia projektu <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> poskytuje komplexnú kontrolu nad kalibráciou, možnosťami spracovania, multispektrálnymi indexmi a formátmi exportu.
 
-## Accessing Project Settings
+## Prístup k nastaveniam projektu
 
-1. Open your project in Chloros
-2. Click the **Project Settings** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> icon in the left sidebar
-3. The Project Settings panel displays all configuration options
+1. Otvorte svoj projekt v Chloros
+2. Kliknite na ikonu **Nastavenia projektu** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> v ľavom bočnom paneli
+3. Panel Nastavenia projektu zobrazuje všetky možnosti konfigurácie
 
-{% hint style="info" %}
-**Settings are saved automatically** with your project. When you reopen a project, all settings are restored.
+{% hint style=&quot;info&quot; %}
+**Nastavenia sa automaticky ukladajú** spolu s projektom. Keď projekt znovu otvoríte, všetky nastavenia sa obnovia.
 {% endhint %}
 
 ***
 
-## Quick Setup for Common Workflows
+## Rýchle nastavenie pre bežné pracovné postupy
 
-### Default Settings (Recommended for Most Users)
+### Predvolené nastavenia (odporúčané pre väčšinu používateľov)
 
-For typical MAPIR Survey3 camera workflows, the default settings work well:
+Pre typické pracovné postupy s kamerou MAPIR Survey3 sú predvolené nastavenia vhodné:
 
-* ✅ **Vignette correction**: Enabled
-* ✅ **Reflectance calibration**: Enabled (requires images of MAPIR targets)
-* ✅ **Debayer method**: High Quality (Faster)
-* ✅ **Export format**: TIFF (16-bit)
+* ✅ **Korekcia vinetácie**: Povolená
+* ✅ **Kalibrácia odrazivosti**: Povolená (vyžaduje obrázky cieľov MAPIR)
+* ✅ **Metóda Debayer**: Vysoká kvalita (rýchlejšia)
+* ✅ **Formát exportu**: TIFF (16-bitový)
 
-Simply import your images and start processing with these defaults.
+Stačí importovať obrázky a začať spracúvanie s týmito predvolenými nastaveniami.
 
 ***
 
-## Project Settings Overview
+## Prehľad nastavení projektu
 
-The Project Settings panel is organized into several categories. Below is a summary of each section. For complete documentation, see [Project Settings](../project-settings/page-2.md).
+Panel Nastavenia projektu je rozdelený do niekoľkých kategórií. Nižšie je uvedený prehľad jednotlivých častí. Kompletnú dokumentáciu nájdete v časti [Nastavenia projektu](../project-settings/project-settings.md).
 
-### Target Detection
+### Detekcia cieľov
 
-Controls how Chloros identifies calibration targets in your images.
+Ovláda spôsob, akým Chloros identifikuje kalibračné ciele vo vašich obrázkoch.
 
-**Key settings:**
+**Kľúčové nastavenia:**
 
-* **Minimum calibration sample area**: Size threshold for target detection (default: 25 pixels)
-* **Minimum target clustering**: Similarity threshold for grouping target regions (default: 60)
+* **Minimálna plocha vzorky kalibrácie**: Prahová hodnota veľkosti pre detekciu cieľov (predvolené nastavenie: 25 pixelov)
+* **Minimálne zoskupovanie cieľov**: Prahová hodnota podobnosti pre zoskupovanie cieľových oblastí (predvolené nastavenie: 60)
 
-**When to adjust:**
+**Kedy upraviť:**
 
-* Increase sample area if getting false detections
-* Decrease if targets aren't being detected
-* Adjust clustering if targets are being split into multiple detections
+* Zväčšite plochu vzorky, ak dochádza k falošným detekciám.
+* Zmenšite ju, ak sa ciele nedetekujú.
+* Upravte zoskupovanie, ak sa ciele rozdeľujú na viacero detekcií.
 
-### Processing
+### Spracovanie
 
-Main image processing and calibration options.
+Hlavné možnosti spracovania a kalibrácie obrázkov.
 
-**Key settings:**
+**Kľúčové nastavenia:**
 
-* **Vignette correction**: Compensates for lens darkening at edges ✅ Recommended
-* **Reflectance calibration**: Normalizes values using calibration targets ✅ Recommended
-* **Debayer method**: Algorithm for converting RAW to 3-channels multi-spectral
-* **Minimum recalibration interval**: Time between using calibration targets (0 = use all)
+* **Korekcia vinetácie**: Kompenzuje stmavnutie objektívu na okrajoch ✅ Odporúčané
+* **Kalibrácia odrazivosti**: Normalizuje hodnoty pomocou kalibračných cieľov ✅ Odporúčané
+* **Metóda Debayer**: Algoritmus na konverziu formátu RAW na 3-kanálový multispektrálny
+* **Minimálny interval rekalibrácie**: Čas medzi použitím kalibračných cieľov (0 = použiť všetky)
 
-**Advanced settings:**
+**Pokročilé nastavenia:**
 
-* **Light sensor timezone offset**: For PPK time synchronization (default: 0)
-* **Apply PPK corrections**: Uses GPS/exposure pin data from .daq files
-* **Exposure Pin 1/2**: Assigns cameras to exposure pins for dual-camera setups
+* **Posun časového pásma svetelného senzora**: Pre synchronizáciu času PPK (predvolené: 0)
+* **Použiť korekcie PPK**: Používa údaje GPS/expozície z .daq súborov
+* **Expozícia Pin 1/2**: Priraďuje kamery k expozičným pinom pre nastavenia dvoch kamier
 
-### Index (Multispectral Indices)
+### Index (multispektrálne indexy)
 
-Configure which vegetation indices to calculate and export.
+Nakonfigurujte, ktoré vegetačné indexy sa majú vypočítať a exportovať.
 
-**How to add indices:**
+**Ako pridať indexy:**
 
-1. Click **"Add index"** button
-2. Select an index from the dropdown menu (NDVI, NDRE, GNDVI, etc.)
-3. Configure visualization settings (LUT colors, value ranges)
-4. Add multiple indices as needed
+1. Kliknite na tlačidlo **„Pridať index“**
+2. Vyberte index z roletového menu (NDVI, NDRE, GNDVI atď.)
+3. Nakonfigurujte nastavenia vizualizácie (farby LUT, rozsahy hodnôt)
+4. Pridajte podľa potreby viacero indexov
 
-**Popular indices:**
+**Populárne indexy:**
 
-* **NDVI**: General vegetation health (most common)
-* **NDRE**: Early stress detection with RedEdge
-* **GNDVI**: Chlorophyll concentration sensitive
-* **OSAVI**: Works well with visible soil
-* **EVI**: High leaf area index (LAI) regions
+* **NDVI**: Všeobecný zdravotný stav vegetácie (najbežnejší)
+* **NDRE**: Včasná detekcia stresu s RedEdge
+* **GNDVI**: Citlivý na koncentráciu chlorofylu
+* **OSAVI**: Funguje dobre s viditeľnou pôdou
+* **EVI**: Oblasti s vysokým indexom listovej plochy (LAI)
 
-**Custom formulas (Chloros+ only):**
+**Vlastné vzorce (len Chloros+):**
 
-* Create custom multispectral index formulas
-* Use band math with all image channels
-* Save custom formulas for reuse
+* Vytvorte vlastné multispektrálne indexové vzorce
+* Použite matematiku pásma so všetkými obrazovými kanálmi
+* Uložte vlastné vzorce na opätovné použitie
 
-For all available indices and formulas, see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md).
+Všetky dostupné indexy a vzorce nájdete v časti [Multispektrálne indexové vzorce](../project-settings/multispectral-index-formulas.md).
 
 ### Export
 
-Controls output file format and quality.
+Ovláda formát a kvalitu výstupného súboru.
 
-**Available formats:**
+**Dostupné formáty:**
 
-* **TIFF (16-bit)**: Recommended for GIS and scientific analysis (0-65,535 range)
-* **TIFF (32-bit, Percent)**: Floating-point reflectance values (0.0-1.0 range)
-* **PNG (8-bit)**: Lossless compression for visualization (0-255 range)
-* **JPG (8-bit)**: Smallest files, lossy compression (0-255 range)
-
-***
-
-## Saving and Loading Settings
-
-### Save Project Template
-
-Create reusable templates for consistent workflows:
-
-1. Configure all desired settings in the Project Settings panel
-2. Scroll to **"Save Project Template"** section at the bottom
-3. Enter a descriptive template name (e.g., "Survey3N\_RGN\_Agriculture")
-4. Click the save icon
-
-**Benefits:**
-
-* Apply identical settings across multiple projects
-* Share configurations with team members
-* Maintain consistency for repeated surveys
-
-### Load Template on New Project
-
-When creating a new project:
-
-1. Select **"New Project"** from main menu
-2. Choose **"Load from template"** option
-3. Select your saved template
-4. All settings are automatically applied
-
-### Working Directory
-
-The **"Save Project Folder"** setting specifies where new projects are created by default:
-
-* **Default location**: `C:\Users\[Username]\Chloros Projects`
-* **Change location**: Click edit icon and select new folder
-* **When to change**:
-  * Network drive for team collaboration
-  * Different drive with more storage space
-  * Organized folder structure by year/client
+* **TIFF (16-bitový)**: Odporúčaný pre GIS a vedeckú analýzu (rozsah 0–65 535)
+* **TIFF (32-bitový, percentuálny)**: Hodnoty odrazivosti s pohyblivou desatinnou čiarkou (rozsah 0,0–1,0)
+* **PNG (8-bit)**: Bezstratová kompresia pre vizualizáciu (rozsah 0–255)
+* **JPG (8-bit)**: Najmenšie súbory, stratová kompresia (rozsah 0–255)
 
 ***
 
-## PPK (Post-Processed Kinematic) Setup
+## Ukladanie a načítanie nastavení
 
-If using MAPIR DAQ recorders with GPS for precise geolocation:
+### Uloženie šablóny projektu
 
-### Prerequisites
+Vytvorte opakovane použiteľné šablóny pre konzistentné pracovné postupy:
 
-* MAPIR DAQ with GPS (GNSS) module
-* .daq log file with exposure pin entries
-* Camera connected to DAQ exposure pins during capture session
+1. Nakonfigurujte všetky požadované nastavenia v paneli Nastavenia projektu.
+2. Prejdite do sekcie **„Uložiť šablónu projektu“** v dolnej časti.
+3. Zadajte popisný názov šablóny (napr. „Survey3N\_RGN\_Agriculture“).
+4. Kliknite na ikonu uloženia.
 
-### Configuration Steps
+**Výhody:**
 
-1. Place the .daq log file in your project folder
-2. In Project Settings, enable **"Apply PPK corrections"** checkbox
-3. Set **"Light sensor timezone offset"** if needed (default: 0 for UTC)
-4. Assign cameras to exposure pins:
-   * **Single camera**: Automatically assigned to Pin 1
-   * **Dual cameras**: Manually assign each camera to correct pin
+* Použite identické nastavenia vo viacerých projektoch.
+* Zdieľajte konfigurácie s členmi tímu.
+* Zachovajte konzistentnosť pri opakovaných prieskumoch.
 
-**Exposure Pin Assignment:**
+### Načítanie šablóny do nového projektu
 
-* **Exposure Pin 1**: Select camera model from dropdown
-* **Exposure Pin 2**: Select second camera or "Do Not Use"
-* Same camera cannot be assigned to both pins
+Pri vytváraní nového projektu:
 
-{% hint style="warning" %}
-**Important**: Exposure pins must be correctly assigned to their respective cameras. Incorrect assignment will result in wrong geolocation data.
+1. V hlavnom menu vyberte **„Nový projekt“**.
+2. Zvoľte možnosť **„Načítať zo šablóny“**.
+3. Vyberte uloženú šablónu.
+4. Všetky nastavenia sa automaticky použijú.
+
+### Pracovný adresár
+
+Nastavenie **„Uložiť priečinok projektu“** určuje, kde sa nové projekty vytvárajú štandardne:
+
+* **Štandardné umiestnenie**: `C:\Users\[Username]\Chloros Projects`
+* **Zmena umiestnenia**: Kliknite na ikonu úprav a vyberte nový priečinok.
+* **Kedy zmeniť**:
+  * Sieťový disk pre spoluprácu tímu.
+  * Iný disk s väčším úložným priestorom.
+  * Usporiadaná štruktúra priečinkov podľa roka/klienta.
+
+***
+
+## Nastavenie PPK (Post-Processed Kinematic)
+
+Ak používate záznamníky MAPIR DAQ s GPS pre presnú geolokalizáciu:
+
+### Predpoklady
+
+* MAPIR DAQ s modulom GPS (GNSS)
+* .daq log súbor s údajmi o expozícií
+* Kamera pripojená k expozičným pinom DAQ počas snímania
+
+### Konfiguračné kroky
+
+1. Umiestnite log súbor .daq do priečinka projektu.
+2. V nastaveniach projektu zaškrtnite políčko **„Použiť PPK korekcie“**.
+3. V prípade potreby nastavte **„Časové posunutie svetelného senzora“** (predvolené nastavenie: 0 pre UTC).
+4. Priraďte kamery k expozičným pinom:
+   * **Jedna kamera**: Automaticky priradená k pinu 1.
+   * **Dve kamery**: Ručne priraďte každú kameru k správnemu pinu.
+
+**Priradenie expozičných pinov:**
+
+* **Expozičný pin 1**: Vyberte model kamery z roletového menu.
+* **Expozičný pin 2**: Vyberte druhú kameru alebo „Nepoužívať“.
+* Tú istú kameru nemožno priradiť k obom pinom.
+
+{% hint style=&quot;warning&quot; %}
+**Dôležité**: Kolíky expozície musia byť správne priradené k príslušným kamerám. Nesprávne priradenie bude mať za následok nesprávne údaje o geolokácii.
 {% endhint %}
 
 ***
 
-## Advanced Scenarios
+## Pokročilé scenáre
 
-### Multi-Camera Projects
+### Projekty s viacerými kamerami
 
-When processing images from multiple MAPIR cameras in one project:
+Pri spracovaní obrázkov z viacerých kamier MAPIR v jednom projekte:
 
-1. Chloros automatically detects each camera model
-2. Each camera gets appropriate processing profile
-3. PPK: Manually assign each camera to correct exposure pin
-4. All cameras use same export format and indices
+1. Chloros automaticky detekuje každý model kamery
+2. Každá kamera dostane príslušný profil spracovania
+3. PPK: Ručne priraďte každej kamere správny expozičný pin.
+4. Všetky kamery používajú rovnaký formát exportu a indexy.
 
-**Example**: Survey3W RGN + Survey3N OCN dual-camera rig
+**Príklad**: Survey3W RGN + Survey3N OCN dvojitá kamera
 
-### Time-Lapse or Multi-Date Surveys
+### Časozberné alebo viacdňové prieskumy
 
-For repeated surveys of the same area over time:
+Pre opakované prieskumy tej istej oblasti v priebehu času:
 
-1. Create a template with your standard settings
-2. Use consistent calibration target setup each session
-3. Process each date as a separate project
-4. Use identical settings for comparable results
-5. Export in same format for temporal analysis
+1. Vytvorte šablónu so štandardnými nastaveniami.
+2. Používajte konzistentné nastavenie kalibračného cieľa v každej relácii.
+3. Spracujte každý deň ako samostatný projekt.
+4. Používajte identické nastavenia pre porovnateľné výsledky.
+5. Exportujte v rovnakom formáte pre časovú analýzu.
 
-### Large Datasets
+### Veľké dátové súbory
 
-For projects with many images (500+):
+Pre projekty s veľkým množstvom obrázkov (500+):
 
-* Consider breaking into smaller projects by date or area
-* Use Chloros+ parallel processing for faster results
-* Consider CLI or API for batch automation
-* Adjust minimum recalibration interval to reduce target detection time
-
-***
-
-## Verifying Your Settings
-
-Before starting to process, review these key settings:
-
-* [ ] Camera model correctly detected in File Browser
-* [ ] Vignette correction enabled
-* [ ] Reflectance calibration enabled
-* [ ] At least one calibration target image imported
-* [ ] Desired multispectral indices added
-* [ ] Export format appropriate for your workflow
-* [ ] PPK settings configured (if using .daq with expposure events)
+* Zvážte rozdelenie na menšie projekty podľa dátumu alebo oblasti.
+* Použite paralelné spracovanie Chloros+ pre rýchlejšie výsledky.
+* Zvážte použitie CLI alebo API pre automatizáciu dávok.
+* Upravte minimálny interval rekalibrácie, aby ste skrátili čas detekcie cieľa.
 
 ***
 
-## Next Steps
+## Overenie nastavení
 
-Once your settings are configured:
+Pred začatím spracovania skontrolujte tieto kľúčové nastavenia:
 
-1. **Mark calibration target images** - See [Choosing Target Images](choosing-target-images.md)
-2. **Start processing** - See [Starting the Processing](starting-the-processing.md)
-3. **Monitor progress** - See [Monitoring the Processing](monitoring-the-processing.md)
+* [ ] Model kamery správne detegovaný v prehliadači súborov
+* [ ] Korekcia vinetácie povolená
+* [ ] Kalibrácia odrazivosti povolená
+* [ ] Importovaný aspoň jeden kalibračný cieľový obrázok
+* [ ] Pridané požadované multispektrálne indexy
+* [ ] Exportný formát vhodný pre váš pracovný postup
+* [ ] Konfigurované nastavenia PPK (ak používate .daq s expozičnými udalosťami)
 
-For complete details on all available settings, see the [Project Settings](../project-settings/page-2.md) reference documentation.
+***
+
+## Ďalšie kroky
+
+Po nakonfigurovaní nastavení:
+
+1. **Označte kalibračné cieľové obrázky** – pozrite si [Výber cieľových obrázkov](choosing-target-images.md)
+2. **Spustite spracovanie** – pozrite si [Spustenie spracovania](starting-the-processing.md)
+3. **Sledujte priebeh** – pozrite si [Sledovanie spracovania](monitoring-the-processing.md)
+
+Úplné podrobnosti o všetkých dostupných nastaveniach nájdete v referenčnej dokumentácii [Nastavenia projektu](../project-settings/project-settings.md).

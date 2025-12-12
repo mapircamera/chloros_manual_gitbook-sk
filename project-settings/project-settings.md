@@ -1,255 +1,255 @@
-# Project Settings
+# Nastavenia projektu
 
-The Project Settings <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> sidebar in Chloros allows you to configure all aspects of image processing, calibration target detection, multispectral index calculations, and export options for your project. These settings are saved with your project and can be saved as templates for reuse across multiple projects.
+Bočný panel Nastavenia projektu <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> v programe Chloros vám umožňuje konfigurovať všetky aspekty spracovania obrazu, detekciu kalibračného cieľa, výpočty multispektrálnych indexov a možnosti exportu pre váš projekt. Tieto nastavenia sa ukladajú spolu s vaším projektom a môžu sa uložiť ako šablóny na opätovné použitie vo viacerých projektoch.
 
-## Accessing Project Settings
+## Prístup k nastaveniam projektu
 
-To access Project Settings:
+Prístup k nastaveniam projektu:
 
-1. Open a project in Chloros
-2. Click the **Project Settings**  <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> tab in the left sidebar
-3. The settings panel will display all available configuration options organized by category
-
-***
-
-## Target Detection
-
-These settings control how Chloros detects and processes calibration targets in your images.
-
-### Minimum calibration sample area (px)
-
-* **Type**: Number
-* **Range**: 0 to 10,000 pixels
-* **Default**: 25 pixels
-* **Description**: Sets the minimum area (in pixels) required for a detected region to be considered a valid calibration target sample. Smaller values will detect smaller targets but may increase false positives. Larger values require bigger, clearer target regions for detection.
-* **When to adjust**:
-  * Increase if you're getting false detections on small image artifacts
-  * Decrease if your calibration targets appear small in your images and are not being detected
-
-### Minimum Target Clustering (0-100)
-
-* **Type**: Number
-* **Range**: 0 to 100
-* **Default**: 60
-* **Description**: Controls the clustering threshold for grouping similar colored regions when detecting calibration targets. Higher values require more similar colors to be grouped together, resulting in more conservative target detection. Lower values allow more color variation within a target group.
-* **When to adjust**:
-  * Increase if calibration targets are being split into multiple detections
-  * Decrease if calibration targets with color variation are not being fully detected
+1. Otvorte projekt v Chloros
+2. Kliknite na kartu **Nastavenia projektu**  <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> v ľavom bočnom paneli.
+3. Na paneli nastavení sa zobrazia všetky dostupné možnosti konfigurácie usporiadané podľa kategórií.
 
 ***
 
-## Processing
+## Detekcia cieľov
 
-These settings control how Chloros processes and calibrates your images.
+Tieto nastavenia ovládajú spôsob, akým Chloros detekuje a spracováva kalibračné ciele vo vašich obrázkoch.
 
-### Vignette correction
+### Minimálna plocha kalibračnej vzorky (px)
 
-* **Type**: Checkbox
-* **Default**: Enabled (checked)
-* **Description**: Applies vignette correction to compensate for lens darkening at the edges of images. Vignetting is a common optical phenomenon where the corners and edges of an image appear darker than the center due to lens characteristics.
-* **When to disable**: Only disable if your camera/lens combination has already applied vignette correction, or if you want to manually correct vignetting in post-processing.
+* **Typ**: Číslo
+* **Rozsah**: 0 až 10 000 pixelov
+* **Predvolené**: 25 pixelov
+* **Popis**: Nastavuje minimálnu plochu (v pixeloch) potrebnú na to, aby bola detegovaná oblasť považovaná za platnú vzorku kalibračného cieľa. Menšie hodnoty detegujú menšie ciele, ale môžu zvýšiť počet falošných pozitív. Väčšie hodnoty vyžadujú väčšie a jasnejšie cieľové oblasti na detegáciu.
+* **Kedy upraviť**:
+  * Zvýšte, ak sa vám zobrazujú falošné detekcie na malých artefaktoch obrázkov.
+  * Znížte, ak sa vaše kalibračné ciele zobrazujú na obrázkoch ako malé a nie sú detegované.
 
-### Reflectance calibration / white balance
+### Minimálne zhlukovanie cieľov (0–100)
 
-* **Type**: Checkbox
-* **Default**: Enabled (checked)
-* **Description**: Enables automatic reflectance calibration using detected calibration targets in your images. This normalizes the reflectance values across your dataset and ensures consistent measurements regardless of lighting conditions.
-* **When to disable**: Disable only if you want to process raw, uncalibrated images or if you're using a different calibration workflow.
+* **Typ**: Číslo
+* **Rozsah**: 0 až 100
+* **Predvolené nastavenie**: 60
+* **Popis**: Ovláda prah zhlukovania pre zoskupovanie podobných farebných oblastí pri detekcii kalibračných cieľov. Vyššie hodnoty vyžadujú zoskupenie podobnejších farieb, čo vedie k konzervatívnejšej detekcii cieľov. Nižšie hodnoty umožňujú väčšiu farebnú variabilitu v rámci cieľovej skupiny.
+* **Kedy nastaviť**:
+  * Zvýšte, ak sa kalibračné ciele rozdeľujú na viacero detekcií.
+  * Znížte, ak sa kalibračné ciele s farebnými variáciami nedetekujú úplne.
 
-### Debayer method
+***
 
-* **Type**: Dropdown selection
-* **Options**:
-  * High Quality (Faster) - Currently the only option available
-* **Default**: High Quality (Faster)
-* **Description**: Selects the demosaicing algorithm used to convert raw Bayer pattern sensor data into full-color images. The "High Quality (Faster)" method provides an optimal balance between processing speed and image quality.
-* **Note**: Additional debayer methods may be added in future versions of Chloros.
+## Spracovanie
 
-### Minimum recalibration interval
+Tieto nastavenia ovládajú spôsob, akým Chloros spracováva a kalibruje vaše obrázky.
 
-* **Type**: Number
-* **Range**: 0 to 3,600 seconds
-* **Default**: 0 seconds
-* **Description**: Sets the minimum time interval (in seconds) between using calibration targets. When set to 0, Chloros will use every detected calibration target. When set to a higher value, Chloros will only use calibration targets that are separated by at least this many seconds, reducing processing time for datasets with frequent calibration target captures.
-* **When to adjust**:
-  * Set to 0 for maximum calibration accuracy when lighting conditions vary
-  * Increase (e.g., to 60-300 seconds) for faster processing when lighting is consistent and you have frequent calibration target images
+### Korekcia vinetácie
 
-### Light sensor timezone offset
+* **Typ**: Začiarkavacie políčko
+* **Predvolené nastavenie**: Povolené (začiarknuté)
+* **Popis**: Uplatňuje korekciu vinetácie na kompenzáciu stmavnutia objektívu na okrajoch obrázkov. Vinetácia je bežný optický jav, pri ktorom rohy a okraje obrázku vyzerajú tmavšie ako stred v dôsledku vlastností objektívu.
+* **Kedy vypnúť**: Vypnite len v prípade, ak vaša kombinácia fotoaparátu a objektívu už použila korekciu vinetácie, alebo ak chcete vinetáciu manuálne korigovať v postprocesingu.
 
-* **Type**: Number
-* **Range**: -12 to +12 hours
-* **Default**: 0 hours
-* **Description**: Specifies the timezone offset (in hours from UTC) for light sensor data timestamps. This is used when processing PPK (Post-Processed Kinematic) data files to ensure correct time synchronization between image captures and GPS data.
-* **When to adjust**: Set this to your local timezone offset if your PPK data uses local time instead of UTC. For example:
-  * Pacific Time: -8 or -7 (depending on DST)
-  * Eastern Time: -5 or -4 (depending on DST)
-  * Central European Time: +1 or +2 (depending on DST)
+### Kalibrácia odrazivosti / vyváženie bielej
 
-### Apply PPK corrections
+* **Typ**: Začiarkavacie políčko
+* **Predvolené nastavenie**: Povolené (zaškrtnuté)
+* **Popis**: Umožňuje automatickú kalibráciu odrazivosti pomocou detegovaných kalibračných cieľov vo vašich snímkach. Tým sa normalizujú hodnoty odrazivosti v celom súbore údajov a zabezpečia sa konzistentné merania bez ohľadu na podmienky osvetlenia.
+* **Kedy vypnúť**: Vypnite len v prípade, ak chcete spracovávať surové, nekalibrované snímky alebo ak používate iný kalibračný pracovný postup.
 
-* **Type**: Checkbox
-* **Default**: Disabled (unchecked)
-* **Description**: Enables the use of Post-Processed Kinematic (PPK) corrections from MAPIR DAQ recorders containing a GPS (GNSS). When enabled, Chloros will use any .daq log files containing exposure pin data in your project directory and apply precise geolocation corrections to your images.
-* **Requirement**: .daq log file with exposure pin entries must be present in your project directory
-* **When to enable**: It is recommended to always enable PPK correction if you have exposure feedback entries in your .daq log file.
+### Metóda Debayer
 
-### Exposure Pin 1
+* **Typ**: Rozbaľovacie menu
+* **Možnosti**:
+  * Vysoká kvalita (rýchlejšie) – v súčasnosti jediná dostupná možnosť
+* **Predvolené nastavenie**: Vysoká kvalita (rýchlejšie)
+* **Popis**: Vyberá algoritmus demosaicingu, ktorý sa používa na konverziu surových údajov snímača Bayerovho vzoru na farebné obrázky. Metóda „Vysoká kvalita (rýchlejšie)“ poskytuje optimálnu rovnováhu medzi rýchlosťou spracovania a kvalitou obrázkov.
+* **Poznámka**: V budúcich verziách Chloros môžu byť pridané ďalšie metódy debayer.
 
-* **Type**: Dropdown selection
-* **Visibility**: Only visible when "Apply PPK corrections" is enabled AND exposure data is available for Pin 1
-* **Options**:
-  * Camera model names detected in the project
-  * "Do Not Use" - Ignore this exposure pin
-* **Default**: Auto-selected based on project configuration
-* **Description**: Assigns a specific camera to Exposure Pin 1 for PPK time synchronization. The exposure pin records the exact timing when the camera shutter is triggered, which is critical for accurate PPK geolocation.
-* **Auto-selection behavior**:
-  * Single camera + single pin: Automatically selects the camera
-  * Single camera + two pins: Pin 1 automatically assigned to the camera
-  * Multiple cameras: Manual selection required
+### Minimálny interval rekalibrácie
 
-### Exposure Pin 2
+* **Typ**: Číslo
+* **Rozsah**: 0 až 3 600 sekúnd
+* **Predvolené nastavenie**: 0 sekúnd
+* **Popis**: Nastavuje minimálny časový interval (v sekundách) medzi použitím kalibračných cieľov. Ak je nastavené na 0, Chloros použije každý detegovaný kalibračný cieľ. Ak je nastavené na vyššiu hodnotu, Chloros použije len kalibračné ciele, ktoré sú od seba vzdialené aspoň o tento počet sekúnd, čím sa skráti čas spracovania pre súbory údajov s častým zachytávaním kalibračných cieľov.
+* **Kedy nastaviť**:
+  * Nastavte na 0 pre maximálnu presnosť kalibrácie, ak sa menia svetelné podmienky.
+  * Zvýšte (napr. na 60–300 sekúnd) pre rýchlejšie spracovanie, ak je osvetlenie konzistentné a máte časté obrazy kalibračných cieľov.
 
-* **Type**: Dropdown selection
-* **Visibility**: Only visible when "Apply PPK corrections" is enabled AND exposure data is available for Pin 2
-* **Options**:
-  * Camera model names detected in the project
-  * "Do Not Use" - Ignore this exposure pin
-* **Default**: Auto-selected based on project configuration
-* **Description**: Assigns a specific camera to Exposure Pin 2 for PPK time synchronization when using a dual-camera setup.
-* **Auto-selection behavior**:
-  * Single camera + single pin: Pin 2 automatically set to "Do Not Use"
-  * Single camera + two pins: Pin 2 automatically set to "Do Not Use"
-  * Multiple cameras: Manual selection required
-* **Note**: The same camera cannot be assigned to both Pin 1 and Pin 2 simultaneously.
+### Časový posun svetelného senzora
+
+* **Typ**: Číslo
+* **Rozsah**: -12 až +12 hodín
+* **Predvolené nastavenie**: 0 hodín
+* **Popis**: Určuje posun časového pásma (v hodinách od UTC) pre časové značky údajov svetelného senzora. Používa sa pri spracovaní súborov údajov PPK (Post-Processed Kinematic) na zabezpečenie správnej synchronizácie času medzi zachytením obrazu a údajmi GPS.
+* **Kedy nastaviť**: Nastavte to na posun vášho miestneho časového pásma, ak vaše údaje PPK používajú miestny čas namiesto UTC. Napríklad:
+  * Pacifický čas: -8 alebo -7 (v závislosti od letného času)
+  * Východný čas: -5 alebo -4 (v závislosti od letného času)
+  * Stredoeurópsky čas: +1 alebo +2 (v závislosti od letného času)
+
+### Použiť korekcie PPK
+
+* **Typ**: Začiarkavacie políčko
+* **Predvolené nastavenie**: Vypnuté (nezačiarknuté)
+* **Popis**: Umožňuje použitie korekcií Post-Processed Kinematic (PPK) z MAPIR DAQ záznamníkov obsahujúcich GPS (GNSS). Keď je táto funkcia povolená, Chloros použije všetky súbory protokolu .daq obsahujúce údaje o expozícií v adresári vášho projektu a uplatní presné geolokačné korekcie na vaše obrázky.
+* **Požiadavka**: V adresári vášho projektu musí byť prítomný súbor protokolu .daq s údajmi o expozícií.
+* **Kedy povoliť**: Odporúča sa vždy povoliť korekciu PPK, ak máte v súbore protokolu .daq údaje o expozícií.
+
+### Expozíciou pin 1
+
+* **Typ**: Výber z roletového menu
+* **Viditeľnosť**: Viditeľné len vtedy, ak je povolená funkcia „Použiť korekcie PPK“ A sú k dispozícii údaje o expozícii pre pin 1.
+* **Možnosti**:
+  * Názvy modelov kamier zistené v projekte.
+  * „Nepoužívať“ – ignorovať tento expozičný pin.
+* **Predvolené nastavenie**: Automaticky vybrané na základe konfigurácie projektu.
+* **Popis**: Priraďuje konkrétnu kameru k expozičnému pinu 1 pre synchronizáciu času PPK. Expozičný pin zaznamenáva presný čas spustenia uzávierky fotoaparátu, čo je kritické pre presnú geolokalizáciu PPK.
+* **Správanie automatického výberu**:
+  * Jedna kamera + jeden pin: Automaticky vyberie kameru.
+  * Jedna kamera + dva piny: Pin 1 automaticky priradený k kamere.
+  * Viac kamier: Vyžaduje sa ručný výber
+
+### Pin expozície 2
+
+* **Typ**: Výber z roletového menu
+* **Viditeľnosť**: Viditeľný len vtedy, ak je povolená funkcia „Použiť korekcie PPK“ A sú k dispozícii údaje o expozícii pre pin 2
+* **Možnosti**:
+  * Názvy modelov kamier zistené v projekte
+  * „Nepoužívať“ – ignorovať tento pin expozície
+* **Predvolené**: Automaticky vybrané na základe konfigurácie projektu
+* **Popis**: Pri použití konfigurácie s dvoma kamerami priraďuje konkrétnu kameru k expozičnému kolíku 2 na synchronizáciu času PPK.
+* **Správanie automatického výberu**:
+  * Jedna kamera + jeden kolík: Kolík 2 je automaticky nastavený na „Nepoužívať“
+  * Jedna kamera + dva piny: Pin 2 sa automaticky nastaví na „Nepoužívať“
+  * Viac kamier: Vyžaduje sa ručný výber
+* **Poznámka**: Tú istú kameru nemožno priradiť súčasne k pinu 1 aj k pinu 2.
 
 ***
 
 ## Index
 
-These settings allow you to configure multispectral indices for analysis and visualization.
+Tieto nastavenia vám umožňujú konfigurovať multispektrálne indexy na analýzu a vizualizáciu.
 
-### Add index
+### Pridať index
 
-* **Type**: Special index configuration panel
-* **Description**: Opens an interactive panel where you can select and configure multispectral vegetation indices (NDVI, NDRE, EVI, etc.) to calculate during image processing. You can add multiple indices, each with its own visualization settings.
-* **Available indices**: The system includes 30+ pre-defined multispectral indices including:
-  * NDVI (Normalized Difference Vegetation Index)
-  * NDRE (Normalized Difference RedEdge)
-  * EVI (Enhanced Vegetation Index)
+* **Typ**: Špeciálny panel konfigurácie indexu
+* **Popis**: Otvorí interaktívny panel, kde môžete vybrať a nakonfigurovať multispektrálne vegetačné indexy (NDVI, NDRE, EVI atď.) na výpočet počas spracovania obrazu. Môžete pridať viacero indexov, každý s vlastnými nastaveniami vizualizácie.
+* **Dostupné indexy**: Systém obsahuje viac ako 30 preddefinovaných multispektrálnych indexov, vrátane:
+  * NDVI (normalizovaný rozdielový index vegetácie)
+  * NDRE (normalizovaný rozdielový RedEdge)
+  * EVI (vylepšený index vegetácie)
   * GNDVI, SAVI, OSAVI, MSAVI2
-  * And many more (see [Multispectral Index Formulas](multispectral-index-formulas.md) for complete list)
-* **Features**:
-  * Select from pre-defined index formulas
-  * Configure visualization color gradients (LUT - Look-Up Tables)
-  * Set threshold values for analysis
-  * Create custom index formulas
+  * A mnoho ďalších (kompletný zoznam nájdete v časti [Vzorec multispektrálnych indexov](multispectral-index-formulas.md) pre kompletný zoznam)
+* **Funkcie**:
+  * Výber z preddefinovaných vzorcov indexov
+  * Konfigurácia farebných prechodov vizualizácie (LUT – vyhľadávacie tabuľky)
+  * Nastavenie prahových hodnôt pre analýzu
+  * Vytvorenie vlastných vzorcov indexov
 
-### Custom Formulas (Chloros+ Feature)
+### Vlastné vzorce (funkcia Chloros+)
 
-* **Type**: Array of custom formula definitions
-* **Description**: Allows you to create and save custom multispectral index formulas using band math. Custom formulas are saved with your project settings and can be used just like built-in indices.
-* **How to create**:
-  1. In the Index configuration panel, look for the custom formula option
-  2. Define your formula using band identifiers (e.g., NIR, Red, Green, Blue)
-  3. Save the formula with a descriptive name
-* **Formula syntax**: Standard mathematical operations are supported, including:
-  * Arithmetic: `+`, `-`, `*`, `/`
-  * Parentheses for order of operations
-  * Band references: NIR, Red, Green, Blue, RedEdge, Cyan, Orange, NIR1, NIR2
+* **Typ**: Pole definícií vlastných vzorcov
+* **Popis**: Umožňuje vytvárať a ukladať vlastné multispektrálne indexové vzorce pomocou matematických operácií s pásmami. Vlastné vzorce sa ukladajú spolu s nastaveniami projektu a dajú sa používať rovnako ako vstavané indexy.
+* **Ako vytvoriť**:
+  1. V paneli konfigurácie indexu vyhľadajte možnosť vlastného vzorca.
+  2. Definujte svoj vzorec pomocou identifikátorov pásiem (napr. NIR, Red, Green, Blue).
+  3. Uložte vzorec s popisným názvom.
+* **Syntax vzorca**: Podporované sú štandardné matematické operácie, vrátane:
+  * Aritmetika: `+`, `-`, `*`, `/`
+  * Zátvorky pre poradie operácií
+  * Odkazy na pásma: NIR, Red, Green, Blue, RedEdge, Cyan, Orange, NIR1, NIR2
 
 ***
 
 ## Export
 
-These settings control the format and quality of exported processed images.
+Tieto nastavenia ovládajú formát a kvalitu exportovaných spracovaných obrázkov.
 
-### Calibrated image format
+### Kalibrovaný formát obrázku
 
-* **Type**: Dropdown selection
-* **Options**:
-  * **TIFF (16-bit)** - Uncompressed 16-bit TIFF format
-  * **TIFF (32-bit, Percent)** - 32-bit floating-point TIFF with reflectance values as percentages
-  * **PNG (8-bit)** - Compressed 8-bit PNG format
-  * **JPG (8-bit)** - Compressed 8-bit JPEG format
-* **Default**: TIFF (16-bit)
-* **Description**: Selects the file format for saving processed and calibrated images.
-* **Format recommendations**:
-  * **TIFF (16-bit)**: Recommended for scientific analysis and professional workflows. Preserves maximum data quality with no compression artifacts. Best for multispectral analysis and further processing in GIS software.
-  * **TIFF (32-bit, Percent)**: Best for workflows that require reflectance values as percentages (0-100%). Offers maximum precision for radiometric measurements.
-  * **PNG (8-bit)**: Good for web viewing and general visualization. Smaller file sizes with lossless compression, but reduced dynamic range.
-  * **JPG (8-bit)**: Smallest file sizes, best for previews and web display only. Uses lossy compression which is not suitable for scientific analysis.
-
-***
-
-## Save Project Template
-
-This feature allows you to save your current project settings as a reusable template.
-
-* **Type**: Text input + Save button
-* **Description**: Enter a descriptive name for your settings template and click the save icon. The template will store all your current project settings (target detection, processing options, indices, and export format) for easy reuse in future projects.
-* **Use cases**:
-  * Create templates for different camera systems (RGB, multispectral, NIR)
-  * Save standard configurations for specific crop types or analysis workflows
-  * Share consistent settings across a team
-* **How to use**:
-  1. Configure all your desired project settings
-  2. Enter a template name (e.g., "RedEdge Survey3 NDVI Standard")
-  3. Click the save icon
-  4. The template can now be loaded when creating new projects
+* **Typ**: Výber z roletového menu
+* **Možnosti**:
+  * **TIFF (16-bit)** – Nekomprimovaný 16-bitový formát TIFF
+  * **TIFF (32-bitový, percentuálny)** – 32-bitový formát TIFF s plávajúcou desatinnou čiarkou s hodnotami odrazivosti vyjadrenými v percentách
+  * **PNG (8-bitový)** - Komprimovaný 8-bitový formát PNG
+  * **JPG (8-bitový)** - Komprimovaný 8-bitový formát JPEG
+* **Predvolené**: TIFF (16-bitový)
+* **Popis**: Vyberá formát súboru na uloženie spracovaných a kalibrovaných obrázkov.
+* **Odporúčania týkajúce sa formátu**:
+  * **TIFF (16-bitový)**: Odporúča sa pre vedecké analýzy a profesionálne pracovné postupy. Zachováva maximálnu kvalitu údajov bez kompresných artefaktov. Najvhodnejší pre multispektrálnu analýzu a ďalšie spracovanie v softvéri GIS.
+  * **TIFF (32-bitový, percentuálny)**: Najvhodnejší pre pracovné postupy, ktoré vyžadujú hodnoty odrazivosti v percentách (0–100 %). Ponúka maximálnu presnosť pre radiometrické merania.
+  * **PNG (8-bitový)**: Vhodný pre prezeranie na webe a všeobecnú vizualizáciu. Menšie veľkosti súborov s bezstratovou kompresiou, ale zníženým dynamickým rozsahom.
+  * **JPG (8-bit)**: Najmenšie veľkosti súborov, najvhodnejšie len pre náhľady a zobrazenie na webe. Používa stratovú kompresiu, ktorá nie je vhodná pre vedeckú analýzu.
 
 ***
 
-## Save Project Folder
+## Uložiť šablónu projektu
 
-This setting specifies where new projects are saved by default.
+Táto funkcia vám umožňuje uložiť aktuálne nastavenia projektu ako šablónu, ktorú môžete opakovane používať.
 
-* **Type**: Directory path display + Edit button
-* **Default**: `C:\Users\[Username]\Chloros Projects`
-* **Description**: Shows the current default directory where new Chloros projects are created. Click the edit icon to select a different directory.
-* **When to change**:
-  * Set to a network drive for team collaboration
-  * Change to a drive with more storage space for large datasets
-  * Organize projects by year, client, or project type in different folders
-* **Note**: Changing this setting only affects NEW projects. Existing projects remain in their original locations.
-
-***
-
-## Settings Persistence
-
-All project settings are automatically saved with your project file (`.mapir` project format). When you reopen a project, all settings are restored exactly as you left them.
-
-### Settings Hierarchy
-
-Settings are applied in the following order:
-
-1. **System defaults** - Built-in defaults defined by Chloros
-2. **Template settings** - If you load a template when creating a project
-3. **Saved project settings** - Settings saved with the project file
-4. **Manual adjustments** - Any changes you make during the current session
-
-### Settings and Image Processing
-
-Most settings changes (especially in Processing and Export categories) will trigger reprocessing of images to reflect the new settings. However, some settings are "export-only" and don't require immediate reprocessing:
-
-* Save Project Template
-* Working Directory
-* Calibrated image format (applies when exporting)
+* **Typ**: Zadávanie textu + tlačidlo Uložiť
+* **Popis**: Zadajte popisný názov šablóny nastavení a kliknite na ikonu Uložiť. Šablóna uloží všetky aktuálne nastavenia projektu (detekcia cieľa, možnosti spracovania, indexy a formát exportu) pre jednoduché opätovné použitie v budúcich projektoch.
+* **Prípady použitia**:
+  * Vytvorte šablóny pre rôzne kamerové systémy (RGB, multispektrálny, NIR)
+  * Uložte štandardné konfigurácie pre konkrétne typy plodín alebo pracovné postupy analýzy
+  * Zdieľajte konzistentné nastavenia v rámci tímu
+* **Ako používať**:
+  1. Nakonfigurujte všetky požadované nastavenia projektu
+  2. Zadajte názov šablóny (napr. „RedEdge Survey3 NDVI Standard“).
+  3. Kliknite na ikonu uloženia.
+  4. Šablónu je teraz možné načítať pri vytváraní nových projektov.
 
 ***
 
-## Best Practices
+## Uložiť priečinok projektu
 
-1. **Start with defaults**: The default settings work well for most MAPIR camera systems and typical workflows.
-2. **Create templates**: Once you've optimized settings for a specific workflow or camera, save them as a template to ensure consistency across projects.
-3. **Test before full processing**: When experimenting with new settings, test on a small subset of images before processing your entire dataset.
-4. **Document your settings**: Use descriptive template names that indicate the camera system, processing type, and intended use (e.g., "Survey3\_RGB\_NDVI\_Agriculture").
-5. **Export format selection**: Choose your export format based on your end use:
-   * Scientific analysis → TIFF (16-bit or 32-bit)
-   * GIS processing → TIFF (16-bit)
-   * Quick visualization → PNG (8-bit)
-   * Web sharing → JPG (8-bit)
+Toto nastavenie určuje, kde sa nové projekty ukladajú ako predvolené.
+
+* **Typ**: Zobrazenie cesty k adresáru + tlačidlo Upraviť
+* **Predvolené**: `C:\Users\[Username]\Chloros Projects`
+* **Popis**: Zobrazuje aktuálny predvolený adresár, kde sa vytvárajú nové projekty Chloros. Kliknutím na ikonu úpravy vyberte iný adresár.
+* **Kedy zmeniť**:
+  * Nastavte sieťový disk pre spoluprácu v tíme.
+  * Zmeňte disk s väčším úložným priestorom pre veľké súbory údajov.
+  * Usporiadajte projekty podľa roka, klienta alebo typu projektu do rôznych priečinkov.
+* **Poznámka**: Zmena tohto nastavenia ovplyvní len NOVÉ projekty. Existujúce projekty zostanú na svojich pôvodných miestach.
 
 ***
 
-For more information on multispectral indices in Chloros, see [Multispectral Index Formulas](multispectral-index-formulas.md) page.
+## Trvalosť nastavení
+
+Všetky nastavenia projektu sa automaticky uložia spolu s vaším projektovým súborom (formát projektu `.mapir`). Keď projekt znovu otvoríte, všetky nastavenia sa obnovia presne tak, ako ste ich nechali.
+
+### Hierarchia nastavení
+
+Nastavenia sa uplatňujú v nasledujúcom poradí:
+
+1. **Východiskové nastavenia systému** – Vstavané východiskové nastavenia definované Chloros
+2. **Nastavenia šablóny** – ak pri vytváraní projektu načítajte šablónu
+3. **Uložené nastavenia projektu** – nastavenia uložené spolu s projektovým súborom
+4. **Ručné úpravy** – akékoľvek zmeny, ktoré vykonáte počas aktuálnej relácie
+
+### Nastavenia a spracovanie obrázkov
+
+Väčšina zmien nastavení (najmä v kategóriách Spracovanie a Export) spustí opätovné spracovanie obrázkov, aby odzrkadľovali nové nastavenia. Niektoré nastavenia sú však „len na export“ a nevyžadujú okamžité opätovné spracovanie:
+
+* Uložiť šablónu projektu
+* Pracovný adresár
+* Kalibrovaný formát obrázkov (platí pri exporte)
+
+***
+
+## Osvedčené postupy
+
+1. **Začnite s predvolenými nastaveniami**: Predvolené nastavenia fungujú dobre pre väčšinu kamerových systémov MAPIR a typické pracovné postupy.
+2. **Vytvorte šablóny**: Po optimalizácii nastavení pre konkrétny pracovný postup alebo kameru ich uložte ako šablónu, aby ste zabezpečili konzistentnosť medzi projektmi.
+3. **Pred úplným spracovaním otestujte**: Pri experimentovaní s novými nastaveniami otestujte malú podmnožinu obrázkov pred spracovaním celého súboru údajov.
+4. **Zaznamenajte svoje nastavenia**: Používajte popisné názvy šablón, ktoré označujú kamerový systém, typ spracovania a zamýšľané použitie (napr. „Survey3\_RGB\_NDVI\_Agriculture“).
+5. **Výber formátu exportu**: Vyberte formát exportu na základe konečného použitia:
+   * Vedecká analýza → TIFF (16-bitový alebo 32-bitový)
+   * Spracovanie GIS → TIFF (16-bitový)
+   * Rýchla vizualizácia → PNG (8-bitový)
+   * Zdieľanie na webe → JPG (8-bitový)
+
+***
+
+Ďalšie informácie o multispektrálnych indexoch v Chloros nájdete na stránke [Vzorce multispektrálnych indexov](multispectral-index-formulas.md).
