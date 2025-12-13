@@ -18,7 +18,7 @@ Po vytvorení alebo otvorení projektu v Chloros je ďalším krokom pridanie mu
 
 Existujú dva hlavné spôsoby pridávania obrázkov do projektu:
 
-### Spôsob 1: Pridanie súborov
+### Spôsob 1: Pridať súbory
 
 Túto možnosť použite na importovanie jednotlivých obrazových súborov alebo malého výberu súborov.
 
@@ -84,7 +84,7 @@ Ak chcete odstrániť nepotrebné obrázky z projektu:
 ### Triedenie a filtrovanie
 
 * **Triedenie podľa stĺpca**: Kliknutím na akýkoľvek nadpis stĺpca môžete obrázky triediť.
-* **Triedenie podľa časovej značky**: užitočné pre organizovanie chronologických sekvencií záberov.
+* **Triedenie podľa časovej pečiatky**: užitočné pre organizovanie chronologických sekvencií záberov.
 * **Filter modelu fotoaparátu**: zoskupte obrázky podľa typu fotoaparátu, ak používate viacero fotoaparátov.
 
 ***
@@ -101,10 +101,10 @@ Kliknite na ľubovoľnú miniatúru obrázku v prehliadači súborov, aby sa zob
 
 ### Rýchla navigácia
 
-* **Predchádzajúci obrázok**: Kliknite na šípku doľava alebo stlačte klávesu ←
-* **Ďalší obrázok**: Kliknite na šípku doprava alebo stlačte klávesu →
+* **Predchádzajúci obrázok**: Kliknite na šípku vľavo alebo stlačte klávesu ←
+* **Ďalší obrázok**: Kliknite na šípku vpravo alebo stlačte klávesu →
 * **Zväčšenie/zmenšenie**: Použite koliesko myši alebo tlačidlá zväčšenia
-* **Posun**: Po zväčšení kliknite na obrázok a potiahnite ho
+* **Posun**: Po zväčšení kliknite na obrázok a ťahajte ho
 
 ***
 
@@ -126,12 +126,12 @@ Chloros automaticky detekuje a ignoruje duplicitné súbory:
 
 Ak váš projekt obsahuje obrázky z viacerých kamier MAPIR:
 
-1. Chloros automaticky rozpozná každý model kamery.
+1. Chloros automaticky detekuje každý model kamery.
 2. Každý typ kamery sa spracováva s príslušným kalibračným profilom.
 3. Prehliadač súborov zobrazuje model kamery v stĺpci Model kamery.
 4. Spracovanie uplatňuje správne nastavenia pre každý typ kamery.
 
-**Príklad scenára**: Survey3W RGN + Survey3N OCN konfigurácia s dvoma kamerami.
+**Príklad scenára**: Survey3W RGN + Survey3N OCN nastavenie dvoch kamier.
 
 ***
 
@@ -146,7 +146,7 @@ Ak váš projekt obsahuje obrázky z viacerých kamier MAPIR:
 ### Pomenovanie súborov
 
 * Zachovajte pôvodné názvy súborov fotoaparátu (IMG\_0001.RAW atď.).
-* Pred importom súbory nepremenujte.
+* Pred importom súbory nepremenúvajte.
 * Pôvodné názvy obsahujú dôležité metadáta.
 
 ### Kalibračné cieľové obrázky
@@ -174,9 +174,9 @@ Ak váš projekt obsahuje obrázky z viacerých kamier MAPIR:
 
 **Možné príčiny:**
 
-* Upravené metadáta EXIF.
-* Obrázky upravené v externom softvéri.
-* Neúplný prenos súborov.
+* Upravené metadáta EXIF
+* Obrázky upravené v externom softvéri
+* Neúplný prenos súborov
 
 **Riešenie**: Znovu importujte pôvodné, neupravené súbory z fotoaparátu/SD karty.
 
@@ -199,6 +199,6 @@ Po importe súborov:
 2. **Skontrolujte modely fotoaparátov** – Overte správne rozpoznanie fotoaparátu.
 3. **Označte cieľové obrázky** – pozrite si [Výber cieľových obrázkov](choosing-target-images.md)
 4. **Upravte nastavenia** – nakonfigurujte možnosti spracovania v [Nastaveniach projektu](adjusting-project-settings.md)
-5. **Spustite spracovanie** – pozrite si časť [Spustenie spracovania](starting-the-processing.md).
+5. **Spustite spracovanie** – pozrite si [Spustenie spracovania](starting-the-processing.md).
 
 Podrobné informácie o konfigurácii projektu nájdete v časti [Úprava nastavení projektu](adjusting-project-settings.md).

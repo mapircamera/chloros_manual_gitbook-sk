@@ -7,15 +7,15 @@ Po dokončení spracovania Chloros je čas skontrolovať výsledky, overiť kval
 Keď sa spracovanie úspešne dokončí, uvidíte niekoľko indikátorov:
 
 * ✅ **Indikátor priebehu**: Dosiahne 100 % dokončenia
-* ✅ **Protokol ladenia**: Zobrazí správu „Spracovanie dokončené“
-* ✅ **Tlačidlo Štart**: Opäť sa aktivuje (pripravené na ďalšie spracovanie)
-* ✅ **Výstupné súbory**: Všetky spracované obrázky uložené do podadresára modelu fotoaparátu
+* ✅ **Debugovací protokol**: Zobrazí správu „Spracovanie dokončené“
+* ✅ **Tlačidlo Štart**: Znovu sa aktivuje (pripravené na ďalšie spracovanie)
+* ✅ **Výstupné súbory**: Všetky spracované obrázky sú uložené v podsložke modelu fotoaparátu
 
 ***
 
 ## Vyhľadanie spracovaných obrázkov
 
-### Otvorenie výstupného adresára
+### Otvorenie výstupnej zložky
 
 1. Kliknite na ikonu **Hlavné menu** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> (vľavo hore)
 2. Vyberte **„Otvoriť priečinok projektu“**
@@ -28,12 +28,12 @@ Keď sa spracovanie úspešne dokončí, uvidíte niekoľko indikátorov:
 
 ### Rýchly náhľad v prehliadači súborov
 
-**Vstavaný náhľad Windows:**
+**Windows vstavaný náhľad:**
 
 1. Prejdite do podadresára modelu fotoaparátu
 2. Vyberte obrazový súbor
-3. Náhľad sa zobrazí v okne náhľadu prehliadača Windows
-4. Pomocou klávesov so šípkami prechádzajte medzi obrázkami
+3. Náhľad sa zobrazí v okne náhľadu Windows Explorer
+4. Pomocou klávesov so šípkami prechádzajte obrázky
 
 ### Náhľad v externých prehliadačoch obrázkov
 
@@ -43,7 +43,7 @@ Keď sa spracovanie úspešne dokončí, uvidíte niekoľko indikátorov:
 * **IrfanView** – rýchly, ľahký prehliadač obrázkov (podporuje TIFF)
 * **Adobe Photoshop** – profesionálna úprava (podpora TIFF)
 * **GIMP** – bezplatná alternatíva k programu Photoshop
-* **Windows Photos** – základné prezeranie (nemusí podporovať 16-bitový TIFF)
+* **Windows Photos** – základné prezeranie (nemusí podporovať 16-bitový formát TIFF)
 
 ### Náhľad v prehliadači obrázkov Chloros
 
@@ -60,7 +60,7 @@ Podrobné pokyny nájdete v časti [Prehliadač obrázkov](../image-viewer-gui/o
 
 ## Kontrola protokolu ladenia
 
-### Skontrolujte varovania alebo chyby
+### Kontrola varovaní alebo chýb
 
 1. Otvorte kartu **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> .
 2. Prejdite správy.
@@ -93,7 +93,7 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 **Riešenia:**
 
 1. Skontrolujte protokol ladenia, či neobsahuje správy o preskočení/chybe.
-2. Overte, či bolo dostatok miesta na disku.
+2. Overte, či bolo dostatočné miesto na disku.
 3. Spočítajte súbory: Malo by sa zhodovať (pôvodný počet – cieľový počet) × (indexy + 1)
 4. Znovu importujte a spracujte všetky chýbajúce súbory.
 
@@ -140,15 +140,15 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 1. Overte, či bola použitá kalibrácia odrazivosti.
 2. Overte, či bol zahrnutý protokol svetelného senzora.
-3. Skontrolujte, či boli zistené kalibračné ciele.
-4. Uistite sa, že bol zistený správny model fotoaparátu.
+3. Skontrolujte, či boli detegované kalibračné ciele.
+4. Uistite sa, že bol detegovaný správny model fotoaparátu.
 5. Skontrolujte načasovanie a podmienky snímania cieľového obrazu.
 
 ***
 
 ## Používanie spracovaných obrázkov
 
-### Pre fotogrametriu / vytvorenie ortomozaiky
+### Pre fotogrametriu / vytvorenie ortomosaiku
 
 **Odporúčaný pracovný postup:**
 
@@ -166,9 +166,9 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 **Odporúčaný pracovný postup:**
 
-1. **Načítajte do QGIS, ArcGIS alebo podobného programu**
-2. **Použite 16-bitové obrazy odrazivosti TIFF** pre multibandovú analýzu
-3. **Použite indexové obrazy** (NDVI, NDRE) ako pripravené vrstvy vegetácie
+1. **Načítanie do QGIS, ArcGIS alebo podobného programu**
+2. **Použitie 16-bitových obrazov odrazivosti TIFF** pre multibandovú analýzu
+3. **Použitie indexových obrazov** (NDVI, NDRE) ako pripravených vrstiev vegetácie
 4. **Rastrová kalkulačka**: Kombinujte pásma pre vlastnú analýzu
 5. **Export**: Vytvorte klasifikačné mapy, detekciu zmien, mapy zdravotného stavu vegetácie
 
@@ -179,7 +179,7 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 1. **Použite indexové obrázky s farbami LUT** pre vizuálne reporty
 2. **Extrahujte štatistiky**: Priemerná hodnota NDVI na pole/parcelu
 3. **Časové rady**: Porovnajte indexy v rámci viacerých relácií
-4. **Generovanie správ**: Zahrňte mapy, štatistiky a vizualizácie
+4. **Vytvorte správy**: Zahrňte mapy, štatistiky a vizualizácie
 
 ***
 
@@ -191,19 +191,19 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 * ✅ **Pôvodné obrázky RAW/JPG** – archivujte na samostatnom disku/v cloude
 * ✅ **Spracované výstupy** – uchovajte kalibrované obrázky a indexy
-* ✅ **Projektový súbor** – obsahuje všetky nastavenia pre opätovné spracovanie, ak je to potrebné
+* ✅ **Súbor projektu** – obsahuje všetky nastavenia pre opätovné spracovanie, ak je to potrebné
 * ✅ **Protokol ladenia** – dokumentuje podrobnosti spracovania
 * ✅ **Kalibračné cieľové obrázky** – na overenie a opätovné spracovanie
 
 **Odporúčania pre ukladanie:**
 
-* **Okamžitá záloha**: Externý pevný disk
-* **Dlhodobý archív**: Ukladanie v cloude (Google Drive, Dropbox atď.)
-* **Kritické údaje**: Uchovávajte 2–3 kópie na rôznych miestach
+* **Okamžitá záloha**: externý pevný disk
+* **Dlhodobý archív**: cloudové úložisko (Google Drive, Dropbox atď.)
+* **Kritické údaje**: uchovajte 2–3 kópie na rôznych miestach
 
 ***
 
-## Ďalšie spracovania
+## Ďalšie spracovanie
 
 ### Opätovné použitie nastavení projektu
 
@@ -212,11 +212,11 @@ Ak budete v budúcnosti spracovávať podobné súbory údajov:
 1. **Uložte šablónu projektu** (ak ste tak ešte neurobili)
 2. **Vytvorte nový projekt** pomocou uloženej šablóny
 3. **Importujte nové obrázky**
-4. **Spracujte** s identickými nastaveniami pre konzistentnosť
+4. **Spracujte** s identickými nastaveniami pre zachovanie konzistentnosti
 
 ### Hromadné spracovanie viacerých relácií
 
-Pre viacero relácií/datasets:
+Pre viacero relácií/súborov údajov:
 
 **Možnosť 1: GUI – viacero projektov**
 
@@ -228,7 +228,7 @@ Pre viacero relácií/datasets:
 
 * Automatizujte hromadné spracovanie.
 * Spracúvajte viacero priečinkov pomocou skriptov.
-* Pozrite si [CLI dokumentáciu](../CLI.md)
+* Pozrite si [CLI Dokumentácia](../CLI.md)
 
 **Možnosť 3: Python SDK (len Chloros+)**
 
@@ -240,7 +240,7 @@ Pre viacero relácií/datasets:
 
 ## Riešenie problémov s následným spracovaním
 
-### Opätovné spracovanie s rôznymi nastaveniami
+### Opätovné spracovanie s inými nastaveniami
 
 Ak výsledky nie sú uspokojivé:
 
@@ -274,11 +274,11 @@ Ak narazíte na problémy:
 Teraz ste dokončili celý pracovný postup spracovania Chloros:
 
 1. ✅ **Vytvorený projekt** – pozrite si [Projekty](../projects.md)
-2. ✅ **Pridané súbory** – pozrite si [Pridávanie súborov](adding-files-to-a-project.md)
-3. ✅ **Upravili ste nastavenia** – pozrite si [Úprava nastavení projektu](adjusting-project-settings.md)
-4. ✅ **Označili ste ciele** – pozrite si [Výber cieľových obrázkov](choosing-target-images.md)
+2. ✅ **Pridané súbory** – pozri [Pridávanie súborov](adding-files-to-a-project.md)
+3. ✅ **Upravili ste nastavenia** – pozri [Úprava nastavení projektu](adjusting-project-settings.md)
+4. ✅ **Označené ciele** – pozri [Výber cieľových obrázkov](choosing-target-images.md)
 5. ✅ **Spustené spracovanie** – pozri [Spustenie spracovania](starting-the-processing.md)
-6. ✅ **Sledovaný pokrok** – pozri [Sledovanie spracovania](monitoring-the-processing.md)
+6. ✅ **Monitorovaný pokrok** – pozri [Monitorovanie spracovania](monitoring-the-processing.md)
 7. ✅ **Skontrolované výsledky** – táto stránka
 
 **Vaše kalibrované multispektrálne obrázky s korekciou odrazivosti sú pripravené na analýzu!**
@@ -289,13 +289,13 @@ Teraz ste dokončili celý pracovný postup spracovania Chloros:
 
 ### Pokročilé funkcie
 
-* [**Prehliadač obrázkov**](../image-viewer-gui/opening-an-image-full-screen.md) – interaktívna vizualizácia a analýza
+* [**Prehliadač obrázkov**](../image-viewer-gui/opening-an-image-full-screen.md) – Interaktívna vizualizácia a analýza
 * [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) – Testovanie vlastného indexu
 * [**Vzorec multispektrálneho indexu**](../project-settings/multispectral-index-formulas.md) – Kompletný referenčný index
 
 ### Automatizácia a integrácia
 
-* [**CLI dokumentácia**](../CLI.md) – hromadné spracovanie z príkazového riadku
+* [**CLI Dokumentácia**](../CLI.md) – Hromadné spracovanie pomocou príkazového riadku
 * [**Python SDK**](../api-python-sdk.md) – Programová automatizácia
 * [**Chloros+ Funkcie**](../#chloros) – Pokročilé možnosti spracovania
 

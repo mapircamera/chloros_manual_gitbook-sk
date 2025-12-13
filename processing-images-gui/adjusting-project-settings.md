@@ -9,7 +9,7 @@ Pred spracovaním obrázkov je dôležité nakonfigurovať nastavenia projektu t
 3. Panel Nastavenia projektu zobrazuje všetky možnosti konfigurácie
 
 {% hint style=&quot;info&quot; %}
-**Nastavenia sa automaticky ukladajú** spolu s projektom. Keď projekt znovu otvoríte, všetky nastavenia sa obnovia.
+**Nastavenia sa automaticky ukladajú** spolu s projektom. Pri opätovnom otvorení projektu sa všetky nastavenia obnovia.
 {% endhint %}
 
 ***
@@ -40,13 +40,13 @@ Ovláda spôsob, akým Chloros identifikuje kalibračné ciele vo vašich obráz
 **Kľúčové nastavenia:**
 
 * **Minimálna plocha vzorky kalibrácie**: Prahová hodnota veľkosti pre detekciu cieľov (predvolené nastavenie: 25 pixelov)
-* **Minimálne zoskupovanie cieľov**: Prahová hodnota podobnosti pre zoskupovanie cieľových oblastí (predvolené nastavenie: 60)
+* **Minimálne zhlukovanie cieľov**: Prahová hodnota podobnosti pre zoskupovanie cieľových oblastí (predvolené nastavenie: 60)
 
 **Kedy upraviť:**
 
 * Zväčšite plochu vzorky, ak dochádza k falošným detekciám.
 * Zmenšite ju, ak sa ciele nedetekujú.
-* Upravte zoskupovanie, ak sa ciele rozdeľujú na viacero detekcií.
+* Upravte zhlukovanie, ak sa ciele rozdeľujú na viacero detekcií.
 
 ### Spracovanie
 
@@ -63,7 +63,7 @@ Hlavné možnosti spracovania a kalibrácie obrázkov.
 
 * **Posun časového pásma svetelného senzora**: Pre synchronizáciu času PPK (predvolené: 0)
 * **Použiť korekcie PPK**: Používa údaje GPS/expozície z .daq súborov
-* **Expozícia Pin 1/2**: Priraďuje kamery k expozičným pinom pre nastavenia dvoch kamier
+* **Expozičný pin 1/2**: Priraďuje kamery k expozičným pinom pre konfigurácie s dvoma kamerami
 
 ### Index (multispektrálne indexy)
 
@@ -100,8 +100,8 @@ Ovláda formát a kvalitu výstupného súboru.
 
 * **TIFF (16-bitový)**: Odporúčaný pre GIS a vedeckú analýzu (rozsah 0–65 535)
 * **TIFF (32-bitový, percentuálny)**: Hodnoty odrazivosti s pohyblivou desatinnou čiarkou (rozsah 0,0–1,0)
-* **PNG (8-bit)**: Bezstratová kompresia pre vizualizáciu (rozsah 0–255)
-* **JPG (8-bit)**: Najmenšie súbory, stratová kompresia (rozsah 0–255)
+* **PNG (8-bitový)**: Bezstratová kompresia pre vizualizáciu (rozsah 0–255)
+* **JPG (8-bitový)**: Najmenšie súbory, stratová kompresia (rozsah 0–255)
 
 ***
 
@@ -109,7 +109,7 @@ Ovláda formát a kvalitu výstupného súboru.
 
 ### Uloženie šablóny projektu
 
-Vytvorte opakovane použiteľné šablóny pre konzistentné pracovné postupy:
+Vytvorte šablóny, ktoré môžete opakovane používať pre konzistentné pracovné postupy:
 
 1. Nakonfigurujte všetky požadované nastavenia v paneli Nastavenia projektu.
 2. Prejdite do sekcie **„Uložiť šablónu projektu“** v dolnej časti.
@@ -135,8 +135,8 @@ Pri vytváraní nového projektu:
 
 Nastavenie **„Uložiť priečinok projektu“** určuje, kde sa nové projekty vytvárajú štandardne:
 
-* **Štandardné umiestnenie**: `C:\Users\[Username]\Chloros Projects`
-* **Zmena umiestnenia**: Kliknite na ikonu úprav a vyberte nový priečinok.
+* **Štandardná poloha**: `C:\Users\[Username]\Chloros Projects`
+* **Zmeniť polohu**: Kliknite na ikonu úprav a vyberte nový priečinok.
 * **Kedy zmeniť**:
   * Sieťový disk pre spoluprácu tímu.
   * Iný disk s väčším úložným priestorom.
@@ -158,7 +158,7 @@ Ak používate záznamníky MAPIR DAQ s GPS pre presnú geolokalizáciu:
 
 1. Umiestnite log súbor .daq do priečinka projektu.
 2. V nastaveniach projektu zaškrtnite políčko **„Použiť PPK korekcie“**.
-3. V prípade potreby nastavte **„Časové posunutie svetelného senzora“** (predvolené nastavenie: 0 pre UTC).
+3. V prípade potreby nastavte **„Časový posun svetelného senzora“** (predvolené nastavenie: 0 pre UTC).
 4. Priraďte kamery k expozičným pinom:
    * **Jedna kamera**: Automaticky priradená k pinu 1.
    * **Dve kamery**: Ručne priraďte každú kameru k správnemu pinu.
@@ -219,7 +219,7 @@ Pred začatím spracovania skontrolujte tieto kľúčové nastavenia:
 * [ ] Importovaný aspoň jeden kalibračný cieľový obrázok
 * [ ] Pridané požadované multispektrálne indexy
 * [ ] Exportný formát vhodný pre váš pracovný postup
-* [ ] Konfigurované nastavenia PPK (ak používate .daq s expozičnými udalosťami)
+* [ ] Konfigurované nastavenia PPK (ak používate .daq s expozíciou udalostí)
 
 ***
 

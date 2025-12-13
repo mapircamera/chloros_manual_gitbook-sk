@@ -9,7 +9,7 @@ Prehliadač obrázkov Chloros poskytuje špecializované rozhranie na celej obra
 Najbežnejší spôsob otvorenia obrázku v prehliadači obrázkov:
 
 1. Uistite sa, že ste na karte **Prehliadač súborov**. <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Kliknite na ľubovoľnú **miniaturu obrázka** v mriežke obrázkov.
+2. Kliknite na ľubovoľnú **miniatúru obrázka** v mriežke obrázkov.
 3. Obrázok sa otvorí v **hlavnej oblasti náhľadu** (v strede obrazovky).
 4. Obrázok je teraz načítaný a pripravený na zobrazenie na celej obrazovke.
 
@@ -30,8 +30,8 @@ Po načítaní obrázka do oblasti náhľadu:
 Najväčšia časť obrazovky zobrazuje váš obrázok:
 
 * **Plné rozlíšenie**: Obrázky sa zobrazujú v natívnom rozlíšení.
-* **Zväčšiteľný**: Na zväčšenie použite ovládacie prvky alebo koliesko myši
-* **Posuvný**: Po zväčšení kliknite a ťahajte, aby ste sa pohybovali
+* **Zväčšiteľné**: Na zväčšenie použite ovládacie prvky alebo koliesko myši
+* **Posuvné**: Po zväčšení kliknite a ťahajte, aby ste sa pohybovali po obrázku
 * **Zachované pomerové rozmery**: Obrázky sa zväčšujú proporcionálne
 
 ***
@@ -40,25 +40,25 @@ Najväčšia časť obrazovky zobrazuje váš obrázok:
 
 ### Základná navigácia v obrázkoch
 
-#### Prehliadanie obrázkov
+#### Prechádzanie obrázkami
 
 V sade obrázkov sa pohybujte pomocou klávesových skratiek alebo tlačidiel:
 
-* **Ďalší obrázok**: Kliknite na tlačidlo → alebo stlačte klávesu **→** (šipka doprava)
-* **Predchádzajúci obrázok**: Kliknite na tlačidlo ← alebo stlačte klávesu **←** (šipka doľava)
+* **Ďalší obrázok**: Kliknite na tlačidlo → alebo stlačte kláves **→** (šipka doprava)
+* **Predchádzajúci obrázok**: Kliknite na tlačidlo ← alebo stlačte kláves **←** (šipka doľava)
 * **Preskočiť na konkrétny obrázok**: Vráťte sa do prehliadača súborov a kliknite na požadovanú miniatúru
 
 #### Ovládacie prvky priblíženia
 
 Upravte zväčšenie, aby ste mohli prezrieť detaily obrázku:
 
-**Zväčšenie:**
+**Zväčšiť:**
 
 * Kliknite na tlačidlo **+** (plus)
 * Stlačte kláves **+** alebo **=**
 * Posuňte koliesko myši **nahor**
 
-**Zmenšenie:**
+**Zmenšiť:**
 
 * Kliknite na tlačidlo **−** (mínus)
 * Stlačte kláves **−** (mínus)
@@ -91,7 +91,7 @@ Keď presuniete kurzor myši nad obrázok, hodnoty pixelov sa zobrazia v reálno
 
 **Umiestnenie zobrazenia hodnoty:**
 
-* **Plávajúce číslo a červená čiara v pravej časti indexu LUT gradientnej legendy**
+* **Plávajúce číslo a červená čiara v pravej strane indexu LUT gradientnej legendy**
 * **Pri ďalšom zväčšení sa zobrazí plávajúca hodnota v blízkosti kurzora a zvýrazneného pixelu**
 * Zobrazuje hodnoty pre pixel **pod kurzorom alebo zvýraznený**
 * Aktualizuje sa pri pohybe myši
@@ -114,10 +114,10 @@ Keď presuniete kurzor myši nad obrázok, hodnoty pixelov sa zobrazia v reálno
 
 * Korekcia vinetácie
 * Kalibrovaná odrazivosť
-* Viacpásmové TIFF (Red, Green, NIR atď.)
+* Viac pásmové TIFF (Red, Green, NIR atď.)
 * Vedecké údaje pripravené na analýzu
 
-### Indexové obrázky
+### Indexové snímky
 
 **NDVI, NDRE, GNDVI atď. (súbory \_NDVI.tif):**
 
@@ -164,7 +164,7 @@ Podrobné pokyny nájdete v časti [Index/LUT Sandbox](index-lut-sandbox.md).
 * **L**: Prepnúť panel vrstiev
 * **Esc**: Zatvoriť celú obrazovku alebo vrátiť sa do prehliadača súborov
 
-### Ostatné
+### Iné
 
 * **Ctrl+S**: Uložiť aktuálny obrázok
 * **F**: Režim celej obrazovky (ak je k dispozícii)
@@ -178,7 +178,7 @@ Skontrolujte, či sú indexy vypočítané správne:
 1. Otvorte NDVI alebo iný indexový obrázok.
 2. Skontrolujte oblasti vegetácie:
    * **NDVI**: Malo by sa zobraziť 0,4–0,9 pre zdravé rastliny.
-   * **NDRE**: Vyššie hodnoty pre silný rast
+   * **NDRE**: Vyššie hodnoty pre bujný rast
    * **GNDVI**: Podobné ako NDVI, ale citlivé na chlorofyl
 3. Skontrolujte oblasti bez vegetácie:
    * **Pôda**: Blízko 0 alebo mierne záporná
@@ -188,13 +188,13 @@ Skontrolujte, či sú indexy vypočítané správne:
 
 ## Riešenie problémov so zobrazením
 
-### Obraz sa neotvorí
+### Obrázok sa neotvorí
 
 **Možné príčiny:**
 
 * Poškodený súbor počas spracovania
 * Nepodporovaný formát súboru
-* Nedostatočná pamäť pre veľký obraz
+* Nedostatočná pamäť pre veľký obrázok
 
 **Riešenia:**
 
@@ -215,7 +215,7 @@ Skontrolujte, či sú indexy vypočítané správne:
 
 1. Skontrolujte hodnoty pixelov – ak sú všetky veľmi nízke alebo veľmi vysoké, upravte rozsah zobrazenia.
 2. Skúste otvoriť v QGIS alebo podobnom programe s automatickým nastavením rozsahu.
-3. Skontrolujte protokol ladenia zo spracovania, či neobsahuje chyby.
+3. Skontrolujte protokol ladenia spracovania, či neobsahuje chyby.
 
 ### Hodnoty pixelov sa zdajú nesprávne
 
@@ -240,8 +240,8 @@ Teraz, keď môžete zobraziť obrázky na celej obrazovke:
 
 * [**Vrstvy obrázkov**](image-layers.md) – Informácie o vizualizácii viacerých pásiem
 * [**Index/LUT Sandbox**](index-lut-sandbox.md) – Použite vlastné indexy a mapovanie farieb
-* [**Vzorec multispektrálneho indexu**](../project-settings/multispectral-index-formulas.md) – Porozumenie dostupným indexom
+* [**Vzorec multispektrálneho indexu**](../project-settings/multispectral-index-formulas.md) – Zoznámte sa s dostupnými indexmi
 
-Pre spracovanie pracovného postupu pozrite:
+Informácie o pracovnom postupe spracovania nájdete v:
 
 * [**Spracovanie obrázkov (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – Kompletný sprievodca spracovaním
