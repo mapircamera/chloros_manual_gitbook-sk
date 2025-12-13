@@ -2,13 +2,11 @@
 
 ## Chloros a Chloros (prehliadač) Prihlásenie
 
-Bočné menu <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> bočné menu vám umožňuje prihlásiť sa do vášho účtu Chloros+ a odomknúť ďalšie funkcie.
+Pomocou <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> bočné menu vám umožňuje prihlásiť sa do vášho účtu Chloros+ a odomknúť ďalšie funkcie.
 
 Po prihlásení sa zobrazia podrobnosti vášho účtu:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
-
-## CLI Prihlásenie
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI Prihlásenie
 
 Prihláste sa pomocou svojich prihlasovacích údajov Chloros+, aby ste mohli spustiť spracovanie CLI.
 
@@ -30,11 +28,9 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 **Výstup:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Vypršanie platnosti plánu
 
-### Vypršanie platnosti plánu
-
-Vypršanie platnosti plánu v grafickom rozhraní zobrazuje, kedy vaša licencia prestane byť platná. V prípade opakovaných mesačných predplatných je platnosť platná do konca mesiaca. V prípade ročných predplatných je platnosť platná jeden rok od začiatku predplatného. Overenie licencie vyžaduje mesačné pripojenie k internetu s 30-dňovou tolerančnou lehotou.
+Vypršanie platnosti plánu v grafickom rozhraní zobrazuje, kedy vaša licencia prestane byť platná. V prípade opakovaných mesačných predplatných je platnosť platná do konca mesiaca. V prípade ročných predplatných je platnosť platná jeden rok od začiatku predplatného. Overenie licencie vyžaduje mesačné pripojenie k internetu s 30-dňovou ochrannou lehotou.
 
 ### Limit zariadení
 

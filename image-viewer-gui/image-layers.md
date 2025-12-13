@@ -2,16 +2,16 @@
 
 Rozbaľovacie menu Vrstvy obrázkov v prehliadači obrázkov Chloros vám umožňuje rýchlo prepínať medzi rôznymi verziami toho istého obrázku – od pôvodných snímok po spracované výstupy odrazivosti a vypočítané indexové obrázky.
 
-## Čo sú obrazové vrstvy?
+## Čo sú vrstvy obrázkov?
 
-V programe Chloros sa **vrstvy** vzťahujú na rôzne výstupy obrazu, ktoré sú k dispozícii pre jeden zdrojový obraz. Pri spracovaní obrazov program Chloros vytvorí viacero verzií:
+V programe Chloros sa **vrstvy** vzťahujú na rôzne výstupy obrázkov, ktoré sú k dispozícii pre jeden zdrojový obrázok. Pri spracovaní obrázkov program Chloros vytvorí viacero verzií:
 
-* **Pôvodné obrazy** (súbory JPG a RAW z fotoaparátu)
-* Výstupy s **kalibrovanou odrazivosťou** (ak bola povolená kalibrácia odrazivosti)
+* **Pôvodné obrázky** (súbory JPG a RAW z fotoaparátu)
+* Výstupy **s kalibrovanou odrazivosťou** (ak bola povolená kalibrácia odrazivosti)
 * **Cieľové obrázky** (ak obrázok obsahuje kalibračné ciele)
 * **Indexové obrázky** (NDVI, NDRE, GNDVI atď., ak boli nakonfigurované indexy)
 
-**Rozbaľovacie menu výberu vrstiev** v pravom hornom rohu prehliadača obrázkov vám umožňuje okamžite prepínať medzi týmito verziami bez opustenia prehliadača.
+Pomocou **roztiahnuteľného zoznamu Layer Selector** v pravom hornom rohu prehliadača obrázkov môžete okamžite prepínať medzi týmito verziami bez opustenia prehliadača.
 
 ***
 
@@ -19,7 +19,7 @@ V programe Chloros sa **vrstvy** vzťahujú na rôzne výstupy obrazu, ktoré s�
 
 ### JPG
 
-* Pôvodný náhľadový obrázok JPG z fotoaparátu
+* Pôvodný náhľadový obrázok JPG z vášho fotoaparátu
 * Vždy k dispozícii pre všetky obrázky
 * Nespracovaný, tak ako bol zachytený fotoaparátom
 * Najrýchlejšie sa načíta a zobrazí
@@ -32,21 +32,21 @@ V programe Chloros sa **vrstvy** vzťahujú na rôzne výstupy obrazu, ktoré s�
 
 ### RAW (pôvodný)
 
-* Pôvodné údaje snímača RAW z vášho fotoaparátu
+* Pôvodné údaje snímača RAW z fotoaparátu
 * Bez postprocesingu
-* Vyššia bitová hĺbka ako JPG (typicky 12-bitové alebo 14-bitové údaje snímača)
+* Vyššia bitová hĺbka ako JPG (zvyčajne 12-bitové alebo 14-bitové údaje snímača)
 
 **Kedy zobraziť:**
 
-* Kontrola kvality pôvodných údajov snímača
+* Kontrola kvality pôvodných údajov zo senzora
 * Kontrola problémov so senzorom alebo artefaktov
 * Porovnanie výsledkov pred a po spracovaní
 
 ### RAW (cieľ)
 
 * Zobrazuje sa len pre obrázky identifikované ako obsahujúce kalibračné ciele
-* Zobrazuje originálny obrázok RAW s detegovaným cieľom
-* Používa sa na overenie, či bola detekcia cieľa úspešná
+* Zobrazuje pôvodný obrázok RAW s detegovaným cieľom
+* Používa sa na overenie, či detegácia cieľa bola úspešná
 
 **Kedy zobraziť:**
 
@@ -72,10 +72,10 @@ V programe Chloros sa **vrstvy** vzťahujú na rôzne výstupy obrazu, ktoré s�
 * Kontrola kalibrovaných výsledkov
 * Overenie kvality kalibrácie
 * Kontrola hodnôt pixelov z hľadiska vedeckej presnosti
-* Porovnanie s originálom, aby ste videli účinky kalibrácie
+* Porovnanie s originálom s cieľom zistiť účinky kalibrácie
 
 {% hint style=&quot;success&quot; %}
-**Odporúčané**: Pri kontrole hodnôt pixelov pre vedecké merania a analýzy používajte vrstvu RAW (Reflectance).
+**Odporúčané**: Pri kontrole hodnôt pixelov pre vedecké merania a analýzy použite vrstvu RAW (Reflectance).
 {% endhint %}
 
 ### RAW (NDVI Index)... a podobné
@@ -90,7 +90,7 @@ V programe Chloros sa **vrstvy** vzťahujú na rôzne výstupy obrazu, ktoré s�
 
 * RAW (index NDVI)
 * RAW (index NDRE)
-* RAW (GNDVI Index)
+* RAW (index GNDVI)
 * RAW (OSAVI Index)
 * RAW (EVI Index)
 * RAW (SAVI Index)
@@ -98,34 +98,34 @@ V programe Chloros sa **vrstvy** vzťahujú na rôzne výstupy obrazu, ktoré s�
 
 **Kedy zobraziť:**
 
-* Kontrola výsledkov výpočtu indexu
+* Preskúmanie výsledkov výpočtu indexu
 * Kontrola rozsahov hodnôt indexu
 * Identifikácia oblastí záujmu
 * Overenie obrazov indexu pred použitím v GIS alebo analýze
 
 ***
 
-## Použitie výberu vrstiev
+## Používanie výberu vrstiev
 
 ### Otvorenie roletového menu
 
-1. Otvorte obrázok v režime celej obrazovky (kliknite na ľubovoľnú miniatúru v prehliadači obrázkov).
-2. Vyhľadajte **roletové menu vrstiev** v pravom hornom rohu prehliadača.
-3. Roletové menu zobrazuje aktuálne vybranú vrstvu (napr. „JPG“).
-4. Kliknutím na roletové menu zobrazíte všetky dostupné vrstvy.
+1. Otvorte obraz v režime celej obrazovky (kliknite na ľubovoľnú miniatúru v prehliadači obrázkov).
+2. Vyhľadajte **roztiahnuteľné menu vrstiev** v pravom hornom rohu prehliadača.
+3. Roztiahnuteľné menu zobrazuje aktuálne vybranú vrstvu (napr. „JPG“).
+4. Kliknutím na roztiahnuteľné menu zobrazíte všetky dostupné vrstvy.
 
 ### Prepínanie vrstiev
 
-1. Kliknite na roletové menu vrstiev, aby sa otvoril zoznam.
+1. Kliknutím na roztiahnuteľné menu vrstiev otvoríte zoznam.
 2. Zobrazia sa všetky dostupné vrstvy pre aktuálny obrázok.
-3. Kliknutím na názov akejkoľvek vrstvy prejdite na túto verziu.
+3. Kliknutím na názov akejkoľvek vrstvy prejdete na túto verziu.
 4. Obrázok sa okamžite aktualizuje a zobrazí vybranú vrstvu.
 
 **Rýchle prepínanie:**
 
-* Roletové menu si pamätá vašu poslednú voľbu.
+* Zoznam si pamätá vašu poslednú voľbu.
 * Pri prechode na ďalší obrázok sa Chloros pokúsi zobraziť rovnaký typ vrstvy.
-* Ak táto vrstva na ďalšom obrázku neexistuje, predvolene sa použije JPG.
+* Ak táto vrstva na ďalšom obrázku neexistuje, predvolene sa zobrazí JPG.
 
 ### Dostupnosť vrstiev
 
@@ -137,9 +137,9 @@ Nie všetky vrstvy sú dostupné pre každý obrázok:
 
 **Podmienečne dostupné:**
 
-* ⚠️ RAW (originál) – iba ak bol obrázok zachytený v režime RAW alebo RAW+JPG
-* ⚠️ RAW (cieľ) – iba ak obrázok obsahuje detegované kalibračné ciele
-* ⚠️ RAW (odrazivosť) – iba po spracovaní s povolenou kalibráciou odrazivosti
+* ⚠️ RAW (originál) – len ak bol obrázok zachytený v režime RAW alebo RAW+JPG
+* ⚠️ RAW (cieľ) – len ak obrázok obsahuje detegované kalibračné ciele
+* ⚠️ RAW (Reflexia) – iba po spracovaní s povolenou kalibráciou reflexie
 * ⚠️ RAW (\[Index] Index) – iba po spracovaní s nakonfigurovanými indexmi
 
 ***
@@ -148,12 +148,12 @@ Nie všetky vrstvy sú dostupné pre každý obrázok:
 
 ### Navigácia medzi obrázkami
 
-Keď prechádzate na iný obrázok (pomocou šípok alebo kliknutím na miniatúry):
+Keď prejdete na iný obrázok (pomocou klávesov so šípkami alebo kliknutím na miniatúry):
 
 **Preferencia vrstvy zostáva zachovaná:**
 
-* Ak sa zobrazuje „RAW (Reflexia)“, ďalší obrázok zobrazuje „RAW (Reflexia)“ (ak je k dispozícii)
-* Ak sa zobrazuje „RAW (NDVI Index)“, ďalší obrázok zobrazuje „RAW (NDVI Index)“ (ak je k dispozícii)
+* Ak prezeráte „RAW (Reflexia)“, ďalší obrázok zobrazuje „RAW (Reflexia)“ (ak je k dispozícii)
+* Ak prezeráte „RAW (NDVI Index)“, ďalší obrázok zobrazuje „RAW (NDVI Index)“ (ak je k dispozícii)
 * Ak rovnaká vrstva neexistuje, predvolené nastavenie je JPG
 
 **Príklad pracovného postupu:**
@@ -162,48 +162,48 @@ Keď prechádzate na iný obrázok (pomocou šípok alebo kliknutím na miniatú
 2. Stlačte → pre zobrazenie obrázku 2
 3. Obrázok 2 automaticky zobrazí vrstvu RAW (NDVI Index)
 4. Pokračujte v navigácii – všetky obrázky zobrazujú vrstvu NDVI
-5. Veľmi efektívne pre kontrolu výsledkov indexu na mnohých obrázkoch
+5. Veľmi efektívne na kontrolu výsledkov indexu na mnohých obrázkoch
 
 ***
 
 ## Bežné pracovné postupy
 
-### Pracovný postup 1: Porovnanie pred a po
+### Pracovný postup 1: Porovnanie pred/po
 
-**Cieľ**: Porovnať pôvodný a kalibrovaný obrázok.
+**Cieľ**: Porovnať pôvodný a kalibrovaný obrázok
 
-1. Otvorte spracovaný obrázok v prehliadači obrázkov.
-2. Z roletového menu vyberte **RAW (pôvodný)**.
-3. Poznámka: vinetácia a nekalibrované hodnoty.
-4. Z roletového menu prejdite na **RAW (odrazivosť)**.
-5. Porovnajte – vinetácia bola odstránená, hodnoty boli kalibrované.
+1. Otvorte spracovaný obrázok v prehliadači obrázkov
+2. Z roletového menu vyberte **RAW (pôvodný)**
+3. Poznámka: vinetácia a nekalibrované hodnoty
+4. Z roletového menu prejdite na **RAW (odrazivosť)**
+5. Porovnajte – vinetácia bola odstránená, hodnoty boli kalibrované
 
 ### Pracovný postup 2: Kontrola indexu
 
-**Cieľ**: Rýchla kontrola výsledkov NDVI v rámci súboru údajov.
+**Cieľ**: Rýchle preskúmanie výsledkov NDVI v celom súbore údajov.
 
 1. Otvorte prvý spracovaný obrázok.
 2. Z roletového menu vyberte **RAW (NDVI Index)**.
-3. Pomocou klávesy → prejdite na ďalší obrázok
-4. Vrstva NDVI zostane automaticky zachovaná
-5. Pokračujte cez všetky obrázky a skontrolujte vzory NDVI
-6. Prejdite na **RAW (NDRE Index)**, aby ste mohli porovnať
+3. Pomocou klávesy → prejdite na ďalší obrázok.
+4. Vrstva NDVI zostáva automaticky zachovaná.
+5. Pokračujte cez všetky obrázky a skontrolujte vzory NDVI.
+6. Prejdite na **RAW (NDRE Index)**, aby ste mohli porovnať.
 
 ### Pracovný postup 3: Overenie cieľa
 
-**Cieľ**: Overiť, či boli všetky cieľové obrázky správne detegované
+**Cieľ**: Overiť, či boli všetky cieľové obrázky správne detegované.
 
-1. Prejdite na cieľový obrázok
-2. Z roletového menu vyberte **RAW (cieľ)**
-3. Overte, či sú kalibračné ciele jasne viditeľné a detegované
-4. Prejdite na ďalší cieľový obrázok
-5. Opakujte overenie pre všetky ciele
+1. Prejdite na cieľový obrázok.
+2. Z roletového menu vyberte **RAW (cieľ)**.
+3. Overte, či sú kalibračné ciele jasne viditeľné a detegované.
+4. Prejdite na ďalší cieľový obrázok.
+5. Opakujte overenie pre všetky ciele.
 
 ### Pracovný postup 4: Kontrola hodnoty pixelov
 
 **Cieľ**: Skontrolujte hodnoty odrazivosti z hľadiska vedeckej presnosti.
 
-1. Otvorte spracovaný obrázok.
+1. Otvorte spracovaný obraz.
 2. Vyberte vrstvu **RAW (Odrazivosť)**.
 3. Aktivujte režim **Pixel Percent** (tlačidlo v pravom hornom rohu panela nástrojov).
 4. Presuňte kurzor nad oblasti vegetácie.
@@ -212,7 +212,7 @@ Keď prechádzate na iný obrázok (pomocou šípok alebo kliknutím na miniatú
 
 ***
 
-## Porozumenie hodnotám pixelov podľa vrstiev
+## Porozumenie hodnotám pixelov podľa vrstvy
 
 Rôzne vrstvy zobrazujú rôzne rozsahy hodnôt pixelov:
 
@@ -230,7 +230,7 @@ Rôzne vrstvy zobrazujú rôzne rozsahy hodnôt pixelov:
 
 ### RAW (odrazivosť)
 
-* **Rozsah**: 0–65 535 (16-bitové TIFF) alebo 0,0–1,0 (32-bitové percento)
+* **Rozsah**: 0–65 535 (16-bitové TIFF) alebo 0,0–1,0 (32-bitové percentá)
 * **Význam**: Kalibrovaná percentuálna odrazivosť
 * **Použitie**: Vedecké merania a analýzy
 
@@ -251,7 +251,7 @@ Rôzne vrstvy zobrazujú rôzne rozsahy hodnôt pixelov:
 
 ### Efektívne prepínanie vrstiev
 
-* **Znalosť klávesových skratiek**: Hoci pre vrstvy neexistujú klávesové skratky, navigačné šípky (←/→) fungujú vo všetkých vrstvách
+* **Poznanie klávesových skratiek**: Hoci pre vrstvy neexistujú klávesové skratky, navigačné šípky (←/→) fungujú vo všetkých vrstvách
 * **Konzistentné pracovné postupy**: Vyberte jednu vrstvu (napr. NDVI) a skontrolujte celý súbor údajov, než prejdete na inú
 * **Rýchle porovnania**: Prepínajte medzi originálom a odrazom, aby ste overili kvalitu spracovania
 
@@ -264,9 +264,9 @@ Rôzne vrstvy zobrazujú rôzne rozsahy hodnôt pixelov:
 
 ### Overenie kvality
 
-* **Vždy skontrolujte RAW (originál)**: Overte kvalitu zdrojových údajov, než budete dôverovať spracovaným výstupom.
-* **Porovnajte vrstvy**: Použite prepínanie vrstiev na overenie správnosti spracovania.
-* **Skontrolujte rozsahy indexov**: Použite režim Pixel Percent s indexovými vrstvami na overenie správnosti hodnôt.
+* **Vždy skontrolujte RAW (originál)**: Overte kvalitu zdrojových údajov, než budete dôverovať spracovaným výstupom
+* **Porovnajte vrstvy**: Použite prepínanie vrstiev na overenie správneho fungovania spracovania
+* **Skontrolujte rozsahy indexov**: Použite režim Pixel Percent s indexovými vrstvami na overenie, či sú hodnoty primerané
 
 ***
 
@@ -274,19 +274,19 @@ Rôzne vrstvy zobrazujú rôzne rozsahy hodnôt pixelov:
 
 ### Vrstva nie je k dispozícii
 
-**Problém**: Očakávaná vrstva sa nezobrazuje v roletovom menu.
+**Problém**: Očakávaná vrstva sa nezobrazuje v roletovom menu
 
 **Možné príčiny:**
 
 * Obrázok nebol spracovaný (k dispozícii sú len formáty JPG a RAW (originál))
 * Kalibrácia odrazivosti bola počas spracovania deaktivovaná
 * V nastaveniach projektu nebol nakonfigurovaný konkrétny index
-* Obrázok je iba cieľový obrázok (pre ciele neboli generované žiadne indexy)
+* Obrázok je iba cieľovým obrázkom (pre ciele neboli generované žiadne indexy)
 
 **Riešenia:**
 
-1. Overte, či bol obrázok spracovaný (skontrolujte výstupnú zložku so spracovanými súbormi)
-2. Skontrolujte nastavenia projektu, aby ste potvrdili, že indexy boli nakonfigurované
+1. Overte, či bol obrázok spracovaný (skontrolujte výstupnú zložku so spracovanými súbormi).
+2. Skontrolujte nastavenia projektu, aby ste potvrdili, že indexy boli nakonfigurované.
 3. Opätovne spracujte s povolenými požadovanými indexmi.
 
 ### Zobrazená nesprávna vrstva
@@ -295,24 +295,24 @@ Rôzne vrstvy zobrazujú rôzne rozsahy hodnôt pixelov:
 
 **Príčina**: Predvoľba vrstvy z predchádzajúceho obrázku bola prenesená, ale táto vrstva neexistuje v aktuálnom obrázku.
 
-**Riešenie**: Chloros automaticky prejde na formát JPG, ak preferovaná vrstva nie je k dispozícii – ide o normálne správanie.
+**Riešenie:** Chloros automaticky prejde na formát JPG, ak preferovaná vrstva nie je k dispozícii – ide o normálne správanie.
 
 ### Neviditeľné kalibračné ciele
 
-**Problém**: Vrstva RAW (cieľ) nezobrazuje detekciu cieľa.
+**Problém:** Vrstva RAW (cieľ) nezobrazuje detekciu cieľa.
 
 **Možné príčiny:**
 
-* Ciele neboli detegované počas spracovania.
-* Obrázok v skutočnosti neobsahuje ciele.
-* Nastavenia detekcie cieľa sú príliš prísne.
+* Ciele neboli zistené počas spracovania
+* Obraz v skutočnosti neobsahuje ciele
+* Nastavenia detekcie cieľov sú príliš prísne
 
 **Riešenia:**
 
-1. Skontrolujte protokol ladenia, či neobsahuje správy „Cieľ nájdený“.
-2. Overte, či obrázok skutočne obsahuje viditeľné kalibračné ciele.
-3. Upravte nastavenia detekcie cieľov v nastaveniach projektu.
-4. Pozrite si [Výber cieľových obrázkov](../processing-images-gui/choosing-target-images.md).
+1. Skontrolujte protokol ladenia, či neobsahuje správy „Cieľ nájdený“
+2. Overte, či obraz skutočne obsahuje viditeľné kalibračné ciele
+3. Upravte nastavenia detekcie cieľov v nastaveniach projektu
+4. Pozrite si [Výber cieľových obrázkov](../processing-images-gui/choosing-target-images.md)
 
 ***
 
@@ -322,10 +322,10 @@ Rôzne vrstvy zobrazujú rôzne rozsahy hodnôt pixelov:
 
 Pri prezeraní akejkoľvek vrstvy môžete použiť:
 
-* **Ovládacie prvky zväčšenia**: Zväčšite obrázok, aby ste mohli skontrolovať detaily.
-* **Posun**: Kliknutím a ťahaním presúvajte zväčšený obrázok.
+* **Ovládacie prvky priblíženia**: Zväčšite na kontrolu detailov
+* **Posúvanie**: Kliknutím a ťahaním sa pohybujete po zväčšenom obrázku.
 * **Kontrola hodnoty pixelov**: Zobrazenie hodnôt v mieste kurzora.
-* **Navigačné šípky**: Presúvajte sa medzi obrázkami bez zmeny vrstvy.
+* **Navigačné šípky**: Prechod medzi obrázkami pri zachovaní vrstvy.
 * **Režim percent pixelov**: Prepínanie medzi zobrazením DN a percentami.
 
 Kompletnú dokumentáciu k prehliadaču obrázkov nájdete v časti [Otvorenie obrázka na celú obrazovku](opening-an-image-full-screen.md).
@@ -334,9 +334,9 @@ Kompletnú dokumentáciu k prehliadaču obrázkov nájdete v časti [Otvorenie o
 
 Pre interaktívne testovanie a vizualizáciu indexov:
 
-* **Výpočet indexu v reálnom čase**: Testujte rôzne vzorce indexov.
-* **Mapovanie farieb LUT**: Použite farebné prechody na indexy v odtieňoch sivej.
-* **Export vizualizácií**: Uložte farebné obrázky indexov.
+* **Výpočet indexu v reálnom čase**: Testujte rôzne vzorce indexov
+* **Mapovanie farieb LUT**: Použite farebné prechody na indexy v odtieňoch sivej
+* **Export vizualizácií**: Uložte farebné obrázky indexov
 
 Podrobnosti nájdete v časti [Index/LUT Sandbox](index-lut-sandbox.md).
 

@@ -20,7 +20,7 @@
 * [Výber cieľových obrázkov](processing-images-gui/choosing-target-images.md)
 * [Spustenie spracovania](processing-images-gui/starting-the-processing.md)
 * [Monitorovanie spracovania](processing-images-gui/monitoring-the-processing.md)
-* [Ukončenie spracovania](processing-images-gui/finishing-the-processing.md)
+* [Dokončenie spracovania](processing-images-gui/finishing-the-processing.md)
 
 ## NASTAVENIA PROJEKTU
 

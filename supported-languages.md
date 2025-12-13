@@ -34,8 +34,8 @@ Chloros podporuje nasledujúce jazyky:
 | 26 | 🇭🇺 Maďarčina | Magyar | `hu` |
 | 27 | 🇷🇴 Rumunčina | Română | `ro` |
 | 28 | 🇺🇦 Ukrajinčina | Українська | `uk` |
-| 29 | 🇧🇷 Brazílsky portugalčina | Português Brasileiro | `pt-BR` |
-| 30 | 🇭🇰 Kantónčina | 粵語 | `zh-HK` |
+| 29 | 🇧🇷 Brazílsky portugalský jazyk | Português Brasileiro | `pt-BR` |
+| 30 | 🇭🇰 Kantonský jazyk | 粵語 | `zh-HK` |
 | 31 | 🇲🇾 Malajčina | Bahasa Melayu | `ms` |
 | 32 | 🇸🇰 Slovenčina | Slovenčina | `sk` |
 | 33 | 🇧🇬 Bulharčina | Български | `bg` |
@@ -51,7 +51,7 @@ Chloros podporuje nasledujúce jazyky:
 
 1. Otvorte nastavenia aplikácie.
 2. Prejdite do menu výberu jazyka.
-3. Zo zoznamu vyberte preferovaný jazyk.
+3. Zoznamu vyberte preferovaný jazyk.
 4. Rozhranie sa okamžite aktualizuje.
 
 ### V Chloros CLI

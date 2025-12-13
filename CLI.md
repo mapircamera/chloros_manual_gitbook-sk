@@ -4,11 +4,11 @@
 
 ### Kľúčové funkcie
 
-* 🚀 **Automatizácia** – skriptové dávkové spracovanie viacerých dátových súborov
+* 🚀 **Automatizácia** – skriptové hromadné spracovanie viacerých dátových súborov
 * 🔗 **Integrácia** – vloženie do existujúcich pracovných postupov a potrubí
-* 💻 **Prevádzka bez grafického rozhrania** – spustenie bez grafického rozhrania
+* 💻 **Prevádzka bez grafického rozhrania** – prevádzka bez grafického rozhrania
 * 🌍 **Viacjazyčnosť** – podpora 38 jazykov
-* ⚡ **Paralelné spracovanie** – dynamické prispôsobenie vášmu CPU (až 16 paralelných pracovníkov)
+* ⚡ **Paralelné spracovanie** – dynamické škálovanie podľa výkonu vášho procesora (až 16 paralelných pracovných procesov)
 
 ### Požiadavky
 
@@ -139,7 +139,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 ### `logout` – Vymazať prihlasovacie údaje
 
-Vymazať uložené prihlasovacie údaje a odhlásiť sa z účtu.
+Vymazanie uložených prihlasovacích údajov a odhlásenie z vášho účtu.
 
 **Syntax:**
 
@@ -297,7 +297,7 @@ chloros-cli language ja
 
 ### `set-project-folder` – Nastavenie predvoleného priečinka projektu
 
-Zmeňte umiestnenie predvoleného priečinka projektu (zdieľané s GUI).
+Zmeňte umiestnenie predvoleného priečinka projektu (zdieľaného s GUI).
 
 **Syntax:**
 
@@ -395,7 +395,7 @@ Chloros+ CLI **automaticky škaluje** paralelné spracovanie tak, aby zodpovedal
 
 ### Metódy debayer
 
-CLI používa ako predvolený a odporúčaný algoritmus debayer **Vysoká kvalita (rýchlejšia)**:
+CLI používa ako predvolený a odporúčaný debayer algoritmus **Vysoká kvalita (rýchlejší)**:
 
 | Metóda                      | Kvalita | Rýchlosť | Popis                                 |
 | --------------------------- | ------- | ----- | ------------------------------------------- |
@@ -409,7 +409,7 @@ CLI používa ako predvolený a odporúčaný algoritmus debayer **Vysoká kvali
 * Na vypnutie použite `--no-vignette`.
 
 {% hint style=&quot;success&quot; %}
-**Odporúčanie**: Vždy zapnite korekciu vinetácie, aby ste zabezpečili rovnomernú jasnosť v celom snímku.
+**Odporúčanie**: Vždy zapnite korekciu vinietovania, aby ste zabezpečili rovnomernú jasnosť v celom ráme.
 {% endhint %}
 
 ### Kalibrácia odrazivosti
@@ -434,7 +434,7 @@ Prevádza surové hodnoty senzora na štandardizované percentá odrazivosti pom
 
 ### Výstupné formáty
 
-<table><thead><tr><th width="197">Formát</th><th width="130.20001220703125">Bitová hĺbka</th><th width="116.5999755859375">Veľkosť súboru</th><th>Najvhodnejšie pre</th></tr></thead><tbody><tr><td><strong>TIFF (16-bitový)</strong> ⭐</td><td>16-bitové celé číslo</td><td>Veľké</td><td>GIS analýza, fotogrametria (odporúčané)</td></tr><tr><td><strong>TIFF (32-bitové, percentá)</strong></td><td>32-bitové plávajúce</td><td>Veľmi veľké</td><td>Vedecká analýza, výskum</td></tr><tr><td><strong>PNG (8-bitový)</strong></td><td>8-bitové celé číslo</td><td>Stredné</td><td>Vizuálna kontrola, zdieľanie na webe</td></tr><tr><td><strong>JPG (8-bitové)</strong></td><td>8-bitové celé číslo</td><td>Malé</td><td>Rýchly náhľad, komprimovaný výstup</td></tr></tbody></table>***
+<table><thead><tr><th width="197">Formát</th><th width="130.20001220703125">Bitová hĺbka</th><th width="116.5999755859375">Veľkosť súboru</th><th>Najvhodnejšie pre</th></tr></thead><tbody><tr><td><strong>TIFF (16-bitový)</strong> ⭐</td><td>16-bitové celé číslo</td><td>Veľké</td><td>GIS analýza, fotogrametria (odporúčané)</td></tr><tr><td><strong>TIFF (32-bitové, percentá)</strong></td><td>32-bitové plávajúce číslo</td><td>Veľmi veľké</td><td>Vedecká analýza, výskum</td></tr><tr><td><strong>PNG (8-bitový)</strong></td><td>8-bitové celé číslo</td><td>Stredné</td><td>Vizuálna kontrola, zdieľanie na webe</td></tr><tr><td><strong>JPG (8-bitové)</strong></td><td>8-bitové celé číslo</td><td>Malé</td><td>Rýchly náhľad, komprimovaný výstup</td></tr></tbody></table>***
 
 ## Automatizácia a skriptovanie
 
@@ -711,13 +711,13 @@ No images found in the specified folder
 
 ***
 
-### Spracovanie sa zastaví alebo zavesí
+### Spracovanie sa zastaví alebo zamrzne
 
 **Riešenia:**
 
 1. Skontrolujte voľné miesto na disku (uistite sa, že je dostatočné na výstup).
 2. Zatvorte ostatné aplikácie, aby ste uvoľnili pamäť.
-3. Znížte počet obrázkov (spracovávajte v dávkach).
+3. Znížte počet obrázkov (spracovávajte ich po častiach).
 
 ***
 
@@ -765,7 +765,7 @@ Prihláste sa na: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camer
 
 ### Otázka: Kde sa ukladajú spracované obrázky?
 
-**Odpoveď:** Spracované obrázky sa štandardne ukladajú do **rovnakého priečinka ako vstupné** v podpriečinkoch modelov kamier (napr. `Survey3N_RGN/`).
+**Odpoveď:** Spracované obrázky sa štandardne ukladajú do **rovnakého priečinka ako vstupné** v podpriečinkoch modelu fotoaparátu (napr. `Survey3N_RGN/`).
 
 Na určenie iného výstupného priečinka použite možnosť `-o`:
 
@@ -895,7 +895,7 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ### Príklad 4: Spracovanie s korekciou PPK
 
-Aplikácia korekcií PPK s odrazivosťou:
+Uplatnenie korekcií PPK s odrazivosťou:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^

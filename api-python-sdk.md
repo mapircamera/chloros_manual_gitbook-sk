@@ -4,7 +4,7 @@
 
 ### Kľúčové vlastnosti
 
-* 🐍 **Natívny Python** - Čistý, Pythonic API pre spracovanie obrazu
+* 🐍 **Natívny Python** - Čistý, pythonský API pre spracovanie obrazu
 * 🔧 **Plný prístup k API** - Kompletná kontrola nad spracovaním Chloros
 * 🚀 **Automatizácia** - Vytvorte vlastné pracovné postupy hromadného spracovania
 * 🔗 **Integrácia** – Vložte Chloros do existujúcich aplikácií Python
@@ -23,7 +23,7 @@
 | **Internet**         | Potrebný na aktiváciu licencie                                     |
 
 {% hint style=&quot;warning&quot; %}
-**Požiadavky na licenciu**: Python SDK vyžaduje platené predplatné Chloros+ pre prístup k API. Štandardné (bezplatné) plány nemajú prístup k API/SDK. Prejdite na [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) a vykonajte upgrade.
+**Požiadavky na licenciu**: Python SDK vyžaduje platené predplatné Chloros+ pre prístup k API. Štandardné (bezplatné) plány nemajú prístup k API/SDK. Prejdite na [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing), aby ste vykonali upgrade.
 {% endhint %}
 
 ## Rýchly štart
@@ -112,7 +112,7 @@ pip install chloros-sdk[dev]
 
 ### Overenie inštalácie
 
-Otestujte, či je SDK nainštalovaný správne:
+Skontrolujte, či je SDK nainštalovaný správne:
 
 ```python
 import chloros_sdk
@@ -125,14 +125,14 @@ print(f"Chloros SDK version: {chloros_sdk.__version__}")
 
 ### Aktivácia licencie
 
-SDK používa rovnakú licenciu ako Chloros, Chloros (prehliadač) a Chloros CLI. Aktivujte raz prostredníctvom grafického používateľského rozhrania alebo CLI:
+SDK používa rovnakú licenciu ako Chloros, Chloros (prehliadač) a Chloros CLI. Aktivujte raz prostredníctvom GUI alebo CLI:
 
 1. Otvorte **Chloros alebo Chloros (prehliadač)** a prihláste sa na karte Používateľ <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> . Alebo otvorte **CLI**.
 2. Zadajte svoje prihlasovacie údaje Chloros+ a prihláste sa
 3. Licencia je uložená v lokálnej pamäti (zostáva zachovaná aj po reštartovaní)
 
 {% hint style=&quot;success&quot; %}
-**Jednorazové nastavenie**: Po prihlásení prostredníctvom GUI alebo CLI, SDK automaticky používa uloženú licenciu. Nie je potrebné žiadne ďalšie overenie!
+**Jednorazové nastavenie**: Po prihlásení prostredníctvom grafického rozhrania alebo CLI, SDK automaticky používa uloženú licenciu. Nie je potrebné žiadne ďalšie overenie!
 {% endhint %}
 
 ### Testovanie pripojenia
@@ -152,7 +152,7 @@ print(f"Backend running: {status['running']}")
 
 ***
 
-## API Referencia
+## Referencia API
 
 ### Trieda ChlorosLocal
 
@@ -178,7 +178,7 @@ ChlorosLocal(
 | `auto_start_backend`      | bool | `True`                    | V prípade potreby automaticky spustiť backend |
 | `backend_exe`             | str  | `None` (automatická detekcia)      | Cesta k spustiteľnému súboru backendu            |
 | `timeout`                 | int  | `30`                      | Časový limit požiadavky v sekundách            |
-| `backend_startup_timeout` | int  | `60`                      | Časový limit pre spustenie backendu (sekundy) |
+| `backend_startup_timeout` | int  | `60`                      | Časový limit na spustenie backendu (sekundy) |
 
 **Príklady:**
 
@@ -206,7 +206,7 @@ Vytvorenie nového projektu Chloros.
 
 **Parametre:**
 
-| Parameter      | Typ | Povinný | Popis                                              |
+| Parameter      | Typ | Povinné | Popis                                              |
 | -------------- | ---- | -------- | -------------------------------------------------------- |
 | `project_name` | str  | Áno      | Názov projektu                                     |
 | `camera`       | str  | Nie       | Šablóna kamery (napr. „Survey3N\_RGN“, „Survey3W\_OCN“) |
@@ -227,14 +227,14 @@ chloros.create_project("DroneField_A", camera="Survey3N_RGN")
 
 #### `import_images(folder_path, recursive=False)`
 
-Importujte obrázky zo zložky.
+Import obrázkov zo zložky.
 
 **Parametre:**
 
-| Parameter     | Typ     | Povinné | Popis                        |
+| Parameter     | Typ     | Požadované | Popis                        |
 | ------------- | -------- | -------- | ---------------------------------- |
 | `folder_path` | str/Path | Áno      | Cesta k priečinku s obrázkami         |
-| `recursive`   | bool     | Nie       | Vyhľadávanie v podpriečinkoch (predvolené: False) |
+| `recursive`   | bool     | Nie       | Vyhľadávať podpriečinky (predvolené: False) |
 
 **Vrátené hodnoty:** `dict` – Výsledky importu s počtom súborov
 
@@ -261,7 +261,7 @@ Konfigurácia nastavení spracovania.
 | `debayer`                 | str  | „Vysoká kvalita (rýchlejšie)“ | Metóda Debayer                  |
 | `vignette_correction`     | bool | `True`                  | Povoliť korekciu vinetácie      |
 | `reflectance_calibration` | bool | `True`                  | Povoliť kalibráciu odrazivosti  |
-| `indices`                 | list | `None`                  | Vegetačné indexy na výpočet |
+| `indices`                 | zoznam | `None`                  | Vegetačné indexy na výpočet |
 | `export_format`           | str  | „TIFF (16-bitový)“         | Výstupný formát                   |
 | `ppk`                     | bool | `False`                 | Povoliť PPK korekcie          |
 | `custom_settings`         | dict | `None`                  | Pokročilé vlastné nastavenia        |
@@ -271,7 +271,7 @@ Konfigurácia nastavení spracovania.
 * `"TIFF (16-bit)"` – odporúčané pre GIS/fotogrametriu
 * `"TIFF (32-bit, Percent)"` – vedecká analýza
 * `"PNG (8-bit)"` – vizuálna kontrola
-* `"JPG (8-bit)"` – komprimovaný výstup
+* `"JPG (8-bit)"` – Komprimovaný výstup
 
 **Dostupné indexy:**
 
@@ -306,17 +306,17 @@ Spracujte obrázky projektu.
 
 **Parametre:**
 
-| Parameter           | Typ     | Predvolené      | Popis                               |
+| Parameter           | Typ     | Predvolené nastavenie      | Popis                               |
 | ------------------- | -------- | ------------ | ----------------------------------------- |
-| `mode`              | str      | `"parallel"` | Režim spracovania: „parallel“ alebo „sériový“   |
+| `mode`              | str      | `"parallel"` | Režim spracovania: „parallel“ alebo „serial“   |
 | `wait`              | bool     | `True`       | Čakanie na dokončenie                       |
 | `progress_callback` | callable | `None`       | Funkcia spätného volania priebehu (progress, msg) |
-| `poll_interval`     | float    | `2.0`        | Interval opytovania pokroku (sekundy)   |
+| `poll_interval`     | float    | `2.0`        | Interval opakovania pre priebeh (sekundy)   |
 
 **Vrátené hodnoty:** `dict` – Výsledky spracovania
 
 {% hint style=&quot;warning&quot; %}
-**Paralelný režim**: Vyžaduje licenciu Chloros+. Automaticky sa prispôsobí jadrám vášho procesora (až 16 pracovných jednotiek).
+**Paralelný režim**: Vyžaduje licenciu Chloros+. Automaticky sa prispôsobí jadrám vášho procesora (až 16 pracovníkov).
 {% endhint %}
 
 **Príklad:**
@@ -358,7 +358,7 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-Získajte informácie o stave backendu.
+Získať informácie o stave backendu.
 
 **Vrátené hodnoty:** `dict` – stav backendu
 
@@ -388,7 +388,7 @@ chloros.shutdown_backend()
 
 #### `process_folder(folder_path, **options)`
 
-Jednoradová pomocná funkcia na spracovanie priečinka.
+Jednořádková praktická funkcia na spracovanie priečinka.
 
 **Parametre:**
 
@@ -396,13 +396,13 @@ Jednoradová pomocná funkcia na spracovanie priečinka.
 | ------------------------- | -------- | --------------- | ------------------------------ |
 | `folder_path`             | str/Path | Povinné        | Cesta k priečinku s obrázkami     |
 | `project_name`            | str      | Automaticky generované  | Názov projektu                   |
-| `camera`                  | str      | `None`          | Šablóna kamery                |
+| `camera`                  | str      | `None`          | Šablóna fotoaparátu                |
 | `indices`                 | list     | `["NDVI"]`      | Indexy na výpočet           |
 | `vignette_correction`     | bool     | `True`          | Povoliť korekciu vinetácie     |
 | `reflectance_calibration` | bool     | `True`          | Povoliť kalibráciu odrazivosti |
 | `export_format`           | str      | „TIFF (16-bitový)“ | Výstupný formát                  |
 | `mode`                    | str      | `"parallel"`    | Režim spracovania                |
-| `progress_callback`       | callable | `None`          | Spätné volanie priebehu              |
+| `progress_callback`       | volateľný | `None`          | Spätné volanie priebehu              |
 
 **Vrátené hodnoty:** `dict` – Výsledky spracovania
 
@@ -1016,13 +1016,13 @@ chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
 chloros.configure(indices=["NDVI"])  # Not all indices
 ```
 
-4. **Spracúvajte na SSD** (nie na HDD)
+4. **Spracujte na SSD** (nie na HDD)
 
 ***
 
 ### Optimalizácia pamäte
 
-Pre veľké dátové súbory:
+Pre veľké súbory údajov:
 
 ```python
 # Process in batches instead of all at once
@@ -1133,13 +1133,13 @@ chloros.process(progress_callback=notebook_progress)
 
 * Windows Server 2016 alebo novší
 * Chloros nainštalovaný (jednorazovo)
-* Licencia aktivovaná na akomkoľvek počítači (licencia uložená v pamäti vyrovnávacej pamäte skopírovaná na server)
+* Licencia aktivovaná na akomkoľvek počítači (licencia uložená v pamäti cache skopírovaná na server)
 
 ***
 
 ### Otázka: Aký je rozdiel medzi Desktop, CLI a SDK?
 
-| Funkcia         | Desktop GUI | CLI Príkazový riadok | Python SDK  |
+| Funkcia         | Desktop GUI | CLI príkazový riadok | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
 | **Rozhranie**   | Ukazovateľom myši | Príkazový riadok          | Python API  |
 | **Najvhodnejšie pre**    | Vizuálnu prácu | Skriptovanie        | Integráciu |
@@ -1154,7 +1154,7 @@ chloros.process(progress_callback=notebook_progress)
 **Odpoveď:** Kód SDK je možné integrovať do vašich aplikácií, ale:
 
 * Koncoví používatelia potrebujú nainštalovaný Chloros
-* Koncoví používatelia potrebujú aktívne licencie Chloros+.
+* Koneční používatelia potrebujú aktívne licencie Chloros+.
 * Komerčná distribúcia vyžaduje OEM licencie.
 
 V prípade otázok týkajúcich sa OEM kontaktujte info@mapir.camera.

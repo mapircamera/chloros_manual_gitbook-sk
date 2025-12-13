@@ -11,7 +11,7 @@ metaLinks:
 
 <summary>Môžem spracovávať obrázky z kamier, ktoré nie sú značky MAPIR, pomocou Chloros?</summary>
 
-Nie, Chloros podporuje spracovanie iba obrazov z kamier MAPIR. Ďalšie informácie nájdete v zozname [podporovaných modelov kamier](supported-cameras.md). Ponúkame spracovanie obrázkov z iných kamier v cloude MAPIR, kompletný zoznam nájdete [tu](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
+Nie, Chloros podporuje spracovanie iba obrázkov z kamery MAPIR. Ďalšie informácie nájdete v zozname [podporovaných modelov kamier](supported-cameras.md). Ponúkame spracovanie snímok z iných kamier v cloude MAPIR, kompletný zoznam nájdete [tu](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
 
 </details>
 
@@ -19,7 +19,7 @@ Nie, Chloros podporuje spracovanie iba obrazov z kamier MAPIR. Ďalšie informá
 
 <summary>Môžem kalibrovať svoje snímky na odrazivosť bez kalibračného terča?</summary>
 
-Nie. Bez snímky kalibračného terčíka zachytenej v čase, keď sú zachytené snímky bez terčíka, nebudete môcť priradiť hodnoty pixelov snímky k známemu percentu odrazivosti. Ak nezahrniete aj protokol zo svetelného senzora MAPIR, spektrum okolitého svetla nebude merané a výsledky odrazivosti nebudú presné.
+Nie. Bez snímky kalibračného terčíka zachytenej v čase, keď sa zachytávajú snímky bez terčíka, nebudete môcť priradiť hodnoty pixelov snímky k známemu percentu odrazivosti. Ak nezahrniete aj protokol zo svetelného senzora MAPIR, spektrum okolitého svetla sa nezmeria a výsledky odrazivosti nebudú presné.
 
 </details>
 
@@ -41,7 +41,7 @@ Nie. Sady obrazových dát Survey3 musia mať pevnú/uzamknutú expozíciu, tak�
 
 <details>
 
-<summary>Môže Chloros spracovávať alebo analyzovať ortomozaikové snímky?</summary>
+<summary>Môže Chloros spracovávať alebo analyzovať ortomosaické snímky?</summary>
 
 Nie. Podporované sú len jednotlivé snímky z fotoaparátu MAPIR, nie spojené snímky, ako je ortomozaiková mapa.
 
@@ -49,7 +49,7 @@ Nie. Podporované sú len jednotlivé snímky z fotoaparátu MAPIR, nie spojené
 
 <details>
 
-<summary>Ako môžem urýchliť krok detekcie cieľa v Chloros?</summary>
+<summary>Ako môžem urýchliť krok detekcie cieľa v programe Chloros?</summary>
 
 V tabuľke prehliadača súborov môžete v pravom stĺpci vopred vybrať cieľové snímky, čím Chloros nariadite, aby hľadal kalibračné ciele iba v týchto snímkach, čo výrazne urýchli spracovanie.
 

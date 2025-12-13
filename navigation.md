@@ -14,11 +14,9 @@ Z hlavného menu môžete začať nový projekt, otvoriť existujúci projekt al
 
 Keď je tlačidlo spracovania aktivované, spustí sa spracovanie obrazu.
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Indikátor priebehu <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Indikátor priebehu <img src=".gitbook/assets/image (5).png" alt="" data-size="line">V bezplatnom režime Chloros, ktorý spracováva všetky súbory postupne, ukazovateľ priebehu zobrazuje 2 fázy: Detekcia cieľa a Spracovanie.
 
-V bezplatnom režime Chloros, ktorý spracováva všetky súbory postupne, ukazovateľ priebehu zobrazuje 2 fázy: Detekcia cieľa a Spracovanie.
-
-V platenom režime Chloros+ s licenciou, ktorý spracováva všetky súbory súčasne, ukazovateľ priebehu zobrazuje 4 fázy: Detekcia, Analýza, Kalibrácia, Export. Ak umiestnite kurzor myši nad ukazovateľ priebehu Chloros+, zobrazí sa rozbalené rozšírené okno s 4 ukazovateľmi priebehu, takže môžete sledovať priebeh. Kliknutím na horný ukazovateľ priebehu sa rozbalené okno zmrazí, ďalším kliknutím sa opäť odblokuje.
+V platenom režime Chloros+ s licenciou, ktorý spracováva všetky súbory súčasne, ukazovateľ priebehu zobrazuje 4 fázy: Detekcia, Analýza, Kalibrácia, Export. Ak umiestnite kurzor myši nad ukazovateľ priebehu Chloros+, rozbalí sa rozšírený panel s 4 ukazovateľmi priebehu, takže môžete sledovať priebeh. Kliknutím na horný ukazovateľ priebehu sa rozbalený panel zmrazí, ďalším kliknutím sa opäť odblokuje.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -40,7 +38,7 @@ Po kliknutí na obrázok v hlavnom prehliadači obrázkov sa otvorí na celej ob
 
 #### <img src=".gitbook/assets/icon_log.JPG" alt="" data-size="line"> Logs
 
-Pri výskytu problémov skontrolujte logy pre debugovanie. Skopírujte/stiahnite logy a pošlite ich na [MAPIR Support](https://www.mapir.camera/community/contact) pre pomoc.
+Pri problémoch skontrolujte logy pre debugovanie. Skopírujte/stiahnite logy a pošlite ich na [MAPIR Support](https://www.mapir.camera/community/contact) pre pomoc.
 
 #### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [Prihlásenie používateľa](chloros+-login.md)
 

@@ -12,13 +12,13 @@ metaLinks:
 
 ### TIFF (32-bitový, percentá %)
 
-32-bitový (plávajúca desatinná hodnota pixelu 0,0 – 1,0) výstup vo formáte TIFF (.tif). Hodnoty pixelu predstavujú percentá odrazivosti, kde 0,0 = 0 % a 1,0 = 100 %.
+32-bitový (plávajúca desatinná čiarka pixelov 0,0 – 1,0) výstup vo formáte TIFF (.tif). Hodnoty pixelov predstavujú percentá odrazivosti, kde 0,0 = 0 % a 1,0 = 100 %.
 
 ### **JPG (8-bitový)**
 
 8-bitový (digitálne číslo pixelu 0 -255) výstup vo formáte JPG (.jpg).
 
-### **PNG (8-bitový)**
+### **PNG (8-bit)**
 
-8-bitový (digitálne číslo pixelu 0 – 255) výstup vo formáte PNG (.png). Bezstratová kompresia vhodná pre prezeranie a vizualizáciu na webe.
+Výstup vo formáte PNG (.png) s 8-bitovou presnosťou (digitálne číslo pixelu 0 – 255). Bezstratová kompresia vhodná pre prezeranie a vizualizáciu na webe.
 

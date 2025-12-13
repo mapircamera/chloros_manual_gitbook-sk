@@ -4,7 +4,7 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
 
-# Stiahnutie
+# Stiahnuť
 
 Stiahnite si najnovšiu verziu Chloros pre Windows a začnite s multispektrálnym spracovaním obrazu.
 
@@ -21,7 +21,7 @@ Stiahnite si najnovšiu verziu Chloros pre Windows a začnite s multispektrálny
 | **Internet**         | Potrebný na aktiváciu licencie | Potrebný na aktiváciu licencie |
 
 {% hint style=&quot;info&quot; %}
-**GPU akcelerácia**: Chloros+ používatelia s GPU NVIDIA (4 GB+ VRAM) môžu využiť CUDA akceleráciu pre výrazne rýchlejšie spracovanie.
+**GPU akcelerácia**: Chloros+ používatelia s NVIDIA GPU (4 GB+ VRAM) môžu využiť CUDA akceleráciu pre výrazne rýchlejšie spracovanie.
 {% endhint %}
 
 ***
@@ -32,7 +32,7 @@ Stiahnite si najnovšiu verziu Chloros pre Windows a začnite s multispektrálny
 
 ### Najnovšia stabilná verzia
 
-**Chloros Inštalátor pre Windows**
+**Chloros Inštalačný program pre Windows**
 
 * **Verzia**: 1.0.3
 * **Dátum vydania**: december ?, 2025
@@ -75,7 +75,7 @@ pip install chloros-sdk
 Inštalácia Chloros obsahuje:
 
 * ✅ **Chloros Desktop GUI** – plnohodnotné grafické rozhranie
-* ✅ **Chloros (prehliadač)** – webové rozhranie pre systémy s nižšou konfiguráciou
+* ✅ **Chloros (prehliadač)** – webové rozhranie pre systémy s nižšou špecifikáciou
 * ✅ **Chloros CLI** – rozhranie príkazového riadku (vyžaduje licenciu Chloros+)
 * ✅ **Backend Engine** – potrubie na spracovanie obrazu
 * ✅ **Profily kamery** - Predkonfigurované šablóny kamery MAPIR
@@ -95,7 +95,7 @@ Odomknite pokročilé funkcie s predplatným Chloros+:
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Zobraziť Chloros+ Plány a ceny</a></p>***
 
-## Pomoc s inštaláciou
+## Pomoc pri inštalácii
 
 ### Riešenie problémov
 
@@ -163,6 +163,6 @@ Potrebujete pomoc s inštaláciou alebo nastavením?
 
 Neoprávnené používanie, distribúcia alebo úprava je zakázaná.
 
-**Bezplatná verzia**: K dispozícii na osobné a komerčné použitie s obmedzeniami funkcií.
+**Bezplatná verzia**: K dispozícii pre osobné a komerčné použitie s obmedzeniami funkcií.
 
 **Chloros+**: Licencia na báze predplatného pre pokročilé funkcie a komerčné nasadenie.
