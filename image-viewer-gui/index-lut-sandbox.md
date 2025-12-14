@@ -45,7 +45,7 @@ V Chloros je možné indexy použiť počas spracovania projektu. Na určenie, k
 Sandbox vám umožňuje:
 
 * **Použiť nové indexy a farebné prechody (LUT)** na vizualizáciu údajov.
-* **Interaktívne upraviť nastavenia vizualizácie**.
+* **Interaktívne prispôsobiť nastavenia vizualizácie**.
 * **Zobraziť** už vypočítané indexové obrázky.
 * **Skontrolovať** hodnoty pixelov na všetkých úrovniach zväčšenia.
 
@@ -53,7 +53,7 @@ Sandbox vám umožňuje:
 
 Sandbox Index/LUT je prístupný v **prehliadači obrázkov** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> :
 
-1. Kliknite na obrázok v mriežke prehliadača súborov, otvorí sa v karte **Prehliadač obrázkov** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> .
+1. Kliknite na obrázok v mriežke prehliadača súborov, otvorí sa v prehliadači obrázkov <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> .
 2. Kliknite na kartu **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> , aby sa otvoril ľavý bočný panel, ak ešte nie je otvorený
 
 ### Výber obrázku, na ktorý sa má použiť index/LUT
@@ -127,19 +127,19 @@ Keď máte indexový obrázok zobrazujúci
 2. Vyberte farebný prechod
 3. Nastavte minimálne/maximálne koncové body orezania
 4. Nastavte režim orezania
-5. Zaškrtnite políčko Index v bočnom paneli **Prehliadač obrázkov** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> na bočnom paneli, aby ste aplikovali LUT.
+5. Zaškrtnite políčko Index v bočnom paneli **Prehliadača obrázkov** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> na bočnom paneli, aby ste aplikovali LUT.
 
 ### Výber farebného prechodu
 
 **Výber prechodu:**
 
-1. V paneli LUT vyhľadajte **farebnú lištu prechodu**.
-2. Naveďte na ňu kurzor myši, aby ste zobrazenie dostupné prednastavenia prechodov.
-3. Vyberte požadovaný prechod.
+1. V paneli LUT vyhľadajte **farebný gradientový pruh**.
+2. Naveďte naň kurzor myši, aby sa zobrazili dostupné prednastavenia gradientu.
+3. Vyberte požadovaný gradient.
 4. Obraz sa **okamžite aktualizuje** novými farbami, keď je zaškrtnuté políčko Index.
 
 {% tip style=&quot;success&quot; %}
-**Osvedčená prax**: Pre vegetačné indexy, ako je NDVI, je najintuitívnejší prechod Red-Yellow-Green, pretože zodpovedá prirodzeným farebným asociáciám (zelená = zdravá, žltá = stredná, červená = stresovaná).
+**Osvedčené postupy**: Pre vegetačné indexy, ako je NDVI, je najintuitívnejší prechod Red-Yellow-Green, pretože zodpovedá prirodzeným asociáciám farieb (zelená = zdravá, žltá = stredná, červená = stresovaná)..
 {% endhint %}
 
 ### Úprava farebných tried
@@ -180,7 +180,7 @@ Keď máte indexový obrázok zobrazujúci
 
 * **Minimálna hodnota**: Dolná hranica farebnej škály
 * **Maximálna hodnota**: Horná hranica farebnej škály
-* **Medzihodnoty**: Automaticky rozdelené medzi min a max (na základe počtu tried)
+* **Stredné hodnoty**: Automaticky rozdelené medzi min a max (na základe počtu tried)
 
 #### Úprava minimálnych/maximálnych hodnôt
 
@@ -200,8 +200,8 @@ Keď máte indexový obrázok zobrazujúci
 **Príklad úprav rozsahu NDVI:**
 
 * **Celý rozsah**: `-1.0` až `1.0` (zobraziť všetky možné hodnoty)
-* **Zamerané na vegetáciu**: `0.2` až `0.9` (vylučte holú pôdu a vodu)
-* **Iba zdravá vegetácia**: `0.5` až `0.9` (zvýrazňujte iba vitálne rastliny)
+* **Zamerané na vegetáciu**: `0.2` až `0.9` (vylúčiť holú pôdu a vodu)
+* **Iba zdravá vegetácia**: `0.5` až `0.9` (zvýrazniť iba vitálne rastliny)
 * **Detekcia stresu**: `0.2` až `0.5` (zdôraznenie problémových oblastí)
 * **Vlastný rozsah**: Úprava na základe pozorovaných hodnôt pixelov
 
@@ -223,7 +223,7 @@ Keď hodnoty pixelov presahujú definovaný minimálny/maximálny rozsah, môže
 * Pixely **pod minimálnou hodnotou** → zobrazenie pomocou **prvej farby** v gradiente (napr. červená)
 * Pixely **nad maximálnou hodnotou** → zobrazenie pomocou **poslednej farby** v gradiente (napr. zelená)
 * **Prípad použitia**: Zdôraznenie extrémov, zobrazenie celého rozsahu údajov s nasýtenými farbami na hraniciach
-* **Príklad**: Hodnoty NDVI pod 0,2 sa zobrazujú červeno, hodnoty nad 0,9 sa zobrazujú zeleno
+* **Príklad**: Hodnoty NDVI pod 0,2 sa zobrazujú červenou farbou, hodnoty nad 0,9 sa zobrazujú zelenou farbou
 
 #### 2. Priehľadné pozadie
 
@@ -238,24 +238,24 @@ Keď hodnoty pixelov presahujú definovaný minimálny/maximálny rozsah, môže
 
 #### 3. Pozadie indexu
 
-* Pixely **mimo rozsah** sa zobrazujú v **odtieňoch sivej** (zobrazujú surové hodnoty indexu)
+* Pixely **mimo rozsahu** sa zobrazujú v **odtieňoch sivej** (zobrazujú surové hodnoty indexu)
 * Pixely **v rozsahu** zobrazujú **farebný prechod**
-* **Prípad použitia**: Jemné zvýraznenie, zachovanie kontextu a zdôraznenie oblastí záujmu
-* **Príklad**: Farebné zvýraznenie stresovanej vegetácie (NDVI 0,3–0,5) a zobrazenie zdravých oblastí v sivej farbe
+* **Prípad použitia**: Jemné zvýraznenie, zachovanie kontextu a zdôraznenie oblastí záujmu.
+* **Príklad**: Farebne zvýraznená namáhaná vegetácia (NDVI 0,3–0,5) a zdravé oblasti zobrazené v sivej farbe.
 
 #### 4. Pôvodné pozadie
 
-* Pixely **mimo rozsahu** zobrazujú **pôvodný multispektrálny obraz**.
-* Pixely **v rozsahu** zobrazujú **farebný prechod**.
-* **Prípad použitia**: Najintuitívnejšie – kombinuje prirodzený kontext obrazu s analytickým farebným prekrytím
+* Pixely **mimo rozsah** sa zobrazia ako **pôvodný multispektrálny obraz**.
+* Pixely **v rozsahu** zobrazujú **farebný prechod**
+* **Prípad použitia**: Najintuitívnejší – kombinuje prirodzený kontext obrazu s analytickým farebným prekrytím
 * **Príklad**: Pozrite si skutočný vzhľad poľa/plodiny s farebne označenými stresovými oblasťami
 
 ### Výber správneho režimu orezávania
 
 | Režim orezávania              | Najvhodnejšie pre                                   | Štýl vizualizácie          |
 | -------------------------- | ------------------------------------------ | ---------------------------- |
-| **Minimálna a maximálna hodnota**    | Zobrazenie všetkých údajov, vedecká analýza     | Všetky pixely sú farebné           |
-| **Transparentné pozadie** | GIS prekrytia, izolovanie konkrétnych rozsahov    | Farba v rozsahu, mimo rozsahu prázdne |
+| **Minimum a maximum**    | Zobrazenie všetkých údajov, vedecká analýza     | Všetky pixely farebné           |
+| **Transparentné pozadie** | GIS prekrytia, izolovanie špecifických rozsahov    | Farba v rozsahu, mimo rozsahu prázdne |
 | **Indexové pozadie**       | Jemné zdôraznenie, zachovanie kontextu údajov  | Farba v rozsahu, mimo rozsahu sivá  |
 | **Pôvodné pozadie**    | Správy, prezentácie, intuitívna analýza | Farba v rozsahu, mimo rozsahu fotografia |
 
@@ -265,29 +265,29 @@ Pre úplnú kontrolu nad vizualizáciou môžete vytvoriť **vlastné farebné p
 
 **Vytvorenie vlastného prechodu:**
 
-1. V paneli LUT vyhľadajte **lištu náhľadu prechodu**
-2. Pod prechodom vyhľadajte **štvorčeky farebných vzoriek**
-3. **Kliknutím na farebnú zastávku** ju vyberte
-4. Otvorí sa **výber farieb**
+1. V paneli LUT vyhľadajte **lištu náhľadu prechodu**.
+2. Pod prechodom vyhľadajte **štvorce farebných vzoriek**.
+3. **Kliknutím na farebné zastavenie** ho vyberte.
+4. Otvorí sa **výber farieb**.
 5. Vyberte novú farbu pomocou:
-   * **Farebného kruhu**: Vizuálny výber farieb
-   * **Posuvníkov RGB/HSV**: Presné ovládanie farieb
-   * **Zadávania hexadecimálneho kódu**: Presná špecifikácia farieb (napr. `#FF0000` pre červenú)
-6. Kliknutím mimo farebného výberu **aplikujete novú farbu**
-7. Prechod **sa okamžite aktualizuje** na obrázku
+   * **Farebného kruhu**: Vizuálny výber farieb.
+   * **Posuvníkov RGB/HSV**: Presné ovládanie farieb.
+   * **Zadania hexadecimálneho kódu**: Presná špecifikácia farieb (napr. `#FF0000` pre červenú).
+6. Kliknutím mimo výberu farieb **aplikujete novú farbu**.
+7. Prechod **sa okamžite aktualizuje** na obrázku.
 
 **Pridávanie alebo odstraňovanie farebných zastavení:**
 
-* **Pridanie zastavenia**: Kliknutím na ikonu + pridáte nový vzor na koniec
-* **Odstránenie zastavenia**: Dvojitým kliknutím na farebný štvorček odstránite vzor
+* **Pridanie zastavenia**: Kliknutím na ikonu + pridáte nový vzor na koniec.
+* **Odstránenie zastavenia**: Dvojitým kliknutím na farebný štvorček odstránite vzor.
 
 **Stratégie prispôsobenia:**
 
-* **Invertovať prechod**: Obráťte poradie farieb, aby ste obrátili význam (napr. zelená = nízka, červená = vysoká)
-* **Farby značky**: Zlaďte farebnú paletu vašej organizácie pre správy
-* **Vhodné pre farboslepých**: Použite kombinácie oranžovej a modrej alebo fialovej a žltej
-* **Optimalizácia tlače**: Vyberte farby, ktoré fungujú pri tlači vo farbách aj v odtieňoch sivej
-* **Viac prahov**: Použite odlišné farby pri konkrétnych prahoch hodnôt na klasifikáciu
+* **Invertovať prechod**: Obráťte poradie farieb, aby ste obrátili význam (napr. zelená = nízka, červená = vysoká).
+* **Farby značky**: Zlaďte farebnú paletu vašej organizácie pre správy.
+* **Vhodné pre farboslepých**: Použite kombinácie oranžová-modrá alebo fialová-žltá.
+* **Optimalizácia tlače**: Vyberte farby, ktoré fungujú pri farebnej aj čiernobielej tlači.
+* **Viac prahov**: Použite odlišné farby pri konkrétnych prahoch hodnôt na klasifikáciu.
 
 {% hint style=&quot;info&quot; %}
 **Uloženie vlastných prechodov**: Vlastné prechody je možné uložiť a znovu použiť. Kliknutím na ikonu uloženia v paneli LUT môžete uložiť vlastné farebné schémy pre budúce použitie.
@@ -304,8 +304,8 @@ Všetky úpravy LUT v sandboxe aktualizujú obraz **okamžite a interaktívne**:
 * **Prepnúť vrstvu** → Obraz sa okamžite zmení
 * **Vybrať prechod** → Farby sa aktualizujú okamžite
 * **Upravte rozsah hodnôt** → Kontrast sa mení v reálnom čase
-* **Zmeňte triedy** → Hladkosť prechodu sa aktualizuje okamžite
-* **Upravte orezanie** → Zobrazenie pozadia sa zmení okamžite
+* **Zmeňte triedy** → Plynulosť prechodu sa aktualizuje okamžite
+* **Upravte orezanie** → Zobrazenie pozadia sa okamžite zmení
 * **Úprava farieb** → Vlastný gradient sa uplatní okamžite
 
 **Nie je potrebné tlačidlo „Uplatniť“** – všetky zmeny sú živé a interaktívne!
@@ -321,11 +321,11 @@ Všetky úpravy LUT v sandboxe aktualizujú obraz **okamžite a interaktívne**:
 1. **Vyberte indexovú vrstvu** (napr. RAW (odrazivosť))
 2. **Použite index** – Vyberte filter fotoaparátu a indexovú formulu, pretiahnite farebné kruhy na vhodné miesto v indexovej formule
 3. **Použite gradient LUT** – Začnite s predvoleným nastavením Red-Yellow-Green
-4. **Skontrolujte hodnoty pixelov** – Pohybujte kurzorom a všimnite si rozsahy hodnôt
+4. **Skontrolujte hodnoty pixelov** – presuňte kurzor a zaznamenajte rozsahy hodnôt
 5. **Upravte min/max** – zúžte, aby ste sa zamerali na vegetáciu (napr. 0,2 až 0,9)
-6. **Vyberte orezanie** – vyskúšajte „Pôvodné pozadie“ pre kontext
+6. **Vyberte orezanie** – vyskúšajte „Original Background“ (Pôvodné pozadie) pre kontext
 7. **Vylepšite farby** – v prípade potreby prispôsobte gradient pre konkrétny dôraz
-8. **Finalizujte nastavenia** – zdokumentujte nastavenia a skopírujte ich do nastavení projektu pre spracovanie exportu
+8. **Finalizujte nastavenia** – Dokumentujte nastavenia a skopírujte ich do nastavení projektu na účely exportu
 
 ### Kontrola hodnôt pixelov
 
@@ -333,10 +333,10 @@ Porozumenie skutočným hodnotám pixelov je kľúčové pre nastavenie efektív
 
 **Ako kontrolovať hodnoty:**
 
-1. Hodnoty pixelov sa zobrazia, ak je v obrázku zaškrtnuté políčko Index alebo políčka Index a LUT.
-2. **Presuňte kurzor** na rôzne oblasti obrázka.
-3. **Pozorujte hodnoty pixelov** zobrazené v legende, keď kurzorom prejdete nad danou oblasťou.
-4. Zväčšite obrázok, aby ste videli jednotlivé pixely zvýraznené plávajúcou hodnotou.
+1. Hodnoty pixelov sa zobrazia, ak je u obrázku zaškrtnuté políčko Index alebo políčka Index a LUT.
+2. **Presuňte kurzor** na rôzne oblasti obrázku
+3. **Pozorujte hodnoty pixelov** zobrazené v legende, keď sa nad nimi nachádzate
+4. Zväčšite zobrazenie, aby ste videli jednotlivé pixely zvýraznené plávajúcou hodnotou
 5. **Zapíšte si** rozsahy hodnôt pre rôzne vlastnosti:
    * **Zdravá vegetácia**: napr. NDVI 0,55–0,85
    * **Stresovaná vegetácia**: napr. NDVI 0,30–0,50
@@ -345,18 +345,18 @@ Porozumenie skutočným hodnotám pixelov je kľúčové pre nastavenie efektív
 
 **Použitie hodnôt pixelov na nastavenie rozsahov LUT:**
 
-Po skontrolovaní hodnôt pixelov prispôsobte minimálnu/maximálnu hodnotu LUT:
+Po skontrolovaní hodnôt pixelov prispôsobte minimálne/maximálne hodnoty LUT:
 
 **Príklad scenára:**
 
-* **Pozorovanie**: Hodnoty pôdy = 0,05–0,25, Stresovaná = 0,25–0,50, Zdravá = 0,50–0,85
-* **Cieľ**: Vizualizovať iba zdravie rastlín (bez pôdy)
+* **Pozorovanie**: Hodnoty pôdy = 0,05–0,25, stres = 0,25–0,50, zdravý stav = 0,50–0,85
+* **Cieľ**: Vizualizovať iba zdravie rastlín (vynechať pôdu)
 * **Nastavenia LUT**: Min = `0.25`, Max = `0.85`
 * **Orezanie**: „Pôvodné pozadie“ na zobrazenie pôdy v prirodzenej farbe
-* **Výsledok**: Farebný prechod sa vzťahuje len na vegetáciu, pôda sa zobrazuje ako pôvodný obrázok
+* **Výsledok**: Farebný prechod sa vzťahuje iba na vegetáciu, pôda sa zobrazuje ako pôvodný obrázok
 
 {% hint style=&quot;info&quot; %}
-**Dynamický rozsah**: Rôzne plodiny, ročné obdobia a fázy rastu budú mať rôzne rozsahy hodnôt. Pred nastavením rozsahov LUT vždy skontrolujte hodnoty pixelov vo vašom konkrétnom súbore údajov.
+**Dynamický rozsah**: Rôzne plodiny, ročné obdobia a fázy rastu budú mať rôzne rozsahy hodnôt. Pred nastavením rozsahov LUT vždy skontrolujte hodnoty pixelov vo vašej konkrétnej sade údajov.
 {% endhint %}
 
 ***
@@ -372,7 +372,7 @@ Po skontrolovaní hodnôt pixelov prispôsobte minimálnu/maximálnu hodnotu LUT
 **Vytvorenie vlastného indexu:**
 
 1. **Otvorte Nastavenia projektu** (pred spracovaním) alebo bočný panel sandboxu prehliadača obrázkov
-2. Prejdite na **roztváracie menu Vzorec indexu**
+2. Prejdite na **roztiahnuteľné menu Vzorec indexu**
 3. Vyhľadajte možnosť **„Vlastný“** (musíte byť prihlásení s licenciou Chloros+)
 4. **Definujte svoj vzorec** pomocou premenných pásma:
    * Názvy pásiem: `NIR`, `Red`, `Green`, `Blue`, `RedEdge` atď.
@@ -406,14 +406,14 @@ Exponential index:
 
 ## Ďalšie kroky
 
-Teraz, keď rozumiete Index/LUT Sandbox:
+Teraz, keď už rozumiete Index/LUT Sandbox:
 
-* **Použiť na spracovanie**: Použite objavené nastavenia v [Nastaveniach projektu](../project-settings/project-settings.md)
+* **Použite na spracovanie**: Použite objavené nastavenia v [Nastaveniach projektu](../project-settings/project-settings.md)
 * **Hromadné spracovanie**: Použite optimalizované indexy na celé súbory údajov
-* **Ďalšie informácie**: Prečítajte si [Vzorce multispektrálnych indexov](../project-settings/multispectral-index-formulas.md)
+* **Ďalšie informácie**: Prečítajte si [Vzorec multispektrálneho indexu](../project-settings/multispectral-index-formulas.md)
 
 Súvisiaca dokumentácia:
 
 * [**Vrstvy obrázkov**](image-layers.md) – Správa vrstiev a vizualizácia
-* [**Otvorenie obrázka na celú obrazovku**](opening-an-image-full-screen.md) – Základy prehliadača obrázkov
+* [**Otvorenie obrázku na celú obrazovku**](opening-an-image-full-screen.md) – Základy prehliadača obrázkov
 * [**Spracovanie obrázkov (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – Kompletný pracovný postup spracovania

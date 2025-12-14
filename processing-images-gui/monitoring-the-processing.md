@@ -1,6 +1,6 @@
 # Sledovanie spracovania
 
-Po začatí spracovania ponúka Chloros niekoľko spôsobov, ako sledovať priebeh, kontrolovať problémy a porozumieť tomu, čo sa deje s vašim súborom údajov. Na tejto stránke je vysvetlené, ako sledovať spracovanie a interpretovať informácie, ktoré poskytuje Chloros.
+Po začatí spracovania ponúka Chloros niekoľko spôsobov, ako sledovať priebeh, kontrolovať problémy a porozumieť tomu, čo sa deje s vašim súborom údajov. Na tejto stránke sa dozviete, ako sledovať spracovanie a interpretovať informácie, ktoré poskytuje Chloros.
 
 ## Prehľad ukazovateľa priebehu
 
@@ -12,7 +12,7 @@ Pre používateľov bez licencie Chloros+:
 
 **Zobrazenie priebehu v 2 fázach:**
 
-1. **Detekcia cieľa** – vyhľadávanie kalibračných cieľov v obrazoch
+1. **Detekcia cieľa** – vyhľadávanie kalibračných cieľov v obrázkoch
 2. **Spracovanie** – aplikovanie korekcií a export
 
 **Indikátor priebehu zobrazuje:**
@@ -35,8 +35,8 @@ Pre používateľov s licenciou Chloros+:
 **Interaktívne funkcie:**
 
 * **Naveďte kurzor na** ukazovateľ priebehu, aby sa zobrazil rozšírený 4-fázový panel
-* **Kliknutím** na ukazovateľ priebehu zmrazíte/pripnete rozšírený panel
-* **Ďalším kliknutím** ho odzmrazíte a automaticky skryjete po odstránení kurzora myši
+* **Kliknutím** na ukazovateľ priebehu zmrazíte/pripnete rozbalený panel
+* **Ďalším kliknutím** panel odzmrazíte a automaticky skryjete po odstránení kurzora myši
 * Každá fáza zobrazuje individuálny priebeh (0–100 %)
 
 ***
@@ -66,7 +66,7 @@ Pre používateľov s licenciou Chloros+:
 **Na čo si dávať pozor:**
 
 * Ak sú ciele správne označené, proces by mal byť rýchlo dokončený.
-* Ak to trvá príliš dlho, ciele môžu byť neoznačené.
+* Ak trvá príliš dlho, ciele môžu byť neoznačené.
 * Skontrolujte protokol ladenia, či sa v ňom nachádzajú správy „Cieľ nájdený“.
 
 ### Fáza 2: Analýza
@@ -76,7 +76,7 @@ Pre používateľov s licenciou Chloros+:
 * Čítanie metadát EXIF obrázkov (časové značky, nastavenia expozície)
 * Určenie stratégie kalibrácie na základe časových značiek cieľov
 * Organizovanie fronty spracovania obrázkov
-* Príprava paralelných spracovateľov (len Chloros+)
+* Príprava paralelných spracovateľských pracovníkov (len Chloros+)
 
 **Trvanie:** 5–30 sekúnd
 
@@ -112,21 +112,21 @@ Pre používateľov s licenciou Chloros+:
 
 * **Voľný režim**: Spracováva jeden obraz za druhým postupne
 * **Režim Chloros+**: Spracováva až 16 obrazov súčasne
-* **GPU akcelerácia**: Výrazne urýchľuje túto fázu.
+* **GPU akcelerácia**: Výrazne urýchľuje túto fázu
 
 **Na čo si dávať pozor:**
 
-* Stabilný pokrok v počte obrázkov.
-* Skontrolujte protokol ladenia, či obsahuje správy o dokončení jednotlivých obrázkov.
-* Upozornenia týkajúce sa kvality obrázkov alebo problémov s kalibráciou.
+* Stabilný pokrok v počte obrázkov
+* Skontrolujte protokol ladenia, či obsahuje správy o dokončení jednotlivých obrázkov
+* Upozornenia týkajúce sa kvality obrázkov alebo problémov s kalibráciou
 
-### Fáza 4: Exportovanie
+### Fáza 4: Export
 
 **Čo sa deje:**
 
 * Zapisovanie kalibrovaných obrázkov na disk vo vybranom formáte
 * Exportovanie multispektrálnych indexových obrázkov s farbami LUT
-* Vytváranie podadresárov modelov kamier
+* Vytváranie podsložiek modelov kamier
 * Zachovanie pôvodných názvov súborov s príslušnými príponami
 
 **Trvanie:** 10–20 % celkového času spracovania
@@ -145,15 +145,15 @@ Pre používateľov s licenciou Chloros+:
 
 ***
 
-## Karta Debug Log (Logs)
+## Karta Debug Log (Protokol ladenia)
 
-Logs poskytuje podrobné informácie o priebehu spracovania a všetkých problémoch, ktoré sa vyskytli.
+Protokol ladenia poskytuje podrobné informácie o priebehu spracovania a všetkých problémoch, ktoré sa vyskytli.
 
-### Prístup k Logs
+### Prístup k protokolu ladenia
 
 1. Kliknite na ikonu **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> v ľavom bočnom paneli.
 2. Otvorí sa panel protokolu, ktorý zobrazuje správy o spracovaní v reálnom čase.
-3. Automaticky sa posúva, aby zobrazoval najnovšie správy.
+3. Automaticky sa posúva, aby zobrazil najnovšie správy.
 
 ### Porozumenie správam protokolu
 
@@ -198,7 +198,7 @@ Kritické problémy, ktoré môžu spôsobiť zlyhanie spracovania:
 | Hlásenie                          | Význam                                | Potrebná akcia                                         |
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
 | „Cieľ zistený v \[názov súboru]“ | Kalibračný cieľ úspešne nájdený  | Žiadne – normálne                                         |
-| „Spracovanie obrázku X z Y“        | Aktualizácia aktuálneho priebehu                | Žiadne – normálne                                         |
+| „Spracovanie obrázku X z Y“        | Aktualizácia aktuálneho stavu                | Žiadne – normálne                                         |
 | „Nenájdené žiadne ciele“               | Nezistené žiadne kalibračné ciele        | Označte cieľové obrázky alebo deaktivujte kalibráciu odrazivosti |
 | „Nedostatočný priestor na disku“        | Nedostatočná pamäťová kapacita pre výstup          | Uvoľnite miesto na disku                                    |
 | „Preskakuje sa poškodený súbor“        | Obrazový súbor je poškodený                  | Znovu skopírujte súbor z SD karty                             |
@@ -209,7 +209,7 @@ Kritické problémy, ktoré môžu spôsobiť zlyhanie spracovania:
 Kopírovanie protokolu na účely riešenia problémov alebo podpory:
 
 1. Otvorte panel Debug Log (Protokol ladenia).
-2. Kliknite na tlačidlo **„Copy Log“ (Kopírovať protokol)** (alebo kliknite pravým tlačidlom myši → Vybrať všetko).
+2. Kliknite na tlačidlo **„Copy Log“** (Kopírovať protokol) (alebo kliknite pravým tlačidlom myši → Vybrať všetko).
 3. Vložte do textového súboru alebo e-mailu.
 4. V prípade potreby pošlite na podporu MAPIR.
 
@@ -223,7 +223,7 @@ Kopírovanie protokolu na účely riešenia problémov alebo podpory:
 
 * 1 jadro CPU na ~100 %
 * Ostatné jadrá sú neaktívne alebo dostupné
-* Systém zostáva odozvový
+* Systém zostáva odozvný
 
 **Chloros+ Paralelný režim:**
 
@@ -250,7 +250,7 @@ Kopírovanie protokolu na účely riešenia problémov alebo podpory:
 
 * Spracúvajte menšie dávky
 * Zatvorte ostatné aplikácie
-* Ak pravidelne spracúvate veľké dátové súbory, zvýšte kapacitu pamäte RAM
+* Ak pravidelne spracúvate veľké dátové súbory, zvýšte kapacitu RAM
 
 ### Využitie GPU (Chloros+ s CUDA)
 
@@ -260,7 +260,7 @@ Keď je povolené zrýchlenie GPU:
 * Zvýšené využitie VRAM (vyžaduje 4 GB+ VRAM)
 * Fáza kalibrácie je výrazne rýchlejšia
 
-**Na monitorovanie:**
+**Monitorovanie:**
 
 * Ikona NVIDIA v systémovej lište
 * Správca úloh → Výkon → GPU
@@ -300,13 +300,13 @@ Keď je povolené zrýchlenie GPU:
 
 **Systém nereaguje:**
 
-* Chloros+ paralelné režimy používajú príliš veľa zdrojov.
+* Chloros+ paralelné režim používa príliš veľa zdrojov.
 * Zvážte zníženie počtu súbežných úloh alebo upgrade hardvéru.
 * Voľný režim je menej náročný na zdroje.
 
 ### Kedy zastaviť spracovanie
 
-Spracovanie zastavte, ak sa zobrazí:
+Zastavte spracovanie, ak sa zobrazí:
 
 * ❌ Chyba „Disk je plný“ alebo „Nie je možné zapísať súbor“
 * ❌ Opakované chyby poškodenia obrazových súborov
@@ -364,8 +364,8 @@ Spracovanie zastavte, ak sa zobrazí:
 
 1. Zabezpečte dostatočné vetranie.
 2. Odstráňte prach z vetracích otvorov počítača.
-3. Znížte zaťaženie spracovaním (použite režim Free namiesto Chloros+).
-4. Spracovávajte v chladnejších častiach dňa.
+3. Znížte zaťaženie spracovania (použite režim Free namiesto Chloros+).
+4. Spracúvajte v chladnejších častiach dňa.
 
 ***
 
@@ -389,4 +389,4 @@ Po dokončení spracovania:
 3. **Skontrolujte protokol ladenia** – skontrolujte, či sa nezobrazujú žiadne varovania alebo chyby
 4. **Prezrite si spracované obrázky** – použite prehliadač obrázkov alebo externý softvér
 
-Informácie o kontrole a používaní spracovaných výsledkov nájdete v časti [Dokončenie spracovania](finishing-the-processing.md).
+Informácie o kontrole a používaní spracovaných výsledkov nájdete v článku [Dokončenie spracovania](finishing-the-processing.md).

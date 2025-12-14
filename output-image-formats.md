@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
-
 # Formáty výstupných obrázkov
 
 ### TIFF (16-bitový)
@@ -20,5 +19,5 @@ metaLinks:
 
 ### **PNG (8-bit)**
 
-Výstup vo formáte PNG (.png) s 8-bitovou presnosťou (digitálne číslo pixelu 0 – 255). Bezstratová kompresia vhodná pre prezeranie a vizualizáciu na webe.
+Výstup vo formáte 8-bit (digitálne číslo pixelu 0 - 255) PNG (.png). Bezstratová kompresia vhodná pre prezeranie a vizualizáciu na webe.
 

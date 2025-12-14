@@ -1,6 +1,6 @@
 # GUI : Projekty
 
-Chloros vám umožňuje vytvárať projekty, ktoré je možné v budúcnosti znovu otvoriť.
+Chloros vám umožňuje vytvárať projekty, ktoré môžete v budúcnosti znovu otvoriť.
 
 ## Nový projekt
 

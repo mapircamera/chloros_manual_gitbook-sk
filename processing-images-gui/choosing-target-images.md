@@ -72,7 +72,7 @@ Pred spracovaním skontrolujte:
 
 **Poloha kamery:**
 
-* Držte kameru nad cieľom tak, aby bola vystredená a vyplňovala približne 40–60 % stredu obrázka.
+* Držte kameru nad cieľom tak, aby bola vystredená a vyplňovala približne 40 – 60 % stredu obrázka.
 * Udržujte kameru paralelne/nadir s povrchom cieľa
 
 **Osvetlenie:**
@@ -80,7 +80,7 @@ Pred spracovaním skontrolujte:
 * Rovnaké okolité osvetlenie ako váš svetelný senzor DAQ.
 * Vyhnite sa tieňom na povrchoch cieľa.
 * Nezakrývajte zdroj svetla svojím telom, vozidlom alebo vegetáciou.
-* Zamračené podmienky poskytujú najkonzistentnejšie výsledky.
+* Zamračená obloha poskytuje najkonzistentnejšie výsledky.
 
 **Stav cieľa:**
 
@@ -88,7 +88,7 @@ Pred spracovaním skontrolujte:
 * Všetky 4 panely by mali byť jasne viditeľné a nezakryté.
 * Ciele by mali byť v prípade možnosti kolmé/nadir k zdroju svetla.
 
-### Koľko obrázkov cieľa?
+### Koľko snímok cieľa?
 
 **Minimálne:** 1 cieľový obraz na jednu reláciu. **Odporúčané:** 3–5 cieľových obrazov na jednu reláciu.
 
@@ -130,7 +130,7 @@ Tento stĺpec použite na overenie, či ste v projekte označili ciele pre každ
 
 Ak Chloros nedetekuje vaše ciele správne, upravte tieto nastavenia v [Nastaveniach projektu](adjusting-project-settings.md):
 
-**Minimálna plocha vzorky kalibrácie:**
+**Minimálna kalibračná vzorkovacia plocha:**
 
 * **Predvolené nastavenie**: 25 pixelov
 * **Zvýšte**, ak dochádza k falošným detekciám malých artefaktov.
@@ -140,13 +140,13 @@ Ak Chloros nedetekuje vaše ciele správne, upravte tieto nastavenia v [Nastaven
 
 * **Predvolené nastavenie**: 60
 * **Zvýšte**, ak sa ciele rozdeľujú na viacero detekcií.
-* **Znížte**, ak sa ciele s farebnými odchýlkami nedetekujú úplne.
+* **Znížte**, ak ciele s farebnými odchýlkami nie sú úplne detegované.
 
 ***
 
 ## Bežné problémy s obrazom cieľa
 
-### Problém: Nedetekujú sa žiadne ciele.
+### Problém: Nedetekovali sa žiadne ciele.
 
 **Možné príčiny:**
 
@@ -167,15 +167,15 @@ Ak Chloros nedetekuje vaše ciele správne, upravte tieto nastavenia v [Nastaven
 **Možné príčiny:**
 
 * Biele budovy, vozidlá alebo povrch zeme zamieňané za ciele
-* Jasné škvrny vo vegetácii
+* Jasné škvrny v vegetácii
 * Príliš nízka citlivosť detekcie
 
 **Riešenia:**
 
-1. Označte len skutočné cieľové obrázky, aby ste obmedzili rozsah detekcie.
+1. Označte len skutočné obrázky cieľov, aby ste obmedzili rozsah detekcie.
 2. Zväčšite minimálnu kalibračnú vzorkovú oblasť.
 3. Zväčšite minimálnu hodnotu zhlukovania cieľov.
-4. Uistite sa, že cieľové obrázky zobrazujú len cieľ (minimálne rušenie pozadia).
+4. Uistite sa, že obrázky cieľov zobrazujú len cieľ (minimálne rušenie pozadia).
 
 ***
 
@@ -183,11 +183,11 @@ Ak Chloros nedetekuje vaše ciele správne, upravte tieto nastavenia v [Nastaven
 
 Pred začatím spracovania overte výber obrázkov cieľov:
 
-* [ ] Aspoň 1 obrázok cieľa označený na jednu reláciu.
-* [ ] Zaškrtnuté políčka stĺpca Cieľ pre všetky obrázky cieľov.
-* [ ] Obrázky cieľov zachytené v rovnakom časovom rámci ako prieskum.
-* [ ] Ciele jasne viditeľné v náhľade po kliknutí.
-* [ ] Všetky 4 kalibračné panely viditeľné na každom obrázku cieľa.
+* [ ] Aspoň 1 označený obrázok cieľa na jednu reláciu
+* [ ] Zaškrtnuté políčka stĺpca Cieľ pre všetky obrázky cieľov
+* [ ] Obrázky cieľov zachytené v rovnakom časovom rámci ako prieskum
+* [ ] Ciele jasne viditeľné v náhľade po kliknutí
+* [ ] Všetky 4 kalibračné panely viditeľné na každom obrázku cieľa
 * [ ] Na cieľoch nie sú žiadne tiene ani prekážky.
 * [ ] V prípade dvoch kamier: Ciele sú označené pre oba typy kamier.
 

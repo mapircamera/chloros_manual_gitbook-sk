@@ -9,7 +9,7 @@ Pred spracovaním obrázkov je dôležité nakonfigurovať nastavenia projektu t
 3. Panel Nastavenia projektu zobrazuje všetky možnosti konfigurácie
 
 {% hint style=&quot;info&quot; %}
-**Nastavenia sa automaticky ukladajú** spolu s projektom. Pri opätovnom otvorení projektu sa všetky nastavenia obnovia.
+**Nastavenia sa automaticky ukladajú** spolu s projektom. Keď projekt znovu otvoríte, všetky nastavenia sa obnovia.
 {% endhint %}
 
 ***
@@ -20,8 +20,8 @@ Pred spracovaním obrázkov je dôležité nakonfigurovať nastavenia projektu t
 
 Pre typické pracovné postupy s kamerou MAPIR Survey3 sú predvolené nastavenia vhodné:
 
-* ✅ **Korekcia vinetácie**: Povolená
-* ✅ **Kalibrácia odrazivosti**: Povolená (vyžaduje obrázky cieľov MAPIR)
+* ✅ **Korekcia vinetácie**: Zapnutá
+* ✅ **Kalibrácia odrazivosti**: Zapnutá (vyžaduje obrázky cieľov MAPIR)
 * ✅ **Metóda Debayer**: Vysoká kvalita (rýchlejšia)
 * ✅ **Formát exportu**: TIFF (16-bitový)
 
@@ -40,13 +40,13 @@ Ovláda spôsob, akým Chloros identifikuje kalibračné ciele vo vašich obráz
 **Kľúčové nastavenia:**
 
 * **Minimálna plocha vzorky kalibrácie**: Prahová hodnota veľkosti pre detekciu cieľov (predvolené nastavenie: 25 pixelov)
-* **Minimálne zhlukovanie cieľov**: Prahová hodnota podobnosti pre zoskupovanie cieľových oblastí (predvolené nastavenie: 60)
+* **Minimálne zoskupenie cieľov**: Prahová hodnota podobnosti pre zoskupenie cieľových oblastí (predvolené nastavenie: 60)
 
 **Kedy upraviť:**
 
 * Zväčšite plochu vzorky, ak dochádza k falošným detekciám.
 * Zmenšite ju, ak sa ciele nedetekujú.
-* Upravte zhlukovanie, ak sa ciele rozdeľujú na viacero detekcií.
+* Upravte zoskupenie, ak sa ciele rozdeľujú na viacero detekcií.
 
 ### Spracovanie
 
@@ -56,7 +56,7 @@ Hlavné možnosti spracovania a kalibrácie obrázkov.
 
 * **Korekcia vinetácie**: Kompenzuje stmavnutie objektívu na okrajoch ✅ Odporúčané
 * **Kalibrácia odrazivosti**: Normalizuje hodnoty pomocou kalibračných cieľov ✅ Odporúčané
-* **Metóda Debayer**: Algoritmus na konverziu formátu RAW na 3-kanálový multispektrálny
+* **Metóda Debayer**: Algoritmus na konverziu formátu RAW na 3-kanálový multispektrálny formát
 * **Minimálny interval rekalibrácie**: Čas medzi použitím kalibračných cieľov (0 = použiť všetky)
 
 **Pokročilé nastavenia:**
@@ -100,8 +100,8 @@ Ovláda formát a kvalitu výstupného súboru.
 
 * **TIFF (16-bitový)**: Odporúčaný pre GIS a vedeckú analýzu (rozsah 0–65 535)
 * **TIFF (32-bitový, percentuálny)**: Hodnoty odrazivosti s pohyblivou desatinnou čiarkou (rozsah 0,0–1,0)
-* **PNG (8-bitový)**: Bezstratová kompresia pre vizualizáciu (rozsah 0–255)
-* **JPG (8-bitový)**: Najmenšie súbory, stratová kompresia (rozsah 0–255)
+* **PNG (8-bit)**: Bezstratová kompresia pre vizualizáciu (rozsah 0–255)
+* **JPG (8-bit)**: Najmenšie súbory, stratová kompresia (rozsah 0–255)
 
 ***
 
@@ -151,14 +151,14 @@ Ak používate záznamníky MAPIR DAQ s GPS pre presnú geolokalizáciu:
 ### Predpoklady
 
 * MAPIR DAQ s modulom GPS (GNSS)
-* .daq log súbor s údajmi o expozícií
+* .daq log súbor s položkami expozičných pinov
 * Kamera pripojená k expozičným pinom DAQ počas snímania
 
 ### Konfiguračné kroky
 
 1. Umiestnite log súbor .daq do priečinka projektu.
 2. V nastaveniach projektu zaškrtnite políčko **„Použiť PPK korekcie“**.
-3. V prípade potreby nastavte **„Časový posun svetelného senzora“** (predvolené nastavenie: 0 pre UTC).
+3. V prípade potreby nastavte **„Časové posunutie svetelného senzora“** (predvolené nastavenie: 0 pre UTC).
 4. Priraďte kamery k expozičným pinom:
    * **Jedna kamera**: Automaticky priradená k pinu 1.
    * **Dve kamery**: Ručne priraďte každú kameru k správnemu pinu.
@@ -183,7 +183,7 @@ Pri spracovaní obrázkov z viacerých kamier MAPIR v jednom projekte:
 
 1. Chloros automaticky detekuje každý model kamery
 2. Každá kamera dostane príslušný profil spracovania
-3. PPK: Ručne priraďte každej kamere správny expozičný pin.
+3. PPK: Ručne priraďte každej kamere správny expozičný kolík.
 4. Všetky kamery používajú rovnaký formát exportu a indexy.
 
 **Príklad**: Survey3W RGN + Survey3N OCN dvojitá kamera
@@ -216,10 +216,10 @@ Pred začatím spracovania skontrolujte tieto kľúčové nastavenia:
 * [ ] Model kamery správne detegovaný v prehliadači súborov
 * [ ] Korekcia vinetácie povolená
 * [ ] Kalibrácia odrazivosti povolená
-* [ ] Importovaný aspoň jeden kalibračný cieľový obrázok
+* [ ] Importovaný aspoň jeden obraz kalibračného cieľa
 * [ ] Pridané požadované multispektrálne indexy
 * [ ] Exportný formát vhodný pre váš pracovný postup
-* [ ] Konfigurované nastavenia PPK (ak používate .daq s expozíciou udalostí)
+* [ ] Nastavenia PPK konfigurované (ak používate .daq s udalosťami expozície)
 
 ***
 

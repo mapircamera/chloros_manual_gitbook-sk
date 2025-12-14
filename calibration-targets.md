@@ -1,5 +1,5 @@
 ---
-description: Panely merané v laboratóriu, ktoré sa používajú na kalibráciu zachytených údajov v postprocesingu
+description: Panels measured in the laboratory used to calibrate captured data in post-processing
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/calibration-targets
@@ -18,8 +18,8 @@ Difúzne referenčné ciele T4 majú nasledujúce krivky odrazivosti, [stiahnuti
 
 Na grafe odrazivosti vidíte, že hodnoty sú vlnová dĺžka (os x) oproti percentuálnej odrazivosti (os y). Keď zachytíme obraz kalibračného cieľa, vytvoríme vzťah medzi hodnotou pixelu a percentuálnou odrazivosťou v rámci spektra, na ktoré sú citlivé jednotlivé senzorové pásma fotoaparátu.
 
-To znamená, že pri každom snímku, ktorý zachytíte našimi kamerami, môžete použiť fotografiu našich cieľov odrazivosti, ako napríklad [T4-R50](https://www.mapir.camera/collections/calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t3-r50) alebo [T4-R125](https://www.mapir.camera/collections/multispectral-reflectance-reference-calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t4-r125), na kalibráciu snímok z hľadiska odrazivosti. Po kalibrácii sa každý pixel v snímke rovná percentuálnej odrazivosti.
+To znamená, že pri každom obrázku, ktorý zachytíte našimi kamerami, môžete použiť fotografiu našich cieľov odrazivosti, ako napríklad [T4-R50](https://www.mapir.camera/collections/calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t3-r50) alebo [T4-R125](https://www.mapir.camera/collections/multispectral-reflectance-reference-calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t4-r125), na kalibráciu obrázkov pre odrazivosť. Po kalibrácii sa každý pixel v snímke rovná percentuálnej odrazivosti.
 
-Ak kalibrované snímky exportujete v Chloros ako typický JPG alebo TIFF, percentuálna odrazivosť sa vypočíta vydelením hodnoty pixelu bitovou hĺbkou formátu snímky. Pre JPG teda vydelíte 255 a pre TIFF vydelíte 65 535. Môžete tiež zvoliť výstup vo formáte PERCENT v Chloros, a potom každý pixel bude mať hodnotu v rozmedzí od 0,0 do 1,0 (0 % až 100 % odrazivosti). Majte však na pamäti, že niektoré aplikácie na spracovanie obrázkov neakceptujú obrázky v percentách (s plávajúcou desatinnou čiarkou) a z hľadiska veľkosti úložiska sú veľké.
+Ak kalibrované snímky exportujete v Chloros ako typický JPG alebo TIFF, percentuálna odrazivosť sa vypočíta vydelením hodnoty pixelu bitovou hĺbkou formátu snímky. Pre JPG teda vydelíte 255 a pre TIFF vydelíte 65 535. Môžete tiež zvoliť výstup vo formáte PERCENT v Chloros, a potom každý pixel bude mať hodnotu v rozmedzí od 0,0 do 1,0 (0 % až 100 % odrazivosti). Majte však na pamäti, že niektoré obrazové aplikácie neakceptujú obrázky v percentách (s plávajúcou desatinnou čiarkou) a z hľadiska veľkosti sú náročné na ukladanie.
 
 <div><figure><img src=".gitbook/assets/t3-125.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure> <figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure> <figure><img src=".gitbook/assets/t3-125_closed.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure></div>
