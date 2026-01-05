@@ -88,7 +88,7 @@ Karta Mapa podporuje dvoch poskytovateľov dlaždíc pre pozadie mapy:
 
 Môžete si vybrať typ vrstvy mapy (zľava doprava):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terén
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Terén
 
 Zobrazuje výškové profily a mapové dlaždice s detailmi (cesty atď.)
 
