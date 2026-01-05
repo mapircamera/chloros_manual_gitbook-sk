@@ -8,17 +8,16 @@ Keď sa spracovanie úspešne dokončí, uvidíte niekoľko indikátorov:
 
 * ✅ **Indikátor priebehu**: Dosiahne 100 % dokončenia
 * ✅ **Debugovací protokol**: Zobrazí správu „Spracovanie dokončené“
-* ✅ **Tlačidlo Štart**: Opäť sa aktivuje (pripravené na ďalšie spracovanie)
-* ✅ **Výstupné súbory**: Všetky spracované obrázky uložené do podadresára modelu fotoaparátu
-
-***
+* ✅ **Tlačidlo Štart**: Znovu sa aktivuje (pripravené na ďalšie spracovanie)
+* ✅ **Výstupné súbory**: Všetky spracované obrázky uložené do podadresára modelu fotoaparátu***
 
 ## Vyhľadanie spracovaných obrázkov
 
 ### Otvorenie výstupného adresára
 
-1. Kliknite na ikonu **Hlavné menu** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> (vľavo hore)
+1. Kliknite na ikonu **Hlavné menu** <img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> (vľavo hore)
 2. Vyberte **„Otvoriť priečinok projektu“**
+
 3. Otvorí sa priečinok projektu v prehliadači súborov
 4. Vyhľadajte projekt podľa názvu
 
@@ -33,13 +32,11 @@ Keď sa spracovanie úspešne dokončí, uvidíte niekoľko indikátorov:
 1. Prejdite do podadresára modelu fotoaparátu
 2. Vyberte obrazový súbor
 3. Náhľad sa zobrazí v okne náhľadu prehliadača Windows
-4. Pomocou šípok prechádzajte medzi obrázkami
+4. Pomocou klávesov so šípkami prechádzajte medzi obrázkami
 
 ### Náhľad v externých prehliadačoch obrázkov
 
-**Odporúčané prehliadače:**
-
-* **QGIS** – bezplatný softvér GIS (najlepší pre multispektrálnu analýzu s georeferenciou)
+**Odporúčané prehliadače:*** **QGIS** – bezplatný softvér GIS (najlepší pre multispektrálnu analýzu s georeferenciou)
 * **IrfanView** – rýchly, ľahký prehliadač obrázkov (podporuje TIFF)
 * **Adobe Photoshop** – profesionálna úprava (podpora TIFF)
 * **GIMP** – bezplatná alternatíva k programu Photoshop
@@ -72,7 +69,7 @@ Podrobné pokyny nájdete v časti [Prehliadač obrázkov](../image-viewer-gui/o
 
 Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
-1. Kliknite na tlačidlo **„Kopírovať“** alebo **„Stiahnuť“**.
+1. Kliknite na tlačidlo **„Kopírovať“**alebo**„Stiahnuť“**.
 2. Uložte ako textový súbor do priečinka projektu.
 3. Priložte k dokumentácii projektu.
 4. V prípade problémov pošlite na podporu MAPIR.
@@ -129,14 +126,10 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 ### Problém: Hodnoty NDVI sa zdajú nesprávne
 
-**Očakávané rozsahy NDVI:**
-
-* **Voda, skaly, pôda**: -0,1 až 0,2
+**Očakávané rozsahy NDVI:*** **Voda, skaly, pôda**: -0,1 až 0,2
 * **Riedka/nezdravá vegetácia**: 0,2 až 0,4
 * **Stredná vegetácia**: 0,4 až 0,6
-* **Zdravá, hustá vegetácia**: 0,6 až 0,9
-
-**Ak sú hodnoty mimo týchto rozsahov:**
+* **Zdravá, hustá vegetácia**: 0,6 až 0,9**Ak sú hodnoty mimo týchto rozsahov:**
 
 1. Overte, či bola použitá kalibrácia odrazivosti.
 2. Overte, či bol zahrnutý protokol svetelného senzora.
@@ -152,7 +145,7 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 **Odporúčaný pracovný postup:**
 
-1. **Importujte kalibrované obrazy odrazivosti** do fotogrametrického softvéru:
+1.**Importujte kalibrované obrazy odrazivosti** do fotogrametrického softvéru:
    * Pix4Dmapper
    * Agisoft Metashape
    * DroneDeploy
@@ -166,8 +159,9 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 **Odporúčaný pracovný postup:**
 
-1. **Načítajte do QGIS, ArcGIS alebo podobného programu**
-2. **Použite 16-bitové obrazy odrazivosti TIFF** pre multibandovú analýzu
+1.**Načítajte do QGIS, ArcGIS alebo podobného programu**
+
+2.**Použite 16-bitové obrazy odrazivosti TIFF** pre multibandovú analýzu
 3. **Použite indexové obrazy** (NDVI, NDRE) ako pripravené vrstvy vegetácie
 4. **Rastrová kalkulačka**: Kombinujte pásma pre vlastnú analýzu
 5. **Export**: Vytvorte klasifikačné mapy, detekciu zmien, mapy zdravotného stavu vegetácie
@@ -176,32 +170,22 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 **Odporúčaný pracovný postup:**
 
-1. **Použite indexové obrázky s farbami LUT** pre vizuálne reporty
+1.**Použite indexové obrázky s farbami LUT** pre vizuálne správy
 2. **Extrahujte štatistiky**: Priemerná hodnota NDVI na pole/parcelu
 3. **Časové rady**: Porovnajte indexy v rámci viacerých relácií
-4. **Generovanie správ**: Zahrňte mapy, štatistiky a vizualizácie
-
-***
+4. **Generovanie správ**: Zahrňte mapy, štatistiky a vizualizácie***
 
 ## Archivácia a zálohovanie
 
 ### Odporúčaná stratégia zálohovania
 
-**Čo uložiť:**
-
-* ✅ **Pôvodné obrázky RAW/JPG** – archivujte na samostatnom disku/v cloude
+**Čo uložiť:*** ✅ **Pôvodné obrázky RAW/JPG** – archivujte na samostatnom disku/v cloude
 * ✅ **Spracované výstupy** – uchovajte kalibrované obrázky a indexy
-* ✅ **Súbor projektu** – obsahuje všetky nastavenia pre opätovné spracovanie, ak je to potrebné
+* ✅ **Projektový súbor** – obsahuje všetky nastavenia pre opätovné spracovanie, ak je to potrebné
 * ✅ **Protokol ladenia** – dokumentuje podrobnosti spracovania
-* ✅ **Obrázky kalibračného cieľa** – na overenie a opätovné spracovanie
-
-**Odporúčania pre ukladanie:**
-
-* **Okamžitá záloha**: Externý pevný disk
+* ✅ **Kalibračné cieľové obrázky** – na overenie a opätovné spracovanie**Odporúčania pre ukladanie:*** **Okamžitá záloha**: Externý pevný disk
 * **Dlhodobý archív**: Ukladanie v cloude (Google Drive, Dropbox atď.)
-* **Kritické údaje**: Uložte 2–3 kópie na rôznych miestach
-
-***
+* **Kritické údaje**: Uchovávajte 2–3 kópie na rôznych miestach***
 
 ## Ďalšie spracovania
 
@@ -212,22 +196,21 @@ Ak budete v budúcnosti spracovávať podobné súbory údajov:
 1. **Uložte šablónu projektu** (ak ste tak ešte neurobili)
 2. **Vytvorte nový projekt** pomocou uloženej šablóny
 3. **Importujte nové obrázky**
-4. **Spracujte** s identickými nastaveniami pre konzistentnosť
+
+4.**Spracujte**s identickými nastaveniami pre konzistentnosť
 
 ### Hromadné spracovanie viacerých relácií
 
-Pre viacero relácií/datasets:
+Pre viacero relácií/datasets:**Možnosť 1: GUI – viacero projektov**
 
-**Možnosť 1: GUI – viacero projektov**
-
-* Vytvorte samostatný projekt pre každú reláciu
-* Použite konzistentné nastavenia šablóny
-* Spracujte jeden po druhom
+* Vytvorte samostatný projekt pre každú reláciu.
+* Použite konzistentné nastavenia šablóny.
+* Spracúvajte po jednom.
 
 **Možnosť 2: Chloros CLI (len Chloros+)**
 
-* Automatizujte hromadné spracovanie
-* Spracujte viacero priečinkov pomocou skriptov
+* Automatizujte hromadné spracovanie.
+* Spracúvajte viacero priečinkov pomocou skriptov.
 * Pozrite si [CLI dokumentáciu](../CLI.md)
 
 **Možnosť 3: Python SDK (len Chloros+)**
@@ -240,7 +223,7 @@ Pre viacero relácií/datasets:
 
 ## Riešenie problémov s následným spracovaním
 
-### Opätovné spracovanie s inými nastaveniami
+### Opätovné spracovanie s rôznymi nastaveniami
 
 Ak výsledky nie sú uspokojivé:
 
@@ -265,9 +248,7 @@ Ak narazíte na problémy:
 * 📧 **E-mail**: info@mapir.camera (pridajte protokol ladenia)
 * 🌐 **Podpora**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **FAQ**: [Často kladené otázky](../faq.md)
-* 📖 **Dokumentácia**: [Chloros Manuál](../)
-
-***
+* 📖 **Dokumentácia**: [Chloros Manuál](../)***
 
 ## Zhrnutie: Kompletný pracovný postup
 
@@ -279,9 +260,7 @@ Teraz ste dokončili celý pracovný postup spracovania Chloros:
 4. ✅ **Označili ste ciele** – pozrite si [Výber cieľových obrázkov](choosing-target-images.md)
 5. ✅ **Spustené spracovanie** – pozri [Spustenie spracovania](starting-the-processing.md)
 6. ✅ **Sledovaný pokrok** – pozri [Sledovanie spracovania](monitoring-the-processing.md)
-7. ✅ **Skontrolované výsledky** – táto stránka
-
-**Vaše kalibrované multispektrálne obrázky s korekciou odrazivosti sú pripravené na analýzu!**
+7. ✅ **Skontrolované výsledky** – táto stránka**Vaše kalibrované multispektrálne obrázky s korekciou odrazivosti sú pripravené na analýzu!**
 
 ***
 

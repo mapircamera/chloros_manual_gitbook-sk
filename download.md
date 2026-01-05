@@ -3,9 +3,10 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
-# Stiahnutie
 
-Stiahnite si najnovšiu verziu Chloros pre Windows a začnite s multispektrálnym spracovaním obrazu.
+# Stiahnuť
+
+Stiahnite si najnovšiu verziu Chloros a začnite s multispektrálnym spracovaním obrazu.
 
 ### Systémové požiadavky
 
@@ -15,12 +16,12 @@ Stiahnite si najnovšiu verziu Chloros pre Windows a začnite s multispektrálny
 | **Procesor**        | Intel Core i5 alebo ekvivalent     | Intel Core i7 alebo lepší         |
 | **Pamäť (RAM)**     | 8 GB                             | 16 GB alebo viac                    |
 | **Grafická karta**    | Kompatibilná s DirectX 11           | NVIDIA GPU s 4 GB+ VRAM       |
-| **Úložisko**          | 2 GB voľného miesta                  | SSD s 10 GB+ voľného miesta       |
+| **Úložisko**          | 6 GB voľného miesta                  | SSD s 10 GB+ voľného miesta       |
 | **Displej**          | 1920x1080                       | 2560x1440 alebo vyšší             |
 | **Internet**         | Potrebný na aktiváciu licencie | Potrebný na aktiváciu licencie |
 
 {% hint style=&quot;info&quot; %}
-**GPU akcelerácia**: Chloros+ používatelia s GPU NVIDIA (4 GB+ VRAM) môžu využiť CUDA akceleráciu pre výrazne rýchlejšie spracovanie.
+**GPU akcelerácia**: Chloros+ používatelia s NVIDIA GPU (4 GB+ VRAM) môžu využiť CUDA akceleráciu pre výrazne rýchlejšie spracovanie. Chloros+ používatelia tiež získajú viacvláknové spracovanie pre maximálnu rýchlosť.
 {% endhint %}
 
 ***
@@ -31,21 +32,20 @@ Stiahnite si najnovšiu verziu Chloros pre Windows a začnite s multispektrálny
 
 ### Najnovšia stabilná verzia
 
-**Chloros Inštalačný program pre Windows**
-
-* **Verzia**: 1.0.3
-* **Dátum vydania**: december ?, 2025
-* **Veľkosť súboru**: 1,6 GB
+**Chloros Inštalačný program pre Windows*** **Verzia**: 1.0.4
+* **Dátum vydania**: 5. január 2026
+* **Veľkosť súboru (stiahnutie)**: 1,8 GB
+* **Veľkosť súboru (inštalácia)**: 5,7 GB
 * **Typ súboru**: .exe (inštalačný program Windows)
 
 #### **Kroky inštalácie:**
 
-1. Stiahnite si súbor `CHLOROS INSTALLER - CURRENT VERSION.exe`.
-2. Dvojitým kliknutím na inštalačný program spustite inštaláciu.
-3. Postupujte podľa pokynov inštalačného sprievodcu.
-4. Vyberte inštalačný adresár (predvolený: `C:\Program Files\Chloros\`).
-5. Dokončite inštaláciu a spustite Chloros.
-6. Prihláste sa pomocou svojho účtu MAPIR Cloud Chloros+ (alebo pokračujte s bezplatnou verziou).
+1. Stiahnite súbor `CHLOROS INSTALLER - CURRENT VERSION.exe`
+2. Dvojitým kliknutím na inštalačný súbor spustite inštaláciu
+3. Postupujte podľa pokynov inštalačného sprievodcu
+4. Vyberte inštalačný adresár (predvolený: `C:\Program Files\[USER]\Chloros\`)
+5. Dokončite inštaláciu a spustite Chloros, Chloros (prehliadač) alebo Chloros CLI
+6. Prihláste sa pomocou svojho účtu [MAPIR Cloud Chloros+](https://cloud.mapir.camera/pricing) (alebo pokračujte s bezplatnou verziou).
 
 {% hint style=&quot;success&quot; %}
 Inštalačný program automaticky pridá `chloros-cli` do systémovej cesty PATH pre prístup z príkazového riadku.
@@ -63,42 +63,36 @@ Pre vývojárov a automatizačné pracovné postupy nainštalujte Chloros Python
 pip install chloros-sdk
 ```
 
-**Dokumentácia**: [API: Python SDK](api-python-sdk.md)
-
-**Požiadavky**: Chloros Desktop musí byť nainštalovaný, Chloros+ licencia je povinná.
-
-***
+**Dokumentácia**: [API: Python SDK](api-python-sdk.md)**Požiadavky**: Chloros Desktop musí byť nainštalovaný, Chloros+ vyžaduje prihlásenie s licenciou.***
 
 ## Čo je zahrnuté
 
 Inštalácia Chloros obsahuje:
 
-* ✅ **Chloros Desktop GUI** – plnohodnotné grafické rozhranie
+* ✅ **Chloros** – plnohodnotné grafické rozhranie
 * ✅ **Chloros (prehliadač)** – webové rozhranie pre systémy s nižšou špecifikáciou
 * ✅ **Chloros CLI** – rozhranie príkazového riadku (vyžaduje licenciu Chloros+)
-* ✅ **Backend Engine** – potrubie na spracovanie obrazu
-* ✅ **Profily kamery** - Predkonfigurované šablóny kamery MAPIR
-
-***
+* ✅ **Chloros SDK** - Python API (vyžaduje licenciu Chloros+)
+* ✅ **Profily kamery** - Predkonfigurované šablóny kamery MAPIR***
 
 ## Prejdite na Chloros+
 
 Odomknite pokročilé funkcie s predplatným Chloros+:
 
 * 🚀 **Viacvláknové spracovanie** – spracovávajte obrázky paralelne
-* ⚡ **Akcelerácia GPU (CUDA)** – Využite výkon GPU NVIDIA
-* 💻 **CLI Access** – Automatizácia pomocou nástrojov príkazového riadku
-* 🐍 **Python SDK** – Programový prístup API
+* ⚡ **Akcelerácia GPU (CUDA)** – využite výkon GPU NVIDIA
+* 💻 **Prístup k CLI** – Automatizácia pomocou nástrojov príkazového riadku
+* 🐍 **Python SDK** – Programový prístup k API
 * 📱 **Viac zariadení** – Používajte na 2 až 10 a viac zariadeniach (v závislosti od plánu)
 * 🧮 **Vlastné vzorce** – Vytvárajte vlastné multispektrálne indexy
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Zobraziť Chloros+ Plány a ceny</a></p>***
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Zobraziť plány a ceny Chloros</a></p>***
 
 ## Pomoc pri inštalácii
 
 ### Riešenie problémov
 
-**Inštalácia zlyhá s chybovou správou:**
+**Inštalácia sa nezdaří a zobrazí sa chybová správa:**
 
 * Uistite sa, že máte práva správcu
 * Dočasne deaktivujte antivírusový softvér
@@ -126,44 +120,41 @@ Potrebujete pomoc s inštaláciou alebo nastavením?
 * 📧 **E-mail**: info@mapir.camera
 * 🌐 **Webová stránka**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **Dokumentácia**: [Začíname](./)
-* ❓ **FAQ**: [Často kladené otázky](faq.md)
-
-***
+* ❓ **FAQ**: [Často kladené otázky](faq.md)***
 
 ## Zoznam zmien
 
 <details>
 
+<summary>Verzia 1.0.4</summary>
+
+#### **Dátum vydania**: 5. január 2026**Nové funkcie*** **Prepínanie obrázkov/metadát**: Do prehliadača súborov bolo pridané prepínanie, ktoré umožňuje zobraziť metadáta vybraného obrázka v tabuľke namiesto mriežky obrázkov.
+* **Posúvač zväčšenia mriežky obrázkov**: Nový posúvač v používateľskom rozhraní na úpravu veľkosti miniatúr. (podporuje aj CTRL + koliesko myši)
+* **Tlačidlá exportu mriežky obrázkov**: Tlačidlá v hornom riadku na prepínanie miniatúr z JPG na spracované exporty (cieľové hodnoty, odrazivosť, index, LUT)
+* **Karta Mapa**: Nová interaktívna 2D mapa zobrazujúca značky GPS polohy obrázkov.
+  * Podporuje Google Maps a ESRI mapové dlaždice (automaticky vyberá najlepšiu dlaždicovú službu na základe dostupnosti úrovne zväčšenia).
+  * Náhľad miniatúr pri prechádzaní myšou nad značkami na mape.
+
+**Oprava chýb*** Vylepšená podpora inštalácie Chloros na počítačoch s iným jazykom ako angličtina.
+
+</details>
+
+<details>
+
 <summary>Verzia 1.0.3</summary>
 
-### **Dátum vydania**: december ?, 2025
+#### **Dátum vydania**: 20. december 2025**Nové funkcie*** Počiatočné spustenie
 
-#### Nové funkcie
+**Vylepšenia*** Počiatočné spustenie
 
-* Počiatočné spustenie
+**Oprava chýb*** Počiatočné spustenie
 
-#### Vylepšenia
-
-* Počiatočné spustenie
-
-#### Opravy chýb
-
-* Počiatočné spustenie
-
-#### Známé problémy
-
-* Počiatočné spustenie
+**Známe problémy*** Počiatočné spustenie
 
 </details>***
 
-## Licenčná zmluva
-
-**Vlastnícky softvér** – Copyright (c) 2025 MAPIR Inc.
+## Licenčná zmluva**Vlastnícky softvér** – Copyright (c) 2025 MAPIR Inc.
 
 Neoprávnené používanie, distribúcia alebo úprava je zakázaná.
 
-**Bezplatná verzia**: K dispozícii pre osobné a komerčné použitie s obmedzeniami funkcií.
-
-**Chloros+**: Licencia na báze predplatného pre pokročilé funkcie a komerčné nasadenie.
-
-<figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption></figcaption></figure>
+**Bezplatná verzia**: K dispozícii pre osobné a komerčné použitie s obmedzeniami funkcií.**Chloros+**: Licencia na báze predplatného pre pokročilé funkcie a komerčné nasadenie.

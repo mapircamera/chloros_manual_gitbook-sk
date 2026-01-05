@@ -4,11 +4,11 @@
 
 ### Kľúčové funkcie
 
-* 🚀 **Automatizácia** – skriptové hromadné spracovanie viacerých dátových súborov
+* 🚀 **Automatizácia** – skriptové dávkové spracovanie viacerých dátových súborov
 * 🔗 **Integrácia** – vloženie do existujúcich pracovných postupov a potrubí
-* 💻 **Prevádzka bez grafického rozhrania** – prevádzka bez grafického rozhrania
+* 💻 **Bezhlavá prevádzka** – spustenie bez grafického používateľského rozhrania
 * 🌍 **Viacjazyčnosť** – podpora 38 jazykov
-* ⚡ **Paralelné spracovanie** – dynamické škálovanie podľa výkonu vášho procesora (až 16 paralelných pracovných procesov)
+* ⚡ **Paralelné spracovanie** – dynamické prispôsobenie vášmu CPU (až 16 paralelných pracovníkov)
 
 ### Požiadavky
 
@@ -18,7 +18,7 @@
 | **Licencia**          | Chloros+ ([vyžaduje sa platený plán](https://cloud.mapir.camera/pricing)) |
 | **Pamäť**           | Minimálne 8 GB RAM (odporúča sa 16 GB)                                  |
 | **Internet**         | Vyžaduje sa na aktiváciu licencie                                     |
-| **Miesto na disku**       | Závisí od veľkosti projektu                                              |
+| **Diskový priestor**       | Závisí od veľkosti projektu                                              |
 
 {% hint style=&quot;warning&quot; %}
 **Požiadavky na licenciu**: CLI vyžaduje platené predplatné Chloros+. Štandardné (bezplatné) plány nemajú prístup k CLI. Prejdite na stránku [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing), aby ste vykonali aktualizáciu.
@@ -28,9 +28,10 @@
 
 ### Inštalácia
 
-CLI je automaticky súčasťou inštalačného programu Chloros:
+CLI je automaticky zahrnutý v inštalačnom programe Chloros:
 
 1. Stiahnite a spustite **Chloros Installer.exe**
+
 2. Dokončite inštalačného sprievodcu
 3. CLI nainštalovaný do: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
@@ -103,7 +104,7 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 | `--reflectance`       | Príznak    | Povolené        | Povoliť kalibráciu odrazivosti                                                         |
 | `--no-reflectance`    | Príznak    | -              | Zakázať kalibráciu odrazivosti                                                        |
 | `--ppk`               | Príznak    | Zakázané       | Použiť korekcie PPK z údajov svetelného senzora .daq                                      |
-| `--format`            | Voľba  | TIFF (16-bit)  | Výstupný formát: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
+| `--format`            | Voľba  | TIFF (16-bitové)  | Výstupný formát: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
 | `--min-target-size`   | Celé číslo | Automaticky           | Minimálna cieľová veľkosť v pixeloch pre detekciu kalibračného panela                          |
 | `--target-clustering` | Celé číslo | Automaticky           | Prah zhlukovania cieľov (0-100)                                                    |
 | `--exposure-pin-1`    | Reťazec  | Žiadne           | Uzamknutie expozície pre model kamery (pin 1)                                                 |
@@ -133,9 +134,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 **Špeciálne znaky**: Použite jednoduché úvodzovky okolo hesiel obsahujúcich znaky ako `$`, `!` alebo medzery.
 {% endhint %}
 
-**Výstup:**
-
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
+**Výstup:**<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
 ### `logout` – Vymazať prihlasovacie údaje
 
@@ -160,9 +159,13 @@ chloros-cli logout
 ℹ Credentials cleared from cache
 ```
 
+{% hint style=&quot;info&quot; %}
+**SDK Používatelia**: Python SDK poskytuje aj programovú metódu `logout()` na vymazanie poverení v skriptoch Python. Podrobnosti nájdete v [dokumentácii Python SDK](api-python-sdk.md#logout).
+{% endhint %}
+
 ***
 
-### `status` – Skontrolujte stav licencie
+### `status` – Kontrola stavu licencie
 
 Zobrazí aktuálny stav licencie a overenia.
 
@@ -209,13 +212,11 @@ chloros-cli export-status
 chloros-cli export-status
 ```
 
-**Prípad použitia:** Vyvolajte tento príkaz počas spracovania, aby ste skontrolovali priebeh exportu.
-
-***
+**Prípad použitia:** Vyvolajte tento príkaz počas spracovania, aby ste skontrolovali priebeh exportu.***
 
 ### `language` – Správa jazyka rozhrania
 
-Zobraziť alebo zmeniť jazyk rozhrania CLI.
+Zobrazenie alebo zmena jazyka rozhrania CLI.
 
 **Syntax:**
 
@@ -260,34 +261,34 @@ chloros-cli language ja
 | `ko`    | Kórejčina                | 한국어              |
 | `zh`    | Čínština (zjednodušená)  | 简体中文             |
 | `zh-TW` | Čínština (tradičná) | 繁體中文             |
-| `ru`    | Ruština               | Русский          |
-| `nl`    | Holandčina                 | Nederlands       |
-| `ar`    | Arabčina                | العربية          |
-| `pl`    | Poľština                | Polski           |
+| `ru`    | ruština               | Русский          |
+| `nl`    | holandčina                 | Nederlands       |
+| `ar`    | arabčina                | العربية          |
+| `pl`    | poľština                | Polski           |
 | `tr`    | Turečtina               | Türkçe           |
 | `hi`    | Hindčina                 | हिंदी            |
 | `id`    | Indonézština            | Bahasa Indonesia |
-| `vi`    | Vietnamčina            | Tiếng Việt       |
-| `th`    | Thajčina                  | ไทย              |
-| `sv`    | Švédčina               | Svenska          |
-| `da`    | Dánčina                | Dansk            |
+| `vi`    | vietnamčina            | Tiếng Việt       |
+| `th`    | thajčina                  | ไทย              |
+| `sv`    | švédčina               | Svenska          |
+| `da`    | dánčina                | Dansk            |
 | `no`    | Nórčina             | Norsk            |
-| `fi`    | fínčina               | Suomi            |
-| `el`    | gréčtina                 | Ελληνικά         |
-| `cs`    | čeština                 | Čeština          |
+| `fi`    | Fínčina               | Suomi            |
+| `el`    | Gréčtina                 | Ελληνικά         |
+| `cs`    | Čeština                 | Čeština          |
 | `hu`    | Maďarčina             | Magyar           |
 | `ro`    | Rumunčina              | Română           |
 | `uk`    | Ukrajinčina             | Українська       |
-| `pt-BR` | Brazílska portugalčina  | Português Brasileiro |
-| `zh-HK` | Kantónčina             | 粵語             |
+| `pt-BR` | Brazílsky portugalský  | Português Brasileiro |
+| `zh-HK` | Kantonský             | 粵語             |
 | `ms`    | Malajčina                 | Bahasa Melayu    |
 | `sk`    | Slovenčina                | Slovenčina       |
 | `bg`    | Bulharčina             | Български        |
-| `hr`    | Chorvátčina              | Hrvatski         |
-| `lt`    | Litovčina            | Lietuvių         |
+| `hr`    | Chorvátsky              | Hrvatski         |
+| `lt`    | Litovský            | Lietuvių         |
 | `lv`    | Lotyšský               | Latviešu         |
-| `et`    | Estónsky              | Eesti            |
-| `sl`    | Slovinčtina             | Slovenščina      |
+| `et`    | Estónčina              | Eesti            |
+| `sl`    | Slovinčina             | Slovenščina      |
 
 {% hint style=&quot;success&quot; %}
 **Automatická perzistencia**: Vaše jazykové preferencie sú uložené v `~/.chloros/cli_language.json` a pretrvávajú vo všetkých reláciách.
@@ -295,9 +296,9 @@ chloros-cli language ja
 
 ***
 
-### `set-project-folder` – Nastavenie predvoleného priečinka projektu
+### `set-project-folder` – Nastaviť predvolenú priečinok projektu
 
-Zmeňte umiestnenie predvoleného priečinka projektu (zdieľaného s GUI).
+Zmeňte umiestnenie predvoleného priečinka projektu (zdieľané s GUI).
 
 **Syntax:**
 
@@ -315,7 +316,7 @@ chloros-cli set-project-folder "C:\Projects\2025"
 
 ### `get-project-folder` – Zobraziť priečinok projektu
 
-Zobrazí aktuálne umiestnenie predvoleného priečinka projektu.
+Zobraziť aktuálne umiestnenie predvoleného priečinka projektu.
 
 **Syntax:**
 
@@ -339,7 +340,7 @@ chloros-cli get-project-folder
 
 ### `reset-project-folder` – Obnoviť predvolené nastavenia
 
-Obnoví predvolenú polohu priečinka projektu.
+Obnoví predvolené umiestnenie priečinka projektu.
 
 **Syntax:**
 
@@ -353,7 +354,7 @@ chloros-cli reset-project-folder
 
 Tieto možnosti sa vzťahujú na všetky príkazy:
 
-| Možnosť          | Typ    | Predvolené nastavenie       | Popis                                      |
+| Možnosť          | Typ    | Predvolené       | Popis                                      |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
 | `--backend-exe` | Cesta    | Automaticky detegovaná | Cesta k spustiteľnému súboru backendu                       |
 | `--port`        | Celé číslo | 5000          | Číslo portu backendu API                          |
@@ -373,15 +374,11 @@ chloros-cli --port 5001 process "C:\Datasets\Survey_001"
 
 ### Paralelné spracovanie
 
-Chloros+ CLI **automaticky škaluje** paralelné spracovanie tak, aby zodpovedalo schopnostiam vášho počítača:
+Chloros+ CLI **automaticky škaluje**paralelné spracovanie tak, aby zodpovedalo schopnostiam vášho počítača:**Ako to funguje:**
 
-**Ako to funguje:**
-
-* Detekuje jadrá procesora a pamäť RAM
-* Prideli pracovníkov: **2× jadrá procesora** (využíva hyperthreading)
-* **Maximálne: 16 paralelných pracovníkov** (pre stabilitu)
-
-**Úrovne systému:**
+* Detekuje jadrá procesora a pamäť RAM.
+* Prideli pracovníkov: **2× jadrá procesora** (využíva hyperthreading).
+* **Maximálne: 16 paralelných pracovníkov** (pre stabilitu).**Úrovne systému:**
 
 | Typ systému   | Procesor        | Pamäť RAM      | Pracovníci  | Výkon     |
 | ------------- | ---------- | -------- | -------- | --------------- |
@@ -395,7 +392,7 @@ Chloros+ CLI **automaticky škaluje** paralelné spracovanie tak, aby zodpovedal
 
 ### Metódy debayer
 
-CLI používa ako predvolený a odporúčaný debayer algoritmus **Vysoká kvalita (rýchlejší)**:
+CLI používa ako predvolený a odporúčaný algoritmus debayer **Vysoká kvalita (rýchlejšia)**:
 
 | Metóda                      | Kvalita | Rýchlosť | Popis                                 |
 | --------------------------- | ------- | ----- | ------------------------------------------- |
@@ -403,13 +400,13 @@ CLI používa ako predvolený a odporúčaný debayer algoritmus **Vysoká kvali
 
 ### Korekcia vinetácie
 
-**Čo robí:** Koriguje pokles jasu na okrajoch obrazu (tmavšie rohy bežné v snímkach z fotoaparátu).
+**Čo robí:** Koriguje pokles jasu na okrajoch obrazu (tmavšie rohy bežné v snímkach z fotoaparátov).
 
 * **Predvolene zapnuté** – väčšina používateľov by mala túto funkciu nechať zapnutú.
 * Na vypnutie použite `--no-vignette`.
 
 {% hint style=&quot;success&quot; %}
-**Odporúčanie**: Vždy zapnite korekciu vinietovania, aby ste zabezpečili rovnomernú jasnosť v celom ráme.
+**Odporúčanie**: Vždy povolte korekciu vinetácie, aby ste zabezpečili rovnomernú jasnosť v celom snímku.
 {% endhint %}
 
 ### Kalibrácia odrazivosti
@@ -579,11 +576,12 @@ if __name__ == '__main__':
 1. **Vstup**: Zložka obsahujúca páry obrázkov RAW/JPG
 2. **Vyhľadávanie**: CLI automaticky vyhľadáva podporované obrazové súbory
 3. **Spracovanie**: Paralelný režim sa prispôsobuje jadrám vášho procesora (Chloros+)
-4. **Výstup**: Vytvára podadresáre podľa modelov fotoaparátov so spracovanými obrázkami
+4. **Výstup**: Vytvára podadresáre podľa modelov fotoaparátov so spracovanými obrazmi
 
 ### Príklad štruktúry výstupu
 
 ```
+
 MyProject/
 ├── project.json                             # Project metadata
 ├── 2025_0203_193056_008.JPG                # Original JPG
@@ -600,7 +598,7 @@ Typické časy spracovania pre 100 obrázkov (každý s rozlíšením 12 MP):
 
 | Režim              | Čas      | Hardvér                                     |
 | ----------------- | --------- | -------------------------------------------- |
-| **Paralelný režim** | 5–10 minút  | i7/Ryzen 7, 16 GB RAM, SSD (až 16 pracovníkov) |
+| **Paralelný režim** | 5–10 min  | i7/Ryzen 7, 16 GB RAM, SSD (až 16 pracovníkov) |
 | **Paralelný režim** | 10–15 minút | i5/Ryzen 5, 8 GB RAM, HDD (až 8 pracovníkov)   |
 
 {% hint style=&quot;info&quot; %}
@@ -611,7 +609,7 @@ Typické časy spracovania pre 100 obrázkov (každý s rozlíšením 12 MP):
 
 ## Riešenie problémov
 
-### CLI nenájdené
+### CLI nenájdený
 
 **Chyba:**
 
@@ -641,11 +639,10 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 
 ***
 
-### Backend sa nepodarilo spustiť.
-
-**Chyba:**
+### Backend sa nepodarilo spustiť.**Chyba:**
 
 ```
+
 Backend failed to start within 30 seconds
 ```
 
@@ -667,11 +664,10 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### Problémy s licenciou/overením
-
-**Chyba:**
+### Problémy s licenciou/overením**Chyba:**
 
 ```
+
 Chloros+ license required for CLI access
 ```
 
@@ -694,11 +690,10 @@ chloros-cli status
 
 ***
 
-### Nenašli sa žiadne obrázky
-
-**Chyba:**
+### Nenašli sa žiadne obrázky**Chyba:**
 
 ```
+
 No images found in the specified folder
 ```
 
@@ -711,21 +706,18 @@ No images found in the specified folder
 
 ***
 
-### Spracovanie sa zastaví alebo zamrzne
-
-**Riešenia:**
+### Spracovanie sa zastaví alebo zavesí**Riešenia:**
 
 1. Skontrolujte voľné miesto na disku (uistite sa, že je dostatočné na výstup).
-2. Zatvorte ostatné aplikácie, aby ste uvoľnili pamäť.
-3. Znížte počet obrázkov (spracovávajte ich po častiach).
+2. Zatvorte ostatné aplikácie, aby sa uvoľnila pamäť.
+3. Znížte počet obrázkov (spracovávajte v dávkach).
 
 ***
 
-### Port je už používaný
-
-**Chyba:**
+### Port je už používaný**Chyba:**
 
 ```
+
 Port 5000 is already in use
 ```
 
@@ -743,7 +735,7 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ### Otázka: Potrebujem licenciu pre CLI?
 
-**Odpoveď:** Áno! CLI vyžaduje platenú **licenciu Chloros+**.
+**Odpoveď:**Áno! CLI vyžaduje platenú**licenciu Chloros+**.
 
 * ❌ Štandardný (bezplatný) plán: CLI deaktivovaný
 * ✅ Plány Chloros+ (platené): CLI plne povolené
@@ -752,9 +744,7 @@ Prihláste sa na: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camer
 
 ***
 
-### Otázka: Môžem používať CLI na serveri bez grafického rozhrania?
-
-**Odpoveď:** Áno! CLI beží úplne bez grafického rozhrania. Požiadavky:
+### Otázka: Môžem používať CLI na serveri bez grafického rozhrania?**Odpoveď:** Áno! CLI beží úplne bez grafického rozhrania. Požiadavky:
 
 * Windows Server 2016 alebo novší
 * Nainštalovaný Visual C++ Redistributable
@@ -763,9 +753,7 @@ Prihláste sa na: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camer
 
 ***
 
-### Otázka: Kde sa ukladajú spracované obrázky?
-
-**Odpoveď:** Spracované obrázky sa štandardne ukladajú do **rovnakého priečinka ako vstupné** v podpriečinkoch modelu fotoaparátu (napr. `Survey3N_RGN/`).
+### Otázka: Kde sa ukladajú spracované obrázky?**Odpoveď:**Spracované obrázky sa štandardne ukladajú do**rovnakého priečinka ako vstupné** v podpriečinkoch modelov kamier (napr. `Survey3N_RGN/`).
 
 Na určenie iného výstupného priečinka použite možnosť `-o`:
 
@@ -775,15 +763,9 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ***
 
-### Otázka: Môžem spracovať viacero priečinkov naraz?
+### Otázka: Môžem spracovať viacero priečinkov naraz?**A:** Nie priamo v jednom príkaze, ale môžete použiť skriptovanie na spracovanie priečinkov postupne. Pozrite si časť [Automatizácia a skriptovanie](CLI.md#automation--scripting).***
 
-**A:** Nie priamo v jednom príkaze, ale môžete použiť skriptovanie na postupné spracovanie priečinkov. Pozrite si časť [Automatizácia a skriptovanie](CLI.md#automation--scripting).
-
-***
-
-### Q: Ako uložím výstup CLI do súboru protokolu?
-
-**PowerShell:**
+### Q: Ako uložím výstup CLI do súboru protokolu?**PowerShell:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
@@ -797,9 +779,7 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### Otázka: Čo sa stane, ak počas spracovania stlačím klávesy Ctrl+C?
-
-**Odpoveď:** CLI:
+### Otázka: Čo sa stane, ak počas spracovania stlačím klávesy Ctrl+C?**Odpoveď:** CLI:
 
 1. Plynule zastaví spracovanie
 2. Vypne backend
@@ -809,15 +789,9 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### Otázka: Môžem automatizovať spracovanie CLI?
+### Otázka: Môžem automatizovať spracovanie CLI?**Odpoveď:** Samozrejme! CLI je navrhnutý pre automatizáciu. Príklady pre PowerShell, Batch a Python nájdete v časti [Automatizácia a skriptovanie](CLI.md#automation--scripting).***
 
-**Odpoveď:** Samozrejme! CLI je navrhnutý pre automatizáciu. Príklady pre PowerShell, Batch a Python nájdete v časti [Automatizácia a skriptovanie](CLI.md#automation--scripting).
-
-***
-
-### Otázka: Ako skontrolujem verziu CLI?
-
-**Odpoveď:**
+### Otázka: Ako skontrolujem verziu CLI?**Odpoveď:**
 
 ```powershell
 chloros-cli --version
@@ -826,6 +800,7 @@ chloros-cli --version
 **Výstup:**
 
 ```
+
 Chloros CLI 1.0.2
 ```
 
@@ -851,9 +826,7 @@ chloros-cli language --help
 
 * **E-mail**: info@mapir.camera
 * **Webová stránka**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Ceny**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
+* **Ceny**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)***
 
 ## Kompletné príklady
 

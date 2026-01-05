@@ -22,39 +22,32 @@ Existujú dva hlavné spôsoby pridávania obrázkov do projektu:
 
 Túto možnosť použite na importovanie jednotlivých obrazových súborov alebo malého výberu súborov.
 
-1. Kliknite na tlačidlo **„Pridať súbory”** v hornej časti panela Prehliadač súborov.
+1. Kliknite na tlačidlo **„Pridať súbory“** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> v hornej časti panela prehliadača súborov.
 2. Prejdite do priečinka obsahujúceho vaše obrázky.
 3. Vyberte jeden alebo viacero obrazových súborov (podržte kláves **Ctrl**, aby ste vybrali viacero súborov).
-4. Kliknite na **„Otvoriť”**, aby ste importovali vybrané súbory.
+4. Kliknite na **„Otvoriť“**, aby ste importovali vybrané súbory.
 
 ### Spôsob 2: Pridať priečinok
 
 Túto možnosť použite na importovanie všetkých obrázkov z priečinka naraz.
 
-1. Kliknite na tlačidlo **„Pridať priečinok“** v hornej časti panela prehliadača súborov.
+1. Kliknite na tlačidlo **„Pridať priečinok“** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> v hornej časti panela prehliadača súborov.
 2. Prejdite do priečinka obsahujúceho obrázky z vašej snímkovej relácie a vyberte ho.
-3. Kliknite na **„Vybrať priečinok“**, aby ste importovali všetky podporované obrázky z tohto priečinka.
-
-***
+3. Kliknite na **„Vybrať priečinok“**, aby ste importovali všetky podporované obrázky z tohto priečinka.***
 
 ## Vysvetlenie tabuľky prehliadača súborov
 
 Po importe sa obrázky zobrazia v tabuľke s nasledujúcimi stĺpcami:
 
-### Miniatúra
-
-* Malý náhľad každého obrázku.
-* Kliknutím na miniatúru zobrazíte celý obrázok v hlavnej oblasti náhľadu.
-
 ### Názov súboru
 
-* Pôvodný názov súboru z fotoaparátu.
-* Zachováva konvenciu názvov fotoaparátu (napr. IMG\_0001.RAW).
+* Pôvodný názov súboru z fotoaparátu
+* Zachováva konvenciu názvov fotoaparátu (napr. IMG\_0001.RAW)
 
 ### Časová pečiatka
 
-* Dátum a čas zachytenia obrázku.
-* Extrahované z metadát EXIF obrázku.
+* Dátum a čas zachytenia obrázku
+* Extrahované z metadát EXIF obrázku
 * Používa sa na synchronizáciu PPK a detekciu kalibračného cieľa
 
 ### Model fotoaparátu
@@ -63,10 +56,10 @@ Po importe sa obrázky zobrazia v tabuľke s nasledujúcimi stĺpcami:
 * Príklady: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
 * Používa sa na aplikovanie správnych profilov spracovania
 
-### Stĺpec cieľ (začiarkavacie políčko)
+### Stĺpec cieľa (začiarkavacie políčko)
 
 * Začiarknite toto políčko pre obrázky, ktoré obsahujú kalibračné ciele
-* Výrazne urýchľuje detekciu cieľa počas spracovania
+* Výrazne urýchľuje detekciu cieľov počas spracovania
 * Podrobnosti nájdete v časti [Výber cieľových obrázkov](choosing-target-images.md)
 
 ***
@@ -75,19 +68,17 @@ Po importe sa obrázky zobrazia v tabuľke s nasledujúcimi stĺpcami:
 
 ### Odstránenie súborov
 
-Ak chcete odstrániť nepotrebné obrázky z projektu:
+Ak chcete odstrániť nepotrebné obrázky z vášho projektu:
 
-1. Vyberte jeden alebo viacero obrázkov v tabuľke prehliadača súborov.
-2. Kliknite na tlačidlo **„Odstrániť vybrané“**.
+1. Vyberte jeden alebo viacero obrázkov v tabuľke prehliadača súborov
+2. Kliknite na tlačidlo **„Odstrániť vybrané“** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> .
 3. Potvrďte odstránenie (súbory sa neodstránia z disku, iba z projektu).
 
 ### Triedenie a filtrovanie
 
-* **Triedenie podľa stĺpca**: Kliknutím na akýkoľvek nadpis stĺpca môžete obrázky triediť.
-* **Triedenie podľa časovej pečiatky**: užitočné pre organizovanie chronologických sekvencií záberov.
-* **Filter modelu fotoaparátu**: zoskupte obrázky podľa typu fotoaparátu, ak používate viacero fotoaparátov.
-
-***
+* **Triedenie podľa stĺpca**: Kliknutím na akýkoľvek záhlavie stĺpca môžete obrázky triediť.
+* **Triedenie podľa časovej pečiatky**: Užitočné pre organizovanie chronologických sekvencií záberov.
+* **Filter modelu fotoaparátu**: Zoskupte obrázky podľa typu fotoaparátu, ak používate viacero fotoaparátov.***
 
 ## Náhľad obrázkov
 
@@ -96,17 +87,15 @@ Ak chcete odstrániť nepotrebné obrázky z projektu:
 Kliknite na ľubovoľnú miniatúru obrázku v prehliadači súborov, aby sa zobrazil v hlavnej oblasti náhľadu:
 
 1. Obrázok sa zobrazí v strednom paneli náhľadu.
-2. Pomocou ovládacích prvkov zväčšenia môžete prezrieť detaily obrázku.
-3. Medzi obrázkami sa pohybujte pomocou klávesov so šípkami
+2. Pomocou ovládacích prvkov zväčšenia/zmenšenia môžete prezerať detaily obrázku.
+3. Medzi obrázkami môžete prechádzať pomocou klávesov so šípkami.
 
 ### Rýchla navigácia
 
 * **Predchádzajúci obrázok**: Kliknite na šípku vľavo alebo stlačte klávesu ←
 * **Ďalší obrázok**: Kliknite na šípku vpravo alebo stlačte klávesu →
 * **Zväčšenie/zmenšenie**: Použite koliesko myši alebo tlačidlá zväčšenia
-* **Posun**: Po zväčšení kliknite na obrázok a ťahajte ho
-
-***
+* **Posun**: Po zväčšení kliknite a ťahajte po obrázku***
 
 ## Spracovanie duplicitných súborov
 
@@ -114,7 +103,7 @@ Chloros automaticky detekuje a ignoruje duplicitné súbory:
 
 * Súbory s identickými názvami sú preskočené.
 * Zabraňuje náhodnému dvojitému spracovaniu.
-* Pri detekcii duplikátov sa zobrazí varovná správa.
+* Pri detekcii duplicitných súborov sa zobrazí varovná správa.
 
 {% hint style=&quot;warning&quot; %}
 **Dôležité**: Pred importom nepremenujte ani nemodifikujte pôvodné obrazové súbory. Chloros sa spolieha na pôvodné názvy súborov a metadáta pre správne spracovanie.
@@ -126,14 +115,12 @@ Chloros automaticky detekuje a ignoruje duplicitné súbory:
 
 Ak váš projekt obsahuje obrázky z viacerých kamier MAPIR:
 
-1. Chloros automaticky detekuje každý model kamery.
-2. Každý typ kamery sa spracováva s príslušným kalibračným profilom.
+1. Chloros automaticky rozpozná každý model kamery.
+2. Každý typ kamery sa spracováva pomocou príslušného kalibračného profilu.
 3. Prehliadač súborov zobrazuje model kamery v stĺpci Model kamery.
 4. Spracovanie uplatňuje správne nastavenia pre každý typ kamery.
 
-**Príklad scenára**: Survey3W RGN + Survey3N OCN nastavenie dvoch kamier.
-
-***
+**Príklad scenára**: Survey3W RGN + Survey3N OCN konfigurácia s dvoma kamerami.***
 
 ## Osvedčené postupy
 
@@ -174,9 +161,9 @@ Ak váš projekt obsahuje obrázky z viacerých kamier MAPIR:
 
 **Možné príčiny:**
 
-* Upravené metadáta EXIF
-* Obrázky upravené v externom softvéri
-* Neúplný prenos súborov
+* Upravené metadáta EXIF.
+* Obrázky upravené v externom softvéri.
+* Neúplný prenos súborov.
 
 **Riešenie**: Znovu importujte pôvodné, neupravené súbory z fotoaparátu/SD karty.
 
@@ -187,9 +174,7 @@ Ak váš projekt obsahuje obrázky z viacerých kamier MAPIR:
 * Nesprávne nastavené hodiny fotoaparátu
 * EXIF údaje odstránené externým softvérom
 
-**Riešenie**: Overte, či boli nastavenia času fotoaparátu počas snímania správne.
-
-***
+**Riešenie**: Overte, či boli nastavenia času fotoaparátu počas snímania správne.***
 
 ## Ďalšie kroky
 
@@ -199,6 +184,6 @@ Po importe súborov:
 2. **Skontrolujte modely fotoaparátov** – Overte správne rozpoznanie fotoaparátu.
 3. **Označte cieľové obrázky** – pozrite si [Výber cieľových obrázkov](choosing-target-images.md)
 4. **Upravte nastavenia** – nakonfigurujte možnosti spracovania v [Nastaveniach projektu](adjusting-project-settings.md)
-5. **Spustite spracovanie** – pozrite si [Spustenie spracovania](starting-the-processing.md).
+5. **Spustite spracovanie** – pozrite si časť [Spustenie spracovania](starting-the-processing.md).
 
 Podrobné informácie o konfigurácii projektu nájdete v časti [Úprava nastavení projektu](adjusting-project-settings.md).
