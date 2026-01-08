@@ -3,19 +3,17 @@ metaLinks: {}
 ---
 # Začíname
 
-<div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
-
-Chloros je softvérová aplikácia od [MAPIR](https://www.mapir.camera) na spracovanie obrázkov a iných údajov zo senzorov.
+<div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>Chloros je softvérová aplikácia od [MAPIR](https://www.mapir.camera) na spracovanie obrázkov a iných údajov zo senzorov.
 
 ***
 
 Chloros je k dispozícii v 4 režimoch aplikácie:
 
-## Chloros: Aplikácia s grafickým používateľským rozhraním pre stolné počítače
+## Chloros: Desktopová GUI aplikácia
 
 \[Odporúčané] Samostatné okno so všetkými funkciami.
 
-## Chloros (prehliadač): Webové grafické používateľské rozhranie
+## Chloros (prehliadač): Webové GUI rozhranie
 
 Beží vo vašom webovom prehliadači (Chrome/Edge). Najvhodnejšie pre pomalšie počítače s &lt;4 GB VRAM.
 
@@ -43,5 +41,13 @@ Hoci Chloros je zadarmo na väčšinu úloh, možno zistíte, že potrebujete vi
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ Ceny a registrácia</a></p>
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_mode.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>

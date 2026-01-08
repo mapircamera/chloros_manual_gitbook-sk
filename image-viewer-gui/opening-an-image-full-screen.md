@@ -9,7 +9,7 @@ Prehliadač obrázkov Chloros poskytuje špecializované rozhranie na celej obra
 Najbežnejší spôsob otvorenia obrázku v prehliadači obrázkov:
 
 1. Uistite sa, že ste na karte **Prehliadač súborov**. <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Kliknite na ľubovoľnú **miniatúru obrázka** v mriežke obrázkov.
+2. Kliknite na ľubovoľnú **miniaturu obrázka** v mriežke obrázkov.
 3. Obrázok sa otvorí v **hlavnej oblasti náhľadu** (v strede obrazovky).
 4. Obrázok je teraz načítaný a pripravený na zobrazenie na celej obrazovke.
 
@@ -31,7 +31,7 @@ Najväčšia časť obrazovky zobrazuje váš obrázok:
 
 * **Plné rozlíšenie**: Obrázky sa zobrazujú v natívnom rozlíšení.
 * **Zväčšiteľné**: Na zväčšenie použite ovládacie prvky alebo koliesko myši
-* **Posuvné**: Po zväčšení kliknite a ťahajte, aby ste sa pohybovali po obrázku
+* **Posuvné**: Po zväčšení kliknite a ťahajte, aby ste sa pohybovali
 * **Zachované pomerové rozmery**: Obrázky sa zväčšujú proporcionálne
 
 ***
@@ -46,40 +46,34 @@ V sade obrázkov sa pohybujte pomocou klávesových skratiek alebo tlačidiel:
 
 * **Ďalší obrázok**: Kliknite na tlačidlo → alebo stlačte kláves **→** (šipka doprava)
 * **Predchádzajúci obrázok**: Kliknite na tlačidlo ← alebo stlačte kláves **←** (šipka doľava)
-* **Preskočiť na konkrétny obrázok**: Vráťte sa do prehliadača súborov a kliknite na požadovanú miniatúru
+* **Prejsť na konkrétny obrázok**: Vráťte sa do prehliadača súborov a kliknite na požadovanú miniatúru
 
-#### Ovládacie prvky priblíženia
+#### Ovládacie prvky zväčšenia
 
 Upravte zväčšenie, aby ste mohli prezrieť detaily obrázku:
 
-**Zväčšiť:**
+**Zväčšenie:**
 
 * Kliknite na tlačidlo **+** (plus)
 * Stlačte kláves **+** alebo **=**
 * Posuňte koliesko myši **nahor**
 
-**Zmenšiť:**
+**Zmenšenie:**
 
 * Kliknite na tlačidlo **−** (mínus)
 * Stlačte kláves **−** (mínus)
 * Posuňte koliesko myši **nadol**
 
-**Prispôsobiť obrazovke:**
-
-* Kliknite na tlačidlo **↔** (Prispôsobiť)
-* Stlačte kláves **0** (Nula)
-* Dvakrát kliknite na obrázok
-
 #### Posúvanie pri zväčšení
 
 Pri zväčšení nad veľkosť obrazovky:
 
-1. Presuňte kurzor myši nad obrázok
-2. Kliknite a **podržte ľavé tlačidlo myši**
-3. **Ťahajte**, aby ste posunuli obrázok
-4. Uvoľnite tlačidlo, aby ste zastavili posúvanie
+1. Presuňte kurzor myši nad obrázok.
+2. Kliknite a **podržte ľavé tlačidlo myši**.
+3. **Ťahajte**, aby ste posunuli obrázok.
+4. Uvoľnite tlačidlo, aby ste zastavili posúvanie.
 
-**Alternatíva**: Použite klávesy so šípkami na posúvanie v malých krokoch
+**Alternatíva**: Použite klávesy so šípkami na posúvanie v malých krokoch.
 
 ***
 
@@ -91,33 +85,35 @@ Keď presuniete kurzor myši nad obrázok, hodnoty pixelov sa zobrazia v reálno
 
 **Umiestnenie zobrazenia hodnoty:**
 
-* **Plávajúce číslo a červená čiara v pravej strane indexu LUT gradientnej legendy**
-* **Pri ďalšom zväčšení sa zobrazí plávajúca hodnota v blízkosti kurzora a zvýrazneného pixelu**
-* Zobrazuje hodnoty pre pixel **pod kurzorom alebo zvýraznený**
+* **Plávajúce číslo a červená čiara v pravej strane indexu LUT gradientovej legendy**
+* **Pri ďalšom zväčšení sa plávajúca hodnota zobrazí v blízkosti kurzora a zvýrazneného pixelu**
+* Zobrazuje hodnoty pixelov **pod kurzorom alebo zvýraznených**
 * Aktualizuje sa pri pohybe myši
 
 ***
 
 ## Typy obrázkov, ktoré môžete zobraziť
 
-### Pôvodné obrázky (pred spracovaním)
+### JPG
 
-**Obrázky RAW + JPG z fotoaparátu:**
+**JPG obrázky z fotoaparátu:**
 
-* Zobrazenie údajov RAW ako náhľad
+* Zobrazenie JPG údajov ako náhľad
 * Zobrazenie pôvodných, neopravených hodnôt
 * Užitočné na kontrolu kvality obrázku pred spracovaním
 
-### Kalibrované obrázky odrazivosti
+### RAW (pôvodný)
+
+### RAW (odrazivosť)
 
 **Po spracovaní:**
 
 * Korekcia vinetácie
-* Kalibrovaná odrazivosť
+* Kalibrácia odrazu
 * Viac pásmové TIFF (Red, Green, NIR atď.)
 * Vedecké údaje pripravené na analýzu
 
-### Indexové snímky
+### RAW (Index)
 
 **NDVI, NDRE, GNDVI atď. (súbory \_NDVI.tif):**
 
@@ -153,21 +149,9 @@ Podrobné pokyny nájdete v časti [Index/LUT Sandbox](index-lut-sandbox.md).
 
 ### Zväčšenie
 
-* **+** alebo **=**: Zväčšiť
-* **−**: Zmenšiť
-* **0** (Nula): Prispôsobiť obrazovke
-* **Koliesko myši**: Zväčšiť/zmenšiť
-
-### Ovládacie prvky zobrazenia
-
-* **P**: Prepnúť režim percentuálneho zobrazenia pixelov
-* **L**: Prepnúť panel vrstiev
-* **Esc**: Zatvoriť celú obrazovku alebo vrátiť sa do prehliadača súborov
-
-### Iné
-
-* **Ctrl+S**: Uložiť aktuálny obrázok
-* **F**: Režim celej obrazovky (ak je k dispozícii)
+* **+** alebo **=**: Zväčšenie
+* **−**: Zmenšenie
+* **Koliesko myši**: Zväčšenie/zmenšenie
 
 ***
 
@@ -175,26 +159,26 @@ Podrobné pokyny nájdete v časti [Index/LUT Sandbox](index-lut-sandbox.md).
 
 Skontrolujte, či sú indexy vypočítané správne:
 
-1. Otvorte NDVI alebo iný indexový obrázok.
+1. Otvorte NDVI alebo iný indexový obrázok
 2. Skontrolujte oblasti vegetácie:
-   * **NDVI**: Malo by sa zobraziť 0,4–0,9 pre zdravé rastliny.
+   * **NDVI**: Pre zdravé rastliny by malo byť zobrazené 0,4–0,9
    * **NDRE**: Vyššie hodnoty pre bujný rast
    * **GNDVI**: Podobné ako NDVI, ale citlivé na chlorofyl
 3. Skontrolujte oblasti bez vegetácie:
-   * **Pôda**: Blízko 0 alebo mierne záporná
+   * **Pôda**: Blízko 0 alebo mierne záporné
    * **Voda**: Záporné hodnoty (-0,5 až 0)
 
 ***
 
 ## Riešenie problémov so zobrazením
 
-### Obrázok sa neotvorí
+### Obraz sa neotvorí
 
 **Možné príčiny:**
 
 * Poškodený súbor počas spracovania
 * Nepodporovaný formát súboru
-* Nedostatočná pamäť pre veľký obrázok
+* Nedostatočná pamäť pre veľký obraz
 
 **Riešenia:**
 
