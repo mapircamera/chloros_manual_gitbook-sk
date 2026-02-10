@@ -12,27 +12,27 @@ Karta Mapa zobrazuje vaše obrázky na interaktívnej 2D mape na základe ich GP
 4. Na mape sa zobrazia značky v GPS polohe každého obrázku.
 
 {% hint style="info" %}
-**Vyžaduje sa GPS**: Na mape sa zobrazia len obrázky s vloženými GPS súradnicami v metadátach EXIF. Uistite sa, že máte počas snímania zapnuté GPS na fotoaparáte.
+**Vyžaduje sa GPS**: Na mape sa zobrazia len obrázky s vloženými GPS súradnicami v metadátach EXIF. Uistite sa, že máte počas snímania zapnuté GPS vo fotoaparáte.
 {% endhint %}
 
 ***
 
 ## Úprava obrázkov z karty Mapa
 
-Karta **Mapa** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> má rovnaké funkcie pridávania  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  a odstránenie  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  ako karta [**Prehliadač súborov**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Zobrazuje tiež rovnaký zoznam projektových súborov, ale s inými názvami stĺpcov:
+Karta **Mapa**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> má rovnaké funkcie pridávania  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  a odstránenie  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  ako karta [**Prehliadač súborov**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Zobrazuje tiež rovnaký zoznam projektových súborov, ale s inými názvami stĺpcov:
 
 ### Názov súboru
 
-* Pôvodný názov súboru z fotoaparátu.
-* Zachováva konvenciu názvov fotoaparátu (napr. IMG\_0001.RAW).
+* Pôvodný názov súboru z fotoaparátu
+* Zachováva konvenciu názvov fotoaparátu (napr. IMG\_0001.RAW)
 
 ### Zemepisná šírka
 
-* Zemepisná šírka obrázku.
+* Zemepisná šírka obrázku
 
 ### Zemepisná dĺžka
 
-* Zemepisná dĺžka obrázku.
+* Zemepisná dĺžka obrázku
 
 ### Nadmorská výška
 
@@ -62,7 +62,7 @@ SUPER-ZOOM: Keď dosiahnete maximálnu úroveň zväčšenia od poskytovateľa m
 
 * **Prejdite kurzorom myši** nad akúkoľvek značku, aby ste videli náhľad miniatúry daného obrázku.
 * To umožňuje rýchlu vizuálnu identifikáciu bez opustenia zobrazenia mapy.
-* Užitočné pre vyhľadávanie konkrétnych obrázkov v rámci veľkej sedenia zachytávania.
+* Užitočné pre vyhľadávanie konkrétnych obrázkov v rámci veľkej snímkovej relácie.
 
 ***
 
@@ -72,7 +72,7 @@ SUPER-ZOOM: Keď dosiahnete maximálnu úroveň zväčšenia od poskytovateľa m
 **Automatický výber**: Chloros automaticky vyberie službu dlaždíc, ktorá poskytuje najlepšiu úroveň priblíženia pre vašu aktuálnu polohu na mape. V prípade potreby môžete ručne prepínať medzi poskytovateľmi.
 {% endhint %}
 
-Karta Mapa podporuje dvoch poskytovateľov dlaždíc pre obrazové pozadie mapy:
+Karta Mapa podporuje dvoch poskytovateľov dlaždíc pre pozadie mapy:
 
 ### Google Maps
 
@@ -90,7 +90,7 @@ Karta Mapa podporuje dvoch poskytovateľov dlaždíc pre obrazové pozadie mapy:
 
 Môžete si vybrať typ mapovej vrstvy (zľava doprava):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Terén
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terén
 
 Zobrazuje výškové profily a mapové dlaždice s detailmi (cesty atď.)
 
@@ -117,19 +117,17 @@ Zobrazuje satelitné mapové dlaždice s pridanými detailmi (cesty atď.)
 
 ### Ovládacie prvky posunu
 
-* **Posun**: Kliknutím a ťahaním sa pohybujete po mape.
-
-***
+* **Posun**: Kliknutím a ťahaním sa pohybujete po mape.***
 
 ## Prípady použitia
 
 ### Vizualizácia letovej dráhy
 
-* Zobrazenie oblasti pokrytia snímaním dronom
-* Identifikácia medzier v pokrytie obrazom
+* Zobrazenie pokrytia oblasti snímaním dronom
+* Identifikácia medzier v pokrytí obrazom
 * Overenie vykonania letovej dráhy
 
-### Preskúmanie pozemného prieskumu
+### Prehľad pozemného prieskumu
 
 * Zobrazenie priestorového rozloženia pozemných snímok
 * Lokalizácia kalibračných cieľových obrazov vo vzťahu k prieskumnej oblasti
@@ -159,7 +157,7 @@ Zobrazuje satelitné mapové dlaždice s pridanými detailmi (cesty atď.)
 
 **Možné príčiny:**
 
-* GPS fotoaparátu malo slabý signál zo satelitu.
-* Posun GPS počas snímania.
+* GPS fotoaparátu malo slabé satelitné pripojenie.
+* GPS sa počas snímania posunulo.
 
 **Riešenie**: Ide zvyčajne o problém so snímaním. Zvážte použitie PPK/RTK GPS pre presné aplikácie.
