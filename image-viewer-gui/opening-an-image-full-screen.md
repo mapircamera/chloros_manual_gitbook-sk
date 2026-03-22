@@ -1,6 +1,6 @@
 # Otvorenie obrázku na celú obrazovku
 
-Prehliadač obrázkov Chloros poskytuje špecializované rozhranie na celú obrazovku na prezeranie, analýzu a manipuláciu s multispektrálnymi obrázkami. Nech už prezeráte originálne obrázky alebo spracované výstupy, prehliadač obrázkov ponúka výkonné nástroje na kontrolu a analýzu.
+Prehliadač obrázkov Chloros ponúka špecializované rozhranie na celú obrazovku určené na prezeranie, analýzu a úpravu vašich multispektrálnych obrázkov. Nech už prezeráte originálne obrázky alebo spracované výstupy, prehliadač obrázkov ponúka výkonné nástroje na kontrolu a analýzu.
 
 ## Prístup k prehliadaču obrázkov
 
@@ -8,31 +8,31 @@ Prehliadač obrázkov Chloros poskytuje špecializované rozhranie na celú obra
 
 Najbežnejší spôsob otvorenia obrázku v prehliadači obrázkov:
 
-1. Uistite sa, že ste na karte **Prehliadač súborov**. <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Kliknite na ľubovoľnú **miniaturu obrázku** v mriežke obrázkov.
-3. Obrázok sa otvorí v **hlavnej oblasti náhľadu** (v strede obrazovky).
-4. Obrázok je teraz načítaný a pripravený na zobrazenie na celej obrazovke.
+1. Uistite sa, že ste na karte **Prehliadač súborov** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Kliknite na ľubovoľnú **miniatúru snímky** v mriežke snímok
+3. Snímka sa otvorí v **hlavnej oblasti náhľadu** (v strede obrazovky)
+4. Snímka je teraz načítaná a pripravená na prezeranie na celej obrazovke
 
-### Otvorenie karty Image Viewer
+### Otvorenie karty prehliadača snímok
 
-Po načítaní obrázku do oblasti náhľadu:
+Akonáhle je snímka načítaná v oblasti náhľadu:
 
-1. Kliknite na ikonu **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> v ľavom bočnom paneli.
-2. Otvorí sa karta Prehliadač obrázkov, kde sa vybraný obrázok zobrazí na celej obrazovke.
-3. V ľavom bočnom paneli sa sprístupnia pokročilé nástroje na prezeranie a analýzu.
+1. Kliknite na ikonu **Prehliadač snímok** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> v ľavom bočnom paneli
+2. Otvorí sa karta Prehliadač obrázkov, ktorá zobrazí vybraný obrázok na celej obrazovke
+3. V ľavom bočnom paneli sa sprístupnia pokročilé nástroje na prezeranie a analýzu
 
 ***
 
 ## Prehľad rozhrania prehliadača obrázkov
 
-### Hlavná oblasť zobrazenia
+### Hlavná zobrazovacia oblasť
 
 Najväčšia časť obrazovky zobrazuje váš obrázok:
 
-* **Plné rozlíšenie**: Obrázky sa zobrazujú v natívnom rozlíšení.
-* **Zväčšiteľné**: Na zväčšenie použite ovládacie prvky alebo koliesko myši
-* **Posuvné**: Po zväčšení kliknite a ťahajte, aby ste sa pohybovali
-* **Zachované pomerové rozmery**: Obrázky sa zväčšujú proporcionálne***
+* **Plné rozlíšenie**: Obrázky sa zobrazujú v natívnom rozlíšení
+* **Možnosť priblíženia**: Na priblíženie použite ovládacie prvky alebo koliesko myši
+* **Možnosť posúvania**: Po priblížení kliknite a ťahajte kurzorom na posúvanie
+* **Zachovanie pomeru strán**: Obrázky sa proporcionálne zmenšujú alebo zväčšujú***
 
 ## Možnosti zobrazenia
 
@@ -42,37 +42,38 @@ Najväčšia časť obrazovky zobrazuje váš obrázok:
 
 V sade obrázkov sa pohybujte pomocou klávesových skratiek alebo tlačidiel:
 
-* **Ďalší obrázok**: Kliknite na tlačidlo → alebo stlačte kláves**→** (šipka doprava)
-* **Predchádzajúci obrázok**: Kliknite na tlačidlo ← alebo stlačte kláves**←** (šipka doľava)
+* **Ďalší obrázok**: Kliknite na tlačidlo → alebo stlačte klávesu**→** (šípka doprava)
+* **Predchádzajúci obrázok**: Kliknite na tlačidlo ← alebo stlačte klávesu**←** (šípka doľava)
 * **Preskočiť na konkrétny obrázok**: Vráťte sa do prehliadača súborov a kliknite na požadovanú miniatúru
 
 #### Ovládacie prvky priblíženia
 
-Upravte zväčšenie, aby ste mohli prezrieť detaily obrázku:
+Upravte zväčšenie, aby ste si prezreli detaily obrázku:
 
-**Zväčšiť:*** Kliknite na tlačidlo **+** (plus)
+**Zväčšenie:*** Kliknite na tlačidlo **+** (plus)
 * Stlačte kláves **+**alebo**=*** Posuňte koliesko myši **nahor**
 
-**Zmenšiť:*** Kliknite na tlačidlo **−** (mínus)
+**Zmenšenie:*** Kliknite na tlačidlo **−** (mínus)
 * Stlačte kláves **−** (mínus)
 * Posuňte koliesko myši **nadol**
 
 #### Posúvanie pri zväčšení
 
-Pri zväčšení nad veľkosť obrazovky:
+Pri zväčšení nad rámec veľkosti obrazovky:
 
-1. Presuňte kurzor myši nad obrázok.
-2. Kliknite a **podržte ľavé tlačidlo myši**.
-3. **Ťahajte**, aby ste posunuli obrázok.
-4. Uvoľnite tlačidlo, aby ste zastavili posúvanie.
+1. Presuňte kurzor myši nad obrázok
+2. Kliknite a **podržte ľavé tlačidlo myši**
 
-**Alternatíva**: Použite klávesy so šípkami na posúvanie v malých krokoch.***
+3.**Ťahajte**, aby ste posúvali obrázok
+4. Uvoľnite tlačidlo, aby ste zastavili posúvanie
 
-## Kontrola hodnoty pixelov
+**Alternatíva**: Použite šípky na posúvanie v malých krokoch***
 
-### Zobrazenie hodnôt pixelov na kurzore
+## Kontrola hodnôt pixelov
 
-Keď presuniete kurzor myši nad obrázok, hodnoty pixelov sa zobrazia v reálnom čase:**Umiestnenie zobrazenia hodnoty:*** **Plávajúce číslo a červená čiara v pravej strane indexu LUT gradientnej legendy*** **Pri ďalšom zväčšení sa plávajúca hodnota zobrazí v blízkosti kurzora a zvýrazneného pixelu*** Zobrazuje hodnoty pixelov **pod kurzorom alebo zvýraznených*** Aktualizuje sa pri pohybe myši
+### Zobrazenie hodnôt pixelov pri kurzore
+
+Keď presúvate kurzor myši nad obrázkom, hodnoty pixelov sa zobrazujú v reálnom čase:**Umiestnenie zobrazenia hodnôt:*** **Plávajúce číslo a červená čiara v pravej časti legendy gradientu indexovej LUT*** **Pri ďalšom zväčšení plávajúca hodnota v blízkosti kurzora a zvýrazneného pixela*** Zobrazuje hodnoty pre pixel **pod kurzorom alebo zvýraznený*** Aktualizuje sa pri pohybe myši
 
 ***
 
@@ -80,9 +81,9 @@ Keď presuniete kurzor myši nad obrázok, hodnoty pixelov sa zobrazia v reálno
 
 ### JPG
 
-**JPG obrázky z fotoaparátu:**
+**Obrázky JPG z fotoaparátu:**
 
-* Zobrazenie JPG údajov ako náhľad
+* Zobrazenie údajov JPG ako v náhľade
 * Zobrazenie pôvodných, neopravených hodnôt
 * Užitočné na kontrolu kvality obrázku pred spracovaním
 
@@ -92,7 +93,7 @@ Keď presuniete kurzor myši nad obrázok, hodnoty pixelov sa zobrazia v reálno
 
 **Po spracovaní:**
 
-* Korigovaná vinetácia
+* Opravená vineta
 * Kalibrovaná odrazivosť
 * Viacpásmový TIFF (Red, Green, NIR atď.)
 * Vedecké údaje pripravené na analýzu
@@ -101,24 +102,24 @@ Keď presuniete kurzor myši nad obrázok, hodnoty pixelov sa zobrazia v reálno
 
 **NDVI, NDRE, GNDVI atď. (súbory \_NDVI.tif):**
 
-* Jednopásmové obrázky v odtieňoch sivej
+* Jednopásmové snímky v odtieňoch šedej
 * Hodnoty pixelov predstavujú výsledky výpočtu indexu
 * Rozsah typicky od -1 do +1 pre normalizované indexy
 * Na vizualizáciu je možné použiť farebné LUT
 
 ***
 
-## Použitie indexu a LUT
+## Použitie indexov a LUT
 
-Použite multispektrálne indexy a farebné vyhľadávacie tabuľky:
+Použite multispektrálne indexy a farebné vyhľadávacie tabuľky (LUT):
 
-1. Vyhľadajte **Index/LUT Sandbox**v**Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> bočnom paneli
+1. V **Prehliadači obrázkov**vyhľadajte**Index/LUT Sandbox** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> bočnom paneli
 2. Vyberte index vegetácie (NDVI, NDRE atď.)
-3. Vyberte multispektrálnu formulu alebo vytvorte vlastnú (len Chloros+)
+3. Vyberte multispektrálny vzorec alebo vytvorte vlastný (len Chloros+)
 4. Použite farebný LUT gradient na vizualizáciu
 5. Upravte rozsahy hodnôt a prahové hodnoty
 
-Podrobné pokyny nájdete v časti [Index/LUT Sandbox](index-lut-sandbox.md).
+Podrobné pokyny nájdete v [Index/LUT Sandbox](index-lut-sandbox.md).
 
 ***
 
@@ -126,75 +127,75 @@ Podrobné pokyny nájdete v časti [Index/LUT Sandbox](index-lut-sandbox.md).
 
 ### Navigácia
 
-* **→** (šipka doprava): Ďalší obrázok
-* **←** (šipka doľava): Predchádzajúci obrázok
+* **→** (šípka doprava): Ďalší obrázok
+* **←** (šípka doľava): Predchádzajúci obrázok
 * **Home**: Prvý obrázok v zozname
 * **End**: Posledný obrázok v zozname
 
 ### Zväčšenie
 
-* **+**alebo**=**: Zväčšenie
-* **−**: Zmenšenie
-* **Koliesko myši**: Zväčšenie/zmenšenie***
+* **+**alebo**=**: Zväčšiť
+* **−**: Zmenšiť
+* **Koleso myši**: Zväčšiť/zmenšiť***
 
 ### Overenie výpočtov indexov
 
 Skontrolujte, či sú indexy vypočítané správne:
 
-1. Otvorte NDVI alebo iný indexový obrázok
+1. Otvorte NDVI alebo iný obrázok s indexom
 2. Skontrolujte oblasti vegetácie:
-   * **NDVI**: Pre zdravé rastliny by malo byť zobrazené 0,4–0,9
-   * **NDRE**: Vyššie hodnoty pre bujný rast
+   * **NDVI**: U zdravých rastlín by mala byť hodnota 0,4–0,9
+   * **NDRE**: Vyššie hodnoty pri bujnom raste
    * **GNDVI**: Podobné ako NDVI, ale citlivé na chlorofyl
-3. Skontrolujte oblasti bez vegetácie:
+3. Skontrolujte neporast:
    * **Pôda**: Blízko 0 alebo mierne záporné
    * **Voda**: Záporné hodnoty (-0,5 až 0)***
 
 ## Riešenie problémov so zobrazením
 
-### Obraz sa neotvorí
+### Obrázok sa neotvorí
 
 **Možné príčiny:**
 
-* Súbor bol poškodený počas spracovania.
-* Nepodporovaný formát súboru.
-* Nedostatočná pamäť pre veľký obraz.
+* Súbor bol poškodený počas spracovania
+* Nepodporovaný formát súboru
+* Nedostatočná pamäť pre veľký obrázok
 
 **Riešenia:**
 
-1. Skúste otvoriť v externom prehliadači, aby ste overili integritu súboru.
-2. Skontrolujte, či formát súboru zodpovedá očakávanému typu.
-3. Zatvorte ostatné aplikácie, aby ste uvoľnili pamäť.
-4. Skúste menší/iný obrázok.
+1. Skúste otvoriť v externom prehliadači, aby ste overili integritu súboru
+2. Skontrolujte, či formát súboru zodpovedá očakávanému typu
+3. Zatvorte ostatné aplikácie, aby ste uvoľnili pamäť
+4. Skúste menší/iný obrázok
 
-### Čierny alebo biely obraz
+### Zobrazenie čierneho alebo bieleho obrázku
 
 **Možné príčiny:**
 
-* Rozsah hodnôt mimo možnosti zobrazenia.
-* 32-bitový obrázok s neobvyklými hodnotami.
-* Chyba výpočtu indexu.
+* Rozsah hodnôt mimo zobrazovacích možností
+* 32-bitový obrázok s neobvyklými hodnotami
+* Chyba výpočtu indexu
 
 **Riešenia:**
 
-1. Skontrolujte hodnoty pixelov – ak sú všetky veľmi nízke alebo veľmi vysoké, upravte rozsah zobrazenia.
-2. Skúste otvoriť v QGIS alebo podobnom programe s automatickým nastavením rozsahu.
-3. Skontrolujte protokol ladenia spracovania, či neobsahuje chyby.
+1. Skontrolujte hodnoty pixelov – ak sú všetky veľmi nízke alebo veľmi vysoké, upravte rozsah zobrazenia
+2. Skúste otvoriť v QGIS alebo podobnom programe s automatickým nastavením rozsahu
+3. Skontrolujte protokol ladenia zo spracovania, či neobsahuje chyby
 
 ### Hodnoty pixelov sa zdajú nesprávne
 
 **Možné príčiny:**
 
-* Zobrazenie nesprávneho obrázku (originál vs. spracovaný)
+* Prezeranie nesprávneho obrázku (originál vs. spracovaný)
 * Kalibrácia nebola správne aplikovaná
-* Dáta svetelného senzora neboli zahrnuté vo vstupe
-* Režim percent bol nesprávne prepnutý
+* Údaje zo svetelného senzora neboli zahrnuté vo vstupe
+* Režim percentuálneho zobrazenia bol nesprávne prepnutý
 
 **Riešenia:**
 
 1. Overte, či prezeráte spracovaný výstup (skontrolujte príponu súboru)
-2. Skontrolujte stav tlačidla režimu percent
-3. Porovnajte so známymi dobrými obrázkami z rovnakého súboru údajov
+2. Skontrolujte stav tlačidla režimu percentuálneho zobrazenia
+3. Porovnajte s obrázkami, o ktorých viete, že sú v poriadku, z rovnakého súboru údajov
 
 ***
 
@@ -202,10 +203,10 @@ Skontrolujte, či sú indexy vypočítané správne:
 
 Teraz, keď môžete zobraziť obrázky na celej obrazovke:
 
-* [**Vrstvy obrázkov**](image-layers.md) – Informácie o vizualizácii viacerých pásiem
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) – Použite vlastné indexy a mapovanie farieb
-* [**Vzorec multispektrálneho indexu**](../project-settings/multispectral-index-formulas.md) – Porozumenie dostupným indexom
+* [**Vrstvy obrázkov**](image-layers.md) – Zoznámte sa s vizualizáciou viacerých pásiem
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) – Použite vlastné indexy a farebné mapovanie
+* [**Vzorce multispektrálnych indexov**](../project-settings/multispectral-index-formulas.md) – Zoznámte sa s dostupnými indexmi
 
-Pre spracovanie pracovného postupu pozrite:
+Informácie o pracovnom postupe spracovania nájdete tu:
 
 * [**Spracovanie obrázkov (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – Kompletný sprievodca spracovaním

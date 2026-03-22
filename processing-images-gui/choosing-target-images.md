@@ -1,6 +1,6 @@
 # Výber cieľových obrázkov
 
-Označenie obrázkov, ktoré obsahujú kalibračné ciele, je kľúčovým krokom, ktorý výrazne urýchľuje spracovanie Chloros. Predbežným výberom cieľových obrázkov eliminujete potrebu, aby Chloros skenoval každý obrázok vo vašej dátovej sade za účelom nájdenia kalibračných cieľov.
+Označenie obrázkov, ktoré obsahujú kalibračné ciele, je kľúčovým krokom, ktorý výrazne urýchľuje spracovateľský reťazec Chloros. Predbežným výberom cieľových obrázkov eliminujete potrebu, aby Chloros prehľadával každý obrázok vo vašom súbore údajov s cieľom nájsť kalibračné ciele.
 
 ## Prečo označovať cieľové obrázky?
 
@@ -8,9 +8,9 @@ Označenie obrázkov, ktoré obsahujú kalibračné ciele, je kľúčovým kroko
 
 Bez označenia cieľových obrázkov musí Chloros:
 
-* Skenovať každý jeden obrázok vo vašom projekte.
-* Spustiť algoritmy detekcie cieľov na každom obrázku.
-* Zbytočne skontrolovať stovky alebo tisíce obrázkov.
+* Prehľadať každý jeden obrázok vo vašom projekte
+* Spustiť algoritmy detekcie cieľov na každom obrázku
+* Zbytočne skontrolovať stovky alebo tisíce obrázkov
 
 **Výsledok**: Spracovanie môže trvať podstatne dlhšie, najmä v prípade veľkých dátových súborov.
 
@@ -18,98 +18,94 @@ Bez označenia cieľových obrázkov musí Chloros:
 
 Keď zaškrtnete stĺpec Cieľ pre konkrétne obrázky:
 
-* Chloros skenuje iba zaškrtnuté obrázky na ciele
-* Detekcia cieľov je oveľa rýchlejšia
-* Celková doba spracovania je výrazne skrátená
+* Chloros skenuje iba zaškrtnuté obrázky na prítomnosť cieľov
+* Detekcia cieľov prebieha oveľa rýchlejšie
+* Celková doba spracovania sa výrazne skráti
 
-{% hint style=&quot;success&quot; %}
-**Zrýchlenie**: Označením 2–3 cieľových obrázkov v súbore údajov s 500 obrázkami môžete skrátiť čas detekcie cieľov z viac ako 30 minút na menej ako 1 minútu.
+{% hint style="success" %}
+**Zvýšenie rýchlosti**: Označením 2–3 cieľových obrázkov v súbore s 500 obrázkami môžete skrátiť čas detekcie cieľov z viac ako 30 minút na menej ako 1 minútu.
 {% endhint %}
 
 ***
 
-## Ako označiť cieľové obrázky
+## Ako označiť obrázky cieľov
 
-### Krok 1: Identifikujte svoje cieľové obrázky
+### Krok 1: Identifikujte svoje obrázky cieľov
 
 Prezrite si importované obrázky v prehliadači súborov a identifikujte, ktoré obrázky obsahujú kalibračné ciele.
 
-**Bežné scenáre:**
-
-* **Cieľ pred zachytením**: Zachytený pred začatím relácie
-* **Cieľ po zachytení**: Zachytený po dokončení relácie
-* **Ciele v teréne**: Ciele umiestnené v oblasti zachytenia
+**Bežné scenáre:*** **Cieľ pred snímaním**: Zachytený pred začatím relácie
+* **Cieľ po snímaní**: Zachytený po dokončení relácie
+* **Ciele v teréne**: Ciele umiestnené v oblasti snímania
 * **Viac cieľov**: 2–3 cieľové obrázky na reláciu (odporúčané)
 
 ### Krok 2: Skontrolujte stĺpec Cieľ
 
 Pre každý obrázok obsahujúci kalibračný cieľ:
 
-1. Vyhľadajte obrázok v tabuľke prehliadača súborov.
-2. Vyhľadajte stĺpec **Cieľ** (stĺpec úplne vpravo).
-3. Zaškrtnite políčko v stĺpci Cieľ pre daný obrázok.
-4. Opakujte pre všetky obrázky obsahujúce ciele.
+1. Vyhľadajte obrázok v tabuľke prehliadača súborov
+2. Nájdite stĺpec **Cieľ** (stĺpec úplne vpravo)
+3. Zaškrtnite políčko v stĺpci Cieľ pre daný obrázok
+4. Opakujte pre všetky obrázky obsahujúce ciele
 
 ### Krok 3: Overte svoj výber
 
-Pred spracovaním skontrolujte:
+Pred spracovaním ešte raz skontrolujte:
 
-* [ ] Všetky obrázky s kalibračnými cieľmi sú zaškrtnuté.
-* [ ] Žiadne obrázky, ktoré nie sú cieľmi, nie sú omylom zaškrtnuté.
-* [ ] Ciele sú na zaškrtnutých obrázkoch jasne viditeľné.
+* [ ] Všetky snímky s kalibračnými cieľmi sú zaškrtnuté
+* [ ] Žiadne snímky bez cieľa nie sú omylom zaškrtnuté
+* [ ] Ciele sú na zaškrtnutých snímkach jasne viditeľné
 
 ***
 
-## Osvedčené postupy pre cieľové obrázky
+## Osvedčené postupy pre snímky cieľa
 
-### Pokyny na zachytávanie cieľov
+### Pokyny na snímanie cieľa
 
 **Načasovanie:**
 
-* Zachytávajte cieľové obrázky bezprostredne pred a počas zachytávania.
-* Za rovnakých svetelných podmienok ako svetelný senzor DAQ.
-* V ideálnom prípade zachytávajte cieľové obrázky čo najčastejšie, aby ste dosiahli najlepšie výsledky. V opačnom prípade sa na úpravu kalibrácie v priebehu času použijú údaje zo svetelného senzora.
+* Snímky cieľa snímejte bezprostredne pred a počas celej relácie snímania
+* Za rovnakých svetelných podmienok ako váš svetelný senzor DAQ
+* Pre dosiahnutie najlepších výsledkov snímejte obrázky cieľov v ideálnom prípade čo najčastejšie. V opačnom prípade sa na úpravu kalibrácie v priebehu času použijú údaje zo svetelného senzora.
 
-**Poloha kamery:**
+**Poloha fotoaparátu:**
 
-* Držte kameru nad cieľom tak, aby bola vystredená a vyplňovala približne 40 – 60 % stredu obrázka.
-* Udržujte kameru paralelne/nadir s povrchom cieľa
+* Držte fotoaparát nad cieľom tak, aby bol vystredený a vyplňoval približne 40–60 % stredu obrázka.
+* Udržujte fotoaparát paralelne/v nadire voči povrchu cieľa
 
 **Osvetlenie:**
 
-* Rovnaké okolité osvetlenie ako váš svetelný senzor DAQ.
-* Vyhnite sa tieňom na povrchoch cieľa.
-* Nezakrývajte zdroj svetla svojím telom, vozidlom alebo vegetáciou.
-* Zamračená obloha poskytuje najkonzistentnejšie výsledky.
+* Rovnaké okolité osvetlenie ako u vášho svetelného senzora DAQ
+* Vyhnite sa tieňom na povrchoch cieľov
+* Nezakrývajte zdroj svetla svojím telom, vozidlom alebo vegetáciou
+* Zamračená obloha poskytuje najkonzistentnejšie výsledky
 
 **Stav cieľa:**
 
-* Udržujte panely cieľa čisté a suché.
-* Všetky 4 panely by mali byť jasne viditeľné a nezakryté.
-* Ciele by mali byť v prípade možnosti kolmé/nadir k zdroju svetla.
+* Udržujte panely cieľa čisté a suché
+* Všetky 4 panely by mali byť jasne viditeľné a ničím nezakryté
+* Ciele by mali byť pokiaľ možno kolmé/v nadire voči zdroju svetla
 
 ### Koľko snímok cieľa?
 
-**Minimálne:** 1 cieľový obraz na jednu reláciu. **Odporúčané:** 3–5 cieľových obrazov na jednu reláciu.
+**Minimálne:**1 snímka cieľa na jednu reláciu.**Odporúčané:** 3–5 snímok cieľa na jednu reláciu.**Osvedčený postup:**
 
-**Najlepší postup:**
-
-* 3–5 obrazov zachytených krátko po začatí nahrávania svetelného senzora
-* Pre dosiahnutie najlepších výsledkov otáčajte kameru medzi jednotlivými zábermi
-* Voliteľné: pravidelne v polovici relácie, ak sa podmienky osvetlenia neustále menia
+* 3–5 snímok zachytených krátko po začatí záznamu svetelného senzora
+* Pre dosiahnutie najlepších výsledkov striedajte polohu kamery medzi jednotlivými zábermi
+* Voliteľné: pravidelne v priebehu relácie, ak sa svetelné podmienky neustále menia
 
 ***
 
 ## Práca s viacerými kamerami
 
-### Nastavenie dvoch kamier
+### Nastavenia s dvoma kamerami
 
 Ak používate dve kamery MAPIR súčasne (napr. Survey3W RGN + Survey3N OCN):
 
-1. Zachyťte cieľové obrázky **oboma kamerami** súčasne.
-2. Použite **rovnaký fyzický cieľ** pre obe kamery.
-3. Označte cieľové obrázky pre **oba typy kamier** v prehliadači súborov.
-4. Chloros použije vhodné ciele pre kalibráciu každej kamery.
+1. Zachyťte snímky cieľa **oboma kamerami** súčasne
+2. Použite **rovnaký fyzický cieľ** pre obe kamery
+3. Označte snímky cieľa pre **oba typy kamier** v prehliadači súborov
+4. Chloros použije vhodné ciele pre kalibráciu každej kamery
 
 ### Stĺpec Model kamery
 
@@ -128,68 +124,58 @@ Tento stĺpec použite na overenie, či ste v projekte označili ciele pre každ
 
 ### Úprava citlivosti detekcie
 
-Ak Chloros nedetekuje vaše ciele správne, upravte tieto nastavenia v [Nastaveniach projektu](adjusting-project-settings.md):
+Ak Chloros nedetekuje vaše ciele správne, upravte tieto nastavenia v [Nastaveniach projektu](adjusting-project-settings.md):**Minimálna plocha kalibračnej vzorky:*** **Predvolené**: 25 pixelov
+* **Zvýšte**, ak dochádza k falošným detekciám na malých artefaktoch
+* **Znížte**, ak sa ciele nedetekujú**Minimálne zhlukovanie cieľov:*** **Predvolené**: 60
+* **Zvýšte**, ak sa ciele rozdeľujú na viacero detekcií
+* **Znížte**, ak sa ciele s farebnými odlišnosťami nedetekujú úplne***
 
-**Minimálna kalibračná vzorkovacia plocha:**
+## Bežné problémy s obrázkami cieľov
 
-* **Predvolené nastavenie**: 25 pixelov
-* **Zvýšte**, ak dochádza k falošným detekciám malých artefaktov.
-* **Znížte**, ak sa ciele nedetekujú.
-
-**Minimálne zhlukovanie cieľov:**
-
-* **Predvolené nastavenie**: 60
-* **Zvýšte**, ak sa ciele rozdeľujú na viacero detekcií.
-* **Znížte**, ak ciele s farebnými odchýlkami nie sú úplne detegované.
-
-***
-
-## Bežné problémy s obrazom cieľa
-
-### Problém: Nedetekovali sa žiadne ciele.
+### Problém: Nedetekované ciele
 
 **Možné príčiny:**
 
-* Obrazy cieľov nie sú označené v prehliadači súborov.
-* Cieľ je v ráme príliš malý (&lt; 30 % obrazu).
+* Obrázky cieľov nie sú označené v prehliadači súborov
+* Cieľ je v snímke príliš malý (&lt; 30 % obrázka)
 * Zlé osvetlenie (tiene, odlesky)
 * Príliš prísne nastavenia detekcie cieľov
 
 **Riešenia:**
 
-1. Overte, či je v stĺpci Cieľ zaškrtnuté správne obrázky.
-2. Skontrolujte kvalitu obrázkov cieľov v náhľade.
-3. Ak je kvalita zlá, znovu zachyťte ciele.
-4. V prípade potreby upravte nastavenia detekcie cieľov.
+1. Overte, či je v stĺpci Cieľ zaškrtnutá možnosť pre správne obrázky
+2. Skontrolujte kvalitu obrázkov cieľov v náhľade
+3. Ak je kvalita zlá, znovu zachyťte ciele
+4. V prípade potreby upravte nastavenia detekcie cieľov
 
 ### Problém: Falošné detekcie cieľov
 
 **Možné príčiny:**
 
-* Biele budovy, vozidlá alebo povrch zeme zamieňané za ciele
-* Jasné škvrny v vegetácii
+* Biele budovy, vozidlá alebo povrch zeme sa mýlia s cieľmi
+* Svetlé škvrny vo vegetácii
 * Príliš nízka citlivosť detekcie
 
 **Riešenia:**
 
-1. Označte len skutočné obrázky cieľov, aby ste obmedzili rozsah detekcie.
-2. Zväčšite minimálnu kalibračnú vzorkovú oblasť.
-3. Zväčšite minimálnu hodnotu zhlukovania cieľov.
-4. Uistite sa, že obrázky cieľov zobrazujú len cieľ (minimálne rušenie pozadia).
+1. Označte len skutočné obrázky cieľov, aby ste obmedzili rozsah detekcie
+2. Zväčšite minimálnu kalibračnú vzorkovú plochu
+3. Zväčšite minimálnu hodnotu zhlukovania cieľov
+4. Uistite sa, že obrázky cieľov zobrazujú len cieľ (minimálne rušivé prvky v pozadí)
 
 ***
 
-## Kontrolný zoznam overenia
+## Kontrolný zoznam overovania
 
 Pred začatím spracovania overte výber obrázkov cieľov:
 
-* [ ] Aspoň 1 označený obrázok cieľa na jednu reláciu
-* [ ] Zaškrtnuté políčka stĺpca Cieľ pre všetky obrázky cieľov
-* [ ] Obrázky cieľov zachytené v rovnakom časovom rámci ako prieskum
-* [ ] Ciele jasne viditeľné v náhľade po kliknutí
-* [ ] Všetky 4 kalibračné panely viditeľné na každom obrázku cieľa
-* [ ] Na cieľoch nie sú žiadne tiene ani prekážky.
-* [ ] V prípade dvoch kamier: Ciele sú označené pre oba typy kamier.
+* [ ] Označený je aspoň 1 obrázok cieľa na jednu reláciu
+* [ ] Zaškrtnuté sú políčka v stĺpci Cieľ pre všetky obrázky cieľov
+* [ ] Obrázky cieľov boli zachytené v rovnakom časovom rámci ako prieskum
+* [ ] Ciele sú jasne viditeľné v náhľade po kliknutí
+* [ ] Všetky 4 kalibračné panely sú viditeľné na každom obrázku cieľa
+* [ ] Na cieľoch nie sú žiadne tiene ani prekážky
+* [ ] Pre dvojitú kameru: Ciele sú označené pre oba typy kamier
 
 ***
 
@@ -197,25 +183,25 @@ Pred začatím spracovania overte výber obrázkov cieľov:
 
 ### Spracovanie bez kalibračných cieľov
 
-Hoci sa to neodporúča pre vedeckú prácu, môžete spracovávať bez cieľov:
+Hoci sa to pre vedeckú prácu neodporúča, môžete spracovávať bez cieľov:
 
-1. Nechajte všetky začiarkavacie políčka v stĺpci Cieľ nezačiarknuté.
-2. **Deaktivujte** „Kalibráciu odrazivosti“ v nastaveniach projektu.
-3. Korekcia vinetácie sa bude naďalej uplatňovať.
-4. Výstup nebude kalibrovaný na absolútnu odrazivosť.
+1. Nechajte všetky začiarkavacie políčka v stĺpci Cieľ nezačiarknuté
+2. **Deaktivujte** „Kalibráciu odrazivosti“ v nastaveniach projektu
+3. Korekcia vinety sa bude naďalej uplatňovať
+4. Výstup nebude kalibrovaný na absolútnu odrazivosť
 
-{% hint style=&quot;warning&quot; %}
-**Neodporúča sa**: Bez kalibrácie odrazivosti hodnoty pixelov predstavujú iba relatívnu jasnosť, nie vedecké merania odrazivosti. Pre presné a opakované výsledky použite kalibračné ciele.
+{% hint style="warning" %}
+**Neodporúča sa**: Bez kalibrácie odrazivosti hodnoty pixelov predstavujú iba relatívnu jasnosť, nie vedecké merania odrazivosti. Pre presné a opakovateľné výsledky použite kalibračné ciele.
 {% endhint %}
 
 ***
 
 ## Ďalšie kroky
 
-Po označení cieľových obrázkov:
+Po označení vašich cieľových obrázkov:
 
 1. **Skontrolujte nastavenia** – pozrite si [Úprava nastavení projektu](adjusting-project-settings.md)
-2. **Spustite spracovanie** – pozri [Spustenie spracovania](starting-the-processing.md)
-3. **Sledujte priebeh** – pozri [Sledovanie spracovania](monitoring-the-processing.md)
+2. **Spustite spracovanie** – pozrite si [Spustenie spracovania](starting-the-processing.md)
+3. **Sledujte priebeh** – pozrite si [Sledovanie spracovania](monitoring-the-processing.md)
 
-Ďalšie informácie o kalibračných cieľoch nájdete v časti [Kalibračné ciele](../calibration-targets.md).
+Ďalšie informácie o samotných kalibračných cieľoch nájdete v časti [Kalibračné ciele](../calibration-targets.md).
