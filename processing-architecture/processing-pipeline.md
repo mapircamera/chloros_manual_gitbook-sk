@@ -1,66 +1,83 @@
-# Spracovateľský reťazec
+# Spracovateľský kanál
 
-Chloros 1.1.0 využíva 4-vláknový spracovateľský reťazec, ktorý funguje ako postupná montážna linka. Každé vlákno spracováva samostatnú fázu pracovného postupu, čo umožňuje súbežné spracovanie viacerých obrázkov v rôznych fázach.
+ChlorosVerzia 1.2.0 využíva 4-vláknový spracovateľský kanál, ktorý funguje ako postupná montážna linka. Každé vlákno spracováva samostatnú fázu pracovného toku, takže v rôznych fázach môže byť súčasne spracovávaných viacero obrázkov.
+
+<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
-## Architektúra reťazca
+## Architektúra spracovateľského potrubia
 
 ```
 
 Images In → [Thread 1: Detection] → [Thread 2: Calibration] → [Thread 3: Processing] → [Thread 4: Export] → Files Out
 ```
 
-Každý obrázok prechádza všetkými štyrmi vláknami v poradí. Vďaka viacvláknovému spracovaniu v Chloros+ môže byť viacero obrázkov súčasne v rôznych vláknach – zatiaľ čo vlákno 3 spracováva jeden obrázok, vlákno 1 môže detekovať ďalší, vlákno 2 môže kalibrovať iný a vlákno 4 môže zapisovať predtým spracovaný obrázok na disk.
+Každý obrázok prechádza postupne všetkými štyrmi vláknami. Vďaka viacvláknovému spracovaniu v Chloros+ môže viacero obrázkov súčasne obsadzovať rôzne vlákna – zatiaľ čo vlákno 3 spracováva jeden obrázok, vlákno 1 môže detekovať ďalší, vlákno 2 kalibrovať iný a vlákno 4 zapisovať hotový obrázok na disk.
 
-***
+Priebeh spracovania sa hlási pre každé vlákno a prenáša sa prostredníctvom udalostí Server-Sent Events (backend ich publikuje na `/api/events`). V živom zobrazení priebehu v nástroji CLI sú štyri fázy označené ako **Detekcia, Analýza, Spracovanie, Export**.***
 
 ## Podrobnosti o vláknach
 
 ### Vlákno 1: Detekcia
 
-**Účel**: Načítanie obrázkov a detekcia kalibračných cieľov.
+**Účel**: Načítať obrázky a detekovať kalibračné ciele.
 
-* Číta obrazové súbory z disku (RAW, JPG)
+* Číta obrazové súbory z disku — páry Survey3 `.raw`+`.jpg`, zachytenia LATTICE `.tif`/`.tiff` a `.dng`
 * Extrahuje metadáta EXIF (GPS, model fotoaparátu, časové značky, expozícia)
-* Detekuje kalibračné ciele ArUco v označených cieľových obrázkoch
-* Výstupy: obrazové dáta + metadáta + výsledky detekcie cieľov
+* Detekuje kalibračné ciele: geometrie cieľov označené ArUco pre snímky LATTICE a klasický panelový detektor pre fotografie kalibračných cieľov Survey3
+* Výstupy: obrazové údaje + metadáta + výsledky detekcie cieľov
 
-Ide primárne o vlákno viazané na I/O a CPU.
+Ide predovšetkým o vlákno závislé od vstupov/výstupov a CPU.
 
 ### Vlákno 2: Kalibrácia
 
-**Účel**: Vypočítať kalibračné parametre z detekovaných cieľov.
+**Účel**: Výpočet kalibračných parametrov na základe detegovaných cieľov.
 
 * Vypočíta kalibračné koeficienty odrazivosti z obrázkov cieľov
 * Vypočíta parametre korekcie vinetácie
 * Určí kalibračné krivky pre jednotlivé pásma
 * Výstupy: kalibračné parametre pre každý obrázok
 
-Toto je výpočtové vlákno závislé od CPU.
+Výpočtové vlákno závislé od CPU. Vlákno 3 naň čaká, ak je povolená kalibrácia odrazivosti, aby boli jeho koeficienty pripravené ešte pred spracovaním akéhokoľvek obrázku.
 
 ### Vlákno 3: Spracovanie (GPU)
 
-**Účel**: Uplatniť korekcie a vypočítať vegetačné indexy.**Toto je vlákno s najvyššou výpočtovou náročnosťou.*** **Debayering**: Konvertuje surové dáta vzoru Bayer na viackanálové snímky
-  * Štandardné (rýchle, stredná kvalita) — predvolené
-  * S ohľadom na textúru (pomalé, najvyššia kvalita) — iba Chloros+, používa odšumovanie AI/ML
-* **Korekcia vinetácie**: Uplatňuje korekciu vinetácie objektívu na celom snímku
-* **Kalibrácia odrazivosti**: Uplatňuje kalibračné koeficienty na konverziu na hodnoty odrazivosti
-* **Výpočet indexov**: Vypočíta vegetačné indexy (NDVI, NDRE, GNDVI atď.)
+**Účel**: Uplatniť korekcie a vypočítať vegetačné indexy.**Toto je výpočtovo najnáročnejšie vlákno.*** **Debayering**: konvertuje surové Bayerove údaje na viackanálové snímky
+  * Štandardné (rýchle, stredná kvalita) — predvolené, `--debayer standard`
+  * S ohľadom na textúru (pomalé, najvyššia kvalita) — iba pre Chloros+, `--debayer texture-aware`, používa model odšumovania založený na AI/ML
+  * Snímky LATTICE mono (M3M) sú jednopásmové: kroky demosaic a vyváženia bielej sa pri nich preskakujú (s jednoradkovou správou v protokole), zatiaľ čo všetky snímky M3C/Bayer v tom istom cykle ich stále prechádzajú
+* **Korekcia vinetácie**: aplikuje korekciu vinetácie objektívu na celý snímok
+* **Kalibrácia odrazivosti**: aplikuje kalibračné koeficienty na prevod na hodnoty odrazivosti
+* **Výpočet indexov**: vypočítava vegetačné indexy (NDVI, NDRE, GNDVI, …)
 * Výstupy: spracované obrazové údaje pripravené na export
 
-Toto vlákno najviac ťaží z akcelerácie GPU. Systém [Dynamic Compute Adaptation](dynamic-compute-adaptation.md) primárne optimalizuje správanie tohto vlákna.
+Toto vlákno najviac ťaží z akcelerácie GPU a je to práve vlákno, ktoré optimalizuje funkcia [Dynamic Compute Adaptation](dynamic-compute-adaptation.md).
 
 ### Vlákno 4: Export
 
-**Účel**: Zapisovanie spracovaných obrázkov na disk.
+**Účel**: Zapisuje spracované snímky na disk.
 
-* Zapisuje výstupné súbory vo vybranom formáte (TIFF 16-bit, TIFF 32-bit %, PNG, JPG)
-* Vkladá metadáta EXIF do výstupných súborov (GPS, časové značky, parametre spracovania)
-* Usporiadava výstup do podpriečinkov podľa modelov fotoaparátov
+* Ukladá výstupné súbory vo vybranom formáte — `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)`
+* Vkladá metadáta do výstupných súborov (GPS, časové značky, parametre spracovania)
+* Usporiadava výstup do zložky projektu ako `<camera>/<format>/<Product>_Images/` — napríklad `LATT-M3M-L41-F550/tiff16/Reflectance_Calibrated_Images/`. **Exportované súbory si zachovávajú názov zdrojového súboru; produkt identifikuje zložka.**
+* V prípade snímok LATTICE sa jeden zdrojový snímok môže rozvetviť na viacero produktov (Debayered, Preview, Radiance, Reflectance, Index), z ktorých každý je umiestnený vo vlastnej zložke produktu
 * Výstupy: finálne súbory na disku
 
-Ide predovšetkým o vlákno viazané na vstupno-výstupné operácie. SSD úložisko výrazne zlepšuje výkon vlákna 4.
+Ide predovšetkým o vlákno obmedzené vstupom a výstupom — úložisko SSD ho výrazne zrýchľuje.
+
+***
+
+## Pod kapotou: Exekútory
+
+V rámci vlákna 3 je práca na jednotlivých snímkach paralelizovaná pomocou štandardného `concurrent.futures` z balíka „Python“:
+
+* **Stratégie GPU**(`GPU_SINGLE`, `GPU_PARALLEL`) používajú metódu**spawn** — každý pracovník je samostatný proces s vlastným kontextom CUDA (`fork` by zdedil inicializovaný stav CUDA rodičovského procesu a poškodil by potomkov)
+* **`CPU_PARALLEL`** používa `ThreadPoolExecutor` — NumPy a OpenCV uvoľňujú GIL, takže stačia vlákna
+* Zariadenia Jetson so zdieľanou RAM s kapacitou 8 GB alebo menej úplne vynechávajú vykonávaciu jednotku a spracovávajú v rámci procesu sekvenčne
+* Funkcia Texture Aware na GPU s VRAM menšou ako 7 GB tiež beží sekvenčne — model odšumovača sa nemôže zmestiť viac ako raz
+
+Chlorosnepoužíva žiadny distribuovaný framework tretej strany (napríklad Ray). Pozrite si [Dynamic Compute Adaptation](dynamic-compute-adaptation.md), kde sa dozviete, ako sa volí stratégia a počet pracovníkov.
 
 ***
 
@@ -68,7 +85,7 @@ Ide predovšetkým o vlákno viazané na vstupno-výstupné operácie. SSD úlo�
 
 ### Voľný režim (sekvenčný)
 
-Vo voľnej verzii Chloros sa obrázky spracúvajú **po jednom**, sekvenčne cez všetky štyri fázy:
+V bezplatnej verzii Chloros sa obrázky spracúvajú **po jednom**, postupne vo všetkých štyroch fázach:
 
 ```
 
@@ -76,11 +93,11 @@ Image 1: [Detect] → [Calibrate] → [Process] → [Export]
                                                          Image 2: [Detect] → [Calibrate] → [Process] → [Export]
 ```
 
-Indikátor priebehu v grafickom rozhraní zobrazuje 2 fázy: Detekcia cieľa a Spracovanie.
+GUI zobrazuje v bezplatnom režime zjednodušený ukazovateľ priebehu; jeho sériové fázy sú označené ako **Detekcia cieľa**a potom**Spracovanie**.
 
-### Režim Chloros+ (sériové spracovanie)
+### Režim „Chloros“ (pipelined)
 
-S licenciou Chloros+ všetky štyri vlákna pracujú **súčasne** na rôznych obrázkoch:
+S licenciou „Chloros“ všetky štyri vlákna pracujú **súbežne** na rôznych snímkach:
 
 ```
 
@@ -90,22 +107,28 @@ Thread 3:                     [Image 1] [Image 2] ...
 Thread 4:                               [Image 1] ...
 ```
 
-Indikátor priebehu v grafickom rozhraní zobrazuje 4 fázy: Detekcia, Analýza, Kalibrácia, Export. Nabehnite kurzorom na indikátor priebehu, aby ste videli priebeh jednotlivých vlákien.
+Indikátor priebehu v grafickom rozhraní zobrazuje štyri fázy; prejdite nad ním kurzorom, aby ste videli priebeh jednotlivých vlákien. V nástroji CLI sa tie isté štyri fázy zobrazujú v reálnom čase ako **Detekcia, Analýza, Spracovanie, Export**.
+
+{% hint style="info" %}
+**Jeden názov, dve označenia.** V súbore `CLI` sa fáza 3 nazýva _Spracovanie_. Kanál priebehu v prémiovom režime backendu — ten, ktorý zobrazuje indikátor priebehu v grafickom rozhraní — označuje tú istú fázu ako _Kalibrácia_. Ide o to isté vlákno, ktoré vykonáva tú istú prácu (vlákn 3: debayer, korekcie, indexy).
+{% endhint %}
 
 {% hint style="success" %}
-**Sériové spracovanie s Chloros+** môže byť 3-5x rýchlejšie ako sekvenčné spracovanie, v závislosti od vášho hardvéru a veľkosti dátového súboru. Zrýchlenie je najväčšie na systémoch s rýchlymi GPU a SSD.
+**Sériové spracovanie s funkciou „Chloros“** môže byť 3–5-krát rýchlejšie ako sekvenčné spracovanie, v závislosti od vášho hardvéru a veľkosti dátového súboru. Zrýchlenie je najväčšie na systémoch s rýchlymi grafickými kartami (GPU) a SSD diskami.
 {% endhint %}
 
 ***
 
-## Priebeh exportu vlákna 4
+## Priebeh exportu v vlákne 4
 
-V Chloros 1.1.0 má exportné vlákno (vlákno 4) vlastné vyhradené sledovanie priebehu. Priebeh exportu môžete sledovať samostatne:**CLI:**
+Vlákno exportu má vlastné sledovanie priebehu, ktoré môžete kontrolovať samostatne:**CLI:**
+
 ```bash
 chloros-cli export-status
 ```
 
 **SDK:**
+
 ```python
 status = chloros.get_status()
 print(f"Export: {status['export']['percent']}% - Phase: {status['export']['phase']}")
@@ -113,22 +136,27 @@ print(f"Export: {status['export']['percent']}% - Phase: {status['export']['phase
 
 Spracovanie je dokončené, keď vlákno 4 dosiahne 100 %.
 
+{% hint style="info" %}
+**Spustenie, pri ktorom sa nezapíšu žiadne obrázky, je neúspešné.**V prípade úspechu `chloros-cli process` nahlási, koľko obrazových produktov zapísal (`Image products written: N`). Ak boli požiadané produkty a**žiadny**nebol zapísaný — iba `project.json` a `calibration_data.json` — program CLI vypíše `Processing finished but wrote no image products.` a**ukončí sa s nenulovým kódom**, pričom uvedie názov projektovej zložky a bežné príčiny (vstupná zložka nebola rozpoznaná ako záznam – skontrolujte rozloženie a `--input-level` – alebo žiadny zo žiadaných produktov nebol pre dané kamery použiteľný). Skripty sa môžu spoliehať na kód ukončenia.
+{% endhint %}
+
 ***
 
 ## Vzťah k dynamickej adaptácii výpočtov
 
-Systém [Dynamic Compute Adaptation](dynamic-compute-adaptation.md) ovplyvňuje predovšetkým **vlákno 3 (spracovanie)**:
+[Dynamická adaptácia výpočtov](dynamic-compute-adaptation.md) ovplyvňuje predovšetkým **vlákno 3 (spracovanie)**:
 
-* **`GPU_PARALLEL`** stratégia: Vlákno 3 spracováva viacero obrazov súčasne cez GPU pomocou potrubia `fused_gpu`
-* **`GPU_SINGLE`** stratégia: Vlákn 3 spracováva jeden obraz po druhom pomocou pamäťovo efektívneho potrubia `tiled_gpu`
-* **`CPU_PARALLEL`** stratégia: Vlákn 3 používa spracovanie založené na CPU s viacvláknovou paralelnosťou
+* **`GPU_PARALLEL`**: Vlákno 3 spracováva viacero obrázkov súčasne prostredníctvom GPU pomocou potrubia `fused_gpu`
+* **`GPU_SINGLE`**: Vlákn 3 serializuje prístup k GPU pomocou semaforu, zatiaľ čo pracovné procesy prekrývajú vstupy a výstupy, pričom využíva potrubie `fused_gpu` alebo potrubie `tiled_gpu` šetrné k pamäti
+* **`CPU_PARALLEL`**: Vlákno 3 využíva spracovanie na báze CPU s viacvláknovou paralelnosťou
 
-Alokácia pamäte GPU vlákna 3 sa tiež dynamicky mení v závislosti od dokončenia vlákien 1 a 2 — pozri [Dynamická alokácia pamäte GPU](dynamic-compute-adaptation.md#dynamic-gpu-memory-allocation).
+Alokácia pamäte GPU vlákna 3 sa tiež zvyšuje, keď vlákna 1 a 2 dokončia svoju činnosť — pozri [Dynamická alokácia pamäte GPU](dynamic-compute-adaptation.md#dynamic-gpu-memory-allocation).
 
 ***
 
 ## Ďalšie kroky
 
 * [Dynamická adaptácia výpočtov](dynamic-compute-adaptation.md) — Ako Chloros vyberá optimálnu stratégiu pre váš hardvér
-* [Príručka NVIDIA Jetson](../linux/nvidia-jetson-guide.md) — Správanie potrubia špecifické pre platformu na Jetsone
+* [Príručka k NVIDIA Jetson](../linux/nvidia-jetson-guide.md) — Správanie potrubia špecifické pre platformu Jetson
 * [Monitorovanie spracovania](../processing-images-gui/monitoring-the-processing.md) — Monitorovanie priebehu prostredníctvom grafického používateľského rozhrania
+* [Referenčné údaje o CLI](../reference/cli-reference.md) — `process`, `export-status`, kódy ukončenia a rozloženie výstupu
