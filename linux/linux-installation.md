@@ -1,8 +1,12 @@
-# Inštalácia Linux
+# Inštalácia v systéme Linux
 
-Chloros sa distribuuje pre Linux ako balíky `.deb`, ktoré inštalujú CLI a backendový server. Python SDK je samostatný balík pip (zahrnutý aj v balíku `.deb` ako wheel s zodpovedajúcou verziou).
+Chloros sa pre systém Linux distribuuje vo forme balíkov `.deb`, ktoré inštalujú CLI, backendový server a Python SDK (pre systém `python3`, plus wheel zodpovedajúci danej verzii pre virtualenvs).
 
-Názvy súborov balíkov obsahujú verziu a architektúru: `chloros_1.2.0_amd64.deb` pre x86_64 a `chloros_1.2.0_arm64_jp6.deb` pre zostavenia JetPack 6 pre Jetson. V nižšie uvedených príkazoch nahraďte názov súboru, ktorý ste si skutočne stiahli.
+Názvy súborov balíkov obsahujú verziu a architektúru: `chloros_1.3.0_amd64.deb` pre x86_64, a `chloros_1.3.0_arm64_jp6.deb` pre arm64 (NVIDIA Jetson, JetPack 6). V nižšie uvedených príkazoch nahraďte názov súboru, ktorý ste skutočne stiahli.
+
+{% hint style="info" %}
+**Novinka vo verzii 1.3.0: programy sa dodávajú v rozbalenom stave.** Backend a CLI sa inštalujú ako priečinky, `/usr/lib/chloros/backend/` a `/usr/lib/chloros/cli/`, namiesto jednotlivých samorozbaľovacích súborov. Už sa pri každom spustení nerozbaľujú do dočasnej zložky, takže sa spúšťajú oveľa rýchlejšie (na x86_64 sa backend pri každom spustení rozbaľoval približne 100 sekúnd) a už nepotrebujú niekoľko GB voľného miesta v `/tmp`. Verzia pre amd64 `.deb` má tiež približne polovičnú veľkosť oproti predchádzajúcej verzii.
+{% endhint %}
 
 ***
 
@@ -15,35 +19,34 @@ Názvy súborov balíkov obsahujú verziu a architektúru: `chloros_1.2.0_amd64.
 | **Distribúcia** | Ubuntu 22.04 LTS+ / Debian 12+ | Ubuntu 24.04 LTS |
 | **Procesor** | x86_64 (Intel/AMD) | Intel Core i7 alebo lepší |
 | **Pamäť (RAM)** | 8 GB | 16 GB alebo viac |
-| **Grafická karta** | Žiadna (spracovanie na CPU) | Grafická karta NVIDIA s 4 GB a viac VRAM (12 GB a viac odomkne `GPU_PARALLEL`, 7 GB a viac zabráni tomu, aby sa Texture Aware používalo v režime jedného obrázka) |
-| **Úložný priestor** | 2 GB voľného miesta | SSD s 10 GB a viac voľného miesta |
+| **Grafická karta** | Žiadna (spracovanie na procesore) | Grafická karta NVIDIA s 4 GB+ VRAM (12 GB+ odomkne `GPU_PARALLEL`, 7 GB+ udrží Texture Aware mimo cesty s jedným obrázkom) |
+| **Úložisko** | 2 GB voľného miesta | SSD s 10 GB+ voľného miesta |
 | **Python** | Python 3.7+ (pre SDK) | Python 3.10+ |
 
 > **Ubuntu 20.04 a Debian 11 nie sú podporované.** Zoznam závislostí `.deb` je
 > odvodený od toho, na čo sa backend Chloros skutočne odkazuje, a to zahŕňa
-> `libc6 (>= 2.34)`. Verzie Focal aj Bullseye obsahujú glibc 2.31, takže `apt`
-> inštaláciu priamo odmietne, namiesto toho, aby ju neskôr počas behu programu nechal zlyhať.
+> `libc6` novší ako glibc 2.31, s ktorou sa dodávajú verzie focal a bullseye, takže `apt` inštaláciu
+> priamo odmietne, namiesto toho, aby ju neskôr počas behu programu nechal zlyhať.
 
 ### Inštalácia
 
 ```bash
-sudo dpkg -i chloros_1.2.0_amd64.deb
-sudo apt-get install -f    # pulls the declared dependencies (libibverbs1, libcap2-bin)
+sudo apt install ./chloros_1.3.0_amd64.deb
 ```
 
 {% hint style="info" %}
-`dpkg -i` nevyrieši závislosti. Ak nahlási chýbajúce balíky, `sudo apt-get install -f` (alebo `sudo apt --fix-broken install`) dokončí inštaláciu — ide o bežný postup, nie o chybu.
+**Použite `apt install ./…`, nie `dpkg -i`.** `apt` vyrieši závislosti balíka a nainštaluje aj to, čo odporúča: požiadavky Python SDK, `python3-numpy` a `python3-requests`. `dpkg -i` neinštaluje ani jedno z nich. CLI a backend sú samostatné a fungujú aj bez nich, ale `import chloros_sdk` ich potrebuje; výstup inštalácie uvádza všetky chýbajúce súčasti. Zachovajte `./`, aby balík `apt` nainštaloval tento súbor namiesto toho, aby hľadal balík s týmto názvom. Balík tiež deklaruje súbor `libgl1`, ktorý načíta súčasťou balíka OpenCV a v minimálnom obraze servera môže chýbať.
 {% endhint %}
 
 Overte inštaláciu:
 
-
-
-<!-- SCREENSHOT-NEEDED: Terminal on Ubuntu 22.04 immediately after `sudo dpkg -i chloros_1.2.0_amd64.deb`, showing the full postinst output: the "Chloros installed successfully!" banner, the Usage lines, the "Python SDK:" block naming the bundled wheel path under /usr/lib/chloros/sdk/, any "GPU Acceleration:" detection line, and the closing "Systemd Service (optional): sudo systemctl enable --now chloros-backend.service" hint -->
-
 ```bash
-chloros-cli --version    # prints "Chloros CLI 1.2.0"
-```***
+chloros-cli --version    # prints "Chloros CLI 1.3.0"
+```
+
+<!-- SCREENSHOT-NEEDED: Terminal on Ubuntu 22.04 immediately after `sudo apt install ./chloros_1.3.0_amd64.deb`, showing the full postinst output: the "Chloros installed successfully!" banner, the Usage lines, the "Python SDK:" block ("chloros_sdk 1.3.0 for python3" and the "In a virtualenv: pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl" line), any "GPU Acceleration:" detection line, and the closing "Systemd Service (optional): sudo systemctl enable --now chloros-backend@<user>.service" hint -->
+
+***
 
 ## Linux arm64 (NVIDIA Jetson)
 
@@ -53,43 +56,36 @@ chloros-cli --version    # prints "Chloros CLI 1.2.0"
 | --- | --- | --- |
 | **Platforma** | NVIDIA Jetson s JetPack 6 | Jetson Orin NX 16 GB alebo AGX Orin |
 | **JetPack** | JetPack 6.x | Najnovšia verzia JetPack 6 |
-| **Pamäť (RAM)** | 8 GB (zdieľaná medzi GPU a CPU) | 16 GB+ zdieľanej pamäte (12 GB+ je prahová hodnota pre paralelné GPU pracovníky) |
+| **Pamäť (RAM)** | 8 GB (zdieľaná medzi GPU a CPU) | 16 GB a viac zdieľanej pamäte (12 GB a viac je prahová hodnota pre paralelné spracovanie) |
 | **Úložisko** | 2 GB voľného miesta | NVMe SSD s 10 GB+ voľného miesta |
 | **Python** | Python 3.7+ (pre SDK) | Python 3.10+ |
 
 ### Inštalácia
 
 ```bash
-sudo dpkg -i chloros_1.2.0_arm64_jp6.deb
-sudo apt-get install -f
+sudo apt install ./chloros_1.3.0_arm64_jp6.deb
 chloros-cli --version
 ```
 
-Rovnaká štruktúra ako v prípade amd64 `.deb`, s verziou CUDA vyladenou pre Jetson Orin / Orin NX / Orin Nano. Informácie o správaní Jetsonu v oblasti pamäte, tepelného správania a nasadenia v teréne nájdete v [príručke NVIDIA Jetson](nvidia-jetson-guide.md).
+Rovnaká štruktúra ako pri amd64 `.deb` (vrátane Python SDK, prijímacích vyrovnávacích pamätí a backendových služieb), pre Jetson Orin / Orin NX / Orin Nano na **JetPack 6** (L4T R36). Jeho PyTorch je CUDA verzia pre Orin z JetPack 6, takže spracovanie na GPU, vrátane debayeringu s podporou textúr, prebieha na GPU zariadenia Jetson. Balík neobsahuje samotnú CUDA: využíva knižnice CUDA a cuDNN, ktoré inštaluje JetPack 6 (`sudo apt install nvidia-jetpack` na obraze, kde chýbajú). Ak nie je k dispozícii žiadne GPU s podporou CUDA, spracovanie prebieha na CPU a `--debayer texture-aware` používa štandardný debayer (backend zaznamená jeden riadok `[DEBAYER] … needs a CUDA GPU …`, v ktorom vysvetľuje dôvod). Informácie o správaní Jetsonu v oblasti pamäte, tepelného správania a nasadenia v teréne nájdete v [Príručke NVIDIA Jetson](nvidia-jetson-guide.md).***
 
-***
+## Inštalácia Python SDK (všetky verzie Linuxu)**`.deb` nainštaluje SDK za vás.** Oba balíky (amd64 a Jetson) ho nainštalujú pre systém `python3`, takže `import chloros_sdk` funguje ihneď po inštalácii, bez potreby pip a bez pripojenia k sieti. Jeho balíky (`chloros_sdk`, `lattice_sdk`, `lattice_cam`, `arena_api` a projektové načítače) sa umiestňujú do `/usr/lib/python3/dist-packages`, ktorý patrí k balíku: aktualizácia ich nahradí a odstránenie balíka ich odstráni. Verzia vždy zodpovedá nainštalovanému rozhraniu CLI a backendu.
 
-## Inštalácia Python a SDK (všetky verzie Linux)
+Vlastné požiadavky SDK, `python3-numpy` a `python3-requests`, sú **odporúčané, nie povinné** balíkom: `sudo apt install ./chloros_<version>_<arch>.deb` ich nainštaluje, `dpkg -i` nie. Výstup inštalácie uvádza verziu SDK, ktorú `python3` importuje, akékoľvek chýbajúce požiadavky a akýkoľvek súbor `chloros_sdk` nachádzajúci sa inde v ceste balíka `python3`, ktorý prekrýva kópiu balíka (napríklad ten, ktorý bol nainštalovaný skôr pomocou `pip install --user`).**Vo virtuálnom prostredí**, ktoré nevidí systémové balíky, nainštalujte do neho priložený súbor wheel (úplne offline):
 
-SDK je čistý klient Python pre backend, takže ten istý balík funguje na architektúrach amd64 aj arm64. Dva zdroje:**Z PyPI** — uverejnená stabilná verzia:
+```bash
+pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl
+```
+
+**Z PyPI** — iba pre počítač, na ktorom nie je nainštalovaný balík Chloros a ktorého SDK riadi backend na inom počítači (pozri [Režim vzdialeného backendu](../reference/sdk-reference.md#remote-backend-mode-pip-only-host-via-tunnel)):
 
 ```bash
 pip install chloros-sdk
 ```
 
-**Z priloženého súboru wheel** — zaručene kompatibilný s CLI/backendom, ktorý ste práve nainštalovali (použite to, ak je váš `.deb` novší ako verzia na PyPI):
+Voliteľné doplnky pre inštaláciu pomocou pip (v prostredí virtualenv alebo z PyPI):
 
-```bash
-pip install --user /usr/lib/chloros/sdk/chloros_sdk-*.whl
-```
-
-{% hint style="warning" %}
-**Distribúcie podľa PEP 668** (Ubuntu 23.10+, Debian 12+) odmietajú inštalácie pip v celom systéme. Použite `pip install --user …`, virtuálne prostredie alebo `sudo pip install --break-system-packages …`. Inštalátor balíkov nikdy automaticky neinštaluje SDK do vášho systémového prostredia Python — toto rozhodnutie je na vás.
-{% endhint %}
-
-Voliteľné doplnky:
-
-| Prídavok | Príkaz | Pridáva |
+| Doplnok | Príkaz | Pridá |
 | --- | --- | --- |
 | `progress` | `pip install chloros-sdk[progress]` | `sseclient-py` pre živé streamovanie priebehu |
 | `camera` | `pip install chloros-sdk[camera]` | `bleak` pre prenos cez BLE (DAQ-M) |
@@ -97,11 +93,11 @@ Voliteľné doplnky:
 Overte SDK:
 
 ```bash
-python -c "import chloros_sdk; print(chloros_sdk.__version__)"
+python3 -c "import chloros_sdk; print(chloros_sdk.__version__)"
 ```
 
 {% hint style="info" %}
-`.deb` nainštaluje Chloros, CLI a backend. Python a SDK komunikujú s týmto backendom cez lokálnu sieť HTTP a API (`http://127.0.0.1:5000`) a v prípade potreby ho automaticky spustí. Vždy používajte doslovnú adresu IPv4 namiesto `localhost` — `localhost` sa môže preložiť na `::1` a jedna požiadavka môže trvať približne dve sekundy.
+Pythonové SDK komunikuje s backendom, ktorý `.deb` inštaluje prostredníctvom lokálneho HTTP API (`http://127.0.0.1:5000`). `ChlorosLocal` a pomocné programy na pripojenie ho v prípade potreby automaticky spustia; uložený projekt `connect_all()` to nikdy nerobí, preto na počítači bez grafického rozhrania spúšťajte backend ako [službu](#always-on-ptp-for-headless-hosts). Vždy používajte doslovnú adresu IPv4 namiesto `localhost` — `localhost` sa môže preložiť na `::1` a spomaliť spracovanie o približne dve sekundy na žiadosť.
 {% endhint %}
 
 ***
@@ -110,16 +106,16 @@ python -c "import chloros_sdk; print(chloros_sdk.__version__)"
 
 ### 1. Prihlásenie
 
-Prístup k adresám CLI a SDK vyžaduje platenú úroveň Chloros+ (**Copper** alebo vyššiu), čo sa vynucuje na strane servera: odhlásený volajúci dostane `401 AUTH_REQUIRED` a volajúci s bezplatným balíkom (Iron) dostane `403 PLAN_UPGRADE_REQUIRED`.
+Prístup k CLI a SDK vyžaduje platenú úroveň služby Chloros+ (**Copper** alebo vyššiu), čo sa vynucuje na strane servera: odhlásený volajúci dostane adresu `401 AUTH_REQUIRED` a volajúci s bezplatnou úrovňou (Iron) dostane adresu `403 PLAN_UPGRADE_REQUIRED`.
 
 ```bash
 chloros-cli login your@email.com 'your-password'
 ```
 
-Prihlasovacie údaje sa ukladajú do vyrovnávacej pamäte v súbore `~/.chloros/user_session.json`.
+Prihlasovacie údaje sú uložené v cache v `~/.chloros/user_session.json`.
 
-{% hint style="warning" %}
-**Po každej inštalácii alebo aktualizácii sa musíte znovu prihlásiť.** Skript balíka `prerm` zámerne vymaže `~/.chloros/user_session.json` a uloženú licenciu pre každého používateľa v systéme, aby nová verzia vždy znovu overila platnosť licencie namiesto toho, aby sa spoliehala na neaktuálnu vyrovnávaciu pamäť.
+{% hint style="info" %}
+**Pri aktualizácii sa vaše prihlasovacie údaje zachovajú; ich odstránenie ich vymaže.** Inštalácia novšej verzie `.deb` na existujúcu inštaláciu (vrátane inštalácie cez `chloros-cli update`) zachová `~/.chloros/user_session.json` a uloženú licenciu v cache, takže úlohy CLI/SDK bez grafického rozhrania budú naďalej fungovať. Odstránenie balíka (`sudo apt remove chloros`) vymaže uložené prihlasovacie údaje a vyrovnávaciu pamäť licencie pre každého používateľa na počítači, takže nová inštalácia si vyžaduje opätovnú inštaláciu verzie `chloros-cli login`.
 {% endhint %}
 
 ### 2. Skontrolujte stav svojej licencie
@@ -136,19 +132,19 @@ chloros-cli status
 chloros-cli selftest
 ```
 
-Postupne sa spustí sedem kontrol a príkaz skončí s nenulovým výstupom, ak niektorá z nich zlyhá:
+Postupne sa vykoná sedem kontrol a príkaz skončí s nenulovým výstupom, ak niektorá z nich zlyhá:
 
 | # | Kontrola | Čo overuje |
 | --- | --- | --- |
-| 1 | **Verzia** | CLI nahlási svoju verziu (`v1.2.0`). |
-| 2 | **Port dostupný** | Port 5000 je voľný, *alebo* naň už odpovedal funkčný backend Chloros (čo sa považuje za úspešnú kontrolu). |
+| 1 | **Verzia** | CLI nahlási svoju verziu (`v1.3.0`). |
+| 2 | **Port je dostupný** | Port 5000 je voľný, *alebo* naň už odpovedal funkčný backend Chloros (čo sa považuje za úspešné). |
 | 3 | **Spustenie backendu** | Spustí sa binárny súbor backendu. |
-| 4 | **Test API (`/api/test`)** | Backend odpovedá `status: ok`. |
+| 4 | **Test API (`/api/test`)** | Backend odpovie `status: ok`. |
 | 5 | **Informácie o systéme** | Vypíše `GPU: <name>, CUDA: <bool>, PyTorch: <version>` z `/api/system-info`. |
-| 6 | **Modely odšumovača** | Nájde modely `*.pth.enc` (na Linux: `/usr/lib/chloros/models`). |
+| 6 | **Modely odšumovača** | Nájde modely `*.pth.enc` (v Linuxe: `/usr/lib/chloros/models`). |
 | 7 | **CUDA + odšumovač**| Funkcia Texture Aware je skutočne použiteľná — vyžaduje CUDA**a** aspoň jeden súbor modelu. |
 
-Spustenie končí modelom `N/7 checks passed`, pričom sa vypisujú všetky chyby podľa názvu.
+Spustenie končí súborom `N/7 checks passed`, v ktorom sú uvedené všetky chyby podľa názvu.
 
 ### 4. Spracujte svoj prvý súbor údajov
 
@@ -160,41 +156,48 @@ chloros-cli process ~/datasets/flight001
 
 ## Súbory a adresáre
 
-### Pre každého používateľa
+### Pre každého používateľa si
 
-Chloros uchováva svoje prihlasovacie údaje a konfiguráciu CLI v jednom medziplatformovom adresári, **`~/.chloros/`** (na Windows, `%USERPROFILE%\.chloros\`). Dve vyrovnávacie pamäte špecifické pre Linux sa namiesto toho riadia konvenciami XDG — tieto rešpektujú nastavenia `XDG_CONFIG_HOME` / `XDG_CACHE_HOME`, ak sú nastavené.
+Chloros uchováva svoje prihlasovacie údaje a konfiguráciu CLI v jedinom adresári pre všetky platformy, **`~/.chloros/`** (v systéme Windows, `%USERPROFILE%\.chloros\`). Dve vyrovnávacie pamäte špecifické pre Linux naopak dodržiavajú konvencie XDG — ak sú nastavené, používajú adresáre `XDG_CONFIG_HOME` / `XDG_CACHE_HOME`.
 
 | Cesta | Účel |
 | --- | --- |
-| `~/.chloros/user_session.json` | Cache prihlasovacej relácie zapísaná súborom `chloros-cli login` (vyprázdňuje sa pri každej inštalácii/aktualizácii balíka) |
+| `~/.chloros/user_session.json` | Cache prihlasovacej relácie zapísaná súborom `chloros-cli login` (zachováva sa aj pri aktualizáciách balíka; vymaže sa pri odstránení balíka) |
 | `~/.chloros/working_directory.txt` | Prepis predvoleného priečinka projektu (`chloros-cli set-project-folder` / `get-project-folder` / `reset-project-folder`) |
-| `~/.chloros/cli_language.json` | Nastavenie jazyka CLI (`chloros-cli language <code>`) |
+| `~/.chloros/cli_language.json` | Nastavenie jazyka rozhrania CLI (`chloros-cli language <code>`) |
 | `~/.chloros/user.json` | Nastavenie jazyka zdieľané s grafickým rozhraním Windows — hodnota `language` má v tomto prípade prednosť pred hodnotou `cli_language.json` |
-| `~/.chloros/update_cache.json` | Hodinová vyrovnávacia pamäť pre kontrolu aktualizácií pri spustení Linux/Jetson |
+| `~/.chloros/update_cache.json` | Jednohodinová vyrovnávacia pamäť pre kontrolu aktualizácií pri spustení systému Linux/Jetson |
 | `~/.chloros/backend.log` | Protokol backendu pri spustení backendu prostredníctvom CLI |
-| `~/.chloros/camera_cal/<serial>/<bundle_sha>/` | Uložené kalibračné balíky LATTICE pre jednotlivé kamery, identifikované sériovým číslom a hash kódom balíka |
-| `~/.chloros/daq_cap_profiles/<u\|m\|e>/<cap_id>.json` | Voliteľné užívateľské prepisovania profilov korekcie DAQ |
-| `~/.config/chloros/system_config.json` | Uložený hardvérový profil z Dynamic Compute Adaptation – jeho odstránením vynútite nové rozpoznanie hardvéru |
+| `~/.chloros/camera_cal/<serial>/<bundle_sha>/` | Uložené kalibračné balíky LATTICE pre jednotlivé kamery, indexované podľa sériového čísla a hash kódu balíka |
+| `~/.chloros/daq_cap_profiles/<u\|m\|e>/<cap_id>.json` | Voliteľné používateľské prepisovania profilov korekcie DAQ |
+| `~/.config/chloros/system_config.json` | Uložený hardvérový profil z Dynamic Compute Adaptation — jeho vymazaním vynútite nové rozpoznanie hardvéru |
 | `~/.cache/chloros/logs/backend_<YYYYMMDD_HHMMSS>.log` | Protokoly backendového servera, jeden súbor na každé spustenie |
-| `~/Chloros Projects/` | Predvolaná zložka projektu, ak nie je nastavené žiadne prepisovanie |
+| `~/Documents/MAPIR/Chloros Projects/` | Predvolaná zložka projektu, ak nie je nastavené žiadne prepisovanie |
 
 ### Systémové
 
 | Cesta | Účel |
 | --- | --- |
-| `/usr/bin/chloros-cli` | Skript wrapperu — nastaví `LD_LIBRARY_PATH` pre priložené natívne knižnice a následne spustí skutočný binárny súbor |
-| `/usr/bin/chloros-backend` | Obalový skript — to isté, plus `CHLOROS_PRODUCTION=1`, aby sa autorizačná brána backendu nikdy nemohla ticho deaktivovať |
-| `/usr/lib/chloros/chloros-cli`, `/usr/lib/chloros/chloros-backend` | Zkompilované binárne súbory |
-| `/usr/lib/chloros/arena_runtime/` | Runtime prostredie Arena SDK požadované kamerami LATTICE |
-| `/usr/lib/chloros/models/*.pth.enc` | Šifrované modely odšumovača používané debayerom Texture Aware |
-| `/usr/lib/chloros/sdk/chloros_sdk-*.whl` | Python SDK balík zodpovedajúci presne tejto verzii |
-| `/usr/lib/chloros/exiftool` | Priložený exiftool (symbolický odkaz na `/usr/local/bin/exiftool` iba v prípade, že neexistuje systémový exiftool) |
-| `/etc/chloros/update.conf` | Aktualizáciakonfigurácie kanála načítanej programom `chloros-cli update` |
+| `/usr/bin/chloros-cli` | Skript obálky — nastaví `LD_LIBRARY_PATH` pre priložené natívne knižnice (a `TMPDIR` na `/mnt/ssd/tmp`, ak táto zložka existuje), potom spustí skutočný binárny súbor |
+| `/usr/bin/chloros-backend` | Skript obálky — to isté pre backend, ktorý označí ako nainštalovanú produkčnú verziu |
+| `/usr/lib/chloros/cli/`, `/usr/lib/chloros/backend/` | Zkompilované rozhranie CLI a backend, inštalované v rozbalenej podobe (novinka vo verzii 1.3.0); programy sú `cli/chloros-cli` a `backend/chloros-backend` |
+| `/usr/lib/chloros/chloros-cli`, `/usr/lib/chloros/chloros-backend` | Dvojriadkové spúšťacie skripty, ktoré spúšťajú vyššie uvedené skutočné programy — sú uložené v týchto cestách, pretože SDK, CLI a staršie skripty ich hľadajú práve tu |
+| `/usr/lib/chloros/arena_runtime/` | Runtime prostredie SDKu Arena, ktoré vyžadujú kamery LATTICE |
+| `/usr/lib/chloros/models/*.pth.enc` | Šifrované modely odšumovača používané nástrojom Texture Aware debayer |
+| `/usr/lib/python3/dist-packages/chloros_sdk/` (a `lattice_sdk`, `lattice_cam`, `arena_api`, načítavače projektov) | Python SDK, nainštalovaný pre systém `python3` a patriaci k balíku |
+| `/usr/lib/chloros/sdk/chloros_sdk-*.whl` | Python SDK wheel zodpovedajúci presne tejto verzii, pre virtualenv |
+| `/usr/lib/chloros/exiftool` | Súčasťou balíka je spúšťač ExifTool (s symbolickým odkazom na `/usr/local/bin/exiftool` iba v prípade, že neexistuje systémový exiftool). Od verzie 1.3.0 sa skript ExifTool dodáva s vlastnou knižnicou Perl v balíku `/usr/lib/chloros/exiftool-dist/`, takže beží bez systémového balíka `libimage-exiftool-perl` |
+| `/etc/chloros/update.conf` | Konfigurácia kanála aktualizácií načítaná programom `chloros-cli update` |
 | `/etc/sysctl.d/60-chloros-ptp.conf` | Nastaví `net.ipv4.ip_unprivileged_port_start = 319` tak, aby backend mohol viazať porty PTP bez oprávnení root |
+| `/etc/sysctl.d/60-chloros-gige.conf` | Zväčší vyrovnávacie pamäte prijímania socketov jadra (`net.core.rmem_max`, `net.core.rmem_default`) na 32 MB pre prúdy z kamery LATTICE a uplatňuje ich pri inštalácii (ak je už nastavená vyššia hodnota, tá zostane zachovaná). Pri predvolenom nastavení jadra sú pakety z kamery v jadre zahodené a pole stráca snímky a snímkovú frekvenciu; `chloros-cli lattice network` hlási stav vyrovnávacích pamätí, keď sú nízke. Pozri [Hostitelia Linuxu — vyrovnávacie pamäte pre príjem cez socket](../reference/cli-reference.md#linux-hosts--socket-receive-buffers) |
 | `/etc/ld.so.conf.d/Arena_SDK.conf` | Nasmeruje dynamický zavádzač na `/usr/lib/chloros/arena_runtime` |
 | `/lib/udev/rules.d/70-chloros-daq.rules` | Udeľuje prihlásenému používateľovi prístup k sériovému mostu DAQ-U USB (CP2102N, `10c4:ea60`) |
-| `/lib/systemd/system/chloros-backend.service` | Zapnutie stále aktívnej služby na pozadí (nainštalovaná, **nie je povolená**) |
+| `/lib/systemd/system/chloros-backend@.service` | Služba „Opt-in always-on backend“, ktorá spúšťa backend ako používateľ, ktorého určíte (nainštalovaná, **nie je povolená**) — túto službu je potrebné povoliť, pozri [Always-On PTP](#always-on-ptp-for-headless-hosts) |
+| `/lib/systemd/system/chloros-backend.service` | Tá istá služba, ktorá spúšťa backend ako **root**(nainštalovaná,**nie je povolená**), ponechaná tak, aby stroj, na ktorom je povolená, naďalej bežal |
+| `/var/log/chloros/` | Podrobný protokol služby root, čitateľný pre skupinu `adm` (odstránené pri úplnom odstránení balíka) |
 | `/usr/share/applications/chloros-cli.desktop` | Položka v ponuke aplikácií „Chloros CLI“, ktorá otvorí terminál |
+
+**Firewall (novinka vo verzii 1.3.0).** Ak je v čase inštalácie aktívna služba `ufw` alebo `firewalld`, balík otvorí UDP porty `5002` (dáta DAQ-E), `5353` (vyhľadávanie mDNS), `319` a `320` (PTP) a pri odstránení balíka tieto pravidlá zruší. Ak je firewall nainštalovaný, ale nie je aktívny, nič nepridáva a vypíše porty, ktoré je potrebné povoliť, ak ho neskôr aktivujete. Neotvára žiadny port TCP: aktualizácia firmvéru DAQ-E, pri ktorej sa senzor pripája späť k tomuto počítaču cez TCP na zber obrazu, zlyhá s chybou `… device never connected back on TCP <port> …`, ak aktívny firewall toto pripojenie blokuje.
 
 ## Umiestnenie spustiteľného súboru backendu
 
@@ -203,24 +206,24 @@ CLI a SDK automaticky detekujú backend:
 | Komponent | Cesta |
 | --- | --- |
 | CLI | `/usr/bin/chloros-cli` |
-| Backend | `/usr/lib/chloros/chloros-backend` |
+| Backend | `/usr/lib/chloros/chloros-backend` (spúšťač pre `/usr/lib/chloros/backend/chloros-backend`) |
 
-Cestu k backendu môžete prepisovať pomocou príznaku `--backend-exe` CLI alebo parametra konštruktora `backend_exe` SDK, a port pomocou `--port` (predvolené nastavenie je `5000`).
+Cestu k backendu môžete prepisovať pomocou príznaku CLIu `--backend-exe` alebo parametra konštruktora SDKu `backend_exe`, a port pomocou `--port` (predvolené nastavenie je `5000`).
 
 {% hint style="info" %}
-`CHLOROS_BACKEND_URL` smeruje na **`lattice`**,**`project`**a**`daq pool-*`** na vzdialenom backende. Základné príkazy (`process`, `login`, `logout`, `status`, `export-status`, `time-sync`, `selftest`) ho zámerne ignorujú a vždy sa zameriavajú na `http://127.0.0.1:<port>`.
+`CHLOROS_BACKEND_URL` smeruje rodiny príkazov **`lattice`**,**`project`**a**`daq pool-*`** na vzdialenom backende. Základné príkazy (`process`, `login`, `logout`, `status`, `export-status`, `time-sync`, `selftest`) ho zámerne ignorujú a vždy sa zameriavajú na `http://127.0.0.1:<port>`.
 {% endhint %}
 
 ***
 
-## Kamery LATTICE a svetelné senzory DAQ na Linux
+## Kamery LATTICE a svetelné senzory DAQ v systéme Linux
 
-Všetky skupiny príkazov pre živý hardvér fungujú na Linux (amd64 a Jetson):
+Všetky skupiny príkazov live-hardware fungujú v systéme Linux (amd64 a Jetson):
 
 * **`chloros-cli lattice`** — vyhľadávanie, pripájanie, konfigurácia a snímanie z kamier LATTICE a synchronizovaných polí. `.deb` obsahuje runtime prostredie Arena SDK, ktoré tieto zariadenia vyžadujú, a zaregistruje ho v dynamickom zavádzači.
-* **`chloros-cli daq pool-*`** — pripojenie svetelných senzorov DAQ-U/M/E prostredníctvom backendového poola, streamovanie kalibrovaných spektier a zaznamenávanie súborov `.daq`. Kompilovaný balík CLI obsahuje iba rodinu `pool-*`: `pool-connect`, `pool-disconnect`, `pool-list`, `pool-latest`, `pool-stream`, `pool-record`, `pool-set-cap`.
-* **`chloros-cli project`** — spustite uložený projekt (jeho kamery, senzory a nastavenia spracovania) bez grafického rozhrania.
-* **`chloros-cli time-sync`** — skontroluje hlavný PTP server, na ktorom beží backend Chloros pre kamery LATTICE a senzory DAQ-E.
+* **`chloros-cli daq pool-*`** — pripojenie svetelných senzorov DAQ-U/M/E prostredníctvom backendového poola, streamovanie kalibrovaných spektier, nahrávanie súborov `.daq` a výmena profilov krytov, a v prípade DAQ-E zmena jeho sieťových nastavení, jeho reštartovanie a aktualizácia firmvéru. `chloros-cli daq discover` vyhľadáva senzory, ktoré je možné pripojiť, a `chloros-cli daq --help` vypisuje podpríkazy `pool-*`.
+* **`chloros-cli project`** — spustí uložený projekt (jeho kamery, senzory a nastavenia spracovania) bez grafického rozhrania.
+* **`chloros-cli time-sync`** — skontrolujte PTP grandmaster, na ktorom beží backend Chloros pre kamery LATTICE a senzory DAQ-E.
 
 ```bash
 # DAQ-E at a known address — the reliable path on multi-homed hosts
@@ -234,13 +237,13 @@ chloros-cli daq pool-list
 chloros-cli daq pool-latest --sensor-id daq-e-a1b2c3 --json
 ```
 
-`--sensor-id` je potrebný pre `pool-latest`, `pool-stream`, `pool-record` a `pool-set-cap`; `pool-list` zobrazuje ID, ktoré sa momentálne nachádzajú v poole.
+`--sensor-id` je nevyhnutný pre `pool-latest`, `pool-stream`, `pool-record` a `pool-set-cap`; `pool-list` zobrazuje ID, ktoré sa momentálne nachádzajú v poole.
 
 {% hint style="info" %}
-**Pre prvé pripojenie DAQ-E na zariadení s viacerými sieťovými kartami uprednostnite `--eth-host`.** Funkcia automatického vyhľadávania prehľadáva mDNS a môže prehliadnuť rozhranie senzora kvôli prázdnej ARP cache, takže prvé pripojenie `pool-connect --eth` po spustení systému môže zlyhať, aj keď je senzor úplne v poriadku. Zadanie IP adresy alebo hostiteľa senzora úplne preskočí proces vyhľadávania.
+**`--eth-host` preskočí vyhľadávanie.** `pool-connect --eth` nájde zariadenie DAQ-E pomocou mDNS s náhradným riešením ARP, ktoré funguje aj z prázdnej vyrovnávacej pamäte ARP; odovzdaním IP adresy alebo názvu hostiteľa senzora pomocou `--eth-host` sa k nemu priamo pripojí.
 {% endhint %}
 
-**Oprávnenia sériového rozhrania DAQ-U** sú spravované nainštalovaným pravidlom udev (`uaccess` + skupina `dialout`). Ak senzor, ktorý bol už pripojený, zostáva nedostupný, načítajte pravidlá znovu alebo ho znovu pripojte:
+**Sériové oprávnenia pre DAQ-U** sú spravované nainštalovaným pravidlom udev (`uaccess` + skupina `dialout`). Ak senzor, ktorý bol už pripojený, zostáva nedostupný, načítajte pravidlá znovu alebo ho znovu pripojte:
 
 ```bash
 sudo udevadm control --reload-rules
@@ -251,23 +254,32 @@ sudo udevadm trigger --subsystem-match=tty
 
 ### Neustále aktívny PTP pre hostiteľa bez grafického rozhrania
 
-Pri prvej inštalácii sa vygeneruje jednotka systemd `chloros-backend.service`, ktorá však **nie je aktivovaná**. Na bezmonitorovom zariadení Jetson alebo serveri, kde by mala synchronizácia času PTP pre senzory DAQ-E a kamery LATTICE bežať nepretržite, ju aktivujte:
+Balík inštaluje dve služby systemd pre backend, z ktorých ani jedna nie je povolená. Na zariadení Jetson bez grafického rozhrania alebo na serveri, kde by mala synchronizácia času PTP pre senzory DAQ-E a kamery LATTICE bežať nepretržite, alebo kde skripty SDK pripájajú uložené projekty (`connect_all()` nikdy nespustí backend), aktivujte službu **ako svoj používateľ**:
 
 ```bash
-sudo systemctl enable --now chloros-backend.service
-sudo systemctl status chloros-backend.service
+sudo systemctl enable --now chloros-backend@$USER.service    # $USER expands to your user name
+systemctl status chloros-backend@$USER.service
 ```
 
-Bez nej beží PTP len počas behu backendu Chloros — teda počas aktívnej relácie CLI/SDK.
+`chloros-backend@<user>.service` spúšťa backend ako tento používateľ: záznamy, ktoré zapisuje, patria tomuto používateľovi, jeho podrobný protokol sa nachádza v súbore `~/.cache/chloros/logs` a používa jeho `chloros-cli login` (`~/.chloros`), preto sa najprv raz prihláste ako tento používateľ. Inštalácia balíka vypíše tento príkaz s vyplneným vaším používateľským menom.
 
-Zariadenie viaže backend na `127.0.0.1:5000` (nastavenia prostredia `CHLOROS_HOST` / `CHLOROS_PORT` vnútri zariadenia; prepisujte pomocou `sudo systemctl edit chloros-backend.service`) a v prípade zlyhania ho po 5 sekundách reštartuje.
+Bez služby beží backend (a s ním aj PTP grandmaster) len dovtedy, kým ho niečo nespustí — príkaz `chloros-cli` alebo skript SDK.
 
-**Ako PTP získava svoje porty.** PTP používa porty UDP 319/320, ktoré sú oba pod bežnou hranicou 1024 privilegovaných portov. Balík `postinst` zapíše `/etc/sysctl.d/60-chloros-ptp.conf` pomocou `net.ipv4.ip_unprivileged_port_start = 319`, čo umožňuje backendu viazať sa na ne pri behu pod vaším používateľským účtom. Ako dodatočné bezpečnostné opatrenie sa na binárny súbor backendu aplikuje aj `setcap cap_net_bind_service,cap_net_raw=+ep` – preto je `libcap2-bin` deklarovanou závislosťou balíka.***
+Modul viaže backend na nastavenia prostredia `127.0.0.1:5000` (nastavenia prostredia `CHLOROS_HOST` / `CHLOROS_PORT` vnútri jednotky; prepisujte pomocou `sudo systemctl edit chloros-backend@.service`) a v prípade zlyhania ho po 5 sekundách reštartuje.
+
+**Služba root.**`chloros-backend.service` spúšťa backend ako**root**. Stále je nainštalovaná, aby stroj, na ktorom je povolená, naďalej bežal, ale všetko, čo backend s oprávneniami root zapíše, patrí používateľovi root, takže používateľ nemôže zmazať svoje vlastné zachytené údaje; jeho protokol sa nachádza v súbore `/var/log/chloros`, ktorý je čitateľný pre skupinu `adm`. Pre prepnutie na vášho používateľa:
+
+```bash
+sudo systemctl disable --now chloros-backend.service
+sudo systemctl enable --now chloros-backend@$USER.service
+```
+
+**Backend služby je zdieľaný a klient ho nikdy nezastaví.** Skripty `chloros-cli` a SDK ho používajú tak, ako ho nájdu: `process` na ňom beží a načíta svoj vlastný projekt namiesto toho posledného. Tam, kde by inak CLI reštartovalo backend (`--restart` alebo `process`, ktorého import nenašiel nič), označí jednotku, vypíše `sudo systemctl restart <unit>` a ukončí `1`, pretože backend zastavený týmto spôsobom by zostal neaktívny. Reštartujte ho sami pomocou `sudo systemctl restart chloros-backend@$USER.service`. Backend služby sa nikdy sám nezastaví v stave nečinnosti a `chloros-cli backend stop` to odmietne, pričom uvedie názov príkazu `systemctl stop`.**Ako PTP získava svoje porty.** PTP používa porty UDP 319/320, ktoré sú oba pod bežnou hranicou 1024 pre privilegované porty. `postinst` balíka zapisuje `/etc/sysctl.d/60-chloros-ptp.conf` s `net.ipv4.ip_unprivileged_port_start = 319`, čo umožňuje backendu viazať sa na ne pri behu pod vaším používateľom. Od verzie 1.3.0 balík nenastavuje na backende žiadne oprávnenia súborov (`setcap`) a `libcap2-bin` už nie je závislosťou: na rozbalenom backende by oprávnenie súboru zabránilo jeho spusteniu, takže ju nepridávajte sami.***
 
 ## Príklady skriptov v Bash
 
 {% hint style="info" %}
-**Kódy ukončenia prispôsobené skriptovaniu.**`chloros-cli process` ukončí `0` v prípade úspechu a**v prípade zlyhania vráti hodnotu odlišnú od nuly — vrátane behu, ktorý požiadal o obrazové produkty, ale žiadne nezapísal** (vypíše `Processing finished but wrote no image products.` a uvedie názov projektovej zložky a bežné príčiny). Úspešné spustenia hlásia, koľko obrazových produktov bolo zapísaných (`Image products written: N`). Kódy ukončenia: `0` úspech, `1` zlyhanie, `2` chyba argumentu, `130` prerušené.
+**Kódy ukončenia vhodné pre skriptovanie.**`chloros-cli process` ukončí `0` v prípade úspechu a**vydá nenulovú hodnotu v prípade zlyhania — vrátane behu, ktorý požiadal o obrazové produkty, ale žiadne nezapísal** (vypíše kód `Processing finished but wrote no image products.` a uvedie názov projektovej zložky a bežné príčiny). Úspešné spustenia hlásia, koľko obrazových výstupov bolo zapísaných (`Image products written: N`, plus `(plus M clamp masks)`, ak boli zapísané masky). Kódy ukončenia: `0` úspech, `1` zlyhanie, `2` chyba argumentu, `130` prerušenie.
 {% endhint %}
 
 ### Spracovanie viacerých dátových súborov
@@ -291,30 +303,31 @@ done
 chloros-cli process ~/datasets/field_a \
     --output ~/output/field_a \
     --format "TIFF (32-bit, Percent)" \
-    --indices NDVI NDRE GNDVI \
+    --indices NDVI GNDVI OSAVI \
     --debayer texture-aware \
     --no-vignette
 ```
 
-Platných hodnôt `--format` je presne štyri a obsahujú medzery – vždy ich uvádzajte v úvodzovkách:
+Platných hodnôt `--format` je presne štyri a obsahujú medzery — vždy ich uvádzajte v úvodzovkách:
 
 | Hodnota `--format` | Výstupná zložka |
 | --- | --- |
-| `TIFF (16-bit)` *(predvolené)* | `tiff16` |
-| `TIFF (32-bit, Percent)` | `tiff32` |
+| hodnota `TIFF (16-bit)` *(predvolená)* | `tiff16` |
+| hodnota `TIFF (8-bit)` | hodnota `tiff8` |
+| hodnota `TIFF (32-bit, Percent)` | hodnota `tiff32` |
 | `PNG (8-bit)` | `png8` |
 | `JPG (8-bit)` | `jpg8` |
 
 `--debayer` prijíma `standard` (predvolené) alebo `texture-aware` (Chloros+).
 
-### Automatizované spracovanie pomocou Cron
+### Automatizované spracovanie pomocou Cronu
 
 ```cron
 # Process any new datasets at 2 AM daily
 0 2 * ** /usr/bin/chloros-cli process /data/incoming --output /data/processed >> /var/log/chloros.log 2>&1
 ```
 
-### Príklad Python SDK
+### Príklad PythonSDK
 
 ```python
 from chloros_sdk import process_folder
@@ -322,7 +335,7 @@ from chloros_sdk import process_folder
 # One-line processing
 result = process_folder(
     "/home/user/datasets/flight001",
-    indices=["NDVI", "NDRE"],
+    indices=["NDVI", "OSAVI"],
     export_format="TIFF (32-bit, Percent)"
 )
 ```
@@ -331,7 +344,7 @@ result = process_folder(
 
 ## Riešenie problémov
 
-### CLI sa po inštalácii nenašiel
+### Po inštalácii sa nenašlo rozhranie CLI
 
 ```bash
 # Check if the binary exists
@@ -345,25 +358,24 @@ dpkg -L chloros
 source ~/.bashrc
 ```
 
-### Oprávnenie zamietnuté
+### Prístup zamietnutý
 
 ```bash
 sudo chmod +x /usr/bin/chloros-cli
-sudo chmod +x /usr/lib/chloros/chloros-backend
+sudo chmod +x /usr/lib/chloros/chloros-backend /usr/lib/chloros/backend/chloros-backend
 ```
 
-### Chyba „setcap failed“ počas inštalácie
+### Backend sa nespustí po pridaní oprávnení pre súbory
 
-`.deb` aplikuje `cap_net_bind_service` na `/usr/lib/chloros/chloros-backend`, aby mohol viazať PTP porty 319/320 bez oprávnení root. Ak chýbal `libcap2-bin` v čase inštalácie, volanie sa preskočí. Nainštalujte ho a balík nainštalujte znovu:
+Nespúšťajte `setcap` na backende. Od verzie 1.3.0 balík nenastavuje žiadne oprávnenia súborov a porty PTP 319/320 pochádzajú z nastavenia `sysctl` opísaného v časti [Ako PTP získava svoje porty](#always-on-ptp-for-headless-hosts). Funkcia súboru nastaví rozbalený backend do režimu bezpečného spustenia, v ktorom nedokáže nájsť svoje vlastné knižnice, a preto sa nespustí. Ak ste takúto funkciu pridali, odstráňte ju:
 
 ```bash
-sudo apt install libcap2-bin
-sudo apt reinstall chloros
+sudo setcap -r /usr/lib/chloros/backend/chloros-backend
 ```
 
-### PTP sa nespustí / nemôže priradiť port 319
+### PTP sa nespustí / nemôže sa pripojiť na port 319
 
-Overte, či bola znížená hranica pre porty bez oprávnení, a ak nie, znovu ju uplatnite pre aktuálne spustenie:
+Overte, či bola znížená minimálna hodnota pre neprivilegované porty, a ak nie, znovu ju nastavte pre aktuálne spustenie:
 
 ```bash
 sysctl net.ipv4.ip_unprivileged_port_start     # expect 319
@@ -377,13 +389,12 @@ chloros-cli time-sync status
 chloros-cli time-sync peers
 ```
 
-### „Nenašli sa ovládače kamery LATTICE“
+### Príkazy `lattice` zlyhávajú s chybou „LATTICE camera drivers not found“
 
-Runtime Arena SDK sa nenašiel. Overte, či je prítomná a aktualizovaná konfigurácia zavádzača, ktorú balík zapisuje:
+Backend nedokázal načítať runtime kamery LATTICE, s ktorým je nainštalovaný. Každý príkaz `lattice` beží na backende; samotné CLI neobsahuje žiadne ovládače kamery. Preinštalujte Chloros (`sudo apt install --reinstall ./chloros_1.3.0_<arch>.deb`): `.deb` nainštaluje runtime vedľa backendu v `/usr/lib/chloros/arena_runtime` a zaregistruje ho v dynamickom zavádzači. Ak chcete skontrolovať túto registráciu:
 
 ```bash
 cat /etc/ld.so.conf.d/Arena_SDK.conf     # expect /usr/lib/chloros/arena_runtime
-sudo ldconfig
 ls /usr/lib/chloros/arena_runtime | head
 ```
 
@@ -400,19 +411,20 @@ kill $(lsof -t -i :5000)
 chloros-cli --port 5001 process ~/datasets/flight001
 ```
 
-Protokoly backendu týkajúce sa zlyhania spustenia sa nachádzajú v súbore `~/.cache/chloros/logs/`.
+Protokoly backendu týkajúce sa neúspešného spustenia sa nachádzajú v súbore `~/.cache/chloros/logs/`. Ak port 5000 patrí službe backendu (`systemctl status chloros-backend@$USER.service`), radšej službu reštartujte, ako aby ste jej proces ukončili.
 
 ### CUDA nebola zistená
 
 ```bash
-# Check NVIDIA driver installation
+# Check NVIDIA driver installation (x86_64)
 nvidia-smi
 
 # Check CUDA availability
 nvcc --version
 
-# On Jetson, check JetPack version
+# On Jetson, check the L4T release (JetPack 6 is R36) and that JetPack's CUDA libraries are installed
 cat /etc/nv_tegra_release
+sudo apt install nvidia-jetpack
 ```
 
 `chloros-cli selftest` hlási to isté v jednom riadku: `GPU: <name>, CUDA: <bool>, PyTorch: <version>`.
@@ -423,13 +435,13 @@ cat /etc/nv_tegra_release
 sudo apt-get update
 sudo apt-get install -f
 
-# Check for missing libraries
-ldd /usr/lib/chloros/chloros-backend | grep "not found"
+# Check for missing libraries (the program itself, not the launcher script)
+ldd /usr/lib/chloros/backend/chloros-backend | grep "not found"
 ```
 
 ### Pomalé spúšťanie na systémoch s SD kartou
 
-Zkompilované binárne súbory sa pri každom spustení samy rozbalia do dočasného adresára. Ak existuje súbor `/mnt/ssd/tmp`, program Chloros ho automaticky použije; v opačnom prípade nastavte súbor `TMPDIR` na rýchly súborový systém:
+Od verzie 1.3.0 sa backend a CLI inštalujú v rozbalenom stave, takže sa už pri každom spustení nerozbaľujú do dočasného adresára. Dočasné súbory sa automaticky ukladajú do adresára `/mnt/ssd/tmp`, ak tento adresár existuje; v opačnom prípade ich môžete nasmerovať do rýchleho súborového systému:
 
 ```bash
 export TMPDIR=/mnt/nvme/tmp
@@ -437,9 +449,9 @@ export TMPDIR=/mnt/nvme/tmp
 
 ***
 
-## Aktualizácia súboru Chloros na systéme Linux
+## Aktualizácia Chlorosu na Linuxu
 
-Príkaz `update` je k dispozícii iba na systéme Linux/Jetson. Overuje verziu uverejnenú v kanáli aktualizácií nakonfigurovanom v `/etc/chloros/update.conf` a ponúka stiahnutie a inštaláciu zodpovedajúceho `.deb`:
+Príkaz `update` je dostupný iba pre Linux/Jetson. Skontroluje verziu uverejnenú v kanáli aktualizácií nakonfigurovanom v `/etc/chloros/update.conf` a ponúkne stiahnutie a inštaláciu zodpovedajúceho `.deb`:
 
 ```bash
 # Check for updates without installing
@@ -449,7 +461,9 @@ chloros-cli update --check
 chloros-cli update
 ```
 
-Na Linux/Jetson vykonáva CLI pri každom spustení aj neblokujúcu kontrolu aktualizácií (výsledok je v `~/.chloros/update_cache.json` uložený v cache po dobu jednej hodiny) a v prípade, že existuje novšia verzia, vypíše `Update available: vX.Y.Z`. Vaše nastavenia a projekty zostanú po aktualizácii zachované; po jej dokončení sa budete musieť znovu prihlásiť.
+V systéme Linux/Jetson vykonáva CLI pri každom spustení aj neblokujúcu kontrolu aktualizácií (výsledok je uložený v cache na jednu hodinu v `~/.chloros/update_cache.json`) a v prípade existencie novej verzie vypíše `Update available: vX.Y.Z`. Vaše nastavenia, projekty a prihlásenie zostanú po aktualizácii zachované.
+
+Aktualizácia balíka počas inštalácie zastaví všetky backendové služby, takže bežiaci skript stratí prístup ku kamerám a senzorom a následne znovu spustí všetky, ktoré sú povolené (služba spustená ručne, ale nikdy nepovolená, zostane zastavená, rovnako ako po reštarte).
 
 ## Odinštalovanie
 
@@ -457,14 +471,14 @@ Na Linux/Jetson vykonáva CLI pri každom spustení aj neblokujúcu kontrolu akt
 sudo apt remove chloros
 ```
 
-Odstránenie zastaví proces `chloros-backend.service`, obnoví predvolenú minimálnu hodnotu pre neprivilegované porty (1024), odstráni symbolický odkaz na nástroj exiftool a konfiguráciu zavádzača Arena a vymaže uložené prihlasovacie údaje. Vaše projekty a dátové súbory `~/.chloros/` zostanú nedotknuté.
+Odstránenie zastaví a deaktivuje všetky backendové služby, obnoví predvolenú minimálnu hodnotu pre neprivilegované porty (1024), odstráni konfiguračný súbor prijímacieho vyrovnávacieho pamäťového priestoru (aktuálne hodnoty zostanú zachované až do reštartu), symbolický odkaz na nástroj exiftool, konfiguráciu zavádzača Arena, pravidlá firewallu pridané balíkom a nainštalované Python SDK a vymaže uložené prihlasovacie údaje z vyrovnávacej pamäte. Vaše projekty a dátové súbory `~/.chloros/` zostanú nedotknuté. `sudo apt purge chloros` tiež odstráni `/var/log/chloros`.
 
 ***
 
 ## Ďalšie kroky
 
-* [Príručka pre NVIDIA Jetson](nvidia-jetson-guide.md) — optimalizácia a nasadenie špecifické pre Jetson
-* [CLI : Príkazový riadok](../CLI.md) — sprievodca CLI
-* [API : Python SDK](../api-python-sdk.md) — príručka k SDK
-* [Referencia k CLI](../reference/cli-reference.md) a [Referencia k SDK](../reference/sdk-reference.md) — úplný zoznam príkazov/API pre verziu 1.2.0
-* [Dynamická adaptácia výpočtov](../processing-architecture/dynamic-compute-adaptation.md) — ako sa Chloros prispôsobuje vášmu hardvéru
+* [Príručka NVIDIA Jetson](nvidia-jetson-guide.md) — Optimalizácia a nasadenie špecifické pre Jetson
+* [CLI: Príkazový riadok](../CLI.md) — sprievodca CLI
+* [API: Python SDK](../api-python-sdk.md) — sprievodca SDK
+* [Referencia CLI](../reference/cli-reference.md) a [Referencia SDK](../reference/sdk-reference.md) — vyčerpávajúce zoznamy príkazov a API pre verziu 1.3.0
+* [Dynamická adaptácia výpočtového výkonu](../processing-architecture/dynamic-compute-adaptation.md) — ako sa Chloros prispôsobuje vášmu hardvéru

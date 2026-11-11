@@ -1,6 +1,6 @@
 # Pridávanie súborov do projektu
 
-Po vytvorení alebo otvorení projektu v programe Chloros je ďalším krokom pridanie multispektrálnych snímok, aby ste mohli začať so spracovaním. Karta „Prehliadač súborov“ (<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">) uľahčuje import snímok a správu vašej sady údajov.
+Po vytvorení alebo otvorení projektu v programe Chloros je ďalším krokom pridanie multispektrálnych snímok, aby ste mohli začať so spracovaním. Karta „Prehliadač súborov“<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> uľahčuje import snímok a správu vašej sady údajov.
 
 ## Otvorenie prehliadača súborov
 
@@ -11,9 +11,9 @@ Po vytvorení alebo otvorení projektu v programe Chloros je ďalším krokom pr
 {% hint style="info" %}
 **Podporované typy súborov**:
 
-* **Survey3W / Survey3N**: Páry súborov RAW+JPG a obrázky vo formáte JPG (odporúča sa RAW+JPG)
-* **LATTICE**: záznamy `.tif` / `.tiff` — zaznamenané pomocou ovládania kamery Chloros alebo prostredníctvom rozbočovača LATTICE
-* **Údaje zo svetelného senzora**: Záznamy `.daq` (DAQ-U/M/E) a záznamy o dopade svetla z DAQ-M `.csv` — importované spolu so snímkami na účely kalibrácie odrazivosti
+* **Survey3W / Survey3N**: páry súborov RAW+JPG a snímky vo formáte JPG (odporúča sa RAW+JPG)
+* **LATTICE**: záznamy `.tif` / `.tiff` — zaznamenané prostredníctvom ovládania kamery Chloros alebo rozbočovača LATTICE
+* **Údaje zo svetelných senzorov**: záznamy `.daq` (DAQ-U/M/E) a záznamy smerom nadol DAQ-M `.csv` — importované spolu so snímkami na účely kalibrácie odrazivosti
 {% endhint %}
 
 ***
@@ -36,18 +36,18 @@ Túto možnosť použite na import jednotlivých obrazových súborov alebo mal�
 Túto možnosť použite na import všetkých obrázkov zo zložky naraz. V jednom dialógovom okne môžete vybrať **viacero zložiek**.
 
 1. Kliknite na tlačidlo **„Pridať zložku“** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> v hornej časti panela Prehliadač súborov
-2. Prejdite do zložky (zložiek) obsahujúcej obrázky z vašej snímacej relácie a vyberte ju (ich)
+2. Prejdite do zložky (zložiek) obsahujúcej obrázky z vašej relácie snímania a vyberte ju (ich)
 3. Kliknite na **„Vybrať zložku“**, aby ste importovali všetky podporované obrázky
 
 {% hint style="info" %}
-**Súbory, ktoré sa nepodarilo načítať, sú nahlásené.** Ak zložka obsahuje súbory, ktoré Chloros rozpozná, ale nedokáže načítať, zobrazí sa varovanie – obrázky sa z mriežky nestratia bez upozornenia.
+**Súbory, ktoré sa nepodarilo načítať, sú nahlásené.** Ak zložka obsahuje súbory, ktoré program Chloros rozpozná, ale nedokáže načítať, zobrazí sa varovanie – obrázky sa z mriežky nezmiznú bez upozornenia.
 {% endhint %}
 
 ***
 
-## Importovanie zložiek s dátami z LATTICE Capture
+## Importovanie zložiek snímok LATTICE
 
-Dáta z LATTICE Capture sa ukladajú s **jednou podzložkou na každú úroveň exportu** — napríklad `raw/`, `debayered/`, `radiance/`, `reflectance/`, `preview/` — s príslušným súborom `.daq` v koreňovom adresári:
+Snímky LATTICE sa ukladajú s **jednou podzložkou na každú úroveň exportu** — napríklad `raw/`, `debayered/`, `radiance/`, `reflectance/`, `preview/` — s príslušným súborom `.daq` v koreňovom adresári:
 
 ```
 output/
@@ -57,9 +57,12 @@ output/
 └── *.daq          the downwelling reading matched to the capture
 ```
 
-**Nastavte priečinok na koreňový priečinok snímok** (`output/` vyššie). Ak vybraný priečinok sám o sebe neobsahuje žiadne obrázky, ale má podpriečinky, Chloros do nich automaticky prejde — podpriečinky na danej úrovni aj koreňový priečinok `.daq` sa načítajú naraz.**Ako prebieha import snímok:*** Každá séria snímok sa importuje ako **jeden obrázok**, zoskupený podľa série (nie jeden záznam na úroveň). Ostatné úrovne tej istej série snímok sa zobrazujú ako režimy zobrazenia tohto jedného obrázku.
-* **Spracovanie vždy začína od surového snímku.** Ostatné úrovne sú viditeľné, ale cez spracovateľský reťazec prechádza vždy len `raw` — opätovné spracovanie už spracovaného produktu by znamenalo dvojité uplatnenie korekcií, preto sa Chloros odmietne. Opätovne importovaný export nikdy nemôže obsadiť slot surového snímku.
-* Zložka so snímkami uložená **bez** surových snímok sa načíta a zobrazí normálne, ale spracovanie ju preskočí a zaznamená to do protokolu. (Príznak CLI `--input-level` môže v tomto prípade vynútiť vstupný bod – pozri [Referenciu CLI](../reference/cli-reference.md#what-a-captures-folder-looks-like).)**Relácie LATTICE hub** sa importujú rovnakým spôsobom: v položke „Add Folder“ (Pridať priečinok) vyberte priečinok relácie skopírovaný z hubu (obsahuje súbory `raw/` a `previews/`) spolu s akýmkoľvek protokolom DAQ-M `.csv`. Ak kalibrácia kamery alebo zariadenia DAQ ešte nie je uložená v cache vášho počítača, Chloros ju pri importe automaticky načíta na základe sériového čísla (vyžaduje jednorazové pripojenie k internetu).***
+**Nastavte priečinok „Add Folder“ na koreňový priečinok snímok** (`output/` vyššie). Ak vybraný priečinok neobsahuje žiadne obrázky, ale má podpriečinky, Chloros do nich automaticky prejde — podpriečinky na danej úrovni aj koreňový priečinok `.daq` sa načítajú naraz.**Ako prebieha import snímok:*** Každá snímka sa importuje ako **jediný obrázok**, zoskupený podľa snímky (nie jeden záznam na úroveň). Ostatné úrovne tej istej snímky sa zobrazujú ako režimy zobrazenia tohto jedného obrázku.
+* **Spracovanie vždy začína od surového snímku.** Ostatné úrovne sú viditeľné, ale cez spracovateľský reťazec prechádza vždy len `raw` — opätovné spracovanie už spracovaného produktu by znamenalo dvojité uplatnenie korekcií, čo Chloros odmieta. Opätovne importovaný export nikdy nemôže obsadiť slot pre surový snímok.
+* Zložka so snímkami uložená **bez** surových snímok sa načíta a zobrazí normálne, ale spracovanie ju preskočí a túto skutočnosť zaznamená do protokolu. (Príznak CLI `--input-level` môže v tomto prípade vynútiť vstupný bod — pozri [Referenciu CLI](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
+* Od verzie 1.3.0 môže zložka s zachytenými snímkami obsahovať aj zložku `clamp_masks/` (masky na úrovni jednotlivých pixelov pre úrovne žiarivosti a odrazivosti — pozri [Formáty výstupných obrázkov](../output-image-formats.md#clamp-masks)). Masky nie sú obrázkami scény a program Chloros ich pri importe preskočí bez ohľadu na to, kde sa nachádzajú.
+
+**Relácie LATTICE hub** sa importujú rovnakým spôsobom: kliknite na Pridať zložku a vyberte zložku relácie skopírovanú z hubu (obsahuje zložky `raw/` a `previews/`) spolu s akýmkoľvek záznamom o dopade žiarenia z DAQ-M (`.csv`). Ak kalibrácia kamery alebo zariadenia DAQ ešte nie je uložená v cache vášho počítača, Chloros ju pri importe automaticky načíta podľa sériového čísla (vyžaduje jednorazové pripojenie k internetu).***
 
 ## Vysvetlenie tabuľky prehliadača súborov
 
@@ -72,22 +75,22 @@ Po importe sa snímky zobrazia v tabuľke s nasledujúcimi stĺpcami:
 
 ### Časová pečiatka
 
-* Dátum a čas nasnímania obrázku
-* Získané z metadát EXIF obrázku
+* Dátum a čas zachytenia snímky
+* Získané z metadát EXIF snímky
 * Používa sa na zosúladenie svetelných senzorov, synchronizáciu PPK a plánovanie kalibračných cieľov
 
 ### Model fotoaparátu
 
-* Automaticky zistená konfigurácia fotoaparátu a filtra
-* Príklady Survey3: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
+* Automaticky zistená konfigurácia fotoaparátu a filtrov
+* Príklady Survey3: Survey3W_RGN, Survey3N_OCN, Survey3W_RGB
 * Príklady LATTICE: LATT-M3M-L41-F550, LATT-M3C-L87-FRGN
-* Slúži na použitie správnych profilov spracovania
+* Používa sa na aplikovanie správnych profilov spracovania
 
 ### Stĺpec cieľov (zaškrtávacie políčko)
 
-* Toto políčko zaškrtnite pri obrázkoch, ktoré obsahujú kalibračné ciele
-* Ak je zaškrtnutý aspoň jeden obrázok, **skenujú sa iba zaškrtnuté obrázky** na prítomnosť cieľov
-* Podrobnosti nájdete v časti [Výber cieľových obrázkov](choosing-target-images.md)
+* Toto políčko zaškrtnite pre snímky, ktoré obsahujú kalibračné ciele
+* Ak je zaškrtnutý aspoň jeden snímok, **skenujú sa iba zaškrtnuté snímky** na prítomnosť cieľov
+* Podrobnosti nájdete v časti [Výber snímok s cieľmi](choosing-target-images.md)
 
 ### Zobrazenie metadát obrázkov
 
@@ -99,7 +102,7 @@ Kliknutím na prepínač v pravom hornom rohu nad tabuľkou sa v oblasti mriežk
 
 ## Súbory svetelných senzorov vo vašom projekte
 
-* Súbory `.daq` a `.csv` sa zobrazujú v zozname prehliadača súborov, nie sú však klikateľnými snímkami — poskytujú údaje o dopadajúcom ožiarení pre kalibráciu odrazivosti.
+* Súbory `.daq` a `.csv` sa zobrazujú v zozname prehliadača súborov, nie sú však klikateľnými obrázkami — poskytujú údaje o intenzite dopadajúceho žiarenia pre kalibráciu odrazivosti.
 * Každý importovaný súbor typu `.daq`/`.csv` je uvedený v časti **Nastavenia projektu → Svetelný senzor DAQ**, kde si môžete skontrolovať korekciu difúzneho krytu platnú pre každý súbor. Pozrite si [Úprava nastavení projektu](adjusting-project-settings.md).
 * Záznamy, ktoré vytvoríte na karte **Svetelné senzory**, sa automaticky pridajú do otvoreného projektu – nie je potrebný žiadny ručný import.***
 
@@ -111,13 +114,13 @@ Ak chcete z projektu odstrániť nepotrebné obrázky:
 
 1. Vyberte jeden alebo viac obrázkov v tabuľke prehliadača súborov
 2. Kliknite na tlačidlo **„Odstrániť vybrané“** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
-3. Potvrďte odstránenie (súbory sa z disku nevymažú, iba sa odstránia z projektu)
+3. Potvrďte odstránenie (súbory sa z disku neodstránia, iba sa vyberú z projektu)
 
 ### Triedenie a filtrovanie
 
 * **Triedenie podľa stĺpca**: Kliknutím na akýkoľvek nadpis stĺpca môžete obrázky zoradiť
-* **Triedenie podľa časovej pečiatky**: Užitočné pri organizovaní chronologických sekvencií záberov
-* **Filtrovanie podľa modelu fotoaparátu**: Zoskupte obrázky podľa typu fotoaparátu, ak používate viacero fotoaparátov***
+* **Triedenie podľa časovej pečiatky**: Užitočné na usporiadanie chronologických sekvencií záberov
+* **Filter podľa modelu fotoaparátu**: Zoskupte obrázky podľa typu fotoaparátu, ak používate viacero fotoaparátov***
 
 ## Náhľad obrázkov
 
@@ -133,19 +136,19 @@ Kliknutím na ľubovoľnú miniatúru obrázku v prehliadači súborov ho zobraz
 
 * **Predchádzajúci obrázok**: Kliknite na šípku doľava alebo stlačte kláves ←
 * **Ďalší obrázok**: Kliknite na šípku doprava alebo stlačte kláves →
-* **Zväčšenie/zmenšenie**: Použite koliesko myši alebo tlačidlá na priblíženie a oddialenie
-* **Posun**: Pri zväčšení kliknite a ťahajte po obrázku***
+* **Priblíženie/oddialenie**: Použite koliesko myši alebo tlačidlá priblíženia
+* **Posun**: Pri priblíženom zobrazení kliknite a ťahajte po obrázku***
 
 ## Spracovanie duplicitných súborov
 
-Chloros automaticky detekuje a ignoruje duplicitné súbory:
+Program Chloros automaticky detekuje a ignoruje duplicitné súbory:
 
 * Súbory s identickými názvami sa preskočia
 * Zabraňuje náhodnému dvojitému spracovaniu
-* Pri detekcii duplikátov sa zobrazí varovná správa
+* Pri detekcii duplicitných súborov sa zobrazí varovná správa
 
 {% hint style="warning" %}
-**Dôležité**: Pred importom nepremenúvajte ani neupravujte pôvodné obrazové súbory. Chloros sa pri správnom spracovaní spolieha na pôvodné názvy súborov a metadáta.
+**Dôležité**: Pred importom nepremenúvajte ani neupravujte svoje pôvodné obrazové súbory. Program Chloros sa pri správnom spracovaní spolieha na pôvodné názvy súborov a metadáta.
 {% endhint %}
 
 ***
@@ -159,15 +162,15 @@ Ak váš projekt obsahuje snímky z viacerých kamier MAPIR:
 3. Prehliadač súborov zobrazuje model kamery v stĺpci „Model kamery“
 4. Každá kamera má po spracovaní vlastnú štruktúru výstupných priečinkov
 
-**Príklady scenárov**: Konfigurácia s dvoma kamerami Survey3W a RGN + Survey3N a OCN, alebo pole LATTICE s hlavnou kamerou RGB a viacerými úzkopásmovými modulmi***
+**Príklady scenárov**: konfigurácia s dvoma kamerami Survey3W RGN + Survey3N OCN, alebo pole LATTICE s hlavnou kamerou RGB a niekoľkými úzkopásmovými modulmi***
 
 ## Osvedčené postupy
 
-### Usporiadajte súbory pred importom
+### Usporiadajte údaje pred importom
 
 * Uložte snímky kalibračných terčov do rovnakého priečinka ako snímky z prieskumu
-* Súbory zo svetelných senzorov `.daq` / `.csv` z každej snímacej relácie uchovávajte spolu so snímkami z danej relácie
-* Zachovajte pôvodnú štruktúru zložiek z fotoaparátu/SD karty/rozbočovača
+* Súbory svetelných senzorov `.daq` / `.csv` z každej snímacej relácie uchovávajte spolu so snímkami z danej relácie
+* Zachovajte pôvodnú štruktúru zložiek z vašej kamery/SD karty/rozbočovača
 * Nemiešajte dátové súbory z rôznych sedení v jednom projekte
 
 ### Pomenovanie súborov
@@ -178,9 +181,9 @@ Ak váš projekt obsahuje snímky z viacerých kamier MAPIR:
 
 ### Snímky kalibračných cieľov
 
-* Vždy zahrňte 1–2 snímky kalibračných cieľov na jednu reláciu (Survey3; v prípade LATTICE ich môže nahradiť záznam z DAQ — pozri [Výber snímok cieľov](choosing-target-images.md))
+* Vždy zahrňte 1–2 snímky kalibračných cieľov na jednu reláciu (program Survey3; v prípade LATTICE ich môže nahradiť záznam DAQ — pozri [Výber snímok cieľov](choosing-target-images.md))
 * Zachyťte ciele pred a po snímacej relácii
-* Umiestnite ciele do rovnakých svetelných podmienok ako snímacia oblasť
+* Umiestnite ciele do rovnakých svetelných podmienok ako snímaciu oblasť
 * Označte cieľové obrázky pomocou začiarkavacieho políčka „Target“
 
 ***
@@ -192,8 +195,8 @@ Ak váš projekt obsahuje snímky z viacerých kamier MAPIR:
 **Možné príčiny:**
 
 * Nepodporovaný formát súboru (pozri zoznam podporovaných typov v hornej časti tejto stránky)
-* Obrázky pochádzajú z fotoaparátov, ktoré nie sú typu MAPIR (pozri [Podporované fotoaparáty](../supported-cameras.md))
-* Poškodenie súboru alebo neúplný prenos z SD karty
+* Snímky pochádzajú z fotoaparátov, ktoré nie sú značky MAPIR (pozri [Podporované fotoaparáty](../supported-cameras.md))
+* Poškodený súbor alebo neúplný prenos z SD karty
 
 **Riešenie**: Overte kompatibilitu formátu súboru a modelu fotoaparátu a skontrolujte varovanie pri načítaní súborov, kde sú uvedené presné súbory, pri ktorých došlo k chybe
 
@@ -205,7 +208,7 @@ Ak váš projekt obsahuje snímky z viacerých kamier MAPIR:
 * Obrázky upravené v externom softvéri
 * Neúplný prenos súborov
 
-**Riešenie**: Znovu naimportujte pôvodné, neupravené súbory z fotoaparátu/SD karty
+**Riešenie**: Znovu načítajte pôvodné, neupravené súbory z fotoaparátu/SD karty
 
 ### Chýbajúce časové údaje
 
@@ -218,14 +221,14 @@ Ak váš projekt obsahuje snímky z viacerých kamier MAPIR:
 
 ### Pri opätovnom otvorení projektu sa hlásia chýbajúce súbory
 
-Ak boli zdrojové súbory presunuté alebo odstránené od posledného otvorenia projektu, kód chyby Chloros vám oznámi, **ktoré** súbory chýbajú, namiesto toho, aby sa otvorila prázdna mriežka. Obnovte súbory na ich pôvodné umiestnenia alebo odstráňte chýbajúce položky a znovu ich načítajte.***
+Ak boli zdrojové súbory presunuté alebo vymazané od posledného otvorenia projektu, Chloros vám oznámi, **ktoré**súbory chýbajú, namiesto toho, aby sa otvorila prázdna mriežka. Ak sa presunula samotná zložka projektu, Chloros presmeruje cesty k zdrojovým súborom na zložku, v ktorej sa teraz nachádza zložka `project.json`, a uchová zálohu (`project.json.before-relink-<date>-<time>`). Ak ich takýmto spôsobom nenájde, okno**Zdrojové súbory neboli nájdené**ponúka možnosť**Prehľadávať** na novom mieste, potom Vytvoriť nový projekt alebo Odstrániť projekt. Z CLI použite `chloros-cli project open PATH --relink FOLDER`; z SDK použite `open_project(path, relink=...)`.***
 
 ## Ďalšie kroky
 
-Po načítení súborov:
+Po importovaní súborov:
 
-1. **Skontrolujte zoznam súborov** – Uistite sa, že sa všetky obrázky načítajú správne
-2. **Skontrolujte modely fotoaparátov** – Overte správnu detekciu fotoaparátov
+1. **Skontrolujte zoznam súborov** – Uistite sa, že sa všetky obrázky načítali správne
+2. **Skontrolujte modely kamier** – Overte správnu detekciu kamier
 3. **Označte cieľové obrázky** – pozrite si [Výber cieľových obrázkov](choosing-target-images.md)
 4. **Upravte nastavenia** – nakonfigurujte možnosti spracovania v [Nastaveniach projektu](adjusting-project-settings.md)
 5. **Spustite spracovanie** – pozrite si [Spustenie spracovania](starting-the-processing.md)
