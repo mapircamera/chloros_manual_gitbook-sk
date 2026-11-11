@@ -22,19 +22,7 @@ Horná lišta obsahuje zľava doprava:
 * **Pripojiť sa k svetelnému senzoru** — prejde na [kartu Svetelné senzory](daq/) na pripojenie svetelného senzora DAQ. Funguje aj bez otvoreného projektu.
 
 {% hint style="info" %}
-**Iba pre Windows**: Grafické používateľské rozhranie Chloros
-
-Desktop je k dispozícii v systéme Windows
-
-. Používatelia Linux
-
-u by si mali prečítať dokumentáciu k [CLI
-
-](CLI.md) a [Python
-
-SDK
-
-](api-python-sdk.md) pre spracovanie bez grafického rozhrania.
+**Iba pre Windows**: Grafické používateľské rozhranie Chloros Desktop je k dispozícii v systéme Windows. Používatelia Linux u by si mali prečítať dokumentáciu k [CLI](CLI.md) a [Python SDK](api-python-sdk.md) pre spracovanie bez grafického rozhrania.
 {% endhint %}
 
 ### <img src=".gitbook/assets/image (2) (1) (1).png" alt="" data-size="line">
@@ -49,15 +37,9 @@ Ukazovateľ priebehu <img src=".gitbook/assets/image (5).png" alt="" data-size="
 
 
 
-V bezplatnom režime Chloros
+V bezplatnom režime Chloros, ktorý spracováva všetky súbory postupne, ukazovateľ priebehu zobrazuje 2 fázy: Detekcia cieľa a Spracovanie.
 
-, ktorý spracováva všetky súbory postupne, ukazovateľ priebehu zobrazuje 2 fázy: Detekcia cieľa a Spracovanie.
-
-V platenom režime s licenciou Chloros
-
-+, ktorý spracováva všetky súbory súčasne, ukazovateľ priebehu zobrazuje 4 fázy: Detekcia, Analýza, Kalibrácia, Export. Ak umiestnite kurzor myši nad ukazovateľ priebehu programu Chloros
-
-+, rozbalí sa rozšírený panel so štyrmi ukazovateľmi priebehu, vďaka čomu môžete sledovať priebeh spracovania. Kliknutím na horný ukazovateľ priebehu panel rozbaleného menu zamrazíte, ďalším kliknutím ho opäť odblokujete.
+V platenom režime s licenciou Chloros+, ktorý spracováva všetky súbory súčasne, ukazovateľ priebehu zobrazuje 4 fázy: Detekcia, Analýza, Kalibrácia, Export. Ak umiestnite kurzor myši nad ukazovateľ priebehu programu Chloros+, rozbalí sa rozšírený panel so štyrmi ukazovateľmi priebehu, vďaka čomu môžete sledovať priebeh spracovania. Kliknutím na horný ukazovateľ priebehu panel rozbaleného menu zamrazíte, ďalším kliknutím ho opäť odblokujete.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 

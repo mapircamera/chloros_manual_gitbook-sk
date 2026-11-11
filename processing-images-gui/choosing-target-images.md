@@ -161,7 +161,7 @@ Ak funkcia „Chloros“ (Detekcia cieľov) nedetekuje vaše ciele správne, upr
 **Možné príčiny:**
 
 * Cieľové obrázky nie sú označené v prehliadači súborov
-* Cieľ je v zábere príliš malý (&lt; 30 % obrázka)
+* Cieľ je v zábere príliš malý (< 30 % obrázka)
 * Zlé osvetlenie (tiene, odlesky)
 * Príliš prísne nastavenia detekcie cieľov
 

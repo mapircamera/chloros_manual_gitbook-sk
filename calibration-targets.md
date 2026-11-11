@@ -21,15 +21,7 @@ MAPIR ponúka rôzne kalibračné terče určené pre širokú škálu aplikáci
 
 To znamená, že pri každom snímku, ktorý zachytíte našimi kamerami, môžete použiť fotografiu našich kalibračných terčov, napríklad [T4-R50](https://www.mapir.camera/collections/calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t3-r50) alebo [T4-R125](https://www.mapir.camera/collections/multispectral-reflectance-reference-calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t4-r125), na kalibráciu snímok z hľadiska odrazivosti. Po kalibrácii sa hodnota každého pixelu na snímke rovná percentuálnej odrazivosti.
 
-V prípade výstupov z programu **Survey3**, ak exportujete kalibrované snímky z programu Chloros
-
-vo formáte JPG alebo TIFF
-
-, percentuálna hodnota odrazivosti sa vypočíta vydelením hodnoty pixelu bitovou hĺbkou formátu snímky. Pre formát JPG teda vydelíte hodnotu 255 a pre formát TIFF
-
-vydelíte hodnotu 65 535. V programe Chloros
-
-môžete tiež zvoliť výstup vo formáte PERCENT, pričom každý pixel bude mať hodnotu v rozmedzí od 0,0 do 1,0 (od 0 % do 100 % odrazivosti). Majte však na pamäti, že niektoré aplikácie na prácu so snímkami nepodporujú snímky v percentách (s plávajúcou desatinnou čiarkou) a z hľadiska úložného priestoru sú tieto snímky veľké.
+V prípade výstupov z programu **Survey3**, ak exportujete kalibrované snímky z programu Chloros vo formáte JPG alebo TIFF, percentuálna hodnota odrazivosti sa vypočíta vydelením hodnoty pixelu bitovou hĺbkou formátu snímky. Pre formát JPG teda vydelíte hodnotu 255 a pre formát TIFF vydelíte hodnotu 65 535. V programe Chloros môžete tiež zvoliť výstup vo formáte PERCENT, pričom každý pixel bude mať hodnotu v rozmedzí od 0,0 do 1,0 (od 0 % do 100 % odrazivosti). Majte však na pamäti, že niektoré aplikácie na prácu so snímkami nepodporujú snímky v percentách (s plávajúcou desatinnou čiarkou) a z hľadiska úložného priestoru sú tieto snímky veľké.
 
 {% hint style="info" %}
 **Odrazivosť LATTICE používa iné mierky pixelov.** Odrazivosť LATTICE sa ukladá s hodnotou DN 32 768 = 100 % odrazivosti (nie 65 535) a každý súbor obsahuje značku XMP `Chloros:PixelScale`, ktorá uvádza jeho mierku. Prečítajte si túto značku a vydelte ňou hodnotu namiesto toho, aby ste predpokladali konštantu — pozrite si [Formáty výstupných obrázkov](output-image-formats.md).
@@ -37,38 +29,26 @@ môžete tiež zvoliť výstup vo formáte PERCENT, pričom každý pixel bude m
 
 ## Kalibračné terče s kamerami LATTICE
 
-Pri kamerách LATTICE je kalibračný terč pre odrazivosť **voliteľný**: Chloros
-
-môže namiesto toho odrazivosť vzťahovať na intenzitu dopadajúceho žiarenia meranú svetelným senzorom DAQ (ρ = π·L/E). Referenčná hodnota sa volí v nastavení zdroja odrazivosti projektu, ktoré sa konfiguruje pomocou `chloros-cli process --reflectance-source` (grafické používateľské rozhranie nemá na to žiadne ovládacie prvky a používa uloženú hodnotu projektu, predvolene `auto` — pozri [Nastavenia projektu](project-settings/project-settings.md)):
+Pri kamerách LATTICE je kalibračný terč pre odrazivosť **voliteľný**: Chloros môže namiesto toho odrazivosť vzťahovať na intenzitu dopadajúceho žiarenia meranú svetelným senzorom DAQ (ρ = π·L/E). Referenčná hodnota sa volí v nastavení zdroja odrazivosti projektu, ktoré sa konfiguruje pomocou `chloros-cli process --reflectance-source` (grafické používateľské rozhranie nemá na to žiadne ovládacie prvky a používa uloženú hodnotu projektu, predvolene `auto` — pozri [Nastavenia projektu](project-settings/project-settings.md)):
 
 | Hodnota | Správanie |
 | --- | --- |
-| `auto` *(predvolené)* | Cieľ v rámci snímky, ktorý prešiel kontrolou kvality (QA), je **absolútnou referenciou**; ak nie je prítomný žiadny cieľ alebo kontrola kvality zlyhá, Chloros
-
-prejde na delenie podľa smeru dopadu DAQ. Cieľ, ktorý prešiel kontrolou kvality s výhradou (vypadnutý panel alebo nefunkčné pásmo), nie je automaticky uprednostňovaný: reťazce cieľ, cieľ+DAQ a iba DAQ sa skúšajú v poradí podľa ich nameraného skóre na vynechaných paneloch. |
+| `auto` *(predvolené)* | Cieľ v rámci snímky, ktorý prešiel kontrolou kvality (QA), je **absolútnou referenciou**; ak nie je prítomný žiadny cieľ alebo kontrola kvality zlyhá, Chloros prejde na delenie podľa smeru dopadu DAQ. Cieľ, ktorý prešiel kontrolou kvality s výhradou (vypadnutý panel alebo nefunkčné pásmo), nie je automaticky uprednostňovaný: reťazce cieľ, cieľ+DAQ a iba DAQ sa skúšajú v poradí podľa ich nameraného skóre na vynechaných paneloch. |
 | `target` | Prísne iba cieľ — bez nahradenia DAQ. |
 | `daq` | DAQ má prednosť — meranie smerom nadol je vždy referenciou. |
 
 Ďalšie správanie cieľov pre LATTICE:
 
 * **Geometrie cieľov** — podporované sú panely označené ArUco, panely s pevnou oblasťou záujmu (ROI) a pásové ciele; geometria pochádza z konfigurácie cieľov projektu.
-* **Dáta o meraných cieľoch na jednotku** — `--target-reflectance-dir DIR` odkazuje na adresár skenov odrazivosti meraných cieľov na jednotku (`<serial>.csv`, vyhľadávané podľa sériového čísla/QR jednotky cieľa). V prípade neúspechu sa Chloros
-
-vráti k nominálnym spektrám T3/T4P.
+* **Dáta o meraných cieľoch na jednotku** — `--target-reflectance-dir DIR` odkazuje na adresár skenov odrazivosti meraných cieľov na jednotku (`<serial>.csv`, vyhľadávané podľa sériového čísla/QR jednotky cieľa). V prípade neúspechu sa Chloros vráti k nominálnym spektrám T3/T4P.
 * **Časové ukotvenie** — detegovaný cieľ kalibruje snímky v jeho okolí a je udržiavaný medzi pozorovaniami cieľa.
 
-Úplná sémantika príznakov a príklady sa nachádzajú v [Referencii CLI
-
-](reference/cli-reference.md) (pozri „Prepínače exportu podľa produktu“).
+Úplná sémantika príznakov a príklady sa nachádzajú v [Referencii CLI](reference/cli-reference.md) (pozri „Prepínače exportu podľa produktu“).
 
 ### F988
 
-„Odrazivosť F988 sa kalibruje pomocou panelu odrazivosti v scéne: pásmo leží mimo kalibrovaného rozsahu svetelného senzora DAQ, preto Chloros
+„Odrazivosť F988 sa kalibruje pomocou panelu odrazivosti v scéne: pásmo leží mimo kalibrovaného rozsahu svetelného senzora DAQ, preto Chloros použije váš najnovší záznam z panelu a udrží ho medzi pozorovaniami panelu.“
 
-použije váš najnovší záznam z panelu a udrží ho medzi pozorovaniami panelu.“
-
-Ak sa F988 spustí s kalibráciou iba pomocou DAQ, Chloros
-
-odmietne odrazivosť založenú na DAQ pre dané pásmo a uvedie dôvod (dôvod preskočenia `dls-uncalibrated-band-988`); podporovaným postupom je práca s panelom.
+Ak sa F988 spustí s kalibráciou iba pomocou DAQ, Chloros odmietne odrazivosť založenú na DAQ pre dané pásmo a uvedie dôvod (dôvod preskočenia `dls-uncalibrated-band-988`); podporovaným postupom je práca s panelom.
 
 <div><figure><img src=".gitbook/assets/t3-125.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure> <figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure> <figure><img src=".gitbook/assets/t3-125_closed.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure></div>

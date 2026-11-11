@@ -1,17 +1,14 @@
 # Dynamická adaptácia výpočtov
 
-Chloros
-1.3.0 využíva detekciu hardvéru a automatický výber stratégie spracovania. Spracovateľský modul sa prispôsobí vášmu hardvéru – od Jetson Orin Nano až po pracovnú stanicu s viacerými grafickými kartami – bez akejkoľvek manuálnej konfigurácie.
+Chloros 1.3.0 využíva detekciu hardvéru a automatický výber stratégie spracovania. Spracovateľský modul sa prispôsobí vášmu hardvéru – od Jetson Orin Nano až po pracovnú stanicu s viacerými grafickými kartami – bez akejkoľvek manuálnej konfigurácie.
 
 ***
 
 ## Ako to funguje
 
-Pri spustení Chloros
-u sa vykoná profilovanie vášho systému:
+Pri spustení Chloros u sa vykoná profilovanie vášho systému:
 
-1. **Zistí operačný systém** — Windows
-alebo Linux
+1. **Zistí operačný systém** — Windows alebo Linux
 2. **Identifikuje jadrá procesora a celkovú veľkosť pamäte RAM**
 
 3.**Zistí prítomnosť grafického procesora** — podporu NVIDIA CUDA, VRAM, model
@@ -24,19 +21,16 @@ Zistený profil sa na danú reláciu ukladá do vyrovnávacej pamäte a na disk,
 
 | Platforma | Profil v vyrovnávacej pamäti |
 | --- | --- |
-| **Linux
-/ Jetson** | `~/.config/chloros/system_config.json` (uprednostňuje `XDG_CONFIG_HOME`) |
+| **Linux / Jetson** | `~/.config/chloros/system_config.json` (uprednostňuje `XDG_CONFIG_HOME`) |
 | **Windows** | `%LOCALAPPDATA%\Chloros\config\system_config.json` |
 
-Vymazanie tohto súboru vynúti nové detekovanie — je to užitočné po pridaní grafického procesora (GPU) alebo väčšieho množstva pamäte RAM. Chloros
-tiež automaticky vykoná nové detekovanie, ak bola vyrovnávacia pamäť zapísaná nekompatibilnou staršou verziou.
+Vymazanie tohto súboru vynúti nové detekovanie — je to užitočné po pridaní grafického procesora (GPU) alebo väčšieho množstva pamäte RAM. Chloros tiež automaticky vykoná nové detekovanie, ak bola vyrovnávacia pamäť zapísaná nekompatibilnou staršou verziou.
 
 ***
 
 ## Výpočtové stratégie
 
-Chloros
-vyberá jednu z troch výpočtových stratégií na základe vášho hardvéru:
+Chloros vyberá jednu z troch výpočtových stratégií na základe vášho hardvéru:
 
 | Stratégia | Vybratá v prípade | Pracovníci | Vykonávateľ | Potrubie |
 | --- | --- | --- | --- | --- |
@@ -50,11 +44,7 @@ Praktické príklady vzorca pre počet pracovníkov `GPU_PARALLEL`: 12 GB VRAM �
 **Stratégie pre GPU vyžadujú PyTorch, ktorý dokáže využívať CUDA.** Zariadenie, ktorého PyTorch nemá použiteľné CUDA zariadenie, dostane hodnotu `CPU_PARALLEL`, bez ohľadu na typ jeho GPU. Balík Jetson 1.3.0 používa verziu PyTorch pre CUDA z JetPack 6, takže zariadenie Jetson spĺňa podmienky hneď po inštalácii knižníc CUDA a cuDNN z JetPacku. Zariadenie Jetson s menej ako 12 GB RAM spracováva vždy len jeden obrázok naraz, a to priamo počas spracovania (zaznamenané ako `GPU_SINGLE`).
 {% endhint %}
 
-Stratégie využívajúce GPU spúšťajú skupinu pracovných procesov, z ktorých každý je samostatným procesom operačného systému s vlastným kontextom CUDA, ktoré Chloros
-spúšťa opätovným spustením svojho vlastného nainštalovaného backendového programu (nie prostredníctvom `multiprocessing` v Python
-e, ktorého spúšťanie pracovných procesov vo vnútri balíka aplikácie nefunguje). Stratégia CPU využíva skupinu vlákien (Python
-ov `ThreadPoolExecutor`). Chloros
-nepoužíva žiadny distribuovaný framework tretej strany (napríklad Ray).
+Stratégie využívajúce GPU spúšťajú skupinu pracovných procesov, z ktorých každý je samostatným procesom operačného systému s vlastným kontextom CUDA, ktoré Chloros spúšťa opätovným spustením svojho vlastného nainštalovaného backendového programu (nie prostredníctvom `multiprocessing` v Python e, ktorého spúšťanie pracovných procesov vo vnútri balíka aplikácie nefunguje). Stratégia CPU využíva skupinu vlákien (Python ov `ThreadPoolExecutor`). Chloros nepoužíva žiadny distribuovaný framework tretej strany (napríklad Ray).
 
 ### Typy spracovacích reťazcov
 
@@ -75,8 +65,7 @@ Nastavte premennú prostredia `CHLOROS_STRATEGY`, aby ste vynútili konkrétnu s
 CHLOROS_STRATEGY=CPU_PARALLEL chloros-cli process ~/datasets/flight001
 ```
 
-Pri porovnávaní premennej sa nerozlišujú veľké a malé písmená; všetko, čo nie je jedným z týchto troch názvov, sa ignoruje a automatická detekcia pokračuje normálne. Aj pri prepisovaní premennej vám Chloros
-stále vyberá počet pracovníkov:
+Pri porovnávaní premennej sa nerozlišujú veľké a malé písmená; všetko, čo nie je jedným z týchto troch názvov, sa ignoruje a automatická detekcia pokračuje normálne. Aj pri prepisovaní premennej vám Chloros stále vyberá počet pracovníkov:
 
 | Prepis | Použitý počet pracovníkov |
 | --- | --- |
@@ -124,8 +113,7 @@ Diskrétne grafické procesory vyhradzujú pre systém len 0,5 GB, pretože nezd
 
 ## Dynamické prideľovanie pamäte GPU
 
-Chloros
-používa [4-vláknový spracovateľský kanál](processing-pipeline.md):
+Chloros používa [4-vláknový spracovateľský kanál](processing-pipeline.md):
 
 * **Vlákno 1** (Detekcia) — Načítanie obrázku, analýza EXIF, detekcia cieľa
 * **Vlákno 2** (Kalibrácia) — Výpočet kalibrácie odrazivosti
@@ -152,26 +140,23 @@ Hodnota skutočne použitá počas behu programu je **nižšia** z alokácie pro
 
 ## Spracovanie s ohľadom na textúry
 
-Deyzer s podporou textúr (**len Chloros
-+** — `--debayer texture-aware`) spúšťa model odšumovania založený na AI/ML, ktorý potrebuje približne 1,75 GB VRAM v FP16 na jednu kópiu, takže využíva oveľa viac pamäte GPU ako štandardná metóda:
+Deyzer s podporou textúr (**len Chloros+** — `--debayer texture-aware`) spúšťa model odšumovania založený na AI/ML, ktorý potrebuje približne 1,75 GB VRAM v FP16 na jednu kópiu, takže využíva oveľa viac pamäte GPU ako štandardná metóda:
 
 * Systémy s **menej ako 7 GB VRAM**spracúvajú Texture Aware v**synchrónnej slučke, jeden obrázok po druhom** — nezmestí sa tam viacero kópií modelu a skupina pracovníkov by len zvýšila konflikt
 * Systémy s **7 GB a viac VRAM** môžu spracovávať Texture Aware súbežne, hoci s nižším počtom pracovných procesov v porovnaní so štandardnou metódou
 * Na **Jetsone** je Texture Aware vždy priradený k jednému pracovníkovi
 * Ak **nie je k dispozícii použiteľný CUDA GPU**, spustenie používa štandardný debayer a backend zaznamená do protokolu jeden riadok `[DEBAYER] … needs a CUDA GPU …` s vysvetlením dôvodu
-* Na zariadeniach Jetson s nízkou spotrebou (Nano, Orin Nano) CLI
-uplatňuje obmedzenie frekvencie GPU, keď požiadate o režim „Texture Aware“ — pozrite si [Príručku NVIDIA Jetson](../linux/nvidia-jetson-guide.md#gpu-frequency-cap-for-texture-aware-on-nano-and-orin-nano)
+* Na zariadeniach Jetson s nízkou spotrebou (Nano, Orin Nano) CLI uplatňuje obmedzenie frekvencie GPU, keď požiadate o režim „Texture Aware“ — pozrite si [Príručku NVIDIA Jetson](../linux/nvidia-jetson-guide.md#gpu-frequency-cap-for-texture-aware-on-nano-and-orin-nano)
 
 ***
 
 ## Riadenie teploty (Jetson)
 
-Zariadenia Jetson majú teplotné obmedzenia, najmä pri inštaláciách v uzavretých priestoroch alebo vo vzduchu. Chloros
-monitoruje integrované teplotné senzory zariadenia Jetson a automaticky prispôsobuje veľkosť dávok:
+Zariadenia Jetson majú teplotné obmedzenia, najmä pri inštaláciách v uzavretých priestoroch alebo vo vzduchu. Chloros monitoruje integrované teplotné senzory zariadenia Jetson a automaticky prispôsobuje veľkosť dávok:
 
 | Teplota | Reakcia |
 | --- | --- |
-| **&lt; 70 °C** | Normálna prevádzka — plná rýchlosť |
+| **< 70 °C** | Normálna prevádzka — plná rýchlosť |
 | **70 °C** (Varovanie) | Veľkosť dávky sa postupne znižuje (100 % → 50 % v rozmedzí 70 °C až 80 °C) |
 | **80 °C** (Kritické) | Agresívne obmedzenie výkonu (50 % → 0 % v rozmedzí 80 °C až 90 °C) |
 | **90 °C** (Vypnutie) | Úplné zastavenie spracovania na GPU |
@@ -182,11 +167,9 @@ Na stolných počítačoch s dostatočným chladením sa tepelné obmedzovanie s
 
 ## Riešenie tlaku na pamäť
 
-Chloros
-nepretržite sleduje pamäť GPU počas spracovania a reaguje na troch úrovniach.
+Chloros nepretržite sleduje pamäť GPU počas spracovania a reaguje na troch úrovniach.
 
-**Určenie veľkosti dávky.** Dávka začína na 8 obrázkoch vynásobených koeficientom platformy z tabuliek vyššie. Chloros
-potom skontroluje voľnú VRAM, rezervuje 20 % z nej pre vlastnú réžiu PyTorchu a predpokladá približne 100 MB pamäte GPU na obrázok s rozlíšením 12 MP — veľkosť dávky je tá menšia z dvoch hodnôt: limit odvodený od pamäte alebo základná hodnota platformy. Nikdy neklesne pod hodnotu 1.
+**Určenie veľkosti dávky.** Dávka začína na 8 obrázkoch vynásobených koeficientom platformy z tabuliek vyššie. Chloros potom skontroluje voľnú VRAM, rezervuje 20 % z nej pre vlastnú réžiu PyTorchu a predpokladá približne 100 MB pamäte GPU na obrázok s rozlíšením 12 MP — veľkosť dávky je tá menšia z dvoch hodnôt: limit odvodený od pamäte alebo základná hodnota platformy. Nikdy neklesne pod hodnotu 1.
 
 **Preventívne zmenšovanie.**Pri**využití VRAM nad 85 %** sa veľkosť dávok zmenší skôr, ako dôjde k zlyhaniu.**Obmedzenie alokácie na vlákno.** Ako stúpa aktuálne využitie, rozpočet GPU pre každé vlákno sa znižuje: ×0,75 pri využití nad 80 %, ×0,5 pri využití nad 90 %. Monitorovacie pásma sú 70 % (konzervatívne), 85 % (normálny prevádzkový limit) a 95 % (riziko nedostatku pamäte).**OOM backoff a obnovenie.** Ak napriek tomu dôjde k udalosti nedostatku pamäte:
 
@@ -194,8 +177,7 @@ potom skontroluje voľnú VRAM, rezervuje 20 % z nej pre vlastnú réžiu PyTorc
 * alokácie aktívnych vlákien sa znížia na 70 % ich aktuálnej hodnoty a alokátor prejde na konzervatívnu stratégiu, ktorá sa opäť uvoľní po sérii úspešných alokácií
 * pri silnom zaťažení sa potrubie vráti z režimu `fused_gpu` do režimu `tiled_gpu` a ako posledná možnosť do režimu `cpu_fallback`
 
-**Pamäť RAM hostiteľa (Jetson).** Pred spracovaním CLI
-odhadne maximálnu kapacitu pamäte hostiteľa na základe počtu snímok a režimu debayeringu a varuje, ak je pravdepodobné, že RAM spolu so swapom na disku nebude stačiť, pričom vypíše presné príkazy na pridanie swapového priestoru — pozri [Príručku NVIDIA Jetson](../linux/nvidia-jetson-guide.md#swap-warning-and-recommendations).
+**Pamäť RAM hostiteľa (Jetson).** Pred spracovaním CLI odhadne maximálnu kapacitu pamäte hostiteľa na základe počtu snímok a režimu debayeringu a varuje, ak je pravdepodobné, že RAM spolu so swapom na disku nebude stačiť, pričom vypíše presné príkazy na pridanie swapového priestoru — pozri [Príručku NVIDIA Jetson](../linux/nvidia-jetson-guide.md#swap-warning-and-recommendations).
 
 ***
 
@@ -219,21 +201,17 @@ Kontrola 7 vypíše `CUDA: <bool>, Denoiser: <bool>` — obe musia byť pravdiv�
 
 ### Protokoly backendu
 
-Stratégia a počet pracovníkov sa volia v rámci backendu na začiatku každého behu — neexistuje žiadny banner v CLI
-, ktorý by ich oznamoval. Keď sa niečo správa neočakávane (prepnutie na alternatívnu cestu GPU, OOM, odšumovač, ktorý sa nenačíta), objaví sa to v protokole backendu pre danú reláciu:
+Stratégia a počet pracovníkov sa volia v rámci backendu na začiatku každého behu — neexistuje žiadny banner v CLI, ktorý by ich oznamoval. Keď sa niečo správa neočakávane (prepnutie na alternatívnu cestu GPU, OOM, odšumovač, ktorý sa nenačíta), objaví sa to v protokole backendu pre danú reláciu:
 
 | Platforma | Umiestnenie protokolu |
 | --- | --- |
-| **Linux
-/ Jetson** | `~/.cache/chloros/logs/backend_<YYYYMMDD_HHMMSS>.log` (jeden súbor na jedno spustenie) |
-| **Linux
-, backend spustený cez CLI** | tiež `~/.chloros/backend.log` |
+| **Linux / Jetson** | `~/.cache/chloros/logs/backend_<YYYYMMDD_HHMMSS>.log` (jeden súbor na jedno spustenie) |
+| **Linux, backend spustený cez CLI** | tiež `~/.chloros/backend.log` |
 | **Windows** | `%LOCALAPPDATA%\Chloros\logs\` |
 
 ### Priebeh v reálnom čase
 
-Počas behu CLI
-zobrazuje priebežný priebeh jednotlivých vlákien (Detekcia, Analýza, Spracovanie, Export) prenášaný prostredníctvom Server-Sent Events — praktický prehľad o tom, či je vlákno 3 úzkym miestom. Pozrite si [Spracovateľský potrubie](processing-pipeline.md).
+Počas behu CLI zobrazuje priebežný priebeh jednotlivých vlákien (Detekcia, Analýza, Spracovanie, Export) prenášaný prostredníctvom Server-Sent Events — praktický prehľad o tom, či je vlákno 3 úzkym miestom. Pozrite si [Spracovateľský potrubie](processing-pipeline.md).
 
 ***
 
@@ -241,8 +219,6 @@ zobrazuje priebežný priebeh jednotlivých vlákien (Detekcia, Analýza, Spraco
 
 * [Spracovateľský potrubie](processing-pipeline.md) — Porozumenie architektúre potrubia so 4 vláknami
 * [Príručka NVIDIA Jetson](../linux/nvidia-jetson-guide.md) — Nasadenie a optimalizácia špecifické pre Jetson
-* [CLI
-: Príkazový riadok](../CLI.md) — Príručka k CLI
+* [CLI: Príkazový riadok](../CLI.md) — Príručka k CLI
 
-* [Referenčná príručka CLI
-](../reference/cli-reference.md) — Úplný zoznam príkazov pre verziu 1.3.0
+* [Referenčná príručka CLI](../reference/cli-reference.md) — Úplný zoznam príkazov pre verziu 1.3.0

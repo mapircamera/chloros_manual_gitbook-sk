@@ -26,28 +26,10 @@ Tri tlačidlá režimov v hornej časti okna:
 | **Neprerušované**| Snímanie za sebou, kým nenastane podmienka zastavenia. | Zastavenie podľa**počtu snímok** (predvolené 1) *alebo* **trvania snímania** (predvolené 10 s; jednotky: sekundy / minúty / hodiny / dni). |
 | **Interval**(časozber) | Séria snímok podľa časovača. |**Počet snímok / interval**(predvolené 1) ·**Každých**N jednotiek (predvolené 5 s) ·**Po dobu** N jednotiek (predvolené 1 m). |
 
-V režime Nepretržité alebo Interval sa tlačidlo Zachytiť všetko počas behu zmení na tlačidlo **Zastaviť (N)**, pričom sa počítajú snímky, ako sa ukladajú. Zaplnený disk zastaví beh (pozri [Priebeh funkcie „Zachytiť všetko“](#the-capture-all-flow)).**Režim „Neprerušovaný“ na poliach beží v rámci backendu (novinka vo verzii 1.3.0).** Ak všetky kamery v zozname patria do poľa (samostatné kamery sú skryté alebo vylúčené), režim „Continuous“ už neposiela jednu požiadavku na každý záznam: backend Chloros
-
-spúšťa cyklus zachytávania sám, zapisuje jednu synchronizovanú skupinu, zatiaľ čo vyberá ďalšiu, a tlačidlo zisťuje jej počet. Ak sú v zozname samostatné kamery, Chloros
-
-zachytáva záznamy po jednotlivých priechodoch ako doteraz.
+V režime Nepretržité alebo Interval sa tlačidlo Zachytiť všetko počas behu zmení na tlačidlo **Zastaviť (N)**, pričom sa počítajú snímky, ako sa ukladajú. Zaplnený disk zastaví beh (pozri [Priebeh funkcie „Zachytiť všetko“](#the-capture-all-flow)).**Režim „Neprerušovaný“ na poliach beží v rámci backendu (novinka vo verzii 1.3.0).** Ak všetky kamery v zozname patria do poľa (samostatné kamery sú skryté alebo vylúčené), režim „Continuous“ už neposiela jednu požiadavku na každý záznam: backend Chloros spúšťa cyklus zachytávania sám, zapisuje jednu synchronizovanú skupinu, zatiaľ čo vyberá ďalšiu, a tlačidlo zisťuje jej počet. Ak sú v zozname samostatné kamery, Chloros zachytáva záznamy po jednotlivých priechodoch ako doteraz.
 
 {% hint style="warning" %}
-**Rýchle snímanie v systéme Windows
-
-: nechajte backend Chloros
-
-vylúčený z kontroly programom Microsoft Defender.** Skenovanie každého súboru, ktorý sa zapisuje pri vysokej rýchlosti snímania, v reálnom čase stojí približne 30 % rýchlosti snímania v testoch MAPIR
-
-(stovky súborov za sekundu pri malej oblasti záujmu). Inštalačný program pre Windows
-
-ponúka možnosť **„Vylúčiť backend Chloros
-
-u zo skenovania programom Microsoft Defender (oveľa rýchlejšie snímanie z kamery; odporúčané)“**, ktorá je predvolene zaškrtnutá, a pri odinštalovaní toto vylúčenie zruší. Ak ste túto možnosť odškrtli, spustite inštalačný program znovu s zaškrtnutou možnosťou alebo pridajte vylúčenie procesu Defender pre `chloros-backend.exe` (v priečinku `backend` v inštalačnom priečinku Chloros
-
-). Keď Defender počas nepretržitého snímania poľa využíva jedno alebo viac jadier procesora, backend Chloros
-
-to raz zaznamená do svojho protokolu spolu s týmito dvoma riešeniami.
+**Rýchle snímanie v systéme Windows: nechajte backend Chloros vylúčený z kontroly programom Microsoft Defender.** Skenovanie každého súboru, ktorý sa zapisuje pri vysokej rýchlosti snímania, v reálnom čase stojí približne 30 % rýchlosti snímania v testoch MAPIR (stovky súborov za sekundu pri malej oblasti záujmu). Inštalačný program pre Windows ponúka možnosť **„Vylúčiť backend Chloros u zo skenovania programom Microsoft Defender (oveľa rýchlejšie snímanie z kamery; odporúčané)“**, ktorá je predvolene zaškrtnutá, a pri odinštalovaní toto vylúčenie zruší. Ak ste túto možnosť odškrtli, spustite inštalačný program znovu s zaškrtnutou možnosťou alebo pridajte vylúčenie procesu Defender pre `chloros-backend.exe` (v priečinku `backend` v inštalačnom priečinku Chloros). Keď Defender počas nepretržitého snímania poľa využíva jedno alebo viac jadier procesora, backend Chloros to raz zaznamená do svojho protokolu spolu s týmito dvoma riešeniami.
 {% endhint %}
 
 <!-- SCREENSHOT-NEEDED: the capture-mode area of Capture Settings with Interval selected — showing the "Captures / interval", "Every N (unit)" and "For N (unit)" rows with their defaults (1, 5 s, 1 m). -->
@@ -67,26 +49,16 @@ Text nápovedy v tomto paneli to zhrňuje: vyberte, ktoré kamery a typy exportu
 
 Existuje šesť typov exportu: **Raw, Debayered, Radiance, Reflectance, Preview, Index**. V riadku každej kamery sa zobrazujú len tie, ktoré sú pre ňu relevantné:
 
-| Typ exportu | Obsah | RGB
-
-(FRGB) | Bayer multispektrálny (FRGN/FOCN/FNGB) | Mono (M3M) |
+| Typ exportu | Obsah | RGB (FRGB) | Bayer multispektrálny (FRGN/FOCN/FNGB) | Mono (M3M) |
 | --- | --- | --- | --- | --- |
 | **Raw** | Bayerova mozaika (mono: jedno spektrálne pásmo) priamo zo senzora | ✓ | ✓ | ✓ |
-| **Debayered** | Lineárna demosaika: z surového dátového súboru sa odstráni tmavý posun (DSNU) z kalibračného balíka, potom nasleduje demosaika zohľadňujúca okraje — bez korekcie linearity, vyrovnania poľa alebo oddelenia kanálov. Uložené ako 3-kanálový RGB
-
-TIFF
-
-(mono: 1-kanálová škála sivej) | ✓ | ✓ | ✓ |
-| **Náhľad** | Kompletný reťazec zobrazenia (vyváženie bielej + gama podľa profilu fotoaparátu, plus nastavenie „Highlights“ (svetlá) u RGB
-
-fotoaparátu; multispektrálne: rozloženie falošných farieb) | ✓ | ✓ | ✓ |
+| **Debayered** | Lineárna demosaika: z surového dátového súboru sa odstráni tmavý posun (DSNU) z kalibračného balíka, potom nasleduje demosaika zohľadňujúca okraje — bez korekcie linearity, vyrovnania poľa alebo oddelenia kanálov. Uložené ako 3-kanálový RGB TIFF (mono: 1-kanálová škála sivej) | ✓ | ✓ | ✓ |
+| **Náhľad** | Kompletný reťazec zobrazenia (vyváženie bielej + gama podľa profilu fotoaparátu, plus nastavenie „Highlights“ (svetlá) u RGB fotoaparátu; multispektrálne: rozloženie falošných farieb) | ✓ | ✓ | ✓ |
 | **Žiarivosť** | float32 W/m²/sr/nm prostredníctvom úplného radiometrického reťazca | — (neponúka sa) | ✓ | ✓ |
 | **Odrazivosť** | uint16 ρ (32768 = 1,0) | — (nie je k dispozícii) | ✓ — zobrazuje sa len vtedy, ak má kamera svetelný senzor DAQ (vlastný alebo zdedený z jej poľa) | rovnako ako multispektrálne |
 | **Index** | Vykreslenie vegetačného indexu (LUT) | — | ✓ — vyžaduje povolený, neprázdny indexový výraz na kamere a nie je k dispozícii pre členov kombinovaného poľa (pole vlastní jeden zdieľaný index) | — (index vyžaduje ≥2 pásma; pozri [Mono kamery a vegetačné indexy](mono-indices.md)) |
 
-Žiarivosť a odrazivosť sa nikdy neponúkajú pre kamery typu RGB
-
-— žiarivosť na báze Bayerovej matice nemá zmysel pre širokopásmový fotometrický senzor.
+Žiarivosť a odrazivosť sa nikdy neponúkajú pre kamery typu RGB — žiarivosť na báze Bayerovej matice nemá zmysel pre širokopásmový fotometrický senzor.
 
 ### Najrýchlejšie zachytenie
 
@@ -151,15 +123,11 @@ Záznamy sa ukladajú v rámci otvoreného projektu do adresára `<project>/capt
 * **Jedna výnimka, ktorú treba vedieť:** úroveň zobrazenia sa ukladá do priečinka s názvom `preview/`, zatiaľ čo súbory si v názve zachovávajú `_display` — priečinok a prípona sa líšia iba pre túto úroveň.
 * Neznáme úrovne sa ukladajú do zložky s ich vlastným názvom; ak nie je možné vytvoriť podzložku, súbor sa zapíše do koreňového adresára záznamov, namiesto toho, aby sa stratil.
 * TIFF súbory so záznamami sú štandardne bezstratovo komprimované (DEFLATE) a obsahujú svoje úplné metadáta o kalibrácii a spracovaní **priamo v XMP súbore** — snímky sú samopopisné a nemajú žiadne doplnkové súbory okrem súboru `.daq` (a jeho `.daq.cameras.json`).
-* **Masky obmedzenia (novinka vo verzii 1.3.0).**Ak muselo spektrálne oddelenie 3×3 obmedziť pásmo na hodnotu 0 aspoň na jednom pixeli, produkty žiarivosti, odrazivosti a indexu dostanú masku na úrovni jednotlivých pixelov, `clamp_masks/<product folder>/<product name>_clampmask.tif` (bit 0 = pásmo v kanáli R produktu, bit 1 = G, bit 2 = B); na ňu odkazuje XMP tag produktu `Chloros:UnmixClampMask`. Masky sa nachádzajú**vedľa** zložiek produktov, nikdy vo vnútri nich, takže zložku produktu, ako je napríklad `reflectance/`, je možné odovzdať fotogrametrickému softvéru tak, ako je. Vlastný import programu Chloros
-
-masky preskakuje.
+* **Masky obmedzenia (novinka vo verzii 1.3.0).**Ak muselo spektrálne oddelenie 3×3 obmedziť pásmo na hodnotu 0 aspoň na jednom pixeli, produkty žiarivosti, odrazivosti a indexu dostanú masku na úrovni jednotlivých pixelov, `clamp_masks/<product folder>/<product name>_clampmask.tif` (bit 0 = pásmo v kanáli R produktu, bit 1 = G, bit 2 = B); na ňu odkazuje XMP tag produktu `Chloros:UnmixClampMask`. Masky sa nachádzajú**vedľa** zložiek produktov, nikdy vo vnútri nich, takže zložku produktu, ako je napríklad `reflectance/`, je možné odovzdať fotogrametrickému softvéru tak, ako je. Vlastný import programu Chloros masky preskakuje.
 * **Orientácia (1.3.0).** Produkty samostatnej kamery typu Preview, Radiance, Reflectance a Index sa otáčajú podľa nastavenia Mirror/Rotation; súbory Raw a Debayered zostávajú tak, ako ich snímač načítal. Všetky súbory v poli zostávajú v pôvodnom formáte. Každý súbor zaznamenáva toto nastavenie vo svojom XMP, takže pri opätovnom spracovaní sa uplatňuje rovnakým spôsobom.
 * **K akej kamere patrí súbor `.daq` (1.3.0).** `.daq` záznamu sa pri spracovaní priraďuje iba k snímkam z fotoaparátov, ktorých názvy sú uvedené v jeho `.daq.cameras.json`. Samostatná kamera bez vlastného svetelného senzora preto už nevyužíva údaje z inej kamery – priraďte k nej senzor alebo ho zaznamenajte na karte Svetelné senzory. Záznam zo senzora osvetlenia (a akýkoľvek kód `.daq` bez tohto súboru, vrátane starších záznamov) stále slúži pre každú kameru.
 
-Ide o rovnakú štruktúru, akú súbory `chloros-cli lattice capture` / `array-capture` zapisujú do svojho adresára `-o` — zdokumentované v [Referencii CLI
-
-§ Ako vyzerá zložka so záznamami](../reference/cli-reference.md#what-a-captures-folder-looks-like).
+Ide o rovnakú štruktúru, akú súbory `chloros-cli lattice capture` / `array-capture` zapisujú do svojho adresára `-o` — zdokumentované v [Referencii CLI § Ako vyzerá zložka so záznamami](../reference/cli-reference.md#what-a-captures-folder-looks-like).
 
 <!-- SCREENSHOT-NEEDED: OS file explorer showing a real <project>/captures/ folder after a multi-level array capture — the raw/debayered/radiance/reflectance/preview subfolders, the daq/ and clamp_masks/ folders, and sync_<ts>_SN<serial>_<level>.tif filenames visible inside one subfolder. -->
 
@@ -179,11 +147,7 @@ chloros-cli process "C:/ChlorosProjects/MyField/captures"
 Priame pomenovanie podzložky úrovne (napr. `…/captures/raw/`) tiež funguje, ale zložka `daq/` zostane vynechaná – skopírujte ju vedľa, keď-odvádzať radiometrický produkt z `raw/`, inak sa časová pečiatka nebude mať s čím porovnať.
 
 {% hint style="warning" %}
-**Spracovanie vždy začína od `raw`.** V rámci každého záznamu je zdrojom spracovateľského reťazca surový snímok; `debayered`, `radiance`, `reflectance`, a `preview` sa objavujú ako zobrazené režimy, ale nikdy sa nevracajú späť cez potrubie — opätovné spracovanie odvodeného produktu by znamenalo opätovné uplatnenie výpočtov vinetácie, farieb a jasu, ktoré sú už zapracované do jeho pixelov, preto Chloros
-
-uprednostňuje odmietnutie pred dvojitým spracovaním. Rendery `index/` a `composite/` sa vôbec nespracúvajú (sú to výstupy, nie záznamy). Zložka so záznamami uložená **bez** importu surových dát sa zobrazuje normálne, ale `process` ju preskočí a oznámi to; `--input-level {raw,debayered,processed}` je zámerný únikový mechanizmus, ktorý vynúti vstupný bod. Presné správy o preskočení nájdete v [Referencii CLI
-
-](../reference/cli-reference.md#what-a-captures-folder-looks-like).
+**Spracovanie vždy začína od `raw`.** V rámci každého záznamu je zdrojom spracovateľského reťazca surový snímok; `debayered`, `radiance`, `reflectance`, a `preview` sa objavujú ako zobrazené režimy, ale nikdy sa nevracajú späť cez potrubie — opätovné spracovanie odvodeného produktu by znamenalo opätovné uplatnenie výpočtov vinetácie, farieb a jasu, ktoré sú už zapracované do jeho pixelov, preto Chloros uprednostňuje odmietnutie pred dvojitým spracovaním. Rendery `index/` a `composite/` sa vôbec nespracúvajú (sú to výstupy, nie záznamy). Zložka so záznamami uložená **bez** importu surových dát sa zobrazuje normálne, ale `process` ju preskočí a oznámi to; `--input-level {raw,debayered,processed}` je zámerný únikový mechanizmus, ktorý vynúti vstupný bod. Presné správy o preskočení nájdete v [Referencii CLI](../reference/cli-reference.md#what-a-captures-folder-looks-like).
 {% endhint %}
 
 Ďalšie dve správania, ktoré stojí za to poznať pri skriptovaní opätovného spracovania:
@@ -197,9 +161,7 @@ uprednostňuje odmietnutie pred dvojitým spracovaním. Rendery `index/` a `comp
 
 Všetko na tejto stránke je možné ovládať bez grafického rozhrania. Režimy zachytávania v grafickom rozhraní (GUI) priamo zodpovedajú `chloros-cli lattice array-capture`:
 
-| GUI | CLI
-
-|
+| GUI | CLI |
 | --- | --- |
 | Jednorazový | `chloros-cli lattice array-capture` |
 | Nepretržitý | `array-capture --continuous [--count N] [--duration S]` |
@@ -210,6 +172,4 @@ Všetko na tejto stránke je možné ovládať bez grafického rozhrania. Režim
 | Nahrávanie indexového videa | `chloros-cli lattice array-record` |
 | Nahrávanie surových sériových snímok / Vytvorenie videa | `chloros-cli lattice array-burst` / `array-build-video` |
 
-Úplné tabuľky príznakov, možnosť inteligentného automatického nastavenia expozície (smart-AE) (`--smart`) a model s konštantnou rýchlosťou sú uvedené v [Referencii CLI
-
-, § Režimy snímania, záznamníky a offline spracovanie](../reference/cli-reference.md#capture-modes-recorders--offline-reprocess).
+Úplné tabuľky príznakov, možnosť inteligentného automatického nastavenia expozície (smart-AE) (`--smart`) a model s konštantnou rýchlosťou sú uvedené v [Referencii CLI, § Režimy snímania, záznamníky a offline spracovanie](../reference/cli-reference.md#capture-modes-recorders--offline-reprocess).

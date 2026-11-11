@@ -1,7 +1,6 @@
 # Dokončenie spracovania
 
-Akonáhle program Chloros
-dokončí spracovanie, je čas skontrolovať výsledky, overiť kvalitu výstupu a pripraviť spracované obrázky na použitie vo vašom pracovnom postupe. Táto stránka vás prevedie záverečnými krokmi a ďalšími úkonmi.
+Akonáhle program Chloros dokončí spracovanie, je čas skontrolovať výsledky, overiť kvalitu výstupu a pripraviť spracované obrázky na použitie vo vašom pracovnom postupe. Táto stránka vás prevedie záverečnými krokmi a ďalšími úkonmi.
 
 ## Indikácia dokončenia spracovania
 
@@ -13,10 +12,7 @@ Po úspešnom dokončení spracovania sa zobrazia viaceré indikátory:
 * ✅ **Výstupné súbory**: Všetky spracované snímky sú uložené vo výstupnej štruktúre projektu (nižšie)
 
 {% hint style="warning" %}
-**Cyklus, pri ktorom sa nezapíšu žiadne snímky, sa považuje za neúspešný.** Ak ste požiadali o obrazové produkty a beh nezaznamenal žiadny, Chloros
-to nahlási ako zlyhanie — `[RUN-SUMMARY]` v názve protokolu naznačuje pravdepodobnú príčinu (nebolo importované nič, nebol detekovaný žiadny cieľ alebo boli všetky požadované produkty preskočené ako nepoužiteľné). Ekvivalent v CLI
-ukončí beh s nenulovým kódom. Úmyselné spustenie iba s metadátami (všetky exportované produkty vypnuté, žiadne indexy) sa stále považuje za úspešné. Pozrite si [Referenčnú príručku k CLI
-](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
+**Cyklus, pri ktorom sa nezapíšu žiadne snímky, sa považuje za neúspešný.** Ak ste požiadali o obrazové produkty a beh nezaznamenal žiadny, Chloros to nahlási ako zlyhanie — `[RUN-SUMMARY]` v názve protokolu naznačuje pravdepodobnú príčinu (nebolo importované nič, nebol detekovaný žiadny cieľ alebo boli všetky požadované produkty preskočené ako nepoužiteľné). Ekvivalent v CLI ukončí beh s nenulovým kódom. Úmyselné spustenie iba s metadátami (všetky exportované produkty vypnuté, žiadne indexy) sa stále považuje za úspešné. Pozrite si [Referenčnú príručku k CLI](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
 {% endhint %}
 
 ***
@@ -48,10 +44,8 @@ Výstupy sú uložené **v zložke projektu, zoskupené podľa fotoaparátu a n�
         └── Radiance_Images/             # float32 radiance always lands here
 ```
 
-* **Zložka fotoaparátu**: `LATT-<sensor>-<lens>-F<filter>` pre LATTICE (zodpovedá EXIF záznamu `Model`), `<model>_<filter>` pre Survey3
-(napr. `Survey3N_RGN`). Dve kamery, ktoré majú spoločný snímač a filter, ale líšia sa objektívom, majú oddelené stromy — líšia sa vinetáciou, zorným poľom a skreslením.
-* **Formát zložky**: riadi sa nastavením formátu exportu — `tiff16`, `tiff8`, `png8`, `jpg8`, alebo `tiff32` pre formát TIFF
-(32-bitový, v percentách). Radiance má vždy typ float32 a vždy sa nachádza pod `tiff32`.
+* **Zložka fotoaparátu**: `LATT-<sensor>-<lens>-F<filter>` pre LATTICE (zodpovedá EXIF záznamu `Model`), `<model>_<filter>` pre Survey3 (napr. `Survey3N_RGN`). Dve kamery, ktoré majú spoločný snímač a filter, ale líšia sa objektívom, majú oddelené stromy — líšia sa vinetáciou, zorným poľom a skreslením.
+* **Formát zložky**: riadi sa nastavením formátu exportu — `tiff16`, `tiff8`, `png8`, `jpg8`, alebo `tiff32` pre formát TIFF (32-bitový, v percentách). Radiance má vždy typ float32 a vždy sa nachádza pod `tiff32`.
 * **Zložky produktov**:
   * `Reflectance_Calibrated_Images/` — kalibrovaná odrazivosť
   * `Debayered_Images/` — lineárne odstránenie bayesovského efektu (LATTICE): odstránený tmavý posun a demosaic, bez vyrovnávacieho poľa ani oddeľovania kanálov, v pôvodnej orientácii senzora
@@ -70,8 +64,7 @@ Výstupy sú uložené **v zložke projektu, zoskupené podľa fotoaparátu a n�
 
 ### Koľko súborov by malo byť?
 
-Nepočítajte podľa vzorca — počet výstupov závisí od toho, ktoré produkty boli aktivované a ktoré sa vzťahujú na jednotlivé kamery (napr. kamery RGB
-nemajú žiarivosť/odrazivosť). Konečný počet je uvedený v protokole: posledný riadok `[RUN-SUMMARY]` uvádza presný počet súborov, ktoré boli zapísané, a riadky s poznámkami vysvetľujú všetko, čo bolo vynechané.
+Nepočítajte podľa vzorca — počet výstupov závisí od toho, ktoré produkty boli aktivované a ktoré sa vzťahujú na jednotlivé kamery (napr. kamery RGB nemajú žiarivosť/odrazivosť). Konečný počet je uvedený v protokole: posledný riadok `[RUN-SUMMARY]` uvádza presný počet súborov, ktoré boli zapísané, a riadky s poznámkami vysvetľujú všetko, čo bolo vynechané.
 
 ***
 
@@ -79,8 +72,7 @@ nemajú žiarivosť/odrazivosť). Konečný počet je uvedený v protokole: posl
 
 ### Rýchly náhľad v Průzkumníku súborov
 
-**Vstavaný náhľad v systéme Windows
-:**
+**Vstavaný náhľad v systéme Windows:**
 
 1. Prejdite do priečinka s produktom (napr. `tiff16/Reflectance_Calibrated_Images/`)
 2. Vyberte obrazový súbor
@@ -91,20 +83,15 @@ nemajú žiarivosť/odrazivosť). Konečný počet je uvedený v protokole: posl
 ### Náhľad v externých prehliadačoch obrázkov
 
 **Odporúčané prehliadače:*** **QGIS** – bezplatný GIS softvér (najlepší pre georeferencovanú multispektrálnu analýzu)
-* **IrfanView** – rýchly a nenáročný prehliadač obrázkov (podporuje formát TIFF
-)
-* **Adobe Photoshop** – profesionálna úprava obrázkov (podpora formátu TIFF
-)
+* **IrfanView** – rýchly a nenáročný prehliadač obrázkov (podporuje formát TIFF)
+* **Adobe Photoshop** – profesionálna úprava obrázkov (podpora formátu TIFF)
 * **GIMP** – bezplatná alternatíva k programu Photoshop
-* **Windows
-Photos** – základné prezeranie (nemusí podporovať 16-bitový formát TIFF
-)
+* **Windows Photos** – základné prezeranie (nemusí podporovať 16-bitový formát TIFF)
 
 ### Náhľad v prehliadači obrázkov Chloros
 
 
-Na pokročilú vizualizáciu použite integrovaný prehliadač obrázkov Chloros
-:
+Na pokročilú vizualizáciu použite integrovaný prehliadač obrázkov Chloros:
 
 1. Kliknite na miniatúru obrázku v prehliadači súborov
 2. Obrázok sa otvorí v hlavnej oblasti náhľadu
@@ -123,9 +110,7 @@ Odrazivosť je uložená ako celé číslo DN a **hodnota DN, ktorá zodpovedá 
 | Zdroj          | ρ = 1,0 je | Ako zistiť                                        |
 | --------------- | ---------- | -------------------------------------------------- |
 | LATTICE (M3C/M3M) | **32768** (rezerva až do ρ 2,0) | Súbor je označený značkou XMP `Chloros:PixelScale=32768` |
-| Survey3
-         | **65535** (obmedzené na ρ 1,0)     | Žiadna značka `Chloros:PixelScale` — táto absencia je signálom (produkty Survey3
-obsahujú iné značky spracovania typu `Chloros:*`) |
+| Survey3          | **65535** (obmedzené na ρ 1,0)     | Žiadna značka `Chloros:PixelScale` — táto absencia je signálom (produkty Survey3 obsahujú iné značky spracovania typu `Chloros:*`) |
 
 **Prečítajte značku `Chloros:PixelScale` a vydelte ňou** namiesto toho, aby ste predpokladali paušálnu hodnotu 65535 — vydelením odrazivosti LATTICE číslom 65535 sa každá hodnota bez upozornenia zníži na polovicu. Súbor odrazivosti z verzie pred 1.3.0, ktorý bol zapísaný ako 8-bitový, bol orezaný, nie preškálovaný, a nemá značku mierky: namiesto delenia ho znovu exportujte v 16-bitovom alebo 32-bitovom formáte. Podrobnosti nájdete v časti [Formáty výstupných obrázkov](../output-image-formats.md).***
 
@@ -153,11 +138,9 @@ poškodzuje výstup LATTICE) a súbory `ExifImageWidth` / `ExifImageHeight` sú 
 pretože opisujú pôvodný záznam — export, ktorého veľkosť bola zmenená, by inak
 uvádzal rozmery, ktoré sú v rozpore s jeho vlastným rastrovým obrazom.
 
-Chloros
-tiež zapisuje vlastné XMP značky typu `Chloros:*`, ktoré opisujú, čo sa s každým produktom vykonalo
+Chloros tiež zapisuje vlastné XMP značky typu `Chloros:*`, ktoré opisujú, čo sa s každým produktom vykonalo
 (napríklad `Chloros:ProcessingLevel`, `Chloros:CalibrationApplied`,
-`Chloros:VignetteCorrected`). Od verzie 1.3.0 ich produkty Survey3
-obsahujú v každom režime spracovania
+`Chloros:VignetteCorrected`). Od verzie 1.3.0 ich produkty Survey3 obsahujú v každom režime spracovania
 režime, indexové produkty opisujú samotný index (`Chloros:ProcessingLevel=index`,
 vzorec a to, či bol vypočítaný na základe odrazivosti alebo žiarivosti) namiesto opakovania
 značiek zdrojových surových dát, a produkty v priečinkoch s názvami dlhšími ako 260 znakov si zachovávajú svoje metadáta
@@ -174,23 +157,17 @@ tiež. Pozrite si [Formáty výstupných obrázkov](../output-image-formats.md#i
 2. Prejdite správami
 3. Hľadajte žlté varovania alebo červené chyby
 4. Prečítajte si riadky `[RUN-SUMMARY]` a prípadné rady
-5. Kontaktujte podporu MAPIR
-, ak potrebujete pomoc
+5. Kontaktujte podporu MAPIR, ak potrebujete pomoc
 
 ### Uloženie protokolu
 
-Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR
-:
+Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 1. Kliknite na tlačidlo **„Kopírovať“**alebo**„Stiahnuť“**
 
 2. Uložte ako textový súbor do priečinka projektu
 3. Priložte k dokumentácii projektu
-4. V prípade problémov ho pošlite podpore MAPIR
-
-
-Ak chcete nahlásiť problém priamo spoločnosti MAPIR
-, použite ikonu chyby (**Nahlásiť chybu**) v hornej časti karty Debug Log — pozrite si [Nahlásenie chyby z karty protokolu](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+4. V prípade problémov ho pošlite podpore MAPIR Ak chcete nahlásiť problém priamo spoločnosti MAPIR, použite ikonu chyby (**Nahlásiť chybu**) v hornej časti karty Debug Log — pozrite si [Nahlásenie chyby z karty protokolu](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
 
 ## Bežné problémy s výstupom a ich riešenia
 
@@ -198,8 +175,7 @@ Ak chcete nahlásiť problém priamo spoločnosti MAPIR
 
 **Možné príčiny:**
 
-* Produkt sa na danú kameru nevzťahuje (napr. radiancia/reflektancia pre RGB
-kamery — uvádza sa to v protokole)
+* Produkt sa na danú kameru nevzťahuje (napr. radiancia/reflektancia pre RGB kamery — uvádza sa to v protokole)
 * Chýbala povinná referencia (napr. odrazivosť bez cieľa a bez `.daq` dopadu lúčov smerom nadol)
 * Zaškrtávacie políčko pre export produktu bolo v nastaveniach projektu deaktivované
 * Počas exportu došlo k vyčerpaniu miesta na disku
@@ -243,11 +219,9 @@ kamery — uvádza sa to v protokole)
 3. Skontrolujte kvalitu snímok cieľov
 4. Spustite spracovanie znovu so správne označenými cieľmi
 
-### Problém: Hodnoty NDVI
-sa zdajú nesprávne
+### Problém: Hodnoty NDVI sa zdajú nesprávne
 
-**Očakávané rozsahy hodnôt NDVI
-:*** **Voda, skaly, pôda**: -0,1 až 0,2
+**Očakávané rozsahy hodnôt NDVI:*** **Voda, skaly, pôda**: -0,1 až 0,2
 * **Riedka/nezdravá vegetácia**: 0,2 až 0,4
 * **Stredná vegetácia**: 0,4 až 0,6
 * **Zdravá, hustá vegetácia**: 0,6 až 0,9**Ak sú hodnoty mimo týchto rozsahov:**
@@ -274,8 +248,7 @@ sa zdajú nesprávne
    * WebODM
 2. **Zachovajte metadáta EXIF**: Uistite sa, že sú zachované údaje GPS pre geotagovanie
 3. **Kalibrované pracovné postupy**: Používajte snímky odrazivosti pre vedeckú presnosť — odrazivosť LATTICE obsahuje kalibračné značky XMP, ktoré Pix4D číta
-4. **Spracujte indexové mozaiky**: Vytvorte ortomozaiky NDVI
-z jednotlivých indexových snímok
+4. **Spracujte indexové mozaiky**: Vytvorte ortomozaiky NDVI z jednotlivých indexových snímok
 5. **Exportujte georeferencované súbory GeoTIFF**: Na použitie v aplikáciách GIS
 
 ### Pre analýzu v GIS
@@ -284,11 +257,8 @@ z jednotlivých indexových snímok
 
 1.**Načítajte do QGIS, ArcGIS alebo podobného programu**
 
-2.**Použite 16-bitové TIFF
-** snímky odrazivosti na multispektrálnu analýzu (vydelite hodnotou `Chloros:PixelScale` uvedenou v súbore)
-3. **Použite indexové snímky** (NDVI
-, NDRE
-) ako pripravené vrstvy vegetácie
+2.**Použite 16-bitové TIFF** snímky odrazivosti na multispektrálnu analýzu (vydelite hodnotou `Chloros:PixelScale` uvedenou v súbore)
+3. **Použite indexové snímky** (NDVI, NDRE) ako pripravené vrstvy vegetácie
 4. **Rastrový kalkulátor**: Kombinujte pásma pre vlastnú analýzu
 5. **Export**: Vytvorte klasifikačné mapy, detekciu zmien, mapy zdravotného stavu vegetácie
 
@@ -297,8 +267,7 @@ z jednotlivých indexových snímok
 **Odporúčaný postup:**
 
 1.**Použite indexové snímky s farbami LUT** pre vizuálne správy
-2. **Extrahujte štatistiky**: Priemerná hodnota NDVI
-na pole/parcelu
+2. **Extrahujte štatistiky**: Priemerná hodnota NDVI na pole/parcelu
 3. **Časové rady**: Porovnávajte indexy medzi viacerými sedeniami
 4. **Vytvorte správy**: Zahrňte mapy, štatistiky a vizualizácie***
 
@@ -335,27 +304,17 @@ V prípade viacerých sedení/datasetov:**Možnosť 1: Grafické rozhranie (GUI)
 * Použite konzistentné nastavenia šablóny
 * Spracúvajte po jednom
 
-**Možnosť 2: Chloros
-CLI
-(len Chloros
-+)**
+**Možnosť 2: Chloros CLI (len Chloros+)**
 
 * Automatizujte hromadné spracovanie
 * Spracúvajte viacero zložiek pomocou skriptov
-* Pozrite si [Dokumentáciu CLI
-](../CLI.md) a [Referenciu CLI
-](../reference/cli-reference.md)
+* Pozrite si [Dokumentáciu CLI](../CLI.md) a [Referenciu CLI](../reference/cli-reference.md)
 
-**Možnosť 3: Python
-SDK
-(len Chloros
-+)**
+**Možnosť 3: Python SDK (len Chloros+)**
 
 * Programové ovládanie
 * Integrácia s analytickými postupmi
-* Pozrite si [Dokumentáciu k API
-](../api-python-sdk.md) a [Referenčnú príručku k SDK
-](../reference/sdk-reference.md)
+* Pozrite si [Dokumentáciu k API](../api-python-sdk.md) a [Referenčnú príručku k SDK](../reference/sdk-reference.md)
 
 ***
 
@@ -386,15 +345,13 @@ Ak narazíte na problémy:
 * 📧 **E-mail**: info@mapir.camera (priložte ladiaci protokol)
 * 🌐 **Podpora**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **Často kladené otázky**: [Často kladené otázky](../faq.md)
-* 📖 **Dokumentácia**: [Príručka k programu Chloros
-](../)
+* 📖 **Dokumentácia**: [Príručka k programu Chloros](../)
 
 ***
 
 ## Zhrnutie: Kompletný pracovný postup
 
-Teraz ste dokončili celý pracovný postup spracovania v Chloros
-:
+Teraz ste dokončili celý pracovný postup spracovania v Chloros:
 
 1. ✅ **Vytvorili ste projekt** – pozrite si [Projekty](../projects.md)
 2. ✅ **Pridali ste súbory** – pozrite si [Pridávanie súborov](adding-files-to-a-project.md)
@@ -417,11 +374,8 @@ Teraz ste dokončili celý pracovný postup spracovania v Chloros
 ### Automatizácia a integrácia
 
 * [**Dokumentácia CLI**](../CLI.md) – Hromadné spracovanie z príkazového riadku
-* [**Python
-SDK
-**](../api-python-sdk.md) – Programová automatizácia
-* [**Funkcie Chloros
-+**](../#chloros) – Pokročilé možnosti spracovania
+* [**Python SDK**](../api-python-sdk.md) – Programová automatizácia
+* [**Funkcie Chloros+**](../#chloros) – Pokročilé možnosti spracovania
 
 ### Podpora a vzdelávanie
 

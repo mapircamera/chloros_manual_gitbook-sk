@@ -165,7 +165,7 @@ $$
 
 V grafickom rozhraní (GUI) a v zozname predvolieb CLI/SDK je to symbolický vzorec `(z/y)*(x/y)`, kde x = Red, y = Green, z = NIR (pásma kamery typu RGN); prednastavenie indexového modulu LATTICE je `nir * red / green**2`. Každá plocha vypočíta rovnaký index.
 
-_Referencia: Vincini, M., E. Frazzi a P. D&#x27;Alessio. „Širokopásmový index vegetácie založený na chlorofyle listov v mierke korún stromov.“ Precision Agriculture 9 (2008): 303–319._
+_Referencia: Vincini, M., E. Frazzi a P. D'Alessio. „Širokopásmový index vegetácie založený na chlorofyle listov v mierke korún stromov.“ Precision Agriculture 9 (2008): 303–319._
 
 ***
 
@@ -207,7 +207,7 @@ $$
 
 Lesnaté oblasti budú mať nižšie hodnoty FCI1 kvôli nižšej odrazivosti stromov a prítomnosti tieňov v korunách stromov.
 
-_Referencia: Becker, Sarah J., Craig S.T. Daughtry a Andrew L. Russ. „Robustné indexy lesného porastu pre multispektrálne snímky.“ Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505–512._
+_Referencia: Becker, Sarah J., Craig S.T. Daughtry a Andrew L. Russ. „Robustné indexy lesného porastu pre multispektrálne snímky.“ Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505–512._
 
 ***
 
@@ -223,7 +223,7 @@ $$
 
 Lesnaté oblasti budú mať nižšie hodnoty FCI2 kvôli nižšej odrazivosti stromov a prítomnosti tieňov v korunách stromov.
 
-_Referencia: Becker, Sarah J., Craig S.T. Daughtry a Andrew L. Russ. „Robustné indexy lesného porastu pre multispektrálne snímky.“ Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505–512._
+_Referencia: Becker, Sarah J., Craig S.T. Daughtry a Andrew L. Russ. „Robustné indexy lesného porastu pre multispektrálne snímky.“ Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505–512._
 
 ***
 
@@ -489,7 +489,7 @@ $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_Referencia: Bannari, A., H. Asalhi a P. Teillet. „Transformovaný index rozdielu vegetácie (TDVI) pre mapovanie vegetačného pokrytia“ V zborníku z konferencie Geoscience and Remote Sensing Symposium, IGARSS &#x27;02, IEEE International, zväzok 5 (2002)._
+_Referencia: Bannari, A., H. Asalhi a P. Teillet. „Transformovaný index rozdielu vegetácie (TDVI) pre mapovanie vegetačného pokrytia“ V zborníku z konferencie Geoscience and Remote Sensing Symposium, IGARSS '02, IEEE International, zväzok 5 (2002)._
 
 ***
 

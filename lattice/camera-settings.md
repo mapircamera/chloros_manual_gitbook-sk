@@ -1,12 +1,8 @@
 # Nastavenia kamier
 
-Karta **Kamery** je ovládací panel aplikácie Chloros
+Karta **Kamery** je ovládací panel aplikácie Chloros pre kamery LATTICE: hlavná oblasť so živým obrazom, kde sa každá pripojená kamera zobrazuje ako živá dlaždica, a bočný panel, ktorý sa prepína medzi tromi stránkami — **zoznamom kamier**,**paneli nastavení**(nastavenia pre jednotlivé kamery, pole kamier alebo nastavenia snímania – vždy jedno po druhom) a**kalkulátor indexu**. Táto stránka popisuje všetky ovládacie prvky v zozname kamier, v paneli nastavení pre jednotlivé kamery a v paneli nastavení poľa kamier. Režimy snímania, výber typu exportu a postup „Zachytiť všetko“ sa nachádzajú na sprievodnej stránke [Nastavenia a režimy snímania](capture.md).
 
-pre kamery LATTICE: hlavná oblasť so živým obrazom, kde sa každá pripojená kamera zobrazuje ako živá dlaždica, a bočný panel, ktorý sa prepína medzi tromi stránkami — **zoznamom kamier**,**paneli nastavení**(nastavenia pre jednotlivé kamery, pole kamier alebo nastavenia snímania – vždy jedno po druhom) a**kalkulátor indexu**. Táto stránka popisuje všetky ovládacie prvky v zozname kamier, v paneli nastavení pre jednotlivé kamery a v paneli nastavení poľa kamier. Režimy snímania, výber typu exportu a postup „Zachytiť všetko“ sa nachádzajú na sprievodnej stránke [Nastavenia a režimy snímania](capture.md).
-
-Karta „Kamery“ sa zobrazí v bočnom paneli, akonáhle je backend Chloros
-
-pripravený. Všetky nižšie uvedené ovládacie prvky komunikujú s lokálnym backendom cez `127.0.0.1:5000`; zmeny sa okamžite prejavia v živom obraze kamery, pokiaľ nie je uvedené inak.
+Karta „Kamery“ sa zobrazí v bočnom paneli, akonáhle je backend Chloros pripravený. Všetky nižšie uvedené ovládacie prvky komunikujú s lokálnym backendom cez `127.0.0.1:5000`; zmeny sa okamžite prejavia v živom obraze kamery, pokiaľ nie je uvedené inak.
 
 ## Typy kamier používané na tejto stránke
 
@@ -14,40 +10,12 @@ Ovládacie prvky sa zobrazujú alebo skryjú v závislosti od toho, aký typ kam
 
 | Pojem | Význam | Kanály filtra |
 | --- | --- | --- |
-| **RGB
-
-kamera** | LATTICE M3C s filtrom FRGB (model obsahuje `-FRGB`) | Red
-
-/ Green
-
-/ Blue
-
-|
-| **Multispektrálna kamera typu Bayer** | LATTICE M3C s filtrom FRGN, FOCN alebo FNGB | FRGN: Red
-
-/ Green
-
-/ NIR
-
-· FOCN: Orange
-
-/ Cyan
-
-/ NIR
-
-· FNGB: NIR
-
-/ Green
-
-/ Blue
-
-|
+| **RGB kamera** | LATTICE M3C s filtrom FRGB (model obsahuje `-FRGB`) | Red / Green / Blue |
+| **Multispektrálna kamera typu Bayer** | LATTICE M3C s filtrom FRGN, FOCN alebo FNGB | FRGN: Red / Green / NIR · FOCN: Orange / Cyan / NIR · FNGB: NIR / Green / Blue |
 | **Mono (M3M)** | LATTICE M3M — jeden úzkopásmový filter, jedno kalibrované pásmo | Jedno pásmo |
 | **Člen poľa** | Kamera pripojená ako súčasť synchronizovaného poľa (kombinované alebo samostatné zobrazenie) | Podľa svojho filtra |
 
-Kamery RGB
-
-prechádzajú fotometrickým spracovaním (vyváženie bielej, farebné profily, gama); multispektrálne a mono kamery prechádzajú radiometrickým reťazcom a preskakujú fotometrické nastavenia. Členovia poľa odovzdávajú nastavenia na úrovni streamu (formát pixelov, rozlíšenie, binning, spúšť, snímková frekvencia) do poľa — tieto riadky sa v paneli pre jednotlivé kamery stanú iba na čítanie a presunú sa do panela nastavení poľa.
+Kamery RGB prechádzajú fotometrickým spracovaním (vyváženie bielej, farebné profily, gama); multispektrálne a mono kamery prechádzajú radiometrickým reťazcom a preskakujú fotometrické nastavenia. Členovia poľa odovzdávajú nastavenia na úrovni streamu (formát pixelov, rozlíšenie, binning, spúšť, snímková frekvencia) do poľa — tieto riadky sa v paneli pre jednotlivé kamery stanú iba na čítanie a presunú sa do panela nastavení poľa.
 
 ## Hlavná oblasť prenosu
 
@@ -55,9 +23,7 @@ prechádzajú fotometrickým spracovaním (vyváženie bielej, farebné profily,
 
 <!-- SCREENSHOT-NEEDED: Cameras tab with 2+ cameras connected in grid view — live tiles visible with name and fps overlays, sidebar camera list open on the right. -->
 
-Ak nie sú pripojené žiadne kamery, v oblasti prenosu sa zobrazí úvodná obrazovka **„Pripojte kameru a začnite“**s dvoma tlačidlami:**Pripojiť kameru**(zelené, otvorí dialógové okno na pripojenie jednej kamery) a**Pripojiť pole** (modré, otvorí dialógové okno na pripojenie poľa). Samotné dialógové okná na pripojenie sú zdokumentované v [Pripájanie kamier](connecting.md); pojmy týkajúce sa poľa (synchronizácia, vrstvy, šírka pásma) v [Súbory viacerých kamier](arrays.md). Keď otvoríte uložený projekt, ktorý obsahuje kamery, na úvodnej obrazovke sa namiesto toho zobrazí ikona načítavania s textom „Znovu otváranie N uložených kamier…“, kým Chloros
-
-obnovuje prúdy z poslednej relácie.
+Ak nie sú pripojené žiadne kamery, v oblasti prenosu sa zobrazí úvodná obrazovka **„Pripojte kameru a začnite“**s dvoma tlačidlami:**Pripojiť kameru**(zelené, otvorí dialógové okno na pripojenie jednej kamery) a**Pripojiť pole** (modré, otvorí dialógové okno na pripojenie poľa). Samotné dialógové okná na pripojenie sú zdokumentované v [Pripájanie kamier](connecting.md); pojmy týkajúce sa poľa (synchronizácia, vrstvy, šírka pásma) v [Súbory viacerých kamier](arrays.md). Keď otvoríte uložený projekt, ktorý obsahuje kamery, na úvodnej obrazovke sa namiesto toho zobrazí ikona načítavania s textom „Znovu otváranie N uložených kamier…“, kým Chloros obnovuje prúdy z poslednej relácie.
 
 <!-- SCREENSHOT-NEEDED: Cameras tab empty state — the "Connect a camera to get started" splash with the green Connect Camera and blue Connect Array buttons. -->
 
@@ -122,17 +88,11 @@ Otvoríte ho kliknutím na **ozubené koliesko** v riadku kamery. Panel sa posun
 
 ### Živý histogram
 
-V hornej časti panela sa nachádza živý histogram jasu vypočítaný z náhľadu vo formáte JPEG
+V hornej časti panela sa nachádza živý histogram jasu vypočítaný z náhľadu vo formáte JPEG pri frekvencii ~8 Hz. Priemer je vážený podľa Bayerovho algoritmu — (R+2G+B)/4 — aby zodpovedal vlastnému meraniu automatického nastavenia expozície (AE) kamery.
 
-pri frekvencii ~8 Hz. Priemer je vážený podľa Bayerovho algoritmu — (R+2G+B)/4 — aby zodpovedal vlastnému meraniu automatického nastavenia expozície (AE) kamery.
-
-* **Oranžová prerušovaná čiara** = cieľ automatického nastavenia expozície (Orange
-
-). **Presuňte ju vodorovne na zmenu cieľa** — pri uvoľnení sa odošle jeden príkaz a ťahaním sa režim cieľa automatického nastavenia expozície prepne na manuálny.
+* **Oranžová prerušovaná čiara** = cieľ automatického nastavenia expozície (Orange). **Presuňte ju vodorovne na zmenu cieľa** — pri uvoľnení sa odošle jeden príkaz a ťahaním sa režim cieľa automatického nastavenia expozície prepne na manuálny.
 * **Zelená súvislá čiara** = skutočná priemerná luma (to, čo automatické nastavenie expozície aktuálne poskytuje).
-* **Tlačidlo RGB** (vpravo hore): prepína prekrývacie histogramy jednotlivých pásiem sfarbené podľa filtra fotoaparátu (napr. pri FRGN: šedá NIR
-
-, zelená, červená). Na monochromatických (M3M) fotoaparátoch je na tlačidle nápis „MONO“ a je deaktivované — monochromatický režim vždy zobrazuje jednopásmový histogram jasu.
+* **Tlačidlo RGB** (vpravo hore): prepína prekrývacie histogramy jednotlivých pásiem sfarbené podľa filtra fotoaparátu (napr. pri FRGN: šedá NIR, zelená, červená). Na monochromatických (M3M) fotoaparátoch je na tlačidle nápis „MONO“ a je deaktivované — monochromatický režim vždy zobrazuje jednopásmový histogram jasu.
 * Popisky na osi X zodpovedajú bitovej hĺbke senzora aktuálneho formátu pixelov: 0..255, 0..1023, 0..4095 alebo 0..65535.
 
 ### Riadky
@@ -144,56 +104,22 @@ s informáciami o kamere
 | Riadok | Správanie |
 | --- | --- |
 | **Model** | Iba na čítanie (napr. `LATT-M3C-L87-FRGN`). |
-| **Radiometrická kalibrácia** | Green
-
-á **„Aktívna“**ikona s popisom zobrazujúcim úroveň kalibrácie, hash, dátum kalibrácie a zoznam pásiem, načítanými z kalibračného balíka kamery (pozri [Továrenská radiometrická kalibrácia](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration)).**Skryté pre kamery typu RGB
-
-** — disponujú fotometrickou kalibráciou vyváženia bielej, nie radianciou pre jednotlivé pásma. |
-| **Správa o kalibrácii**| Tlačidlo**Stiahnuť** — otvorí PDF certifikát NIST o kalibrácii kamery podľa sériového čísla vo prehliadači vášho operačného systému. Ak certifikát ešte nie je uložený v cache, Chloros
-
-namiesto toho zobrazí upozornenie. |
+| **Radiometrická kalibrácia** | Green **„Aktívna“**ikona s popisom zobrazujúcim úroveň kalibrácie, hash, dátum kalibrácie a zoznam pásiem, načítanými z kalibračného balíka kamery (pozri [Továrenská radiometrická kalibrácia](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration)).**Skryté pre kamery typu RGB** — disponujú fotometrickou kalibráciou vyváženia bielej, nie radianciou pre jednotlivé pásma. |
+| **Správa o kalibrácii**| Tlačidlo**Stiahnuť** — otvorí PDF certifikát NIST o kalibrácii kamery podľa sériového čísla vo prehliadači vášho operačného systému. Ak certifikát ešte nie je uložený v cache, Chloros namiesto toho zobrazí upozornenie. |
 | **Sériové číslo** | Iba na čítanie. |
 | **Firmware**| Zobrazuje aktuálnu verziu, potom vyhľadá dostupnú verziu pre tento model (uloženú v cache podľa modelu — skupina N kamier skontroluje server len raz). Stavy: „Kontroluje sa…“ → tlačidlo**„Aktualizovať na X“**→ „Aktualizuje sa…“ → „Aktualizované z A na B“ / „Zlyhalo: …“ / „Preskočené: …“ / zelené**„Aktuálne“**. Popis tlačidla aktualizácie: „Obnovenie továrenských nastavení + aktualizácia firmvéru + preprogramovanie UserSet1. ~2–3 minúty; neodpájajte.“ |
 | **IP** | Iba na čítanie. |
 | **Teplota** | Iba na čítanie, aktualizuje sa každé 3 s. Pri ≥65 °C svieti oranžovo a pri ≥75 °C červeno so symbolom ⚠. |
-| **Kalibračný cieľ** zaškrtávacie políčko | Aktivuje detekciu cieľa odrazivosti ArUco s validačnou tabuľkou NDVI
-
-pre každý panel pod živým prenosom (zobrazenie zoznamu) — pozri [Tabuľka kalibračného cieľa](#the-calibration-target-table). Platí len pre danú reláciu — vždy sa otvára v vypnutom stave. |
+| **Kalibračný cieľ** zaškrtávacie políčko | Aktivuje detekciu cieľa odrazivosti ArUco s validačnou tabuľkou NDVI pre každý panel pod živým prenosom (zobrazenie zoznamu) — pozri [Tabuľka kalibračného cieľa](#the-calibration-target-table). Platí len pre danú reláciu — vždy sa otvára v vypnutom stave. |
 | Rozbaľovacie menu **Svetelný senzor** | Priradí svetelný senzor DAQ (DAQ-E/M/U, zo zoznamu na karte Svetelné senzory) k tejto kamere na účely korekcie osvetlenia smerom nadol (DLS) a prediktívnej automatickej expozície. „Voľba „Žiadny“ zruší priradenie. Ak nie sú pripojené žiadne senzory, v roletovom menu sa zobrazí „(žiadne senzory nie sú pripojené — otvorte kartu DAQ)“. Priradenie sa uloží spolu s projektom. |
 
 #### Tabuľka kalibračných terčov
 
 Táto tabuľka slúži **len na overenie** („len na overenie — nemení kalibráciu“). V jej hlavičke sú uvedené sériové číslo kamery, filter, číslo terča a veľkosť značky v pixeloch, pričom každý panel má jeden riadok:
 
-* **Panel**, potom jeden stĺpec na každé pásmo s hodnotou panelu — kamera typu Bayer zobrazuje svoje tri pásma podľa názvu a vlnovej dĺžky (napr. FRGN: Red
-
-660 nm / Green
-
-550 nm / NIR
-
-850 nm); **monochromatická (M3M) kamera zobrazuje svoje jediné pásmo** (napr. `F750`) a nemá stĺpce NDVI
-
-.
+* **Panel**, potom jeden stĺpec na každé pásmo s hodnotou panelu — kamera typu Bayer zobrazuje svoje tri pásma podľa názvu a vlnovej dĺžky (napr. FRGN: Red 660 nm / Green 550 nm / NIR 850 nm); **monochromatická (M3M) kamera zobrazuje svoje jediné pásmo** (napr. `F750`) a nemá stĺpce NDVI.
 * **Sat** — podiel pixelov panelu, ktoré sú nasýtené (jantárová farba od 1 %, červená od 5 %).
-* **NDVI
-
-Meas**,**NDVI
-
-Theo** (referenčná odrazivosť NDVI
-
-panelu) a **Δ**— iba multispektrálne kamery typu Bayer. Malá značka za „NDVI
-
-Meas“ udáva, z čoho bol nameraný NDVI
-
-vypočítaný:**ρ**(odrazivosť — je k dispozícii hodnota zo svetelného senzora),**L**(svetelná intenzita — žiadna hodnota zo svetelného senzora) alebo**DN**(surové hodnoty kamery). Iba**ρ** NDVI
-
-je porovnateľné s NDVI
-
-Theo: pre L a DN je stĺpec Δ sivý a poznámka to uvádza („Chýba údaj zo svetelného senzora: NDVI
-
-je vypočítané zo žiarivosti, preto Δ neslúži na kontrolu kalibrácie“ / „NDVI
-
-je vypočítané zo surových hodnôt kamery, preto Δ neslúži na kontrolu kalibrácie“). Pri hodnote ρ je Δ zelené pri hodnote pod 0,02, oranžové pri hodnote pod 0,05 a v ostatných prípadoch červené.
+* **NDVI Meas**,**NDVI Theo** (referenčná odrazivosť NDVI panelu) a **Δ**— iba multispektrálne kamery typu Bayer. Malá značka za „NDVI Meas“ udáva, z čoho bol nameraný NDVI vypočítaný:**ρ**(odrazivosť — je k dispozícii hodnota zo svetelného senzora),**L**(svetelná intenzita — žiadna hodnota zo svetelného senzora) alebo**DN**(surové hodnoty kamery). Iba**ρ** NDVI je porovnateľné s NDVI Theo: pre L a DN je stĺpec Δ sivý a poznámka to uvádza („Chýba údaj zo svetelného senzora: NDVI je vypočítané zo žiarivosti, preto Δ neslúži na kontrolu kalibrácie“ / „NDVI je vypočítané zo surových hodnôt kamery, preto Δ neslúži na kontrolu kalibrácie“). Pri hodnote ρ je Δ zelené pri hodnote pod 0,02, oranžové pri hodnote pod 0,05 a v ostatných prípadoch červené.
 
 <!-- SCREENSHOT-NEEDED: a 1.3.0 Calibration Target table under a live feed in list view — a Bayer camera's table showing the band columns, Sat, and "NDVI Meas ρ" / NDVI Theo / Δ; ideally next to a mono camera's single-band table with no NDVI columns. -->
 
@@ -201,7 +127,7 @@ je vypočítané zo surových hodnôt kamery, preto Δ neslúži na kontrolu kal
 
 <!-- SCREENSHOT-NEEDED: per-camera Exposure & Gain section — Exposure (us) and Gain (dB) rows with Auto/Manual toggles, AE Target Brightness, AE Smoothing slider, AE Region of Interest row with the Aim button, and (on an array camera) AE Tune Speed and Highlight Protection rows. -->
 
-Všetky číselné vstupy tu používajú otočné ovládače s funkciou „podržať pre zrýchlenie“: ťuknutie = ±1, podržanie &gt;1,5 s = ±10, podržanie &gt;3 s = ±100. Hodnota sa odošle do kamery po uvoľnení.
+Všetky číselné vstupy tu používajú otočné ovládače s funkciou „podržať pre zrýchlenie“: ťuknutie = ±1, podržanie >1,5 s = ±10, podržanie >3 s = ±100. Hodnota sa odošle do kamery po uvoľnení.
 
 | Ovládací prvok | Rozsah / možnosti | Predvolené | Platí pre | Čo robí |
 | --- | --- | --- | --- | --- |
@@ -214,21 +140,11 @@ Všetky číselné vstupy tu používajú otočné ovládače s funkciou „podr
 | **Ochrana svetiel** | Prísna (1 %) / Normálna (5 %) / Uvoľnená (15 %) | Prísna | Kamery, ktoré poskytujú toto nastavenie | Koľko z obrazu sa môže preexponovať do biela, kým automatická expozícia (AE) obraz stmaví. |
 
 {% hint style="info" %}
-**Požiadavky na osvetlenie pre multispektrálne kamery typu Bayer (RGN
-
-/ OCN
-
-/ NGB
-
-):** scéna musí mať dostatok svetla vo všetkých troch kanáloch, inak kalibrácia nebude fungovať správne — jedna expozícia snímača pokrýva všetky tri spektrá. Na meranie osvetlenia použite svetelný senzor DAQ alebo prejdite na režim „all-mono“ (M3M), aby každé pásmo malo vlastnú expozíciu. Ak snímka túto podmienku poruší, Chloros
-
-to zistí a upozorní vás (oznámenie o obmedzení oddeľovania). V reálnom čase sa v dlaždici s rozdelením kanálov zobrazí **„Dáta pásma s nízkou spoľahlivosťou · N %“**, ak program unmix obmedzil toto pásmo na 25 % alebo viac jeho pixelov.
+**Požiadavky na osvetlenie pre multispektrálne kamery typu Bayer (RGN / OCN / NGB):** scéna musí mať dostatok svetla vo všetkých troch kanáloch, inak kalibrácia nebude fungovať správne — jedna expozícia snímača pokrýva všetky tri spektrá. Na meranie osvetlenia použite svetelný senzor DAQ alebo prejdite na režim „all-mono“ (M3M), aby každé pásmo malo vlastnú expozíciu. Ak snímka túto podmienku poruší, Chloros to zistí a upozorní vás (oznámenie o obmedzení oddeľovania). V reálnom čase sa v dlaždici s rozdelením kanálov zobrazí **„Dáta pásma s nízkou spoľahlivosťou · N %“**, ak program unmix obmedzil toto pásmo na 25 % alebo viac jeho pixelov.
 {% endhint %}
 
 {% hint style="info" %}
-**Ako automatická expozícia využíva expozíciu a zosilnenie (1.3.0).** Ak je zosilnenie nastavené na Auto, Chloros
-
-udržiava zosilnenie na úrovni 0 dB, kým expozícia nedosiahne najdlhšiu povolenú hodnotu (hornú hranicu AE, spúšťaciu periódu poľa alebo strop expozície DAQ); až potom sa zosilnenie zvýši. V poli má prednosť spúšťacia frekvencia: automatická expozícia vyplní obdobie, ktoré táto frekvencia určuje, a až potom zvyšuje zosilnenie, takže stmavujúca scéna už neznižuje frekvenciu spúšťania v režime Auto (vo verzii 1.2.0 to tak bolo). **Ručná**expozícia na člene poľa, ktorá trvá dlhšie ako spúšťacia perióda, spomalí spúšťanie poľa tak, aby sa tomu prispôsobilo; frekvencia automatického spúšťania sa obnoví, akonáhle sa každý člen, ktorý ju spomalil, vráti k automatickej expozícii. Ak sú nastavenia**Expozícia**a**Cieľová jasnosť AE** obidve na Auto a svetelný senzor DAQ poskytuje hodnotu, expozícia každej kamery sa udrží po ustálení automatickej expozície, pokiaľ namerané osvetlenie zostane v rozmedzí približne ±25 %; väčšia, trvalá zmena osvetlenia, reštart nastavení (napríklad zmena oblasti záujmu) alebo vaša vlastná zmena expozície ju opäť aktivuje.
+**Ako automatická expozícia využíva expozíciu a zosilnenie (1.3.0).** Ak je zosilnenie nastavené na Auto, Chloros udržiava zosilnenie na úrovni 0 dB, kým expozícia nedosiahne najdlhšiu povolenú hodnotu (hornú hranicu AE, spúšťaciu periódu poľa alebo strop expozície DAQ); až potom sa zosilnenie zvýši. V poli má prednosť spúšťacia frekvencia: automatická expozícia vyplní obdobie, ktoré táto frekvencia určuje, a až potom zvyšuje zosilnenie, takže stmavujúca scéna už neznižuje frekvenciu spúšťania v režime Auto (vo verzii 1.2.0 to tak bolo). **Ručná**expozícia na člene poľa, ktorá trvá dlhšie ako spúšťacia perióda, spomalí spúšťanie poľa tak, aby sa tomu prispôsobilo; frekvencia automatického spúšťania sa obnoví, akonáhle sa každý člen, ktorý ju spomalil, vráti k automatickej expozícii. Ak sú nastavenia**Expozícia**a**Cieľová jasnosť AE** obidve na Auto a svetelný senzor DAQ poskytuje hodnotu, expozícia každej kamery sa udrží po ustálení automatickej expozície, pokiaľ namerané osvetlenie zostane v rozmedzí približne ±25 %; väčšia, trvalá zmena osvetlenia, reštart nastavení (napríklad zmena oblasti záujmu) alebo vaša vlastná zmena expozície ju opäť aktivuje.
 {% endhint %}
 
 {% hint style="info" %}
@@ -269,34 +185,18 @@ Všetko v tejto sekcii sa týka **len zobrazenia**— mení to, čo vidíte v ž
 | --- | --- | --- | --- | --- |
 | **Rozlíšenie renderovania** | 360p (najrýchlejšie) / 480p / 720p / 1080p / Natívne rozlíšenie senzora (najpomalšie) | 720p | Všetko | Výška, pri ktorej backend spúšťa radiometrický reťazec náhľadov. Nižšia hodnota zvyšuje snímkovú frekvenciu bez zmeny zorného poľa. |
 | **Index**| Zaškrtávacie políčko „Zapnúť“ + ozubené koliesko | Vypnuté | Iba multispektrálny Bayer,**nie** členovia kombinovaného poľa | Náhľad indexu živých rastlín. Ikona ozubeného kolesa otvorí zdieľaný [Index Calculator](#index-calculator-pane), ktorý je prednastavený na prirodzené pásma filtrov kamery (napr. `Red_660_RGN`, `Green_550_RGN`, `NIR_850_RGN`). Vlastný výraz spolu s LUT (zapnuté/vypnuté, predvolená úroveň 7-stop, predvolená minimálna hodnota 0,2, predvolená maximálna hodnota 1) sa vypočíta pri každom snímku náhľadu. Členovia kombinovaného poľa skryjú tento riadok — pole vlastní jeden zdieľaný index. |
-| **Vyváženie bielej** | Vypnuté / Jednorazovo / Nepretržite + tlačidlo opätovného zachytenia | Nepretržite | Iba RGB
-
-| Vyváženie bielej v reálnom čase. Tlačidlo obnovenia znovu zachytí vyváženie bielej z aktuálneho spektra DLS (vypnuté, ak je režim Vypnuté). |
-| **Gama** | Zapnuté / Vypnuté | Zapnuté | Len RGB
-
-| Zobrazenie gama (γ = 2,2 LUT) v živom náhľade. Uložené snímky zostávajú lineárne. |
+| **Vyváženie bielej** | Vypnuté / Jednorazovo / Nepretržite + tlačidlo opätovného zachytenia | Nepretržite | Iba RGB | Vyváženie bielej v reálnom čase. Tlačidlo obnovenia znovu zachytí vyváženie bielej z aktuálneho spektra DLS (vypnuté, ak je režim Vypnuté). |
+| **Gama** | Zapnuté / Vypnuté | Zapnuté | Len RGB | Zobrazenie gama (γ = 2,2 LUT) v živom náhľade. Uložené snímky zostávajú lineárne. |
 | **Odšumovanie** | Zaškrtávacie políčko + intenzita 0–100 | Vypnuté / 50 | Všetko (pre každú kameru, aj v rámci polí) | Bilaterálny filter v živom náhľade. Vyššia hodnota = hladší, ale menej ostrý obraz. |
 | **Ostrosť** | Zaškrtávacie políčko + intenzita 0–100 | Vypnuté / 30 | Všetko | Maska neostrosti v živom náhľade, aplikovaná ako posledná. Môže zosilniť šum. Iba v náhľade. |
 | **Vigneta**| Zaškrtávacie políčko + intenzita 0–100 | Vypnuté / 0 | Všetko | Ručné odstránenie zvyškov vignety (zosvetľuje rohy), nanesené na odhad inteligentnej vignety z poľa.**Radiometrické — ovplyvňuje živý náhľad AJ exporty**, na rozdiel od odšumovania a ostrosti. |
-| **Farebný profil** | Raw / Lineárny / Prirodzený / Vylepšený / Vlastná teplota | Prirodzený | Iba RGB
-
-| Pozri nižšie. |
-| **Farebná teplota** | 2000–10000 K, krok 100 | 5500 K | Iba RGB
-
-, profil Vlastná teplota | Upevňuje vyváženie bielej na pevnú korelovanú farebnú teplotu (vstup DLS sa ignoruje). Posledná zvolená hodnota v Kelvinoch sa zapamätá aj pri prepínaní profilov. |
-| **Svetlé oblasti** | −100 až 0, krok 1 | 0 (vypnuté) | Iba RGB
-
-| Novinka vo verzii 1.3.0. Stmavuje najjasnejšie a najbielejšie oblasti obrázka (0 = bez zmeny, −100 = najsilnejšie). Platí pre živý náhľad **a pre snímky na úrovni displeja (Náhľad)**, ktoré zaznamenávajú toto nastavenie (`Chloros:DisplayHighlights`); exporty žiarivosti a odrazivosti nie sú nikdy ovplyvnené. Nemôže obnoviť údaje zo senzora, ktoré boli orezané — na to znížte expozíciu. Prekrývanie zebra sleduje stmavený obraz. Deaktivované s farebným profilom Raw („Neaplikuje sa s farebným profilom Raw.“). |
-| **Sýtosť** | 0–200 (100 = neutrálne) | 100 | iba RGB
-
-| Sýtosť HSV v živom náhľade. |
-| **Kontrast** | 0–200 (100 = neutrálny) | 100 | Len RGB
-
-| Lineárny kontrast okolo strednej šedej v živom náhľade. |
+| **Farebný profil** | Raw / Lineárny / Prirodzený / Vylepšený / Vlastná teplota | Prirodzený | Iba RGB | Pozri nižšie. |
+| **Farebná teplota** | 2000–10000 K, krok 100 | 5500 K | Iba RGB, profil Vlastná teplota | Upevňuje vyváženie bielej na pevnú korelovanú farebnú teplotu (vstup DLS sa ignoruje). Posledná zvolená hodnota v Kelvinoch sa zapamätá aj pri prepínaní profilov. |
+| **Svetlé oblasti** | −100 až 0, krok 1 | 0 (vypnuté) | Iba RGB | Novinka vo verzii 1.3.0. Stmavuje najjasnejšie a najbielejšie oblasti obrázka (0 = bez zmeny, −100 = najsilnejšie). Platí pre živý náhľad **a pre snímky na úrovni displeja (Náhľad)**, ktoré zaznamenávajú toto nastavenie (`Chloros:DisplayHighlights`); exporty žiarivosti a odrazivosti nie sú nikdy ovplyvnené. Nemôže obnoviť údaje zo senzora, ktoré boli orezané — na to znížte expozíciu. Prekrývanie zebra sleduje stmavený obraz. Deaktivované s farebným profilom Raw („Neaplikuje sa s farebným profilom Raw.“). |
+| **Sýtosť** | 0–200 (100 = neutrálne) | 100 | iba RGB | Sýtosť HSV v živom náhľade. |
+| **Kontrast** | 0–200 (100 = neutrálny) | 100 | Len RGB | Lineárny kontrast okolo strednej šedej v živom náhľade. |
 | **Zrkadliť po horizontále / Zrkadliť po vertikále** | Zaškrtávacie políčka | Vypnuté | Všetko | Otočiť náhľad horizontálne / vertikálne. |
-| **Otočenie**| 0° / 90° / 180° / 270° | 0° | Všetko | Otočiť náhľad. Orientácia sa uplatňuje na konci reťazca náhľadov na pozadí.**Uložené snímky (1.3.0):**produkty Náhľad, Radiancia, Odrazivosť a Index samostatnej kamery sa otočia pomocou Zrkadlenia/Otočenia, zatiaľ čo**súbory Raw a Debayered zostávajú v natívnej orientácii kamery**; každý súbor záberu zaznamenáva toto nastavenie do svojho XMP, takže pri neskoršom spracovaní súboru Raw sa uplatní rovnakým spôsobom.**Súbory v poli zostávajú v natívnej orientácii** (nastavenie sa zaznamenáva, ale neuplatňuje) a kompozitné zobrazenia poľa ho ignorujú. |**Sémantika farebných profilov** (kamery RGB
-
-):
+| **Otočenie**| 0° / 90° / 180° / 270° | 0° | Všetko | Otočiť náhľad. Orientácia sa uplatňuje na konci reťazca náhľadov na pozadí.**Uložené snímky (1.3.0):**produkty Náhľad, Radiancia, Odrazivosť a Index samostatnej kamery sa otočia pomocou Zrkadlenia/Otočenia, zatiaľ čo**súbory Raw a Debayered zostávajú v natívnej orientácii kamery**; každý súbor záberu zaznamenáva toto nastavenie do svojho XMP, takže pri neskoršom spracovaní súboru Raw sa uplatní rovnakým spôsobom.**Súbory v poli zostávajú v natívnej orientácii** (nastavenie sa zaznamenáva, ale neuplatňuje) a kompozitné zobrazenia poľa ho ignorujú. |**Sémantika farebných profilov** (kamery RGB):
 
 * **Raw** — úplne obíde spracovateľský reťazec.
 * **Lineárny** — tmavý signál + vyrovnanie poľa + vyváženie bielej; bez farebnej matice, bez gama.
@@ -321,20 +221,12 @@ Tieto funkcie sú dostupné iba v používateľskom rozhraní — sú nakreslen�
 | **Mriežka** | Vypnuté / 3 × 3 / 9 × 9 | Vypnuté | Kompozičná mriežka. |
 | **Histogram** | Zaškrtávacie políčko + šírka 0,10–0,90 snímky | Vypnuté / 0,25 | Pás histogramu priamo v prúde. |
 | **Focus Peak** | Zaškrtávacie políčko + prah 20–200 + vzorka farby | Vypnuté / 80 / `#ff5722` | Zvýraznenie hrán podľa Sobelovho algoritmu na zaostrenie. |
-| **Rozdelenie kanálov** | Tlačidlo „Zobraziť rozdelenie (Red
-
-/ Green
-
-/ NIR
-
-)“ / Tlačidlo „Skryť rozdelenia“ | Skryté | Pridá tri nezávislé dlaždice v odtieňoch šedej pre každý kanál vedľa kompozitného obrazu (označenie tlačidla zodpovedá filtrovým kanálom fotoaparátu). Každú dlaždicu rozdelenia je možné presúvať a má farbu ohraničenia fotoaparátu. Nedostupné na monochromatických fotoaparátoch. Uloží sa spolu s projektom. |
+| **Rozdelenie kanálov** | Tlačidlo „Zobraziť rozdelenie (Red / Green / NIR)“ / Tlačidlo „Skryť rozdelenia“ | Skryté | Pridá tri nezávislé dlaždice v odtieňoch šedej pre každý kanál vedľa kompozitného obrazu (označenie tlačidla zodpovedá filtrovým kanálom fotoaparátu). Každú dlaždicu rozdelenia je možné presúvať a má farbu ohraničenia fotoaparátu. Nedostupné na monochromatických fotoaparátoch. Uloží sa spolu s projektom. |
 
 ### Bodový expozimeter
 
 * Zaškrtávacie políčko **Kliknutím na vzorku**: kliknutím na živý obraz odoberiete vzorku jedného pixela (označí ho krížik) alebo kliknutím a ťahaním vyberiete oblasť pre výpočet priemeru pixelov. Tlačidlo**Vymazať**vymaže vzorku a krížik. Táto funkcia sa vzájomne vylučuje s režimom**Aim** v AE-ROI.
-* **Rozbaľovacie menu**Zobraziť**:**Raw (bitová hĺbka)**— natívne digitálne hodnoty v bitovej hĺbke snímača (napr. 12-bit → 0..4095) — alebo**Zobrazenie (8-bit)** (predvolené). Ak je aktívny živý index, v položke Zobrazenie sa namiesto toho zobrazí vypočítaná hodnota indexu (napr. NDVI
-
-).
+* **Rozbaľovacie menu**Zobraziť**:**Raw (bitová hĺbka)**— natívne digitálne hodnoty v bitovej hĺbke snímača (napr. 12-bit → 0..4095) — alebo**Zobrazenie (8-bit)** (predvolené). Ak je aktívny živý index, v položke Zobrazenie sa namiesto toho zobrazí vypočítaná hodnota indexu (napr. NDVI).
 * Na paneli s údajmi sú uvedené súradnice pixelov, veľkosť snímky, formát pixelov, bitová hĺbka a tabuľka kanálov (Chan / Hodnota / %) s označeniami pásiem a vlnovými dĺžkami; páry zelených pixelov podľa Bayerovho systému sú zpriemerované; vzorky z oblasti zobrazujú „N px avg“.
 
 Stav bodového expozimetra platí len pre danú reláciu.
@@ -356,18 +248,10 @@ Táto sekcia sa zobrazí len vtedy, ak je **pripojený aspoň jeden svetelný se
 | **Odrazivosť scény**| Tlačidlo**Prekalibrovať ρ** | — | Prepočíta faktor odrazivosti scény, ktorý riešiteľ používa. |
 
 {% hint style="info" %}
-**Pri použití viacerých fotoaparátov je prediktívna automatická expozícia (AE) štandardne vypnutá** — pri viacerých fotoaparátoch sa o expozíciu starajú inteligentná automatická expozícia Chloros
-
-a automatická expozícia na strane fotoaparátu (s ochranou proti presýteniu), pričom odhad odrazivosti jednej scényodhad odrazivosti nie je bezpečný v zmiešaných scénach. Ak konkrétne chcete radiometrickú expozíciu riadenú DLS, môžete ju tu opäť zapnúť pre jednotlivé kamery.
+**Pri použití viacerých fotoaparátov je prediktívna automatická expozícia (AE) štandardne vypnutá** — pri viacerých fotoaparátoch sa o expozíciu starajú inteligentná automatická expozícia Chloros a automatická expozícia na strane fotoaparátu (s ochranou proti presýteniu), pričom odhad odrazivosti jednej scényodhad odrazivosti nie je bezpečný v zmiešaných scénach. Ak konkrétne chcete radiometrickú expozíciu riadenú DLS, môžete ju tu opäť zapnúť pre jednotlivé kamery.
 {% endhint %}
 
-**Strop expozície riadený DAQ a AE viazaná na dopadajúce svetlo.** Nezávisle od vyššie uvedeného zaškrtávacieho políčka, keď je svetelný senzor DAQ priradený k RGB
-
-kamere, Chloros
-
-vypočíta — na základe nameranej absolútnej intenzity dopadajúceho žiarenia — maximálnu expozíciu × zosilnenie, pri ktorej povrch so 100 % odrazivosťou zostane pod úrovňou prekrytia, a uplatní ju ako **strop**automatického nastavenia expozície. Od verzie 1.3.0 sa tento strop uplatňuje len vtedy, keď je kalibračný cieľ v zornom poli danej kamery (zaznamenaný v jej zábere za posledných 10 s); ak sa v zornom poli nenachádza žiadny cieľ, namiesto toho beží bežná automatická expozícia kamery s vlastnou ochranou proti preexponovaniu, takže zvyšok scény nie je tmavší, ako je potrebné. Pokiaľ je limit aktívny, kamera je**viazaná na dopadajúce svetlo**: pracuje v režime otvorenej slučky pri expozícii meranej podľa dopadajúceho svetla so zosilnením na úrovni 0 dB — expozícia sleduje namerané svetlo, nie obsah scény. Keďže horná hranica môže expozíciu iba skrátiť, sama o sebe nemôže spôsobiť preexponovanie. Od verzie 1.3.0 sa horná hranica vypočítava pomocou vlastnej expozičnej konštanty kamery z jej kalibračného balíka (priemerná hodnota pre celú flotilu sa používa len vtedy, ak balík túto hodnotu neobsahuje). Horná hranica sa automaticky deaktivuje – a obnoví sa normálna automatická expozícia scény – vždy, keď nie je v zornom poli žiadny kalibračný cieľ, chýba hodnota z DAQ, je neaktuálna (&gt;30 s), alebo je tmavý, alebo ak ≥15 % snímky preexponuje pri pevne nastavenej expozícii (čo znamená, že senzor a kamera vnímajú odlišné osvetlenie). Neexistuje žiadny prepínač v grafickom rozhraní; ide o štandardné správanie vždy, keď je k RGB
-
-kamere pripojený DAQ.
+**Strop expozície riadený DAQ a AE viazaná na dopadajúce svetlo.** Nezávisle od vyššie uvedeného zaškrtávacieho políčka, keď je svetelný senzor DAQ priradený k RGB kamere, Chloros vypočíta — na základe nameranej absolútnej intenzity dopadajúceho žiarenia — maximálnu expozíciu × zosilnenie, pri ktorej povrch so 100 % odrazivosťou zostane pod úrovňou prekrytia, a uplatní ju ako **strop**automatického nastavenia expozície. Od verzie 1.3.0 sa tento strop uplatňuje len vtedy, keď je kalibračný cieľ v zornom poli danej kamery (zaznamenaný v jej zábere za posledných 10 s); ak sa v zornom poli nenachádza žiadny cieľ, namiesto toho beží bežná automatická expozícia kamery s vlastnou ochranou proti preexponovaniu, takže zvyšok scény nie je tmavší, ako je potrebné. Pokiaľ je limit aktívny, kamera je**viazaná na dopadajúce svetlo**: pracuje v režime otvorenej slučky pri expozícii meranej podľa dopadajúceho svetla so zosilnením na úrovni 0 dB — expozícia sleduje namerané svetlo, nie obsah scény. Keďže horná hranica môže expozíciu iba skrátiť, sama o sebe nemôže spôsobiť preexponovanie. Od verzie 1.3.0 sa horná hranica vypočítava pomocou vlastnej expozičnej konštanty kamery z jej kalibračného balíka (priemerná hodnota pre celú flotilu sa používa len vtedy, ak balík túto hodnotu neobsahuje). Horná hranica sa automaticky deaktivuje – a obnoví sa normálna automatická expozícia scény – vždy, keď nie je v zornom poli žiadny kalibračný cieľ, chýba hodnota z DAQ, je neaktuálna (>30 s), alebo je tmavý, alebo ak ≥15 % snímky preexponuje pri pevne nastavenej expozícii (čo znamená, že senzor a kamera vnímajú odlišné osvetlenie). Neexistuje žiadny prepínač v grafickom rozhraní; ide o štandardné správanie vždy, keď je k RGB kamere pripojený DAQ.
 
 ### Získavanie údajov a spúšťanie
 
@@ -417,11 +301,7 @@ Zobrazuje sa pre kombinované aj samostatné polia:
 
 Vlastná skupina priamo za položkou Senzor okolitého osvetlenia, pre kombinované aj samostatné polia:
 
-* Zaškrtávacie políčko **Povoliť** — „Detekovať cieľ MAPIR
-
-ArUco a overiť LUT pre NDVI
-
-vs. odrazivosť panelu“; ovplyvňuje prekrývanie cieľa a validačné tabuľky kombinovanej dlaždice. V prípade **samostatného** poľa aktivuje vlastnú [tabuľku kalibračného cieľa](#the-calibration-target-table) (jedna na každý riadok kamery v zobrazení zoznamu).
+* Zaškrtávacie políčko **Povoliť** — „Detekovať cieľ MAPIR ArUco a overiť LUT pre NDVI vs. odrazivosť panelu“; ovplyvňuje prekrývanie cieľa a validačné tabuľky kombinovanej dlaždice. V prípade **samostatného** poľa aktivuje vlastnú [tabuľku kalibračného cieľa](#the-calibration-target-table) (jedna na každý riadok kamery v zobrazení zoznamu).
 
 ### Zachytenie — jednotné nastavenia senzorov
 

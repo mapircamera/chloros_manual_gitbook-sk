@@ -84,7 +84,7 @@ Každá snímka s údajmi GPS dostane značku na svojich súradniciach.
 
 Vyberte typ mapovej vrstvy pomocou tlačidiel (zľava doprava):
 
-![](&lt;../.gitbook/assets/image (14).png&gt;)
+![](<../.gitbook/assets/image (14).png>)
 
 | Typ                 | Zobrazuje                                                                |
 | -------------------- | -------------------------------------------------------------------- |

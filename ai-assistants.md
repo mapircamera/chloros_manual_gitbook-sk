@@ -43,7 +43,7 @@ Nástroje servera pokrývajú funkcie, ktoré poskytuje [Python SDK](api-python-
 claude mcp add chloros -- chloros-mcp
 ```
 
-**Claude Desktop:**pridajte to do súboru `claude_desktop_config.json` (otvoríte ho cez**Nastavenia &gt; Vývojár &gt; Upraviť konfiguráciu**), potom reštartujte aplikáciu Claude Desktop.**Kurzor** používa rovnaký záznam v súbore `~/.cursor/mcp.json`.
+**Claude Desktop:**pridajte to do súboru `claude_desktop_config.json` (otvoríte ho cez**Nastavenia > Vývojár > Upraviť konfiguráciu**), potom reštartujte aplikáciu Claude Desktop.**Kurzor** používa rovnaký záznam v súbore `~/.cursor/mcp.json`.
 
 ```json
 {
