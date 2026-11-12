@@ -15,7 +15,9 @@ Images In → [Thread 1: Detection] → [Thread 2: Calibration] → [Thread 3: P
 
 Každý obrázok prechádza postupne všetkými štyrmi vláknami. Vďaka viacvláknovému spracovaniu v Chloros+ môže viacero obrázkov súčasne obsadzovať rôzne vlákna — zatiaľ čo vlákno 3 spracováva jeden obrázok, vlákno 1 môže detekovať ďalší, vlákno 2 kalibrovať iný a vlákno 4 zapisovať hotový obrázok na disk.
 
-Priebeh spracovania sa hlási pre každé vlákno a prenáša sa prostredníctvom udalostí Server-Sent Events (backend ich publikuje na `/api/events`). V živom zobrazení priebehu v CLI sú štyri fázy označené ako **Detekcia, Analýza, Spracovanie, Export**.***
+Priebeh spracovania sa hlási pre každé vlákno a prenáša sa prostredníctvom udalostí Server-Sent Events (backend ich publikuje na `/api/events`). V živom zobrazení priebehu v CLI sú štyri fázy označené ako **Detekcia, Analýza, Spracovanie, Export**.
+
+***
 
 ## Podrobnosti o vláknach
 

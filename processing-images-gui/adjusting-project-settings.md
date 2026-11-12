@@ -154,7 +154,9 @@ Táto sekcia sa zobrazí **len** vtedy, ak aspoň jeden obrázok v projekte obsa
 
 * **Použiť zarovnanie poľa** (predvolené: zapnuté): deformuje každý spracovaný výstup (odstránenie matice / náhľad / radiancia / odrazivosť / index) do spoločnej referenčnej geometrie poľa. Vypnuté = export v natívnej geometrii senzora.
 * **Orezanie na spoločný prekrývací úsek** (predvolené: zapnuté): oreže zarovnané exporty na oblasť, ktorú zdieľajú všetky moduly, takže každé pásmo má rovnakú stopu. Vypnuté zachováva plnú plochu snímača (čierna výplň mimo zdrojového obrazu).
-* **Prevzorkovanie**:**Bilineárne (hladké, predvolené)**,**Najbližšie (zachovanie presných hodnôt)**— bez miešania medzi pixelmi, pre prísnu radiometrickú analýzu — alebo**Kubické (najostrejšie)**.***
+* **Prevzorkovanie**:**Bilineárne (hladké, predvolené)**,**Najbližšie (zachovanie presných hodnôt)**— bez miešania medzi pixelmi, pre prísnu radiometrickú analýzu — alebo**Kubické (najostrejšie)**.
+
+***
 
 ## Ukladanie a načítanie nastavení
 

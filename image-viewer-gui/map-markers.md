@@ -78,7 +78,9 @@ Každá snímka s údajmi GPS dostane značku na svojich súradniciach.
 | Poskytovateľ        | Poznámky                                                                                                                                                             |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Google Maps** | Široké celosvetové pokrytie; podporuje všetky štyri typy dlaždíc                                                                                                            |
-| **Esri ArcGIS**| V určitých regiónoch často letecké snímky s vyšším rozlíšením. Typ dlaždíc**Terrain** nie je pre Esri k dispozícii a jeho tlačidlo je deaktivované, pokiaľ je zvolený Esri |***
+| **Esri ArcGIS**| V určitých regiónoch často letecké snímky s vyšším rozlíšením. Typ dlaždíc**Terrain** nie je pre Esri k dispozícii a jeho tlačidlo je deaktivované, pokiaľ je zvolený Esri |
+
+***
 
 ## Typy mapových dlaždíc
 
@@ -93,7 +95,9 @@ Vyberte typ mapovej vrstvy pomocou tlačidiel (zľava doprava):
 | **Satelit**        | Podrobné satelitné snímky, bez popisov — možnosť s najvyššou šírkou pásma |
 | **Hybrid** (predvolené) | Satelitné snímky s nakreslenými cestami a popismi                |
 
-Karta Mapa sa otvorí v režime **Hybrid**. Váš výber sa prenesie aj pri zmene poskytovateľa, ak to poskytovateľ podporuje.***
+Karta Mapa sa otvorí v režime **Hybrid**. Váš výber sa prenesie aj pri zmene poskytovateľa, ak to poskytovateľ podporuje.
+
+***
 
 ## Navigácia na mape
 
@@ -141,7 +145,9 @@ Karta Mapa sa otvorí v režime **Hybrid**. Váš výber sa prenesie aj pri zmen
 
 ### Mapa je prázdna alebo sa prestali načítať dlaždice
 
-Poskytovatelia dlaždíc sú online služby. Ak sa dlaždice prestanú načítať, skontrolujte sieťové pripojenie zariadenia a potom skúste zmeniť poskytovateľa. Ak ste boli výrazne zväčšení, stlačte tlačidlo **×** na resetovanie, aby ste sa vrátili na normálnu úroveň zväčšenia, a nechajte mapu znovu požiadať o dlaždice.***
+Poskytovatelia dlaždíc sú online služby. Ak sa dlaždice prestanú načítať, skontrolujte sieťové pripojenie zariadenia a potom skúste zmeniť poskytovateľa. Ak ste boli výrazne zväčšení, stlačte tlačidlo **×** na resetovanie, aby ste sa vrátili na normálnu úroveň zväčšenia, a nechajte mapu znovu požiadať o dlaždice.
+
+***
 
 ## Súvisiace stránky
 

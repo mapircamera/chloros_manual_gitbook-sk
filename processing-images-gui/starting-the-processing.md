@@ -181,7 +181,9 @@ Po spustení beží celý reťazec automaticky:
 * Zastavený beh presne hlási, čo sa podarilo dokončiť (pozri riadky `[RUN-SUMMARY]` v protokole)
 * Nové spustenie začne spracovávanie od začiatku
 
-**Tip na plánovanie:** Pri veľmi veľkých projektoch zvážte spracovanie v dávkach alebo použitie CLI pre lepšiu kontrolu.***
+**Tip na plánovanie:** Pri veľmi veľkých projektoch zvážte spracovanie v dávkach alebo použitie CLI pre lepšiu kontrolu.
+
+***
 
 ## Sledovanie spracovávania
 

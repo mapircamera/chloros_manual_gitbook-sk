@@ -112,7 +112,9 @@ Odrazivosť je uložená ako celé číslo DN a **hodnota DN, ktorá zodpovedá 
 | LATTICE (M3C/M3M) | **32768** (rezerva až do ρ 2,0) | Súbor je označený značkou XMP `Chloros:PixelScale=32768` |
 | Survey3          | **65535** (obmedzené na ρ 1,0)     | Žiadna značka `Chloros:PixelScale` — táto absencia je signálom (produkty Survey3 obsahujú iné značky spracovania typu `Chloros:*`) |
 
-**Prečítajte značku `Chloros:PixelScale` a vydelte ňou** namiesto toho, aby ste predpokladali paušálnu hodnotu 65535 — vydelením odrazivosti LATTICE číslom 65535 sa každá hodnota bez upozornenia zníži na polovicu. Súbor odrazivosti z verzie pred 1.3.0, ktorý bol zapísaný ako 8-bitový, bol orezaný, nie preškálovaný, a nemá značku mierky: namiesto delenia ho znovu exportujte v 16-bitovom alebo 32-bitovom formáte. Podrobnosti nájdete v časti [Formáty výstupných obrázkov](../output-image-formats.md).***
+**Prečítajte značku `Chloros:PixelScale` a vydelte ňou** namiesto toho, aby ste predpokladali paušálnu hodnotu 65535 — vydelením odrazivosti LATTICE číslom 65535 sa každá hodnota bez upozornenia zníži na polovicu. Súbor odrazivosti z verzie pred 1.3.0, ktorý bol zapísaný ako 8-bitový, bol orezaný, nie preškálovaný, a nemá značku mierky: namiesto delenia ho znovu exportujte v 16-bitovom alebo 32-bitovom formáte. Podrobnosti nájdete v časti [Formáty výstupných obrázkov](../output-image-formats.md).
+
+***
 
 ## Metadáta prenášané do exportov
 
@@ -167,7 +169,9 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 2. Uložte ako textový súbor do priečinka projektu
 3. Priložte k dokumentácii projektu
-4. V prípade problémov ho pošlite podpore MAPIR Ak chcete nahlásiť problém priamo spoločnosti MAPIR, použite ikonu chyby (**Nahlásiť chybu**) v hornej časti karty Debug Log — pozrite si [Nahlásenie chyby z karty protokolu](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+4. V prípade problémov ho pošlite podpore MAPIR Ak chcete nahlásiť problém priamo spoločnosti MAPIR, použite ikonu chyby (**Nahlásiť chybu**) v hornej časti karty Debug Log — pozrite si [Nahlásenie chyby z karty protokolu](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).
+
+***
 
 ## Bežné problémy s výstupom a ich riešenia
 

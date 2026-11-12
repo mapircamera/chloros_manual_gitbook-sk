@@ -10,7 +10,9 @@ Pomocou posuvníka zväčšenia v pravom hornom rohu môžete nastaviť veľkos�
 * **Ctrl + `+`**/**Ctrl + `=`**a**Ctrl + `−`** menia veľkosť o 4 px pri každom stlačení. Rozsah klávesových skratiek končí na 64 px na spodnej hranici a na hornej hranici pri veľkosti, ktorá presne pojme dva náhľady v jednom riadku v aktuálnom okne.
 * Veľkosť, ktorú si zvolíte, sa uloží spolu s projektom (`UI → Grid thumbnail size` v `project.json`, predvolené nastavenie `160`), takže pri opätovnom otvorení projektu sa obnoví.
 
-<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>*Rozlíšenie* náhľadov je odlišné nastavenie od *veľkosti* náhľadov: pozri **Zobrazenie → Rozlíšenie náhľadov obrázkov** v [Nastaveniach projektu](../project-settings/project-settings.md) (predvolené 512 px na dlhšej strane). Veľkosť určuje, ako veľká sa dlaždica nakreslí; rozlíšenie určuje, koľko detailov sa na jej vyplnenie načíta.***
+<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>*Rozlíšenie* náhľadov je odlišné nastavenie od *veľkosti* náhľadov: pozri **Zobrazenie → Rozlíšenie náhľadov obrázkov** v [Nastaveniach projektu](../project-settings/project-settings.md) (predvolené 512 px na dlhšej strane). Veľkosť určuje, ako veľká sa dlaždica nakreslí; rozlíšenie určuje, koľko detailov sa na jej vyplnenie načíta.
+
+***
 
 ## Nástrojová lišta mriežky
 

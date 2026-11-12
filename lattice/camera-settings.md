@@ -196,7 +196,9 @@ Všetko v tejto sekcii sa týka **len zobrazenia**— mení to, čo vidíte v ž
 | **Sýtosť** | 0–200 (100 = neutrálne) | 100 | iba RGB | Sýtosť HSV v živom náhľade. |
 | **Kontrast** | 0–200 (100 = neutrálny) | 100 | Len RGB | Lineárny kontrast okolo strednej šedej v živom náhľade. |
 | **Zrkadliť po horizontále / Zrkadliť po vertikále** | Zaškrtávacie políčka | Vypnuté | Všetko | Otočiť náhľad horizontálne / vertikálne. |
-| **Otočenie**| 0° / 90° / 180° / 270° | 0° | Všetko | Otočiť náhľad. Orientácia sa uplatňuje na konci reťazca náhľadov na pozadí.**Uložené snímky (1.3.0):**produkty Náhľad, Radiancia, Odrazivosť a Index samostatnej kamery sa otočia pomocou Zrkadlenia/Otočenia, zatiaľ čo**súbory Raw a Debayered zostávajú v natívnej orientácii kamery**; každý súbor záberu zaznamenáva toto nastavenie do svojho XMP, takže pri neskoršom spracovaní súboru Raw sa uplatní rovnakým spôsobom.**Súbory v poli zostávajú v natívnej orientácii** (nastavenie sa zaznamenáva, ale neuplatňuje) a kompozitné zobrazenia poľa ho ignorujú. |**Sémantika farebných profilov** (kamery RGB):
+| **Otočenie**| 0° / 90° / 180° / 270° | 0° | Všetko | Otočiť náhľad. Orientácia sa uplatňuje na konci reťazca náhľadov na pozadí.**Uložené snímky (1.3.0):**produkty Náhľad, Radiancia, Odrazivosť a Index samostatnej kamery sa otočia pomocou Zrkadlenia/Otočenia, zatiaľ čo**súbory Raw a Debayered zostávajú v natívnej orientácii kamery**; každý súbor záberu zaznamenáva toto nastavenie do svojho XMP, takže pri neskoršom spracovaní súboru Raw sa uplatní rovnakým spôsobom.**Súbory v poli zostávajú v natívnej orientácii** (nastavenie sa zaznamenáva, ale neuplatňuje) a kompozitné zobrazenia poľa ho ignorujú. |
+
+**Sémantika farebných profilov** (kamery RGB):
 
 * **Raw** — úplne obíde spracovateľský reťazec.
 * **Lineárny** — tmavý signál + vyrovnanie poľa + vyváženie bielej; bez farebnej matice, bez gama.

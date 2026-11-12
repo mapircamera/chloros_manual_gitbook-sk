@@ -136,7 +136,9 @@ Tieto čísla sa riadia dvoma pravidlami:
 * Vlákno, ktoré je **jediným** aktívnym, dostane maximálnu alokáciu podľa svojho profilu.
 * Ak je aktívnych viac ako jedna *náročná* úloha na GPU, základná alokácia každej náročnej úlohy sa medzi ne rozdelí (nikdy však neklesne pod nakonfigurované minimum).
 
-Hodnota skutočne použitá počas behu programu je **nižšia** z alokácie profilu platformy a aktuálneho odporúčania z monitora pamäte GPU, takže vyťažená karta má vždy prednosť pred optimistickým profilom.***
+Hodnota skutočne použitá počas behu programu je **nižšia** z alokácie profilu platformy a aktuálneho odporúčania z monitora pamäte GPU, takže vyťažená karta má vždy prednosť pred optimistickým profilom.
+
+***
 
 ## Spracovanie s ohľadom na textúry
 

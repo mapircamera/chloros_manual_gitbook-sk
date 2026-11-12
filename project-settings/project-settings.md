@@ -34,7 +34,9 @@ v ľavom bočnom paneli
 * **Možnosti**: `Default (512 px)`, `1024 px`, `2048 px`, `Full resolution`
 * **Predvolené**: Predvolené (512 px)
 * **Popis**: Rozlíšenie (najdlhšia hrana, v pixeloch), pri ktorom sa vykresľujú miniatúry v mriežke obrázkov. Vyššie hodnoty vyzerajú pri zväčšení ostrejšie, ale načítajú sa pomalšie a spotrebúvajú viac pamäte. Plné rozlíšenie zodpovedá pôvodnej veľkosti obrázku.
-* **Poznámka**: Iba na zobrazenie — toto nikdy neovplyvňuje spracovanie ani exportované súbory.***
+* **Poznámka**: Iba na zobrazenie — toto nikdy neovplyvňuje spracovanie ani exportované súbory.
+
+***
 
 ## Detekcia cieľov
 
@@ -186,7 +188,9 @@ Skeny **meraných** cieľov na jednotku sa vyhľadávajú podľa sériového č�
   * Jedna kamera + jeden pin: Pin 2 sa automaticky nastaví na „Nepoužívať“
   * Jedna kamera + dva piny: Pin 2 sa automaticky nastaví na „Nepoužívať“
   * Viac kamier: Je potrebný ručný výber
-* **Poznámka**: Tú istú kameru nie je možné priradiť súčasne k pinu 1 aj k pinu 2.***
+* **Poznámka**: Tú istú kameru nie je možné priradiť súčasne k pinu 1 aj k pinu 2.
+
+***
 
 ## Svetelný senzor DAQ
 
@@ -207,7 +211,9 @@ Každý riadok zobrazuje súbor, model senzora a korekciu difúzneho krytu, ktor
 * **Popis**: `Auto` používa kryt zaznamenaný v každom súbore (ak nebolo zaznamenané nič, predpokladá sa kryt Sunshine, avšak zariadenia DAQ-U, DAQ-M a DAQ-E sa dodávajú bez krytu a program Chloros nedokáže zistiť, aký kryt je namontovaný, preto spracovanie varuje pred predpokladaným krytom: vyberte kryt, ktorý bol namontovaný). Výber konkrétneho krytu prepisuje **všetky** súbory smerom nadol v projekte okrem súborov z DAQ-E-S, ktorých difúzor je súčasťou ich kalibrácie; projekt obsahujúci iba DAQ-E-S nezobrazuje roletové menu: surové záznamy sa korigujú pomocou neho, a záznamy, ktoré už obsahujú krytku, sa prekalibrujú (zaznamenaná korekcia sa zruší a uplatní sa vybraná).
 * **Dôležité**: Vybraná krytka sa musí zhodovať s krytkou, ktorá bola fyzicky namontovaná počas záznamu. Ani senzor, ani softvér nedokážu detekovať fyzickú krytku — nezhodné ID krytky nesprávne koriguje spektrá.
 
-Zámere je tu **jedno** nastavenie pre celý projekt namiesto roletových menu pre jednotlivé súbory: toto nastavenie sa vzťahuje na každý zdroj smerujúci nadol v projekte.***
+Zámere je tu **jedno** nastavenie pre celý projekt namiesto roletových menu pre jednotlivé súbory: toto nastavenie sa vzťahuje na každý zdroj smerujúci nadol v projekte.
+
+***
 
 ## Zarovnanie poľa
 
@@ -278,7 +284,9 @@ Každý pridaný index zobrazuje svoj vzorec ako matematický výraz s farebným
   * Operátory: `+`, `-`, `*`, `/`, `^` a `()` na zoskupovanie
   * Funkcie: `sqrt()`, `log()`, `ln()`, `abs()`, `sign()`, `log1p()`, `log2()`
 * **Prečo symboly a nie názvy kapiel**: vzorec zapísaný ako `(y-x)/(y+x)` funguje na akomkoľvek fotoaparáte, pretože priradenie pomocou drag-and-drop rozhoduje, či `y` je 850 nm NIR filtra RGN, alebo 808 nm NIR filtra OCN. Vstavané prednastavenia sú uložené rovnakým spôsobom — presnú symbolickú formu všetkých 27 nájdete v [Vzorcoch multispektrálnych indexov](multispectral-index-formulas.md).
-* **Kde fungujú**: vlastné vzorce sa ukladajú spolu s nastaveniami projektu a dajú sa použiť v [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) aj pri spracovaní. CLI/SDK `--indices` ich **neakceptuje** v zozname mien, ktorý rozširuje iba 22 mien vstavaných predvolieb.***
+* **Kde fungujú**: vlastné vzorce sa ukladajú spolu s nastaveniami projektu a dajú sa použiť v [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) aj pri spracovaní. CLI/SDK `--indices` ich **neakceptuje** v zozname mien, ktorý rozširuje iba 22 mien vstavaných predvolieb.
+
+***
 
 ## Export
 

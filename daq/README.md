@@ -17,7 +17,9 @@ MAPIR merajú okolité osvetlenie vo forme radiometricky kalibrovaných spektier
 | --- | --- | --- |
 | **DAQ-U** | USB (sériové) | vyhľadávanie cez sériový port |
 | **DAQ-M** | Bluetooth Low Energy | vyhľadávanie BLE podľa názvu |
-| **DAQ-E** | Ethernet (IPv4, napájanie cez PoE) | mDNS `_daq-e._tcp` (názov hostiteľa `daq-e-<id>.local`) |**DAQ-E-S (novinka vo verzii 1.3.0).** DAQ-E s pevným difúzorom a senzorom náklonu. V zozname Chlorosu je uvedený ako `DAQ-E-S` a funguje presne ako DAQ-E, s tým rozdielom, že nevyžaduje korekciu krytu a každé meranie obsahuje údaje o náklone, otáčaní a sklonu zariadenia. Pozri [DAQ-E-S: pevný difúzor a náklon](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
+| **DAQ-E** | Ethernet (IPv4, napájanie cez PoE) | mDNS `_daq-e._tcp` (názov hostiteľa `daq-e-<id>.local`) |
+
+**DAQ-E-S (novinka vo verzii 1.3.0).** DAQ-E s pevným difúzorom a senzorom náklonu. V zozname Chlorosu je uvedený ako `DAQ-E-S` a funguje presne ako DAQ-E, s tým rozdielom, že nevyžaduje korekciu krytu a každé meranie obsahuje údaje o náklone, otáčaní a sklonu zariadenia. Pozri [DAQ-E-S: pevný difúzor a náklon](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
 
 Všetky tri zariadenia používajú rovnaký komunikačný protokol a poskytujú identické údaje:
 

@@ -62,7 +62,9 @@ output/
 * Zložka so snímkami uložená **bez** surových snímok sa načíta a zobrazí normálne, ale spracovanie ju preskočí a túto skutočnosť zaznamená do protokolu. (Príznak CLI `--input-level` môže v tomto prípade vynútiť vstupný bod — pozri [Referenciu CLI](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Od verzie 1.3.0 môže zložka s zachytenými snímkami obsahovať aj zložku `clamp_masks/` (masky na úrovni jednotlivých pixelov pre úrovne žiarivosti a odrazivosti — pozri [Formáty výstupných obrázkov](../output-image-formats.md#clamp-masks)). Masky nie sú obrázkami scény a program Chloros ich pri importe preskočí bez ohľadu na to, kde sa nachádzajú.
 
-**Relácie LATTICE hub** sa importujú rovnakým spôsobom: kliknite na Pridať zložku a vyberte zložku relácie skopírovanú z hubu (obsahuje zložky `raw/` a `previews/`) spolu s akýmkoľvek záznamom o dopade žiarenia z DAQ-M (`.csv`). Ak kalibrácia kamery alebo zariadenia DAQ ešte nie je uložená v cache vášho počítača, Chloros ju pri importe automaticky načíta podľa sériového čísla (vyžaduje jednorazové pripojenie k internetu).***
+**Relácie LATTICE hub** sa importujú rovnakým spôsobom: kliknite na Pridať zložku a vyberte zložku relácie skopírovanú z hubu (obsahuje zložky `raw/` a `previews/`) spolu s akýmkoľvek záznamom o dopade žiarenia z DAQ-M (`.csv`). Ak kalibrácia kamery alebo zariadenia DAQ ešte nie je uložená v cache vášho počítača, Chloros ju pri importe automaticky načíta podľa sériového čísla (vyžaduje jednorazové pripojenie k internetu).
+
+***
 
 ## Vysvetlenie tabuľky prehliadača súborov
 
@@ -104,7 +106,9 @@ Kliknutím na prepínač v pravom hornom rohu nad tabuľkou sa v oblasti mriežk
 
 * Súbory `.daq` a `.csv` sa zobrazujú v zozname prehliadača súborov, nie sú však klikateľnými obrázkami — poskytujú údaje o intenzite dopadajúceho žiarenia pre kalibráciu odrazivosti.
 * Každý importovaný súbor typu `.daq`/`.csv` je uvedený v časti **Nastavenia projektu → Svetelný senzor DAQ**, kde si môžete skontrolovať korekciu difúzneho krytu platnú pre každý súbor. Pozrite si [Úprava nastavení projektu](adjusting-project-settings.md).
-* Záznamy, ktoré vytvoríte na karte **Svetelné senzory**, sa automaticky pridajú do otvoreného projektu – nie je potrebný žiadny ručný import.***
+* Záznamy, ktoré vytvoríte na karte **Svetelné senzory**, sa automaticky pridajú do otvoreného projektu – nie je potrebný žiadny ručný import.
+
+***
 
 ## Správa súborov vo vašom projekte
 
@@ -221,7 +225,9 @@ Ak váš projekt obsahuje snímky z viacerých kamier MAPIR:
 
 ### Pri opätovnom otvorení projektu sa hlásia chýbajúce súbory
 
-Ak boli zdrojové súbory presunuté alebo vymazané od posledného otvorenia projektu, Chloros vám oznámi, **ktoré**súbory chýbajú, namiesto toho, aby sa otvorila prázdna mriežka. Ak sa presunula samotná zložka projektu, Chloros presmeruje cesty k zdrojovým súborom na zložku, v ktorej sa teraz nachádza zložka `project.json`, a uchová zálohu (`project.json.before-relink-<date>-<time>`). Ak ich takýmto spôsobom nenájde, okno**Zdrojové súbory neboli nájdené**ponúka možnosť**Prehľadávať** na novom mieste, potom Vytvoriť nový projekt alebo Odstrániť projekt. Z CLI použite `chloros-cli project open PATH --relink FOLDER`; z SDK použite `open_project(path, relink=...)`.***
+Ak boli zdrojové súbory presunuté alebo vymazané od posledného otvorenia projektu, Chloros vám oznámi, **ktoré**súbory chýbajú, namiesto toho, aby sa otvorila prázdna mriežka. Ak sa presunula samotná zložka projektu, Chloros presmeruje cesty k zdrojovým súborom na zložku, v ktorej sa teraz nachádza zložka `project.json`, a uchová zálohu (`project.json.before-relink-<date>-<time>`). Ak ich takýmto spôsobom nenájde, okno**Zdrojové súbory neboli nájdené**ponúka možnosť**Prehľadávať** na novom mieste, potom Vytvoriť nový projekt alebo Odstrániť projekt. Z CLI použite `chloros-cli project open PATH --relink FOLDER`; z SDK použite `open_project(path, relink=...)`.
+
+***
 
 ## Ďalšie kroky
 
