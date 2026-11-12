@@ -375,7 +375,7 @@ Panel len na čítanie, aktualizovaný každých 5 s:
 
 * **Názov úrovne**: „Súbežné snímanie“ (zelená) · „Súbežné snímanie (FTD – postupné vysielanie)“ (zelená) · „Postupné snímanie (100 ms posun)“ (oranžová) · „Konfigurácia je príliš veľká“ (červená).
 * **Stav snímky**: „x,xx % neúplné“ — zelená pri menej ako 1 %, oranžová pri menej ako 5 %, červená pri 5 % alebo viac.
-* ****Linková linka**: „NIC {mbps} Mbps – trvalá {MB/s} MB/s“.
+* **Linková linka**: „NIC {mbps} Mbps – trvalá {MB/s} MB/s“.
 
 Toto je aktuálny rozpočet šírky pásma poľa. Informácie o základných hodnotách fps a sieťovom modeli — a o tom, čo je potrebné zmeniť, keď sa úroveň zmení na oranžovú alebo červenú — nájdete v [Poliach s viacerými kamerami](arrays.md) a v [Referencii CLI](../reference/cli-reference.md).
 
@@ -401,7 +401,7 @@ Stručný prehľad toho, čo sa nachádza kde, keď je kamera členom poľa:
 Ďalšie prierezové správanie:
 
 * **Kombinované vs. samostatné zobrazenie** sa volí pri pripojení poľa: kombinované = jedna zarovnaná kompozitná dlaždica (členy vysielajú iba cez Split View); samostatné = každý člen vykresľuje svoju vlastnú synchronizovanú dlaždicu. Kamera nikdy nezobrazuje súčasne samostatný prenos aj dlaždicu poľa.
-* ****Automatické opätovné pripojenie**: otvorenie uloženého projektu obnoví jeho kamery a polia a pred obnovením prenosov opätovne aplikuje všetky uložené nastavenia na backend.
+* **Automatické opätovné pripojenie**: otvorenie uloženého projektu obnoví jeho kamery a polia a pred obnovením prenosov opätovne aplikuje všetky uložené nastavenia na backend.
 * **Obmedzenie snímania**: skryté alebo pozastavené kamery sú vylúčené z funkcie „Capture All“; pole je úplne blokované len vtedy, ak sú VŠETKY členy skryté/pozastavené. Pozrite si [Nastavenia a režimy snímania](capture.md).
 
 ## Ako sa nastavenia uchovávajú

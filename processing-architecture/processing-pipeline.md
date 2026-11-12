@@ -45,7 +45,11 @@ Výpočtové vlákno závislé od CPU. Pri spustení programu Survey3 alebo zmie
 
 ### Vlákno 3: Spracovanie (GPU)
 
-**Účel**: Uplatniť korekcie a vypočítať vegetačné indexy.**Toto je vlákno s najvyššou výpočtovou náročnosťou.*** **Debayering**: prevádza surové Bayerove údaje na viackanálové snímky
+**Účel**: Uplatniť korekcie a vypočítať vegetačné indexy.
+
+**Toto je vlákno s najvyššou výpočtovou náročnosťou.**
+
+* **Debayering**: prevádza surové Bayerove údaje na viackanálové snímky
   * Štandardné (rýchle, stredná kvalita) — predvolené, `--debayer standard`
   * S ohľadom na textúru (pomalé, najvyššia kvalita) — iba Chloros+, `--debayer texture-aware`, používa model odšumovania založený na AI/ML
   * Snímky LATTICE mono (M3M) sú jednopásmové: kroky demosaic a vyváženia bielej sa pri nich preskakujú (s jednoriadkovou správou v protokole), zatiaľ čo všetky snímky M3C/Bayer v tom istom behu ich stále prechádzajú

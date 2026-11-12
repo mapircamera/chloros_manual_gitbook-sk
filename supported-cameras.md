@@ -21,9 +21,9 @@ Rad LATTICE je modulárny multispektrálny kamerový systém postavený na senzo
 
 ```
 <sensor>-<lens>-F<filter>        e.g.  M3C-L41-FRGN,  M3M-L87-F550
-```. Aplikácia
+```
 
-Chloros ju zobrazuje s predponou `LATT-` (napríklad `LATT-M3M-L41-F550`), a tento reťazec modelu riadi všetko, čo nasleduje – profil snímača, rozloženie pásiem a kalibrácia sa riešia automaticky; nie je potrebné nič konfigurovať pre jednotlivé kamery. Číslo objektívu predstavuje **horizontálne zorné pole v stupňoch**: `L41` = úzke 41°, `L87` = široké 87°.
+Aplikácia Chloros ju zobrazuje s predponou `LATT-` (napríklad `LATT-M3M-L41-F550`), a tento reťazec modelu riadi všetko, čo nasleduje – profil snímača, rozloženie pásiem a kalibrácia sa riešia automaticky; nie je potrebné nič konfigurovať pre jednotlivé kamery. Číslo objektívu predstavuje **horizontálne zorné pole v stupňoch**: `L41` = úzke 41°, `L87` = široké 87°.
 
 Existujú dve konfigurácie senzorov:
 

@@ -44,7 +44,9 @@ Panel Nastavenia projektu je rozdelený do nižšie uvedených sekcií. Dve ďal
 
 Určuje, ako program Chloros identifikuje kalibračné ciele na vašich obrázkoch.
 
-**Kľúčové nastavenia:*** **Minimálna plocha kalibračnej vzorky (px)**: Prahová hodnota veľkosti pre detekciu cieľov (predvolené:**25**, rozsah 0–10 000)
+**Kľúčové nastavenia:**
+
+* **Minimálna plocha kalibračnej vzorky (px)**: Prahová hodnota veľkosti pre detekciu cieľov (predvolené:**25**, rozsah 0–10 000)
 * **Minimálne zoskupovanie cieľov (0–100)**: Prah podobnosti pre zoskupovanie oblastí cieľov (predvolené:**60**)**Kedy nastaviť:**
 
 * Zväčšite vzorkovú oblasť, ak dochádza k falošným detekciám
@@ -59,19 +61,26 @@ Tieto nastavenia sú sivé, ak je vypnutá funkcia **Kalibrácia odrazivosti / v
 
 Hlavné možnosti spracovania obrazu a kalibrácie.
 
-**Kľúčové nastavenia:*** **Korekcia vinetácie**: Kompenzuje stmavnutie objektívu na okrajoch ✅ Odporúčané
+**Kľúčové nastavenia:**
+
+* **Korekcia vinetácie**: Kompenzuje stmavnutie objektívu na okrajoch ✅ Odporúčané
 * **Kalibrácia odrazivosti / vyváženie bielej**: Kalibruje snímky pomocou detekovaných cieľov (systém Survey3) a/alebo údajov zo svetelného senzora DAQ (LATTICE) ✅ Odporúčané
 * **Metóda debayeringu**: Algoritmus na konverziu formátu RAW na 3-kanálový multispektrálny formát
 * **Minimálny interval rekalibrácie**: Minimálny čas v sekundách medzi použitím kalibračného cieľa (predvolené:**0** = použiť všetky, rozsah 0–3600)**Nekalibrované náhradné produkty:**Ak nie je možné kalibrovať odrazivosť snímky (nie je k dispozícii žiadny cieľ alebo je kalibrácia vypnutá), exportuje sa ako jeden z dvoch náhradných produktov —**na jedno spustenie existuje presne jeden z tejto dvojice**, vybraný prepínačom korekcie vinetácie:
 
-* **Exportovať odozvu senzora**: zapíše `Sensor_Response_Images` — používa sa, keď je korekcia vinetácie**vypnutá*** **Export s korekciou vinetácie**: zapíše `Vignette_Corrected_Images` — používa sa, keď je korekcia vinetácie**zapnutá**Zaškrtávacie políčko, ktoré nie je aktívne, je sivé. Odškrtnutím aktívneho políčka sa úplne zastaví zapisovanie daného súboru.**Výstupné produkty LATTICE** (zobrazujú sa pri každom projekte; vzťahujú sa na snímky z LATTICE):
+* **Exportovať odozvu senzora**: zapíše `Sensor_Response_Images` — používa sa, keď je korekcia vinetácie**vypnutá**
+* **Export s korekciou vinetácie**: zapíše `Vignette_Corrected_Images` — používa sa, keď je korekcia vinetácie**zapnutá**Zaškrtávacie políčko, ktoré nie je aktívne, je sivé. Odškrtnutím aktívneho políčka sa úplne zastaví zapisovanie daného súboru.**Výstupné produkty LATTICE** (zobrazujú sa pri každom projekte; vzťahujú sa na snímky z LATTICE):
 
 * **Exportovať bez demosaicingu**: lineárny obraz bez debayeringu (`Debayered_Images`): odstránený tmavý posun kalibračného balíka, následne demosaicovaný, bez flat fieldu alebo unmixu — ten istý súbor, aký sa uloží pri snímaní na úrovni bez debayeringu — v natívnej orientácii senzora. Platí pre RGB a multispektrálne moduly.
 * **Export náhľadu**: náhľad na displeji (`Preview_Images`). RGB = vyváženie bielej (DAQ-svetelný zdroj, ak je k dispozícii, inak šedý svet) + gama; multispektrálne = rozloženie falošných farieb.
 * **Export žiarivosti**: spektrálna žiarivosť typu float32 (`Radiance_Images`, W/m²/sr/nm). Iba multispektrálne moduly – neplatí pre RGB mastery.
 * **Export odrazivosti**: odrazivosť typu uint16 (`Reflectance_Calibrated_Images`, DN 32768 = ρ 1,0), ak snímka obsahuje hodnotu `.daq` smerujúcu nadol alebo cieľ v rámci snímky. Iba multispektrálne moduly.
 
-Všetky štyri sú **štandardne zapnuté**— jeden importovaný surový snímok LATTICE sa v rámci jedného spracovateľského cyklu rozdelí do všetkých povolených a príslušných produktov. Zaškrtávacie políčko**Exportovať odrazivosť** je sivé, ak je kalibrácia odrazivosti vypnutá. Nastavenia, ktorých aktivácia je znemožnená nadradeným prepínačom, sú vždy sivé a obsahujú popisok s názvom prepínača, ktorý je potrebné zmeniť.**Pokročilé nastavenia:*** **Posun časového pásma svetelného senzora**: Počet hodín od UTC pre zosúladenie času svetelného senzora (predvolené: 0, rozsah −12 až +12)
+Všetky štyri sú **štandardne zapnuté**— jeden importovaný surový snímok LATTICE sa v rámci jedného spracovateľského cyklu rozdelí do všetkých povolených a príslušných produktov. Zaškrtávacie políčko**Exportovať odrazivosť** je sivé, ak je kalibrácia odrazivosti vypnutá. Nastavenia, ktorých aktivácia je znemožnená nadradeným prepínačom, sú vždy sivé a obsahujú popisok s názvom prepínača, ktorý je potrebné zmeniť.
+
+**Pokročilé nastavenia:**
+
+* **Posun časového pásma svetelného senzora**: Počet hodín od UTC pre zosúladenie času svetelného senzora (predvolené: 0, rozsah −12 až +12)
 * **Použiť korekcie PPK**: Používa údaje GPS/expozičných pinov zo súborov `.daq` (predvolené nastavenie: vypnuté)
 * **Expozičný pin 1/2**: Priraďuje kamery k expozičným pinom pre konfigurácie s dvoma kamerami
 
@@ -105,7 +114,9 @@ Nastavte, ktoré vegetačné indexy sa majú vypočítať a exportovať. Rozbaľ
 3. Nastavte parametre vizualizácie (farby LUT, rozsahy hodnôt)
 4. Podľa potreby pridajte viacero indexov
 
-**Populárne indexy:*** **NDVI**: Všeobecný zdravotný stav vegetácie (najbežnejší)
+**Populárne indexy:**
+
+* **NDVI**: Všeobecný zdravotný stav vegetácie (najbežnejší)
 * **NDRE**: Včasná detekcia stresu pomocou RedEdge
 * **GNDVI**: Citlivý na koncentráciu chlorofylu
 * **OSAVI**: Funguje dobre pri viditeľnej pôde
@@ -217,7 +228,11 @@ Ak používate záznamníky MAPIR DAQ s GPS na presnú geolokalizáciu:
 3. V prípade potreby nastavte**„Časový posun svetelného senzora“** (predvolené nastavenie: 0 pre UTC)
 4. Priraďte kamery k expozícijným pinom:
    * **Jedna kamera**: Automaticky priradená k pinu 1
-   * **Dve kamery**: Ručne priraďte každú kameru k správnemu pinu**Priradenie expozícií:*** **Expozícia 1**: Z roletového menu vyberte model kamery
+   * **Dve kamery**: Ručne priraďte každú kameru k správnemu pinu
+
+**Priradenie expozícií:**
+
+* **Expozícia 1**: Z roletového menu vyberte model kamery
 * **Expozícia 2**: Vyberte druhú kameru alebo možnosť „Nepoužívať“
 * Na oba piny nemožno priradiť tú istú kameru
 

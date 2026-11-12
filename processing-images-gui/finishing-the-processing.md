@@ -82,7 +82,9 @@ Nepočítajte podľa vzorca — počet výstupov závisí od toho, ktoré produk
 
 ### Náhľad v externých prehliadačoch obrázkov
 
-**Odporúčané prehliadače:*** **QGIS** – bezplatný GIS softvér (najlepší pre georeferencovanú multispektrálnu analýzu)
+**Odporúčané prehliadače:**
+
+* **QGIS** – bezplatný GIS softvér (najlepší pre georeferencovanú multispektrálnu analýzu)
 * **IrfanView** – rýchly a nenáročný prehliadač obrázkov (podporuje formát TIFF)
 * **Adobe Photoshop** – profesionálna úprava obrázkov (podpora formátu TIFF)
 * **GIMP** – bezplatná alternatíva k programu Photoshop
@@ -225,7 +227,9 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 ### Problém: Hodnoty NDVI sa zdajú nesprávne
 
-**Očakávané rozsahy hodnôt NDVI:*** **Voda, skaly, pôda**: -0,1 až 0,2
+**Očakávané rozsahy hodnôt NDVI:**
+
+* **Voda, skaly, pôda**: -0,1 až 0,2
 * **Riedka/nezdravá vegetácia**: 0,2 až 0,4
 * **Stredná vegetácia**: 0,4 až 0,6
 * **Zdravá, hustá vegetácia**: 0,6 až 0,9**Ak sú hodnoty mimo týchto rozsahov:**
@@ -279,12 +283,18 @@ Ak chcete uchovať záznam o spracovaní alebo ho poslať podpore MAPIR:
 
 ### Odporúčaná stratégia zálohovania
 
-**Čo uložiť:*** ✅ **Pôvodné snímky vo formáte RAW/JPG alebo surové záznamy LATTICE** – archivujte na samostatnom disku/v cloude; surové dáta sú zdrojom spracovateľského reťazca a všetko ostatné sa z nich dá znovu vygenerovať
+**Čo uložiť:**
+
+* ✅ **Pôvodné snímky vo formáte RAW/JPG alebo surové záznamy LATTICE** – archivujte na samostatnom disku/v cloude; surové dáta sú zdrojom spracovateľského reťazca a všetko ostatné sa z nich dá znovu vygenerovať
 * ✅ **Súbory zo svetelných senzorov `.daq` / `.csv`** – potrebné na neskoršie opätovné odvodenie odrazivosti
 * ✅ **Spracované výstupy** – uchovajte kalibrované snímky a indexy
 * ✅ **Zložka projektu** (`project.json` a súvisiace súbory) – Obsahuje všetky nastavenia pre prípadné opätovné spracovanie
 * ✅ **Log ladiaceho procesu** – Dokumentuje podrobnosti spracovania
-* ✅ **Obrázky kalibračných terčov** – Na overenie a opätovné spracovanie**Odporúčania pre ukladanie:*** **Okamžitá záloha**: Externý pevný disk
+* ✅ **Obrázky kalibračných terčov** – Na overenie a opätovné spracovanie
+
+**Odporúčania pre ukladanie:**
+
+* **Okamžitá záloha**: Externý pevný disk
 * **Dlhodobý archív**: Úložisko v cloude (Google Drive, Dropbox atď.)
 * **Kritické údaje**: Uložte 2–3 kópie na rôznych miestach***
 

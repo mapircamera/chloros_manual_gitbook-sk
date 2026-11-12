@@ -28,7 +28,11 @@ Pre používateľov s licenciou Chloros+:
 1.**Detekcia** – vyhľadávanie kalibračných cieľov
 2. **Analýza** – preskúmanie obrázkov a príprava spracovateľského reťazca
 3. **Kalibrácia** – Aplikácia korekcií vinety a odrazivosti
-4. **Export** – Uloženie spracovaných súborov**Interaktívne funkcie:*** **Naveďte kurzor** na ukazovateľ priebehu, aby sa zobrazil rozbalený 4-fázový panel
+4. **Export** – Uloženie spracovaných súborov
+
+**Interaktívne funkcie:**
+
+* **Naveďte kurzor** na ukazovateľ priebehu, aby sa zobrazil rozbalený 4-fázový panel
 * **Kliknutím** na ukazovateľ priebehu zamrazíte/pripnete rozbalený panel
 * **Kliknite znovu** na odblokovanie a automatické skrytie pri odsunutí kurzora
 * Každá fáza zobrazuje individuálny priebeh (0–100 %)
@@ -92,7 +96,9 @@ Pre používateľov s licenciou Chloros+:
 
 ### Fáza 3: Kalibrácia
 
-**Čo sa deje:*** **Debayering**: Konverzia vzoru RAW Bayer na 3 kanály (pri monokromatických moduloch LATTICE sa táto fáza preskočí, s poznámkou)
+**Čo sa deje:**
+
+* **Debayering**: Konverzia vzoru RAW Bayer na 3 kanály (pri monokromatických moduloch LATTICE sa táto fáza preskočí, s poznámkou)
 * **Korekcia vinetácie**: Odstránenie stmavnutia okrajov objektívu
 * **Kalibrácia odrazivosti**: Normalizácia pomocou cieľových hodnôt a/alebo zníženia citlivosti DAQ
 * **Výpočet indexov**: Výpočet multispektrálnych indexov
@@ -104,7 +110,9 @@ Pre používateľov s licenciou Chloros+:
 * Aktuálny obrázok sa spracúva
 * Dokončené obrázky / Celkový počet obrázkov
 
-**Spôsob spracovania:*** **Režim Free**: Spracováva jeden snímok po druhom postupne
+**Spôsob spracovania:**
+
+* **Režim Free**: Spracováva jeden snímok po druhom postupne
 * **Režim Chloros+**: Spúšťa hardvérovo adaptívny fond pracovných procesov — 1–4 súbežné pracovné procesy na systémoch s GPU (podľa VRAM), jeden pracovný proces na fyzické jadro (mínus jeden) na systémoch iba s CPU. Pozri [Dynamická adaptácia výpočtov](../processing-architecture/dynamic-compute-adaptation.md)
 * **GPU akcelerácia**: Výrazne urýchľuje túto fázu**Na čo si dávať pozor:**
 

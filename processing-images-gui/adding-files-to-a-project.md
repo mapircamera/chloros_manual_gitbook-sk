@@ -57,7 +57,11 @@ output/
 └── *.daq          the downwelling reading matched to the capture
 ```
 
-**Nastavte priečinok „Add Folder“ na koreňový priečinok snímok** (`output/` vyššie). Ak vybraný priečinok neobsahuje žiadne obrázky, ale má podpriečinky, Chloros do nich automaticky prejde — podpriečinky na danej úrovni aj koreňový priečinok `.daq` sa načítajú naraz.**Ako prebieha import snímok:*** Každá snímka sa importuje ako **jediný obrázok**, zoskupený podľa snímky (nie jeden záznam na úroveň). Ostatné úrovne tej istej snímky sa zobrazujú ako režimy zobrazenia tohto jedného obrázku.
+**Nastavte priečinok „Add Folder“ na koreňový priečinok snímok** (`output/` vyššie). Ak vybraný priečinok neobsahuje žiadne obrázky, ale má podpriečinky, Chloros do nich automaticky prejde — podpriečinky na danej úrovni aj koreňový priečinok `.daq` sa načítajú naraz.
+
+**Ako prebieha import snímok:**
+
+* Každá snímka sa importuje ako **jediný obrázok**, zoskupený podľa snímky (nie jeden záznam na úroveň). Ostatné úrovne tej istej snímky sa zobrazujú ako režimy zobrazenia tohto jedného obrázku.
 * **Spracovanie vždy začína od surového snímku.** Ostatné úrovne sú viditeľné, ale cez spracovateľský reťazec prechádza vždy len `raw` — opätovné spracovanie už spracovaného produktu by znamenalo dvojité uplatnenie korekcií, čo Chloros odmieta. Opätovne importovaný export nikdy nemôže obsadiť slot pre surový snímok.
 * Zložka so snímkami uložená **bez** surových snímok sa načíta a zobrazí normálne, ale spracovanie ju preskočí a túto skutočnosť zaznamená do protokolu. (Príznak CLI `--input-level` môže v tomto prípade vynútiť vstupný bod — pozri [Referenciu CLI](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Od verzie 1.3.0 môže zložka s zachytenými snímkami obsahovať aj zložku `clamp_masks/` (masky na úrovni jednotlivých pixelov pre úrovne žiarivosti a odrazivosti — pozri [Formáty výstupných obrázkov](../output-image-formats.md#clamp-masks)). Masky nie sú obrázkami scény a program Chloros ich pri importe preskočí bez ohľadu na to, kde sa nachádzajú.

@@ -260,10 +260,15 @@ e 1.3.0** na stránke [Začíname](./).**Verzia 1.2.0**— pozrite si časť**Č
 
 **Dátum vydania: 10. februára 2026**
 
-**Nové funkcie*** **Metóda debayeringu s ohľadom na textúru \[Iba Chloros+] –** Metóda s ohľadom na textúru využíva vysokokvalitný debayering zohľadňujúci hrany v kombinácii s modelom odšumovania založeným na AI/ML, ktorý odstraňuje takmer všetok šum spôsobený debayeringom.
-* **Podpora kalibračných terčov T4P*** **Rýchlejšie spracovanie na GPU v programe Chloros+, lepšie riadenie pamäte**
+**Nové funkcie**
 
-**Opravy chýb*** Úplne nové používateľské rozhranie (GUI), ktoré by teraz malo fungovať na všetkých počítačoch so systémom Windows.
+* **Metóda debayeringu s ohľadom na textúru \[Iba Chloros+] –** Metóda s ohľadom na textúru využíva vysokokvalitný debayering zohľadňujúci hrany v kombinácii s modelom odšumovania založeným na AI/ML, ktorý odstraňuje takmer všetok šum spôsobený debayeringom.
+* **Podpora kalibračných terčov T4P**
+* **Rýchlejšie spracovanie na GPU v programe Chloros+, lepšie riadenie pamäte**
+
+**Opravy chýb**
+
+* Úplne nové používateľské rozhranie (GUI), ktoré by teraz malo fungovať na všetkých počítačoch so systémom Windows.
 
 </details>
 
@@ -273,14 +278,18 @@ e 1.3.0** na stránke [Začíname](./).**Verzia 1.2.0**— pozrite si časť**Č
 
 **Dátum vydania: 5. január 2026**
 
-**Nové funkcie*** **Prepínanie medzi obrázkom a metadátami**: Do prehliadača súborov bolo pridané prepínanie, ktoré umožňuje zobraziť metadáta vybraného obrázku v tabuľke namiesto mriežky obrázkov
+**Nové funkcie**
+
+* **Prepínanie medzi obrázkom a metadátami**: Do prehliadača súborov bolo pridané prepínanie, ktoré umožňuje zobraziť metadáta vybraného obrázku v tabuľke namiesto mriežky obrázkov
 * **Posuvník priblíženia mriežky obrázkov**: Nový posuvník v používateľskom rozhraní na nastavenie veľkosti miniatúr (podporuje aj kombináciu klávesov CTRL + koliesko myši)
 * **Tlačidlá na export mriežky obrázkov**: Tlačidlá v hornom riadku na prepínanie miniatúr z formátu JPG na spracované výstupy (Targets, Reflectance, Index, LUT)
 * **Karta Mapa**: Nová interaktívna 2D mapa zobrazujúca značky GPS polohy obrázkov
   * Podporuje mapové dlaždice Google Maps a ESRI (automaticky vyberá najlepšiu službu dlaždíc na základe dostupnosti úrovne priblíženia)
   * Náhľad miniatúr pri prechádzaní kurzorom myši nad značkami na mape
 
-**Opravy chýb*** Vylepšená podpora inštalácie programu Chloros na počítačoch s iným jazykom ako angličtina
+**Opravy chýb**
+
+* Vylepšená podpora inštalácie programu Chloros na počítačoch s iným jazykom ako angličtina
 
 </details>
 
@@ -290,13 +299,21 @@ e 1.3.0** na stránke [Začíname](./).**Verzia 1.2.0**— pozrite si časť**Č
 
 **Dátum vydania: 20. december 2025**
 
-**Nové funkcie*** Prvé spustenie
+**Nové funkcie**
 
-**Vylepšenia*** Prvé spustenie
+* Prvé spustenie
 
-**Opravy chýb*** Prvé spustenie
+**Vylepšenia**
 
-**Známe problémy*** Prvé spustenie
+* Prvé spustenie
+
+**Opravy chýb**
+
+* Prvé spustenie
+
+**Známe problémy**
+
+* Prvé spustenie
 
 </details>
 

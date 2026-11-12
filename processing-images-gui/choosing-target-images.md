@@ -32,7 +32,9 @@ Ak nie sú zaškrtnuté **žiadne** snímky, program Chloros prejde do režimu s
 
 Prezrite si importované snímky v prehliadači súborov a zistite, ktoré snímky obsahujú kalibračné ciele.
 
-**Bežné scenáre:*** **Cieľ pred snímaním**: Zachytený pred začatím relácie
+**Bežné scenáre:**
+
+* **Cieľ pred snímaním**: Zachytený pred začatím relácie
 * **Cieľ po snímaní**: Zachytený po ukončení relácie
 * **Ciele v teréne**: Ciele umiestnené v oblasti snímania
 * **Viac cieľov**: 2–3 snímky cieľov na reláciu (odporúčané)
@@ -142,9 +144,17 @@ Tento stĺpec použite na overenie, či ste v projekte označili ciele pre každ
 
 ### Úprava citlivosti detekcie
 
-Ak funkcia „Chloros“ (Detekcia cieľov) nedetekuje vaše ciele správne, upravte tieto nastavenia v [Nastaveniach projektu](adjusting-project-settings.md):**Minimálna plocha kalibračnej vzorky (px):*** **Predvolené nastavenie**: 25 pixelov
+Ak funkcia „Chloros“ (Detekcia cieľov) nedetekuje vaše ciele správne, upravte tieto nastavenia v [Nastaveniach projektu](adjusting-project-settings.md):
+
+**Minimálna plocha kalibračnej vzorky (px):**
+
+* **Predvolené nastavenie**: 25 pixelov
 * **Zvýšte hodnotu**, ak dochádza k falošným detekciám pri malých artefaktoch
-* **Znížte hodnotu**, ak sa ciele nedetekujú**Minimálne zhlukovanie cieľov (0–100):*** **Predvolené**: 60
+* **Znížte hodnotu**, ak sa ciele nedetekujú
+
+**Minimálne zhlukovanie cieľov (0–100):**
+
+* **Predvolené**: 60
 * **Zvýšte**, ak sa ciele rozdeľujú na viacero detekcií
 * **Znížte**, ak sa ciele s farebnými odlišnosťami nedetekujú úplne
 
